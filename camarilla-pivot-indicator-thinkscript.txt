@@ -1,0 +1,91 @@
+# Camarilla TH / TL Zone for Thinkorswim
+# 5-minute chart, based on:
+# H = yesterday high (daily)
+# L = yesterday low  (daily)
+# C = yesterday close(daily)
+# O = today's 09:30 RTH open
+# P  = (H + L + C) / 3
+# B  = P + O
+# TH = B - L
+# TL = B - H
+
+declare upper;
+
+input showOnlyToday = yes;
+input showCloud = yes;
+input showLabels = yes;
+input rthOpenTime = 0930;
+input rthCloseTime = 1600;
+
+# ------------------------------------------------
+# 1) Yesterday daily H / L / C
+# ------------------------------------------------
+def yH = high(period = AggregationPeriod.DAY)[1];
+def yL = low(period = AggregationPeriod.DAY)[1];
+def yC = close(period = AggregationPeriod.DAY)[1];
+
+# ------------------------------------------------
+# 2) Detect day + capture today's 09:30 open
+# ------------------------------------------------
+def day = GetYYYYMMDD();
+def newDay = day <> day[1];
+def isRTH = SecondsFromTime(rthOpenTime) >= 0 and SecondsTillTime(rthCloseTime) > 0;
+def is0930Bar = SecondsFromTime(rthOpenTime) == 0;
+
+rec todayOpen =
+    if newDay then Double.NaN
+    else if is0930Bar then open
+    else todayOpen[1];
+
+# ------------------------------------------------
+# 3) Calculate today's fixed levels
+# ------------------------------------------------
+def P  = (yH + yL + yC) / 3;
+def B  = P + todayOpen;
+def TH = B - yL;
+def TL = B - yH;
+
+# ------------------------------------------------
+# 4) Show only current day if desired
+# ------------------------------------------------
+def lastDay = HighestAll(if !IsNaN(close) then day else 0);
+def isToday = day == lastDay;
+def visible = if showOnlyToday then isToday and isRTH else isRTH;
+
+# ------------------------------------------------
+# 5) Plots
+# ------------------------------------------------
+plot THLine = if visible and !IsNaN(todayOpen) then TH else Double.NaN;
+THLine.SetDefaultColor(CreateColor(0, 102, 255));
+THLine.SetLineWeight(2);
+THLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+THLine.HideBubble();
+THLine.HideTitle();
+
+plot TLLine = if visible and !IsNaN(todayOpen) then TL else Double.NaN;
+TLLine.SetDefaultColor(CreateColor(0, 102, 255));
+TLLine.SetLineWeight(2);
+TLLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+TLLine.HideBubble();
+TLLine.HideTitle();
+
+AddCloud(
+    if showCloud and visible and !IsNaN(todayOpen) then TH else Double.NaN,
+    if showCloud and visible and !IsNaN(todayOpen) then TL else Double.NaN,
+    CreateColor(40, 90, 180),
+    CreateColor(40, 90, 180)
+);
+
+# ------------------------------------------------
+# 6) Labels
+# ------------------------------------------------
+AddLabel(showLabels, "YH: " + AsPrice(yH) + "  YL: " + AsPrice(yL) + "  YC: " + AsPrice(yC), Color.LIGHT_GRAY);
+AddLabel(showLabels, "O: " + AsPrice(todayOpen), Color.WHITE);
+AddLabel(showLabels, "TH: " + AsPrice(TH), CreateColor(0, 102, 255));
+AddLabel(showLabels, "TL: " + AsPrice(TL), CreateColor(0, 102, 255));
+
+# ------------------------------------------------
+# 7) Optional alerts
+# ------------------------------------------------
+Alert(isToday and close >= TH and close[1] < TH, "Touched TH: " + AsPrice(TH), Alert.BAR, Sound.Bell);
+Alert(isToday and close <= TL and close[1] > TL, "Touched TL: " + AsPrice(TL), Alert.BAR, Sound.Bell);

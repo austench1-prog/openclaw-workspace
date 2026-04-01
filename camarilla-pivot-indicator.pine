@@ -1,0 +1,113 @@
+//@version=6
+indicator("Camarilla TH/TL Zone", overlay=true, max_boxes_count=100, max_labels_count=100)
+
+// ================================================================
+// 模块1：获取昨日日线 H / L / C
+// ================================================================
+prevH = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+
+// ================================================================
+// 模块2：识别今日 09:30 开盘，记录 O（只取第一根RTH K线）
+// ================================================================
+isNewDay     = dayofmonth != dayofmonth[1]
+isRTHOpen    = (hour == 9 and minute == 30)   // 09:30 纽约时间
+isFirstRTH   = isNewDay[0] or (isRTHOpen and not isRTHOpen[1])
+
+var float todayO = na
+
+if isRTHOpen
+    todayO := open
+
+// ================================================================
+// 模块3：计算 P / B / TH / TL（每日固定，不变）
+// ================================================================
+var float todayTH = na
+var float todayTL = na
+var float todayP  = na
+var float todayB  = na
+
+if isRTHOpen and not na(prevH) and not na(todayO)
+    todayP  := (prevH + prevL + prevC) / 3
+    todayB  := todayP + todayO
+    todayTH := todayB - prevL
+    todayTL := todayB - prevH
+
+// ================================================================
+// 模块4：画矩形区间（每日独立，不跨天）
+// ================================================================
+var box   zoneBox  = na
+var label thLbl    = na
+var label tlLbl    = na
+var int   dayStart = na
+
+// 每天 09:30 创建新的矩形
+if isRTHOpen and not na(todayTH)
+    // 删除上一个矩形（可选，保留历史就不删）
+    dayStart := bar_index
+
+    zoneBox := box.new(
+         left         = bar_index,
+         top          = todayTH,
+         right        = bar_index + 2,
+         bottom       = todayTL,
+         bgcolor      = color.new(color.blue, 82),
+         border_color = color.new(color.blue, 40),
+         border_width = 1
+         )
+
+    thLbl := label.new(
+         x         = bar_index,
+         y         = todayTH,
+         text      = "TH " + str.tostring(todayTH, "#.00"),
+         color     = color.new(color.blue, 30),
+         textcolor = color.white,
+         style     = label.style_label_right,
+         size      = size.small
+         )
+
+    tlLbl := label.new(
+         x         = bar_index,
+         y         = todayTL,
+         text      = "TL " + str.tostring(todayTL, "#.00"),
+         color     = color.new(color.blue, 30),
+         textcolor = color.white,
+         style     = label.style_label_right,
+         size      = size.small
+         )
+
+// 当天每根 bar 实时延伸矩形
+isMarketHours = (hour >= 9 and hour < 16) or (hour == 9 and minute >= 30)
+
+if not na(zoneBox) and isMarketHours
+    box.set_right(zoneBox, bar_index + 1)
+
+// ================================================================
+// 右上角信息表格
+// ================================================================
+var table tbl = table.new(position.top_right, 2, 6,
+     bgcolor      = color.new(color.black, 60),
+     border_width = 1)
+
+if barstate.islast
+    table.cell(tbl, 0, 0, "昨H",  text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 0, str.tostring(prevH, "#.00"),    text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 1, "昨L",  text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 1, str.tostring(prevL, "#.00"),    text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 2, "昨C",  text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 2, str.tostring(prevC, "#.00"),    text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 3, "开盘O", text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 3, str.tostring(todayO, "#.00"),   text_color=color.white, text_size=size.small, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 4, "TH",   text_color=color.black, text_size=size.small, bgcolor=color.new(color.blue, 30))
+    table.cell(tbl, 1, 4, str.tostring(todayTH, "#.00"),  text_color=color.black, text_size=size.small, bgcolor=color.new(color.blue, 30))
+    table.cell(tbl, 0, 5, "TL",   text_color=color.black, text_size=size.small, bgcolor=color.new(color.blue, 30))
+    table.cell(tbl, 1, 5, str.tostring(todayTL, "#.00"),  text_color=color.black, text_size=size.small, bgcolor=color.new(color.blue, 30))
+
+// ================================================================
+// 告警
+// ================================================================
+if not na(todayTH) and close >= todayTH * 0.9998
+    alert("价格触及 TH: " + str.tostring(todayTH, "#.00"), alert.freq_once_per_bar_close)
+if not na(todayTL) and close <= todayTL * 1.0002
+    alert("价格触及 TL: " + str.tostring(todayTL, "#.00"), alert.freq_once_per_bar_close)
