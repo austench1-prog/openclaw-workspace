@@ -21,7 +21,7 @@ if isRTHOpen
     todayO := open
 
 // ================================================================
-// 模块3：计算 P / B / TH / TL（每日固定，不变）
+// 模块3：计算 P / B / TH / TL（B = 2 * P，每日固定，不变）
 // ================================================================
 var float todayTH = na
 var float todayTL = na
@@ -30,7 +30,7 @@ var float todayB  = na
 
 if isRTHOpen and not na(prevH) and not na(todayO)
     todayP  := (prevH + prevL + prevC) / 3
-    todayB  := todayP + todayO
+    todayB  := 2 * todayP
     todayTH := todayB - prevL
     todayTL := todayB - prevH
 
