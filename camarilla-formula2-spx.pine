@@ -22,7 +22,7 @@ if isRTHOpen
 
 P  = (todayH + todayL + todayC) / 3
 D  = todayC - TO
-B  = 2 * P + D
+B  = 2 * P - D
 TH = B - todayL
 TL = B - todayH
 MID = (TH + TL) / 2
@@ -45,7 +45,7 @@ if barstate.islast and showLevels
 var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
 if barstate.islast
     table.cell(tbl, 0, 0, "F2 - Wtd Open", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
-    table.cell(tbl, 1, 0, "D=C-TO B=2P+D", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, "D=C-TO B=2P-D", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
     table.cell(tbl, 0, 1, "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
     table.cell(tbl, 1, 1, str.tostring(todayH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
     table.cell(tbl, 0, 2, "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
