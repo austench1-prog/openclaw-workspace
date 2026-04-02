@@ -1,9 +1,9 @@
 //@version=6
 // Formula 2 - Weighted Open
 // Uses TODAY H/L/C + TOMORROW open (TO) to predict TOMORROW TH/TL
-// P  = (H + L + C) / 3        <- today's data
-// TO = tomorrow's 09:30 open  <- becomes known at open
-// B  = (2H + 2L + 8C - 6TO) / 6
+// P  = (H + L + C) / 3
+// D  = C - TO
+// B  = 2P + D
 // TH = B - L
 // TL = B - H
 indicator("Camarilla F2 - Weighted Open", overlay=true, max_labels_count=10)
@@ -21,7 +21,8 @@ if isRTHOpen
     TO := open
 
 P  = (todayH + todayL + todayC) / 3
-B  = (2 * todayH + 2 * todayL + 8 * todayC - 6 * TO) / 6
+D  = todayC - TO
+B  = 2 * P + D
 TH = B - todayL
 TL = B - todayH
 MID = (TH + TL) / 2
@@ -44,7 +45,7 @@ if barstate.islast and showLevels
 var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
 if barstate.islast
     table.cell(tbl, 0, 0, "F2 - Wtd Open", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
-    table.cell(tbl, 1, 0, "B=(2H+2L+8C-6TO)/6", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, "D=C-TO B=2P+D", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
     table.cell(tbl, 0, 1, "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
     table.cell(tbl, 1, 1, str.tostring(todayH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
     table.cell(tbl, 0, 2, "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
