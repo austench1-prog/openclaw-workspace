@@ -1,61 +1,126 @@
 //@version=6
 // Formula 3 - Futures Version
-// Uses TODAY 24h H/L/C + TOMORROW 0:01am NYT futures open
-// P  = (H + L + C + O) / 4
-// B  = 2 * P
-// TH = B - L
-// TL = B - H
-// H/L/C = today's full 24h futures session
-// O = tomorrow's 0:01am NYT futures open
-indicator("Camarilla F3 - Futures", overlay=true, max_labels_count=10)
+// Data: yesterday 24h H/L/C + today 0:01am O (earliest price of day)
+// P = (H + L + C + O) / 4
+// B = 2 * P
+// TH = B - L  (Tomorrow High)
+// TL = B - H  (Tomorrow Low)
+// Display window: 00:00 to 16:00 each day (independent, no cross-day connection)
+// At 16:01: numbers available in table as next-day preview
 
-isTradingSession = not na(close)
-isNewSession = hour == 0 and minute <= 5   // captures 0:01am NYT open
+indicator("Camarilla F3 - Futures", overlay=true, max_labels_count=20, max_boxes_count=50)
 
-// Today's full 24h session H/L/C (from previous completed day)
-todayH = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_on)
-todayL = request.security(syminfo.tickerid, "D", low[1], lookahead=barmerge.lookahead_on)
-todayC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+// ============================================================
+// Time helpers
+// ============================================================
+is0am        = hour == 0 and minute == 0                          // midnight, start of new day
+isAfter1600  = hour == 16 and minute >= 1                         // after RTH close
+inWindow     = hour >= 0 and hour < 16                            // display window 0:00 - 16:00
+isNewDay     = ta.change(time("D")) != 0                          // day boundary
 
-// Capture 0:01am futures open (locked for the session)
-var float O = na
-if isNewSession
-    O := open
+// ============================================================
+// Capture 0:01am open (O) - reset each day at midnight
+// ============================================================
+var float O_locked = na
+var float O_preview = na
 
-P  = (todayH + todayL + todayC + O) / 4
-B  = 2 * P
-TH = B - todayL
-TL = B - todayH
-MID = (TH + TL) / 2
+if is0am
+    O_locked   := open
+    O_preview  := open
 
-showLevels = isTradingSession and not na(O)
+// ============================================================
+// Previous completed day H/L/C (24h futures session via daily bar)
+// ============================================================
+prevH = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
 
-thPlot = plot(showLevels ? TH : na, title="TH", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
-tlPlot = plot(showLevels ? TL : na, title="TL", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
-plot(showLevels ? MID : na, title="MID", color=color.yellow, linewidth=1, style=plot.style_linebr)
+// ============================================================
+// DISPLAY levels: for current 0:00 - 16:00 window
+// Uses: yesterday H/L/C + today 0:01am O
+// ============================================================
+P_disp  = (prevH + prevL + prevC + O_locked) / 4
+B_disp  = 2 * P_disp
+TH_disp = B_disp - prevL
+TL_disp = B_disp - prevH
+MID_disp = (TH_disp + TL_disp) / 2
+
+showZone = inWindow and not na(O_locked) and not na(prevH)
+
+thPlot = plot(showZone ? TH_disp : na, title="TH", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+tlPlot = plot(showZone ? TL_disp : na, title="TL", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+plot(showZone ? MID_disp : na, title="MID", color=color.yellow, linewidth=1, style=plot.style_linebr)
 fill(thPlot, tlPlot, color=color.new(color.purple, 85), title="F3 Zone")
 
-var label lbTH = na
-var label lbTL = na
-if barstate.islast and showLevels
+// ============================================================
+// Labels at current bar's right edge
+// ============================================================
+var label lbTH  = na
+var label lbTL  = na
+var label lbMID = na
+
+if barstate.islast and showZone
     label.delete(lbTH)
     label.delete(lbTL)
-    lbTH := label.new(bar_index+1, TH, "F3 TH " + str.tostring(TH, "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
-    lbTL := label.new(bar_index+1, TL, "F3 TL " + str.tostring(TL, "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    label.delete(lbMID)
+    lbTH  := label.new(bar_index+1, TH_disp,  "TH "  + str.tostring(TH_disp,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(bar_index+1, TL_disp,  "TL "  + str.tostring(TL_disp,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index+1, MID_disp, "MID " + str.tostring(MID_disp, "#.00"), color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
 
-var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
+// ============================================================
+// PREVIEW levels: computed at 16:01 using today completed H/L/C
+// Shows what TOMORROW's TH/TL will be (after today's C is locked)
+// ============================================================
+todayH = request.security(syminfo.tickerid, "D", high,  lookahead=barmerge.lookahead_on)
+todayL = request.security(syminfo.tickerid, "D", low,   lookahead=barmerge.lookahead_on)
+todayC = request.security(syminfo.tickerid, "D", close, lookahead=barmerge.lookahead_on)
+
+var float PREV_TH = na
+var float PREV_TL = na
+var float PREV_MID = na
+
+if isAfter1600 and not na(O_preview) and not na(todayC)
+    float Pp   = (todayH + todayL + todayC + O_preview) / 4
+    float Bp   = 2 * Pp
+    PREV_TH  := Bp - todayL
+    PREV_TL  := Bp - todayH
+    PREV_MID := (PREV_TH + PREV_TL) / 2
+
+// ============================================================
+// Table: top-right
+// Shows active levels during window, preview levels after 16:00
+// ============================================================
+var table tbl = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 55), border_width=1)
+
 if barstate.islast
-    table.cell(tbl, 0, 0, "F3 - Futures", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
-    table.cell(tbl, 1, 0, "P=(H+L+C+O)/4", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
-    table.cell(tbl, 0, 1, "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 1, 1, str.tostring(todayH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 0, 2, "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 1, 2, str.tostring(todayL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 0, 3, "Today C", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 1, 3, str.tostring(todayC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 0, 4, "0:01am O", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 1, 4, na(O) ? "Waiting..." : str.tostring(O, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
-    table.cell(tbl, 0, 5, "Tmrw TH", text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
-    table.cell(tbl, 1, 5, na(O) ? "N/A" : str.tostring(TH, "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
-    table.cell(tbl, 0, 6, "Tmrw TL", text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
-    table.cell(tbl, 1, 6, na(O) ? "N/A" : str.tostring(TL, "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    bool isPreview = isAfter1600 or (not inWindow and hour >= 16)
+    string mode = isPreview ? "PREVIEW: Tomorrow" : "ACTIVE: Today"
+    color modeColor = isPreview ? color.new(color.orange, 20) : color.new(color.blue, 20)
+
+    table.cell(tbl, 0, 0, "F3 Futures", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, mode, text_color=color.black, bgcolor=modeColor, text_size=size.small)
+
+    float dH = isPreview ? todayH  : prevH
+    float dL = isPreview ? todayL  : prevL
+    float dC = isPreview ? todayC  : prevC
+    float dO = isPreview ? O_preview : O_locked
+    float dTH  = isPreview ? PREV_TH  : TH_disp
+    float dTL  = isPreview ? PREV_TL  : TL_disp
+    float dMID = isPreview ? PREV_MID : MID_disp
+
+    table.cell(tbl, 0, 1, "H",   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 1, str.tostring(dH, "#.00"),   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 2, "L",   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(dL, "#.00"),   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 3, "C",   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(dC, "#.00"),   text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 4, "O 0am", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 4, na(dO) ? "N/A" : str.tostring(dO, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 5, "---", text_color=color.gray, bgcolor=color.new(color.black, 50), text_size=size.small)
+    table.cell(tbl, 1, 5, "---", text_color=color.gray, bgcolor=color.new(color.black, 50), text_size=size.small)
+    table.cell(tbl, 0, 6, "TH",  text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 6, na(dTH) ? "N/A" : str.tostring(dTH, "#.00"),  text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 0, 7, "MID", text_color=color.black, bgcolor=color.new(color.yellow, 30), text_size=size.small)
+    table.cell(tbl, 1, 7, na(dMID) ? "N/A" : str.tostring(dMID, "#.00"), text_color=color.black, bgcolor=color.new(color.yellow, 30), text_size=size.small)
+    table.cell(tbl, 0, 8, "TL",  text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 8, na(dTL) ? "N/A" : str.tostring(dTL, "#.00"),  text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
