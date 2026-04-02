@@ -1,0 +1,50 @@
+//@version=6
+indicator("Camarilla Next-Day TH/TL Preview", overlay=true, max_labels_count=10)
+
+isRTH = ((hour > 9) or (hour == 9 and minute >= 30)) and hour < 16
+
+// During RTH: show levels for TODAY using previous completed daily bar.
+// After RTH close: show PREVIEW levels for TOMORROW using current completed daily bar.
+useH = request.security(syminfo.tickerid, "D", isRTH ? high[1]  : high,  lookahead=barmerge.lookahead_on)
+useL = request.security(syminfo.tickerid, "D", isRTH ? low[1]   : low,   lookahead=barmerge.lookahead_on)
+useC = request.security(syminfo.tickerid, "D", isRTH ? close[1] : close, lookahead=barmerge.lookahead_on)
+
+P = (useH + useL + useC) / 3
+B = 2 * P
+TH = B - useL
+TL = B - useH
+MID = (TH + TL) / 2
+
+thPlot = plot(TH, title="TH", color=color.aqua, linewidth=3, style=plot.style_linebr)
+tlPlot = plot(TL, title="TL", color=color.aqua, linewidth=3, style=plot.style_linebr)
+midPlot = plot(MID, title="MID", color=color.yellow, linewidth=2, style=plot.style_linebr)
+fill(thPlot, tlPlot, color=color.new(color.blue, 78), title="ZONE")
+
+var label lbTH = na
+var label lbTL = na
+var label lbMID = na
+
+if barstate.islast
+    label.delete(lbTH)
+    label.delete(lbTL)
+    label.delete(lbMID)
+    lbTH := label.new(bar_index + 1, TH, "TH " + str.tostring(TH, "#.00"), color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL := label.new(bar_index + 1, TL, "TL " + str.tostring(TL, "#.00"), color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index + 1, MID, "MID " + str.tostring(MID, "#.00"), color=color.yellow, textcolor=color.black, style=label.style_label_left, size=size.small)
+
+var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
+if barstate.islast
+    table.cell(tbl, 0, 0, isRTH ? "Prev H" : "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 0, str.tostring(useH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 1, isRTH ? "Prev L" : "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 1, str.tostring(useL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 2, isRTH ? "Prev C" : "Today C", text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 2, str.tostring(useC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 3, "P", text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 3, str.tostring(P, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 4, "TH", text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 1, 4, str.tostring(TH, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 0, 5, "TL", text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 1, 5, str.tostring(TL, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 0, 6, isRTH ? "For Today" : "For Tomorrow", text_color=color.black, bgcolor=color.new(color.yellow, 20))
+    table.cell(tbl, 1, 6, isRTH ? "ACTIVE" : "PREVIEW", text_color=color.black, bgcolor=color.new(color.yellow, 20))
