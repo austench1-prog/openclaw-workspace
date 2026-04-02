@@ -1,0 +1,61 @@
+//@version=6
+// Formula 3 - Futures Version
+// Uses TODAY 24h H/L/C + TOMORROW 0:01am NYT futures open
+// P  = (H + L + C + O) / 4
+// B  = 2 * P
+// TH = B - L
+// TL = B - H
+// H/L/C = today's full 24h futures session
+// O = tomorrow's 0:01am NYT futures open
+indicator("Camarilla F3 - Futures", overlay=true, max_labels_count=10)
+
+isTradingSession = not na(close)
+isNewSession = hour == 0 and minute <= 5   // captures 0:01am NYT open
+
+// Today's full 24h session H/L/C (from previous completed day)
+todayH = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_on)
+todayL = request.security(syminfo.tickerid, "D", low[1], lookahead=barmerge.lookahead_on)
+todayC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+
+// Capture 0:01am futures open (locked for the session)
+var float O = na
+if isNewSession
+    O := open
+
+P  = (todayH + todayL + todayC + O) / 4
+B  = 2 * P
+TH = B - todayL
+TL = B - todayH
+MID = (TH + TL) / 2
+
+showLevels = isTradingSession and not na(O)
+
+thPlot = plot(showLevels ? TH : na, title="TH", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+tlPlot = plot(showLevels ? TL : na, title="TL", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+plot(showLevels ? MID : na, title="MID", color=color.yellow, linewidth=1, style=plot.style_linebr)
+fill(thPlot, tlPlot, color=color.new(color.purple, 85), title="F3 Zone")
+
+var label lbTH = na
+var label lbTL = na
+if barstate.islast and showLevels
+    label.delete(lbTH)
+    label.delete(lbTL)
+    lbTH := label.new(bar_index+1, TH, "F3 TH " + str.tostring(TH, "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL := label.new(bar_index+1, TL, "F3 TL " + str.tostring(TL, "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+
+var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
+if barstate.islast
+    table.cell(tbl, 0, 0, "F3 - Futures", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, "P=(H+L+C+O)/4", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 0, 1, "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 1, str.tostring(todayH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 2, "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(todayL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 3, "Today C", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(todayC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 4, "0:01am O", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 4, na(O) ? "Waiting..." : str.tostring(O, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 5, "Tmrw TH", text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 5, na(O) ? "N/A" : str.tostring(TH, "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 0, 6, "Tmrw TL", text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 6, na(O) ? "N/A" : str.tostring(TL, "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)

@@ -1,0 +1,48 @@
+//@version=6
+// Formula 1 - Basic
+// Uses TODAY H/L/C to predict TOMORROW TH/TL
+// P = (H + L + C) / 3
+// B = 2 * P
+// TH = B - L
+// TL = B - H
+indicator("Camarilla F1 - Basic", overlay=true, max_labels_count=10)
+
+isRTH = ((hour > 9) or (hour == 9 and minute >= 30)) and hour < 16
+
+todayH = request.security(syminfo.tickerid, "D", high[1], lookahead=barmerge.lookahead_on)
+todayL = request.security(syminfo.tickerid, "D", low[1], lookahead=barmerge.lookahead_on)
+todayC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+
+P  = (todayH + todayL + todayC) / 3
+B  = 2 * P
+TH = B - todayL
+TL = B - todayH
+MID = (TH + TL) / 2
+
+thPlot = plot(isRTH ? TH : na, title="TH", color=color.aqua, linewidth=2, style=plot.style_linebr)
+tlPlot = plot(isRTH ? TL : na, title="TL", color=color.aqua, linewidth=2, style=plot.style_linebr)
+plot(isRTH ? MID : na, title="MID", color=color.yellow, linewidth=1, style=plot.style_linebr)
+fill(thPlot, tlPlot, color=color.new(color.blue, 82), title="F1 Zone")
+
+var label lbTH = na
+var label lbTL = na
+if barstate.islast and isRTH
+    label.delete(lbTH)
+    label.delete(lbTL)
+    lbTH := label.new(bar_index+1, TH, "F1 TH " + str.tostring(TH, "#.00"), color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL := label.new(bar_index+1, TL, "F1 TL " + str.tostring(TL, "#.00"), color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+
+var table tbl = table.new(position.top_right, 2, 6, bgcolor=color.new(color.black, 55), border_width=1)
+if barstate.islast
+    table.cell(tbl, 0, 0, "F1 - Basic", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, "B=2P", text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 0, 1, "Today H", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 1, str.tostring(todayH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 2, "Today L", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(todayL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 3, "Today C", text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(todayC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 4, "Tmrw TH", text_color=color.black, bgcolor=color.new(color.aqua, 20), text_size=size.small)
+    table.cell(tbl, 1, 4, str.tostring(TH, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20), text_size=size.small)
+    table.cell(tbl, 0, 5, "Tmrw TL", text_color=color.black, bgcolor=color.new(color.aqua, 20), text_size=size.small)
+    table.cell(tbl, 1, 5, str.tostring(TL, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20), text_size=size.small)
