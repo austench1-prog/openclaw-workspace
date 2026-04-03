@@ -1,0 +1,64 @@
+# Camarilla Formula 2B - Weighted Open (TOS ThinkScript)
+# P  = (H + L + C) / 3    <- today's data
+# D  = C - TO             <- TO = tomorrow's 09:30 RTH open
+# B  = 2P + D
+# TH = B - L              <- Tomorrow High
+# TL = B - H              <- Tomorrow Low
+
+declare upper;
+
+input showOnlyRTH = yes;
+
+# Yesterday (today's) daily H / L / C
+def prevH = high(period = AggregationPeriod.DAY)[1];
+def prevL = low(period = AggregationPeriod.DAY)[1];
+def prevC = close(period = AggregationPeriod.DAY)[1];
+
+# Tomorrow's 09:30 open (locked once per day)
+def is0930 = SecondsFromTime(0930) == 0;
+rec TO = if is0930 then open else TO[1];
+
+# Formula
+def P  = (prevH + prevL + prevC) / 3;
+def D  = prevC - TO;
+def B  = 2 * P + D;
+def TH = B - prevL;
+def TL = B - prevH;
+def MID = (TH + TL) / 2;
+
+# RTH filter
+def isRTH = SecondsFromTime(0930) >= 0 and SecondsTillTime(1600) > 0;
+def show = if showOnlyRTH then isRTH and !IsNaN(TO) else !IsNaN(TO);
+
+# Plots
+plot TargetHigh = if show then TH else Double.NaN;
+TargetHigh.SetDefaultColor(CreateColor(0, 200, 100));
+TargetHigh.SetLineWeight(2);
+TargetHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+TargetHigh.HideBubble();
+
+plot TargetLow = if show then TL else Double.NaN;
+TargetLow.SetDefaultColor(CreateColor(0, 200, 100));
+TargetLow.SetLineWeight(2);
+TargetLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+TargetLow.HideBubble();
+
+plot MidLine = if show then MID else Double.NaN;
+MidLine.SetDefaultColor(Color.YELLOW);
+MidLine.SetLineWeight(1);
+MidLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+MidLine.HideBubble();
+
+AddCloud(TargetHigh, TargetLow, CreateColor(0, 200, 100), CreateColor(0, 200, 100));
+
+# Labels
+AddLabel(yes, "F2B: D=C-TO B=2P+D", CreateColor(0, 200, 100));
+AddLabel(yes, "Prev H: " + AsPrice(prevH) + "  L: " + AsPrice(prevL) + "  C: " + AsPrice(prevC), Color.GRAY);
+AddLabel(yes, "TO: " + AsPrice(TO), Color.WHITE);
+AddLabel(yes, "TH: " + AsPrice(TH), CreateColor(0, 200, 100));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "TL: " + AsPrice(TL), CreateColor(0, 200, 100));
+
+# Alerts
+Alert(show and close >= TH, "F2B Touched TH: " + AsPrice(TH), Alert.BAR, Sound.Bell);
+Alert(show and close <= TL, "F2B Touched TL: " + AsPrice(TL), Alert.BAR, Sound.Bell);
