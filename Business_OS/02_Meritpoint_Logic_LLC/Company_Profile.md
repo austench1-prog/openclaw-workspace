@@ -1,43 +1,85 @@
 # Meritpoint Logic LLC — 公司主档案
+> 最后更新：2026-04-04
+
+---
+
+## ⚠️ 注意：公司全名差异
+
+| 文件来源 | 显示名称 |
+|---|---|
+| Corporate Book | **Meritpoint LLC** |
+| Business Activity Confirmation | **Meritpoint Logic LLC** |
+| Business Structure Letter | **Meritpoint Logic LLC** |
+
+> **待确认：** 正式注册名是 "Meritpoint LLC" 还是 "Meritpoint Logic LLC"？
+> 建议以 Nevada Secretary of State 注册文件为准。
+
+---
 
 ## 基本资料
 
 | 项目 | 内容 |
 |---|---|
-| 公司全名 | MERITPOINT LOGIC LLC |
+| 公司全名 | Meritpoint Logic LLC（待确认）|
 | 成立州 | Nevada |
-| EIN | 待填写 |
-| 实体类型 | LLC |
-| 税务身份 | Disregarded entity |
+| 成立日期 | January 8, 2026 |
+| EIN | 41-3492899（存加密磁盘）|
+| 管理结构 | Member Managed |
+| 成员 | Austin Chien — Sole Member — 100% |
+| 税务身份 | Disregarded Entity（Single-Member LLC）|
 | 用途 | 自营交易实体 |
+
+---
+
+## 业务定位（银行 KYC 口径）
+
+> 来源：Business Activity Confirmation（2026-03-24，致 Citibank）
+
+- **业务性质：** 自主自营交易实体
+- **交易品种：** 股票、期货（ES/NQ/Gold）、期权（SPX）
+- **资金来源：** 所有人个人储蓄和资本注入
+- **收入来源：** 公司经纪账户内的交易利润
+- **客户：** 无，不管理第三方资金，不接受外部投资
+- **监管状态：** 不提供投资建议或经纪服务
+
+---
 
 ## 账户状态
 
 | 账户 | 机构 | 状态 |
 |---|---|---|
-| 银行账户 | 待填写 | 待填写 |
-| 券商账户（自有资金）| TOS (Schwab) | 活跃 |
-| Prop Firm 账户 | Apex / TPT / MFF / TradeDay | 活跃 |
+| 银行账户 | Citibank（开户进行中）| 进行中 |
+| 自营券商账户 | TOS (Schwab) | 活跃 |
+| Prop Firm | Apex / TPT / MFF / TradeDay | 活跃 |
+
+---
 
 ## 合规事项
 
 | 项目 | 截止日期 | 状态 |
 |---|---|---|
-| Nevada 年报 | 待填写 | 待填写 |
+| Nevada Annual Report | 待填写 | 待填写 |
 | BOI Filing | 待填写 | 待填写 |
+| Section 475(f) MTM Election | 待确认 | 待确认 |
 
-## 文件索引（正式文件存云盘）
+---
 
-| 文件 | 云盘位置 |
-|---|---|
-| Articles of Organization | Business/Meritpoint_Logic_LLC/01_Formation/ |
-| Operating Agreement | Business/Meritpoint_Logic_LLC/01_Formation/ |
-| EIN Letter | Business/Meritpoint_Logic_LLC/02_IRS_Tax/ |
-| 银行开户文件 | Business/Meritpoint_Logic_LLC/03_Banking/ |
-| 券商开户文件 | Business/Meritpoint_Logic_LLC/04_Trading_Brokerage/ |
+## 文件索引（原件存 iCloud Drive）
+
+| 文件 | 云盘路径 | 状态 |
+|---|---|---|
+| Meritpoint LLC Professional Corporate Book.pdf | `Business/Meritpoint_Logic_LLC/01_Formation/` | ⬜ 待存入 |
+| Meritpoint Logic LLC Business Activity Confirmation.pdf | `Business/Meritpoint_Logic_LLC/07_Letters_Internal/` | ⬜ 待存入 |
+| Nevada 州政府设立文件包 | `Business/Meritpoint_Logic_LLC/01_Formation/` | ⬜ 待存入 |
+| EIN Letter (CP575) | `Business/Meritpoint_Logic_LLC/02_IRS_Tax/` | ⬜ 待存入 |
+| 银行开户文件 | `Business/Meritpoint_Logic_LLC/03_Banking/` | ⬜ 待存入 |
+
+---
 
 ## 当前待办
 
-- [ ] 填写 EIN
-- [ ] 确认银行账户状态
+- [ ] **确认正式注册名：Meritpoint LLC 还是 Meritpoint Logic LLC？**
+- [ ] 存入以上文件到 iCloud Drive
 - [ ] 确认 Nevada 年报截止日
+- [ ] 确认 Section 475(f) MTM 是否已选择
+- [ ] Citibank 开户进度跟进

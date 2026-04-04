@@ -15,13 +15,13 @@
 
 | 项目 | APM LLC | Meritpoint Logic LLC |
 |---|---|---|
-| 全名 | APM LLC | MERITPOINT LOGIC LLC |
+| 全名 | APM LLC | Meritpoint Logic LLC（⚠️ 待确认）|
 | 成立州 | Nevada | Nevada |
-| 成立日期 | 2026-01-08 | 待填写 |
-| EIN | 35-2947076（存加密磁盘）| 待填写（存加密磁盘）|
-| 税务身份 | 待确认 | Disregarded entity |
-| 管理人 | Austin Chien（Sole Member 100%）| 待填写 |
-| 用途 | 待填写 | 自营交易实体 |
+| 成立日期 | 2026-01-08 | 2026-01-08 |
+| EIN | 35-2947076（存加密磁盘）| 41-3492899（存加密磁盘）|
+| 税务身份 | S-Corp（2553已提交，确认函待查）| Disregarded Entity |
+| 管理人 | Austin Chien（Sole Member 100%）| Austin Chien（Sole Member 100%）|
+| 用途 | 运营管理 + Prop Firm 绩效分成 | 自营交易（SPX/ES/NQ）|
 
 ---
 
