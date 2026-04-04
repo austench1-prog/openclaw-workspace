@@ -1,0 +1,12 @@
+{
+  "readableLineLength": false,
+  "defaultViewMode": "preview",
+  "foldHeading": false,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "spellcheckLanguages": [
+    "zh",
+    "en"
+  ],
+  "newFileLocation": "root"
+}

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw / AI Agent 架构总览</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+        "Noto Sans SC", Arial, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 24px auto;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 28px 28px 36px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin: 6px 0 18px;
+      color: #1f2937;
+    }
+
+    .divider {
+      height: 2px;
+      background: #d1d5db;
+      margin: 0 0 22px;
+      border-radius: 999px;
+    }
+
+    .section {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 3px solid transparent;
+    }
+
+    .section-header {
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      font-size: 24px;
+      padding: 14px 18px;
+    }
+
+    .section-body {
+      padding: 20px;
+    }
+
+    .orange {
+      border-color: #e67e22;
+    }
+
+    .orange .section-header {
+      background: linear-gradient(180deg, #f39c12, #e67e22);
+    }
+
+    .orange .section-body {
+      background: #fbefe2;
+    }
+
+    .blue {
+      border-color: #1f6fb2;
+    }
+
+    .blue .section-header {
+      background: linear-gradient(180deg, #2477bd, #1f5f99);
+    }
+
+    .blue .section-body {
+      background: #eaf4ff;
+    }
+
+    .green {
+      border-color: #3f8b3f;
+    }
+
+    .green .section-header {
+      background: linear-gradient(180deg, #5aa14d, #4d8c42);
+    }
+
+    .green .section-body {
+      background: #eef8ea;
+    }
+
+    .llm-card {
+      max-width: 430px;
+      margin: 0 auto;
+      background: #fff8f1;
+      border: 3px solid #e79b49;
+      border-radius: 14px;
+      padding: 18px 24px;
+    }
+
+    .llm-card ul,
+    .info-card ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .llm-card li,
+    .info-card li {
+      font-size: 18px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 36px;
+      color: #6b7280;
+      margin: 4px 0 10px;
+      font-weight: 700;
+    }
+
+    .agent-top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mini-box {
+      background: #f8fbff;
+      border: 3px solid #3b82c4;
+      border-radius: 12px;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .loop-area {
+      background: #dceefe;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .loop-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e5d95;
+      margin-bottom: 12px;
+    }
+
+    .loop-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #1f6fb2;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .loop-line {
+      font-size: 28px;
+      color: #1f6fb2;
+      font-weight: 700;
+    }
+
+    .tools-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .tool-box {
+      background: #f5fff1;
+      border: 3px solid #4c8c45;
+      border-radius: 12px;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 18px;
+      font-weight: 600;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .info-card {
+      background: #fff8f1;
+      border: 3px solid #e79b49;
+      border-radius: 14px;
+      padding: 16px 18px;
+      min-height: 150px;
+    }
+
+    .info-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: #8a4b08;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 15px;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .title {
+        font-size: 32px;
+      }
+
+      .agent-top,
+      .tools-row,
+      .security-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin: 0;
+        border-radius: 0;
+        padding: 18px;
+      }
+
+      .title {
+        font-size: 26px;
+      }
+
+      .section-header {
+        font-size: 20px;
+      }
+
+      .agent-top,
+      .tools-row,
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-box,
+      .tool-box,
+      .llm-card li,
+      .info-card li {
+        font-size: 16px;
+      }
+    }
+
+    /* 打印优化 */
+    @page {
+      size: A4 portrait;
+      margin: 8mm;
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        width: 210mm;
+        height: auto;
+      }
+
+      body {
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Noto Sans CJK SC", "Noto Sans SC", "Heiti SC", Arial, sans-serif !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color: #111111 !important;
+      }
+
+      .page {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 10px 12px 14px !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+      }
+
+      .title {
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        margin: 0 0 12px !important;
+      }
+
+      .divider {
+        margin-bottom: 14px !important;
+      }
+
+      .section {
+        margin-bottom: 12px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .section-header {
+        font-size: 19px !important;
+        font-weight: 700 !important;
+        padding: 10px 12px !important;
+      }
+
+      .section-body {
+        padding: 14px !important;
+      }
+
+      .llm-card {
+        max-width: 360px !important;
+        padding: 12px 18px !important;
+      }
+
+      .llm-card li,
+      .info-card li,
+      .mini-box,
+      .tool-box,
+      .pill,
+      .loop-title,
+      .footer-note {
+        font-weight: 500 !important;
+        color: #111111 !important;
+      }
+
+      .llm-card li,
+      .info-card li {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+      }
+
+      .agent-top {
+        gap: 10px !important;
+        margin-bottom: 12px !important;
+      }
+
+      .mini-box {
+        padding: 10px 8px !important;
+        font-size: 15px !important;
+      }
+
+      .loop-area {
+        padding: 12px !important;
+      }
+
+      .loop-title {
+        font-size: 15px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .pill {
+        padding: 8px 16px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+      }
+
+      .loop-line {
+        font-size: 22px !important;
+      }
+
+      .arrow {
+        margin: 2px 0 8px !important;
+        font-size: 24px !important;
+      }
+
+      .tools-row {
+        gap: 8px !important;
+      }
+
+      .tool-box {
+        min-height: 50px !important;
+        padding: 10px 8px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+      }
+
+      .security-grid {
+        gap: 10px !important;
+      }
+
+      .info-card {
+        min-height: auto !important;
+        padding: 12px 14px !important;
+      }
+
+      .info-card h3 {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        margin: 0 0 8px !important;
+      }
+
+      .footer-note {
+        margin-top: 10px !important;
+        padding-top: 8px !important;
+        border-top: 1px solid #dddddd !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="title">OpenClaw / AI Agent 架构总览</div>
+    <div class="divider"></div>
+
+    <section class="section orange">
+      <div class="section-header">大型语言模型（LLM）</div>
+      <div class="section-body">
+        <div class="llm-card">
+          <ul>
+            <li>生成下一步文本</li>
+            <li>没有真正长期记忆</li>
+            <li>不会直接操作电脑</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow">⬇</div>
+
+    <section class="section blue">
+      <div class="section-header">智能代理层（AI Agent）</div>
+      <div class="section-body">
+        <div class="agent-top">
+          <div class="mini-box">上下文组装</div>
+          <div class="mini-box">调用工具</div>
+          <div class="mini-box">检索记忆</div>
+          <div class="mini-box">管理会话</div>
+        </div>
+
+        <div class="loop-area">
+          <div class="loop-title">循环交互</div>
+          <div class="loop-row">
+            <div class="pill">LLM</div>
+            <div class="loop-line">⟷</div>
+            <div class="pill">工具执行</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow">⬇</div>
+
+    <section class="section green">
+      <div class="section-header">外部工具与功能</div>
+      <div class="section-body">
+        <div class="tools-row">
+          <div class="tool-box">文档文件</div>
+          <div class="tool-box">浏览器</div>
+          <div class="tool-box">Shell / 命令行</div>
+          <div class="tool-box">消息与通讯</div>
+          <div class="tool-box">TTS / ASR</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="arrow">⬇</div>
+
+    <section class="section orange">
+      <div class="section-header">长期运作与安全</div>
+      <div class="section-body">
+        <div class="security-grid">
+          <div class="info-card">
+            <h3>定时任务</h3>
+            <ul>
+              <li>Heartbeat</li>
+              <li>Cron</li>
+              <li>例行巡检 / 准时触发</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>记忆管理</h3>
+            <ul>
+              <li>记忆写入</li>
+              <li>检索与召回</li>
+              <li>上下文压缩</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>风险控制</h3>
+            <ul>
+              <li>权限隔离</li>
+              <li>沙箱防护</li>
+              <li>审计与追踪</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      说明：LLM 负责推理与生成；Agent 负责上下文、工具、记忆与调度；安全边界必须独立设计。
+    </div>
+  </div>
+</body>
+</html>

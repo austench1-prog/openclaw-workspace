@@ -1,89 +1,73 @@
 //@version=6
-indicator("Camarilla TH/TL Zone vB", overlay=true)
+indicator("Camarilla TH/TL Zone vB", overlay=true, max_labels_count=10)
 
-// -----------------------------
 // Yesterday daily H / L / C
-// -----------------------------
 prevH = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
 prevL = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
 prevC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
 
-// -----------------------------
 // Today's 09:30 RTH open
-// -----------------------------
 isRTHOpen = (hour == 9 and minute == 30)
 isRTH     = (hour > 9 or (hour == 9 and minute >= 30)) and hour < 16
 
-var float todayO = na
+var float todayO  = na
 if isRTHOpen
     todayO := open
 
-// -----------------------------
-// P / B / TH / TL
-// B = 2P
-// -----------------------------
-var float todayP  = na
-var float todayB  = na
+// P / B / TH / TL  (B = 2P)
 var float todayTH = na
 var float todayTL = na
 var float midLine = na
 
 if isRTHOpen and not na(prevH) and not na(todayO)
-    todayP  := (prevH + prevL + prevC) / 3
-    todayB  := 2 * todayP
-    todayTH := todayB - prevL
-    todayTL := todayB - prevH
+    float P  = (prevH + prevL + prevC) / 3
+    float B  = 2 * P
+    todayTH := B - prevL
+    todayTL := B - prevH
     midLine := (todayTH + todayTL) / 2
 
-// -----------------------------
-// Display
-// -----------------------------
-thPlot = plot(
-     isRTH and not na(todayTH) ? todayTH : na,
-     title     = "TH",
-     color     = color.new(color.aqua, 0),
-     linewidth = 3,
-     style     = plot.style_linebr)
+// Plots
+thPlot = plot(isRTH and not na(todayTH) ? todayTH : na,
+     title="TH", color=color.new(color.aqua, 0), linewidth=3, style=plot.style_linebr)
 
-tlPlot = plot(
-     isRTH and not na(todayTL) ? todayTL : na,
-     title     = "TL",
-     color     = color.new(color.aqua, 0),
-     linewidth = 3,
-     style     = plot.style_linebr)
+tlPlot = plot(isRTH and not na(todayTL) ? todayTL : na,
+     title="TL", color=color.new(color.aqua, 0), linewidth=3, style=plot.style_linebr)
 
-midPlot = plot(
-     isRTH and not na(midLine) ? midLine : na,
-     title     = "MID",
-     color     = color.new(color.yellow, 0),
-     linewidth = 2,
-     style     = plot.style_linebr)
+plot(isRTH and not na(midLine) ? midLine : na,
+     title="MID", color=color.new(color.yellow, 0), linewidth=2, style=plot.style_linebr)
 
-fill(thPlot, tlPlot, color = color.new(color.blue, 78), title = "TH-TL Zone")
+fill(thPlot, tlPlot, color=color.new(color.blue, 78), title="TH-TL Zone")
 
-// -----------------------------
-// Right-side labels via plots
-// -----------------------------
-plotshape(isRTH and barstate.islast and not na(todayTH), title="TH Label", style=shape.labeldown, location=location.absolute, y=todayTH, text="TH", color=color.aqua, textcolor=color.black, size=size.tiny)
-plotshape(isRTH and barstate.islast and not na(todayTL), title="TL Label", style=shape.labelup, location=location.absolute, y=todayTL, text="TL", color=color.aqua, textcolor=color.black, size=size.tiny)
-plotshape(isRTH and barstate.islast and not na(midLine), title="MID Label", style=shape.labelleft, location=location.absolute, y=midLine, text="MID", color=color.yellow, textcolor=color.black, size=size.tiny)
+// Side labels using label.new at last bar
+var label lbTH  = na
+var label lbTL  = na
+var label lbMID = na
 
-// -----------------------------
+if barstate.islast and isRTH and not na(todayTH)
+    label.delete(lbTH)
+    label.delete(lbTL)
+    label.delete(lbMID)
+    lbTH  := label.new(bar_index + 1, todayTH, "TH " + str.tostring(todayTH, "#.00"),
+         color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(bar_index + 1, todayTL, "TL " + str.tostring(todayTL, "#.00"),
+         color=color.aqua, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index + 1, midLine,  "MID " + str.tostring(midLine, "#.00"),
+         color=color.yellow, textcolor=color.black, style=label.style_label_left, size=size.small)
+
 // Table
-// -----------------------------
 var table tbl = table.new(position.top_right, 2, 7, bgcolor=color.new(color.black, 55), border_width=1)
 if barstate.islast
-    table.cell(tbl, 0, 0, "YH", text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 1, 0, str.tostring(prevH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 0, 1, "YL", text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 1, 1, str.tostring(prevL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 0, 2, "YC", text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 1, 2, str.tostring(prevC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 0, 3, "O", text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 1, 3, str.tostring(todayO, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
-    table.cell(tbl, 0, 4, "TH", text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 0, 0, "YH",  text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 0, str.tostring(prevH,   "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 1, "YL",  text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 1, str.tostring(prevL,   "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 2, "YC",  text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 2, str.tostring(prevC,   "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 3, "O",   text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 1, 3, str.tostring(todayO,  "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(tbl, 0, 4, "TH",  text_color=color.black, bgcolor=color.new(color.aqua, 20))
     table.cell(tbl, 1, 4, str.tostring(todayTH, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20))
-    table.cell(tbl, 0, 5, "TL", text_color=color.black, bgcolor=color.new(color.aqua, 20))
+    table.cell(tbl, 0, 5, "TL",  text_color=color.black, bgcolor=color.new(color.aqua, 20))
     table.cell(tbl, 1, 5, str.tostring(todayTL, "#.00"), text_color=color.black, bgcolor=color.new(color.aqua, 20))
     table.cell(tbl, 0, 6, "MID", text_color=color.black, bgcolor=color.new(color.yellow, 20))
     table.cell(tbl, 1, 6, str.tostring(midLine, "#.00"), text_color=color.black, bgcolor=color.new(color.yellow, 20))

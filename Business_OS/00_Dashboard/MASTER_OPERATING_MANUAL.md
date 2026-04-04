@@ -15,12 +15,12 @@
 
 | 项目 | APM LLC | Meritpoint Logic LLC |
 |---|---|---|
-| 全名 | ANAHEIM PROPERTY MANAGEMENT LLC | MERITPOINT LOGIC LLC |
-| 成立州 | California | Nevada |
-| Entity No. | 201627910296 | 待填写 |
-| EIN | 81-4191044（存加密磁盘） | 待填写（存加密磁盘） |
-| 税务身份 | S-Corp election（待确认） | Disregarded entity |
-| 用途 | 运营/管理实体 | 自营交易实体 |
+| 全名 | ⚠️ 待填写（新 APM LLC）| MERITPOINT LOGIC LLC |
+| 成立州 | 待填写 | Nevada |
+| Entity No. | 待填写 | 待填写 |
+| EIN | 待填写（存加密磁盘）| 待填写（存加密磁盘）|
+| 税务身份 | 待填写 | Disregarded entity |
+| 用途 | 待填写 | 自营交易实体 |
 
 ---
 

@@ -69,12 +69,7 @@ TLLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
 TLLine.HideBubble();
 TLLine.HideTitle();
 
-AddCloud(
-    if showCloud and visible and !IsNaN(todayOpen) then TH else Double.NaN,
-    if showCloud and visible and !IsNaN(todayOpen) then TL else Double.NaN,
-    CreateColor(40, 90, 180),
-    CreateColor(40, 90, 180)
-);
+AddCloud(THLine, TLLine, CreateColor(40, 90, 180), CreateColor(40, 90, 180));
 
 # ------------------------------------------------
 # 6) Labels
