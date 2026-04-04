@@ -55,7 +55,7 @@
 | 项目 | 截止日期 | 状态 |
 |---|---|---|
 | EIN SS-4 申请 | 2026-01-09 原始申请 | ✅ 已获得（EIN：35-2947076）|
-| Form 2553 S-Corp Election | 2026-03-15 | ⬜ 状态待确认 |
+| Form 2553 S-Corp Election | 2026-03-15 | ✅ 已提交 / ⬜ IRS 确认信待查 |
 | Nevada Annual Report | 待填写 | 待填写 |
 | BOI Filing | 待填写 | 待填写 |
 | IRS Form 941（每季度）| 每季度末 | 待启动 |
