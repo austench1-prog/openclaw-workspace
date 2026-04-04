@@ -62,9 +62,9 @@
 
 | 文件 | 云盘路径 | 状态 |
 |---|---|---|
-| Meritpoint LLC Professional Corporate Book.pdf | `Business/Meritpoint_Logic_LLC/01_Formation/` | ⬜ 待存入 |
+| Meritpoint LLC Professional Corporate Book.pdf | `Business/Meritpoint_Logic_LLC/01_Formation/` | ✅ 已存入 |
 | Meritpoint Logic LLC Business Activity Confirmation.pdf | `Business/Meritpoint_Logic_LLC/07_Letters_Internal/` | ⬜ 待存入 |
-| Nevada 州政府设立文件包 | `Business/Meritpoint_Logic_LLC/01_Formation/` | ⬜ 待存入 |
+| Nevada 州政府设立文件包 | `Business/Meritpoint_Logic_LLC/01_Formation/` | ✅ 已存入 |
 | EIN Letter (CP575) → CP_575_G.pdf | `Business/Meritpoint_Logic_LLC/02_IRS_Tax/` | ✅ 已存入 |
 | 475(f) MTM Election Letter | `Business/Meritpoint_Logic_LLC/02_IRS_Tax/` | ✅ 已存入 |
 | 银行开户文件 | `Business/Meritpoint_Logic_LLC/03_Banking/` | ⬜ 待存入 |
