@@ -71,4 +71,13 @@ iCloud Drive/
 
 ---
 
+## Shared 文件索引
+
+| 文件 | 云盘路径 | 状态 |
+|---|---|---|
+| Business_Structure_Overview_Cover_Letter.pdf | `Business/Shared/Bank_Explanation_Letters/` | ⬜ 待存入 |
+| Risk_Management_Policy_Internal_Guidelines.pdf | `Business/Shared/Risk_Management_Policy/` | ⬜ 待存入 |
+
+---
+
 *更新规则：你存入文件 → 告诉龙大哥 → 龙大哥更新状态*
