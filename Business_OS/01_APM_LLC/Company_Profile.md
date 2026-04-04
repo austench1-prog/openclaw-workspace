@@ -67,12 +67,12 @@
 
 | 文件 | 云盘路径 | 状态 |
 |---|---|---|
-| APM LLC Corporate Kit.pdf | `Business/APM_LLC/01_Formation/` | ⬜ 待存入 |
-| APM LLC Professional Corporate Book.pdf | `Business/APM_LLC/01_Formation/` | ⬜ 待存入 |
-| APM LLC Operating Agreement clean.pdf | `Business/APM_LLC/01_Formation/` | ⬜ 待存入 |
+| APM LLC Corporate Kit.pdf | `Business/APM_LLC/01_Formation/` | ✅ 已存入 |
+| APM LLC Professional Corporate Book.pdf | `Business/APM_LLC/01_Formation/` | ✅ 已存入 |
+| APM LLC Operating Agreement clean.pdf | `Business/APM_LLC/01_Formation/` | ✅ 已存入 |
 | APM LLC Nevada Formation Package.pdf | `Business/APM_LLC/01_Formation/` | ✅ 已存入 |
-| APM_LLC_Business_Activity_Confirmation.pdf | `Business/APM_LLC/07_Contracts_Letters/` | ⬜ 待存入 |
-| APM_SCorp_Payroll_Setup_OnePage_EN.pdf | `Business/APM_LLC/06_Payroll/` | ⬜ 待存入 |
+| APM LLC Business Activity Confirmation.pdf | `Business/APM_LLC/07_Contracts_Letters/` | ✅ 已存入 |
+| APM SCorp Payroll Setup OnePage EN.pdf | `Business/APM_LLC/06_Payroll/` | ✅ 已存入 |
 | APM LLC CP575A.pdf (EIN Letter) | `Business/APM_LLC/02_IRS_Tax/` | ✅ 已存入 |
 | SS-4 Expedite Letter（2026-02-21）| `Business/APM_LLC/02_IRS_Tax/` | ⬜ 待存入 |
 
