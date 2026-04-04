@@ -3,16 +3,10 @@
 
 ---
 
-## ⚠️ 注意：公司全名差异
+## ⚠️ 注意：Corporate Book 名称有误
 
-| 文件来源 | 显示名称 |
-|---|---|
-| Corporate Book | **Meritpoint LLC** |
-| Business Activity Confirmation | **Meritpoint Logic LLC** |
-| Business Structure Letter | **Meritpoint Logic LLC** |
-
-> **待确认：** 正式注册名是 "Meritpoint LLC" 还是 "Meritpoint Logic LLC"？
-> 建议以 Nevada Secretary of State 注册文件为准。
+- **正式注册名：Meritpoint Logic LLC** ✅（以 475(f) Election 文件和 Business Activity Confirmation 为准）
+- Corporate Book 里显示 "Meritpoint LLC" — 为简写或错误，以正式文件为准
 
 ---
 
@@ -60,7 +54,7 @@
 |---|---|---|
 | Nevada Annual Report | 待填写 | 待填写 |
 | BOI Filing | 待填写 | 待填写 |
-| Section 475(f) MTM Election | 待确认 | 待确认 |
+| Section 475(f) MTM Election | 2026-02-21 提交 | ✅ 已提交，生效 2026-01-01 |
 
 ---
 
@@ -72,13 +66,14 @@
 | Meritpoint Logic LLC Business Activity Confirmation.pdf | `Business/Meritpoint_Logic_LLC/07_Letters_Internal/` | ⬜ 待存入 |
 | Nevada 州政府设立文件包 | `Business/Meritpoint_Logic_LLC/01_Formation/` | ⬜ 待存入 |
 | EIN Letter (CP575) | `Business/Meritpoint_Logic_LLC/02_IRS_Tax/` | ⬜ 待存入 |
+| 475(f) MTM Election Letter（⚠️ 含 SSN，只存加密磁盘）| 加密磁盘：Documents/Corporate/Meritpoint/ | ⬜ 待存入加密磁盘 |
 | 银行开户文件 | `Business/Meritpoint_Logic_LLC/03_Banking/` | ⬜ 待存入 |
 
 ---
 
 ## 当前待办
 
-- [ ] **确认正式注册名：Meritpoint LLC 还是 Meritpoint Logic LLC？**
+- [x] ~~确认正式注册名~~ → **Meritpoint Logic LLC** ✅
 - [ ] 存入以上文件到 iCloud Drive
 - [ ] 确认 Nevada 年报截止日
 - [ ] 确认 Section 475(f) MTM 是否已选择
