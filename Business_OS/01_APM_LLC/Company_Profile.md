@@ -54,6 +54,8 @@
 
 | 项目 | 截止日期 | 状态 |
 |---|---|---|
+| EIN SS-4 申请 | 2026-01-09 原始申请 | ✅ 已获得（EIN：35-2947076）|
+| Form 2553 S-Corp Election | 2026-03-15 | ⬜ 状态待确认 |
 | Nevada Annual Report | 待填写 | 待填写 |
 | BOI Filing | 待填写 | 待填写 |
 | IRS Form 941（每季度）| 每季度末 | 待启动 |
@@ -71,12 +73,14 @@
 | APM_LLC_Business_Activity_Confirmation.pdf | `Business/APM_LLC/07_Contracts_Letters/` | ⬜ 待存入 |
 | APM_SCorp_Payroll_Setup_OnePage_EN.pdf | `Business/APM_LLC/06_Payroll/` | ⬜ 待存入 |
 | EIN Letter (CP575) | `Business/APM_LLC/02_IRS_Tax/` | ⬜ 待存入 |
+| SS-4 Expedite Letter（2026-02-21）| `Business/APM_LLC/02_IRS_Tax/` | ⬜ 待存入 |
 
 ---
 
 ## 当前待办
 
-- [ ] 把以上5个 PDF 存入 iCloud Drive 对应路径
+- [ ] 把以上文件存入 iCloud Drive 对应路径
+- [ ] **确认 Form 2553 S-Corp Election 是否已成功提交并获得 IRS 确认**
 - [ ] 完成 Banking Resolution 签字（日期空白待填）
 - [ ] 注册 IRS 联邦 Payroll
 - [ ] 注册 Nevada DETR
