@@ -7,9 +7,9 @@
 | 公司全名 | ANAHEIM PROPERTY MANAGEMENT LLC |
 | 成立州 | California |
 | Entity Number | 201627910296 |
-| EIN | 81-4191044 |
+| EIN | 81-4191044（存加密磁盘）|
 | 实体类型 | LLC |
-| 税务身份 | S-Corp election 状态：待确认 |
+| 税务身份 | S-Corp election（待确认）|
 | 用途 | 运营/管理实体 |
 
 ## 账户状态
