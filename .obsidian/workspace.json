@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/dragon_signal_sender.py",
     "scripts/NinjaTrader_HTTP_Receiver.cs",
     "scripts/tradovate_connection.py",
     "scripts",
@@ -216,7 +217,6 @@
     "Business_OS/07_Finance_Admin",
     "Business_OS/06_Compliance_Calendar",
     "Business_OS/05_Banking",
-    "Business_OS/04_SOPs",
-    "Business_OS/03_Shared_Structure"
+    "Business_OS/04_SOPs"
   ]
 }
