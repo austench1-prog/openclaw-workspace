@@ -22,12 +22,14 @@ USE_DEMO = True  # Set to False when ready for live
 BASE_URL = "https://demo.tradovateapi.com/v1" if USE_DEMO else "https://live.tradovateapi.com/v1"
 
 # Instrument map
+# Month codes: H=Mar, M=Jun, U=Sep, Z=Dec — update as needed
 INSTRUMENTS = {
-    "NQ": "NQM5",   # Update month code as needed
-    "MNQ": "MNQM5",
-    "ES": "ESM5",
-    "MES": "MESM5",
-    "GC": "GCM5",   # Gold
+    "NQ":  "NQM5",   # Nasdaq 100 Futures
+    "MNQ": "MNQM5",  # Micro Nasdaq 100
+    "ES":  "ESM5",   # S&P 500 Futures
+    "MES": "MESM5",  # Micro S&P 500
+    "GC":  "GCM5",   # Gold Futures
+    "MGC": "MGCM5",  # Micro Gold Futures
 }
 
 # --- AUTH ---
