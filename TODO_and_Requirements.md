@@ -11,15 +11,17 @@
 - [ ] **Pre-market Brief v1** — 每天盘前自动推送财经日历 + 账户状态摘要
 - [ ] 确认各 Prop Firm 账户当前规模和余额
 - [ ] 更新 `prop-firm-rules.md` 账户实际数据
+- [ ] **SPX 0DTE AI 辅助提醒 v1** — 0DTE 不适合纯手动，优先做 setup 提醒+信号 alert
 
 ## 🟡 本月内完成
 
 - [ ] **平台信息 Agent v1** — Prop Firm 规则自动更新 + 折扣/活动跟踪
 - [ ] **Review Copilot v1** — 收盘后自动生成复盘模板
 - [ ] SPX 0DTE 策略结构化（把策略思路写成可执行规则）
-- [ ] 确认 TOS API 替代方案（Webhook 或截图识别）
+- [ ] **IBKR 公司账户开设**（银行账户完成后优先做，SPX 0DTE 自动化的基础）
+- [ ] IBKR `ib_insync` 连接测试脚本（账户开好后立刻做）
+- [ ] TOS Alert → Webhook → AI 过滤 → IBKR 下单（半自动 0DTE 流程）
 - [ ] AMP Futures API 接入评估
-- [ ] IBKR 公司账户开设（等银行账户完成后）
 
 ## 🟢 第2-3个月
 
