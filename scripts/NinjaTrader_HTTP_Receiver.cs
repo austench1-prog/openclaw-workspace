@@ -200,7 +200,7 @@ namespace NinjaTrader.NinjaScript.AddOns
                     break;
                 case "CLOSE":
                     // Close all positions
-                    account.Flatten(new[] { instrument }, OrderType.Market, 0, 0, "", "Dragon_Close");
+                    account.Flatten(new[] { instrument });
                     Print($"DragonSignalReceiver: Closed all {fullSymbol} positions");
                     return;
                 default:
