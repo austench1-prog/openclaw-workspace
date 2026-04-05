@@ -49,14 +49,19 @@ namespace NinjaTrader.NinjaScript.AddOns
                 Description = "Dragon Signal Receiver - HTTP listener for AI trading signals";
                 Name = "DragonSignalReceiver";
             }
-            else if (State == State.Active)
+            else if (State == State.Configure)
             {
                 StartListener();
                 Print("DragonSignalReceiver: Started on port " + PORT);
             }
+            else if (State == State.Active)
+            {
+                Print("DragonSignalReceiver: Active, listening on port " + PORT);
+            }
             else if (State == State.Terminated)
             {
                 StopListener();
+                Print("DragonSignalReceiver: Stopped");
             }
         }
 
