@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dual_System_Blueprint_v1.0.md",
+                "file": "Agent_Prompts/prop_firm_rules_agent_v1.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dual_System_Blueprint_v1.0"
+              "title": "prop_firm_rules_agent_v1"
             }
           }
         ]
@@ -182,20 +182,20 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "AGENTS.md",
+    "Master_Task_List_v1.0.md",
+    "Dual_System_Blueprint_v1.0.md",
     "Agent_Prompts/setup_alert_agent_v1_skeleton.md",
     "Agent_Prompts/prop_firm_rules_agent_v1.md",
     "Agent_Prompts",
-    "Master_Task_List_v1.0.md",
     "Capital_Flow_Model_v1.0.md",
     "Capital_Allocation_Blueprint_v1.0.md",
     "Dual_System_Blueprint_v2.0.md",
-    "Dual_System_Blueprint_v1.0.md",
     "Multi_Agent_Trading_System_v1.0.md",
     "Multi_Agent_Structure_v2.0.md",
     "Multi_Agent_Structure_v1.0.md",
     "Multi_Agent_Reference_Notes_v2.0.md",
     "Multi_Agent_Reference_Notes_v1.0.md",
-    "AGENTS.md",
     "memory/2026-04-04.md",
     "Prop_Firm_Launch_Plan_v1.0.md",
     "TODO_and_Requirements.md",
