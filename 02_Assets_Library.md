@@ -115,4 +115,32 @@ NWL = B - WH
 
 ---
 
+## 参考视频类
+
+### SMB Capital — How to use Claude To Gain a Huge Day Trading Edge
+**类型：** 参考视频 / 策略派
+**链接：** https://youtu.be/Rqmdw4xyIMM
+**技术含量：** 7/10
+**核心价值：**
+- 交易"尸检"逻辑 → 对应 Review Copilot
+- 盘前计划自动化 → 对应 Pre-market Brief
+- Prompt 三原则：具体、迭代、先模拟盘验证
+**局限：** 无 Prop Firm 多账户概念，Pine Script 部分已超越
+
+---
+
+### Alex Carter — How to Build Your Own AI Trading Bot Using Claude Code
+**类型：** 参考视频 / 工程派
+**链接：** https://youtu.be/tsCI72TWzsg
+**技术含量：** 8.5/10
+**核心价值：**
+- Telegram → AI → 执行 闭环架构（你已有）
+- TradingView Webhook → AI 过滤 → 执行 → 对应 Trade Gatekeeper
+- 本地运行 + API Key 不过第三方（你已做到）
+**局限：** 针对加密货币，无 Prop Firm 风控，无多账户同步
+
+**综合判断：** 两个视频验证了你的方向是对的。你的架构已超越视频层级，差的是三个具体工具的落地：Trade Gatekeeper / Prop Rule Copilot / Review Copilot
+
+---
+
 *触发词：「这个很重要」或「加入军械库」→ 龙大哥自动追加新资产*
