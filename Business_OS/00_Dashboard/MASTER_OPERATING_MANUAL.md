@@ -129,11 +129,11 @@ Business_OS/
 
 | 事项 | 公司 | 截止日期 | 状态 |
 |---|---|---|---|
-| CA Statement of Information | APM LLC | 待填写 | 待填写 |
-| CA Franchise Tax ($800) | APM LLC | 待填写 | 待填写 |
+| NV Annual Report | APM LLC | 待填写 | 待填写 |
 | NV Annual Report | Meritpoint | 待填写 | 待填写 |
 | BOI Filing | 两家 | 待确认 | 待填写 |
 | Federal Tax Return | 两家 | 待填写 | 待填写 |
+| Form 2553 IRS 确认信 | APM LLC | 已提交 | ⬜ 待查收 |
 
 ---
 
@@ -150,16 +150,16 @@ Business_OS/
 ## 九、待办事项
 
 ### 立即
-- [ ] Meritpoint Logic LLC EIN 填入档案
 - [ ] 两家公司银行账户状态更新
 - [ ] Nevada 年报截止日确认
-- [ ] APM LLC S-Corp election 状态确认
+- [ ] APM LLC Form 2553 IRS 确认信待查收
+- [ ] IBKR 公司账户申请（周一）
 
 ### 近期
 - [ ] 建立银行 KYC 话术（英文版）放入 `03_Shared_Structure/`
 - [ ] 建立商务信函模板库 `08_Templates/`
 - [ ] 完善合规日历截止日期
-- [ ] 确认 APM LLC 注销还是保留
+- [ ] Citibank 开户进度跟进
 
 ---
 

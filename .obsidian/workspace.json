@@ -182,6 +182,10 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Agent_Prompts/setup_alert_agent_v1_skeleton.md",
+    "Agent_Prompts/prop_firm_rules_agent_v1.md",
+    "Agent_Prompts",
+    "Master_Task_List_v1.0.md",
     "Capital_Flow_Model_v1.0.md",
     "Capital_Allocation_Blueprint_v1.0.md",
     "Dual_System_Blueprint_v2.0.md",
@@ -205,9 +209,6 @@
     "Business_OS/00_Dashboard/Security_Architecture.md",
     "Business_OS/00_Dashboard/README.md",
     "Business_OS/00_Dashboard/MASTER_OPERATING_MANUAL.md",
-    "Business_OS/05_Banking/APM_LLC_Banking.md",
-    "Business_OS/00_Dashboard/Cloud_Index.md",
-    "Business_OS/Cloud_Drive_Structure.md",
     "Business_OS/09_Decisions",
     "Business_OS/08_Templates",
     "Business_OS/07_Finance_Admin",
@@ -216,7 +217,6 @@
     "Business_OS/04_SOPs",
     "Business_OS/03_Shared_Structure",
     "Business_OS/02_Meritpoint_Logic_LLC",
-    "Business_OS/01_APM_LLC",
-    "Business_OS/00_Dashboard"
+    "Business_OS/01_APM_LLC"
   ]
 }
