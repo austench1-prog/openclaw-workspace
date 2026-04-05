@@ -12,7 +12,7 @@
 
 ## 📊 四家对比总览
 
-| 规则 | Apex | TPT（The Trading Pit）| MFF | TradeDay |
+| 规则 | Apex | TPT（TakeProfitTrader）| MFF | TradeDay |
 |---|---|---|---|---|
 | **Drawdown类型** | Intraday Trailing | Futures: EOD Trailing | EOD Trailing | Static Max |
 | **Daily Loss Limit** | ❌ 没有 | ❌ 没有 | ❌ 没有 | ❌ 没有 |
@@ -52,7 +52,7 @@
 
 ---
 
-## 2️⃣ The Trading Pit（TPT）
+## 2️⃣ TakeProfitTrader（TPT）
 
 **Drawdown类型：取决于账户类型（Prime vs Classic）**
 

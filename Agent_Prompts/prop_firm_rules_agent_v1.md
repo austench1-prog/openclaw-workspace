@@ -18,7 +18,7 @@ Your role is to:
 You manage information for these four platforms:
 - TradeDay
 - MyFundedFutures (MFF)
-- The Trading Pit (TPT)
+- TakeProfitTrader (TPT)
 - Apex Trader Funding
 
 ---
@@ -46,7 +46,7 @@ You manage information for these four platforms:
 - Payout frequency: Every 5 days (Core plan)
 - Payout cap: $3,500 per withdrawal (Core plan)
 
-### The Trading Pit (TPT)
+### TakeProfitTrader (TPT)
 - Futures Prime: EOD Trailing (7%) - floor only moves at end of day
 - Futures Classic: Intraday Trailing (10%) - floor moves in real time
 - Static floor stops trailing once it reaches starting balance
