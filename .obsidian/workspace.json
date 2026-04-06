@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/playwright_apex_scraper.py",
+    "Prop_Firm_Risk_Rules_v1.0.md",
     "Notes_20260406.md",
     "scripts/windows_signal_server_v2.py",
     "memory/2026-04-05.md",
@@ -215,8 +217,6 @@
     "Multi_Agent_Reference_Notes_v1.0.md",
     "memory/2026-04-04.md",
     "Prop_Firm_Launch_Plan_v1.0.md",
-    "TODO_and_Requirements.md",
-    "Business_OS/00_Dashboard/Security_API_and_Data_Privacy.md",
     "Business_OS/09_Decisions"
   ]
 }
