@@ -120,16 +120,27 @@ namespace NinjaTrader.NinjaScript.Strategies
             switch (action)
             {
                 case "BUY":
-                    EnterLong(qty, "Dragon_Buy");
+                    EnterLong(qty, "Dragon_B");
                     break;
                 case "SELL":
-                    EnterShort(qty, "Dragon_Sell");
+                    EnterShort(qty, "Dragon_S");
                     break;
                 case "CLOSE":
+                    // Force close all positions regardless of direction
                     if (Position.MarketPosition == MarketPosition.Long)
-                        ExitLong("Dragon_Close");
+                    {
+                        ExitLong(Position.Quantity, "Dragon_Close", "Dragon_B");
+                        Print($"DragonFileSignal: Closing LONG {Position.Quantity}");
+                    }
                     else if (Position.MarketPosition == MarketPosition.Short)
-                        ExitShort("Dragon_Close");
+                    {
+                        ExitShort(Position.Quantity, "Dragon_Close", "Dragon_S");
+                        Print($"DragonFileSignal: Closing SHORT {Position.Quantity}");
+                    }
+                    else
+                    {
+                        Print("DragonFileSignal: No position to close");
+                    }
                     break;
                 default:
                     Print($"DragonFileSignal: Unknown action {action}");
