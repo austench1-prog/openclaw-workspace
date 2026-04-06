@@ -68,6 +68,37 @@ def send_signal(action: str, symbol: str, qty: int = 1) -> dict:
         return {"status": "error", "message": str(e)}
 
 
+def emergency_flatten_all():
+    """
+    EMERGENCY: Flatten all positions immediately.
+    Call this when you need to stop everything NOW.
+    """
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{timestamp}] ⚠️ EMERGENCY FLATTEN ALL")
+    try:
+        response = requests.post(BASE_URL, data="FLATTEN_ALL", timeout=5)
+        result = response.text.strip()
+        print(f"[{timestamp}] Response: {result}")
+        return {"status": "ok", "action": "FLATTEN_ALL", "response": result}
+    except Exception as e:
+        print(f"[EMERGENCY ERROR] {e}")
+        return {"status": "error", "message": str(e)}
+
+
+def close_all():
+    """Close all positions gracefully"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{timestamp}] CLOSE ALL positions")
+    try:
+        response = requests.post(BASE_URL, data="CLOSE_ALL", timeout=5)
+        result = response.text.strip()
+        print(f"[{timestamp}] Response: {result}")
+        return {"status": "ok", "action": "CLOSE_ALL", "response": result}
+    except Exception as e:
+        print(f"[ERROR] {e}")
+        return {"status": "error", "message": str(e)}
+
+
 def test_connection():
     """Test if NinjaTrader is reachable"""
     print(f"Testing connection to {WINDOWS_PC_IP}:{NINJATRADE_PORT}...")

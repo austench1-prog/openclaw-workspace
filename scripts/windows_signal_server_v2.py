@@ -44,6 +44,29 @@ class SignalHandler(BaseHTTPRequestHandler):
                 if result.returncode != 0:
                     response = f"PS_ERR: {result.stderr.strip()[:200]}"
 
+            # EMERGENCY: flatten all positions immediately
+            elif body.upper() == "FLATTEN_ALL":
+                done_file = os.path.join(SIGNAL_FOLDER, "signal_done.txt")
+                if os.path.exists(done_file):
+                    os.remove(done_file)
+                with open(SIGNAL_FILE, 'w') as f:
+                    f.write("CLOSE|NQ|0")
+                # Also write a second flatten file for safety
+                with open(os.path.join(SIGNAL_FOLDER, "flatten_all.txt"), 'w') as f:
+                    f.write(f"FLATTEN_ALL|{timestamp}")
+                response = "EMERGENCY_OK: FLATTEN_ALL triggered"
+                print(f"[{timestamp}] ⚠️ EMERGENCY FLATTEN ALL triggered!")
+
+            # CLOSE all: same as flatten but explicit
+            elif body.upper() == "CLOSE_ALL":
+                done_file = os.path.join(SIGNAL_FOLDER, "signal_done.txt")
+                if os.path.exists(done_file):
+                    os.remove(done_file)
+                with open(SIGNAL_FILE, 'w') as f:
+                    f.write("CLOSE|NQ|0")
+                response = "OK: CLOSE_ALL triggered"
+                print(f"[{timestamp}] CLOSE_ALL triggered")
+
             # Trading signal: ACTION|SYMBOL|QTY
             elif "|" in body:
                 parts = body.upper().split('|')
