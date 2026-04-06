@@ -175,10 +175,10 @@ Intraday Trailing    EOD Trailing    Static
 
 | 账户 | 账户规模 | 当前权益 | 底线位置 | 剩余空间 | 状态 |
 |---|---|---|---|---|---|
-| MFF MFFUEVRPD122274040 | $50,000 | $48,084.12 | $48,071.18 | **$12.94 ⚠️ 极危险** | Evaluation |
-| Apex | | | | | |
-| TPT | | | | | |
-| TradeDay | | | | | |
+| **Apex APEX-165583-123** | $50,000 | $50,000 | $47,500（EOD Trail）| $2,500 ✅ | **Active - TEST** |
+| MFF MFFUEVRPD122274040 | $50,000 | $48,084.12 | $48,071.18 | **$12.94 ⚠️ 不可交易** | Evaluation |
+| TPT | | | | | 待开设 |
+| TradeDay | | | | | 待开设 |
 
 ---
 

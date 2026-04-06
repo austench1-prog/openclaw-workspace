@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "memory/2026-04-05.md",
     "Master_Tree_v1.0.md",
     "Agent_Prompts/prop_firm_rules_agent_v2_1.md",
     "Agent_Prompts/prop_firm_compliance_protocol_v2_1.md",
@@ -215,7 +216,6 @@
     "TODO_and_Requirements.md",
     "Business_OS/00_Dashboard/Security_API_and_Data_Privacy.md",
     "02_Assets_Library.md",
-    "01_Decision_Log.md",
     "Business_OS/09_Decisions",
     "Business_OS/08_Templates"
   ]
