@@ -81,12 +81,22 @@ Format: "At [timestamp], official site stated [X], third-party stated [Y], we ac
 **Physical isolation:**
 - Dragon runs on Mac mini with Henderson residential IP
 - Does NOT use direct API scraping
-- Reads screen pixels like a human user
+- Reads screen pixels like a human user (monitoring only)
 
-**Human-like behavior:**
+**Human-like behavior (monitoring only - NOT for execution):**
 - Random refresh intervals (280-350 seconds)
 - Non-linear mouse trajectories with micro-jitter
-- No bot-like fixed patterns
+- Purpose: DATA READING ONLY. Never simulate clicks for order placement.
+
+**HARD RULE - Execution Standard:**
+> Any 1% uncertainty on the execution side = DO NOT attempt.
+> Apply highest standard. No gambling.
+> Only GREEN = explicit written permission from firm.
+> Vague language = RED. Community ban reports = RED. No exceptions.
+
+**Order execution path:**
+- ONLY via: AI signal → NinjaTrader → Replikanto → Prop Firm accounts
+- NEVER via: browser simulation, dashboard clicks, or any unverified method
 
 **Conflict arbitration:**
 - Dragon does NOT guess rules
