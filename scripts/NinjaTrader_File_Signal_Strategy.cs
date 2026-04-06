@@ -135,16 +135,28 @@ namespace NinjaTrader.NinjaScript.Strategies
                 case "BUY":
                     EnterLong(qty, "Dragon_B");
                     if (stopPrice > 0)
+                    {
                         SetStopLoss("Dragon_B", CalculationMode.Price, stopPrice, false);
+                        Draw.HorizontalLine(this, "SL_line", stopPrice, Brushes.Red, DashStyleHelper.Dash, 2);
+                    }
                     if (targetPrice > 0)
+                    {
                         SetProfitTarget("Dragon_B", CalculationMode.Price, targetPrice);
+                        Draw.HorizontalLine(this, "TP_line", targetPrice, Brushes.White, DashStyleHelper.Dash, 2);
+                    }
                     break;
                 case "SELL":
                     EnterShort(qty, "Dragon_S");
                     if (stopPrice > 0)
+                    {
                         SetStopLoss("Dragon_S", CalculationMode.Price, stopPrice, false);
+                        Draw.HorizontalLine(this, "SL_line", stopPrice, Brushes.Red, DashStyleHelper.Dash, 2);
+                    }
                     if (targetPrice > 0)
+                    {
                         SetProfitTarget("Dragon_S", CalculationMode.Price, targetPrice);
+                        Draw.HorizontalLine(this, "TP_line", targetPrice, Brushes.White, DashStyleHelper.Dash, 2);
+                    }
                     break;
                 case "CLOSE":
                     // Force close all positions regardless of direction
