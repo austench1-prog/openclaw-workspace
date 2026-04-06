@@ -49,10 +49,14 @@ class SignalHandler(BaseHTTPRequestHandler):
                 parts = body.upper().split('|')
                 if len(parts) >= 3 and parts[0] in ['BUY', 'SELL', 'CLOSE']:
                     os.makedirs(SIGNAL_FOLDER, exist_ok=True)
+                    # Remove done file first so NinjaTrader picks up fresh signal
+                    done_file = os.path.join(SIGNAL_FOLDER, "signal_done.txt")
+                    if os.path.exists(done_file):
+                        os.remove(done_file)
                     with open(SIGNAL_FILE, 'w') as f:
                         f.write(body)
                     response = f"OK: {body}"
-                    print(f"[{timestamp}] Signal written")
+                    print(f"[{timestamp}] Signal written (done file cleared)")
                 else:
                     response = "ERROR: Invalid signal format"
 
