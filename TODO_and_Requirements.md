@@ -5,6 +5,14 @@
 
 # 一、待办清单（按优先级）
 
+## 🔴 明天第一件事
+
+- [ ] **部署 Playwright** — 自动读取 Apex / MFF 网页数据，不再靠截图
+- [ ] **Apex $50K 账户激活确认** — 录入系统，开始测试
+- [ ] **NinjaScript File Strategy 测试** — signal.txt → NinjaTrader → Replikanto → Apex 下单
+
+---
+
 ## 🔴 本周必做（2天内）
 
 - [ ] **Prop Rule Copilot v1** — 录入4家 Prop Firm 规则，能回答"今天能不能开仓"
