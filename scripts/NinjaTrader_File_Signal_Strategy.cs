@@ -83,7 +83,7 @@ namespace NinjaTrader.NinjaScript.Strategies
                 
                 Print($"DragonFileSignal: New signal received: {signal}");
                 
-                // Parse signal: ACTION|SYMBOL|QTY
+                // Parse signal: ACTION|SYMBOL|QTY|SL=price|TP=price
                 var parts = signal.ToUpper().Split('|');
                 if (parts.Length >= 3)
                 {
@@ -91,10 +91,23 @@ namespace NinjaTrader.NinjaScript.Strategies
                     string symbol = parts[1];
                     int qty = int.Parse(parts[2]);
                     
+                    // Parse optional SL and TP
+                    double stopPrice = 0;
+                    double targetPrice = 0;
+                    for (int i = 3; i < parts.Length; i++)
+                    {
+                        if (parts[i].StartsWith("SL="))
+                            double.TryParse(parts[i].Substring(3), out stopPrice);
+                        if (parts[i].StartsWith("TP="))
+                            double.TryParse(parts[i].Substring(3), out targetPrice);
+                    }
+                    
                     // Execute on main thread
+                    double sl = stopPrice;
+                    double tp = targetPrice;
                     TriggerCustomEvent(state =>
                     {
-                        ExecuteSignal(action, symbol, qty);
+                        ExecuteSignal(action, symbol, qty, sl, tp);
                     }, null);
                     
                     _lastProcessedSignal = signal;
@@ -113,17 +126,25 @@ namespace NinjaTrader.NinjaScript.Strategies
             }
         }
 
-        private void ExecuteSignal(string action, string symbol, int qty)
+        private void ExecuteSignal(string action, string symbol, int qty, double stopPrice = 0, double targetPrice = 0)
         {
-            Print($"DragonFileSignal: Executing {action} {qty} {symbol}");
+            Print($"DragonFileSignal: Executing {action} {qty} {symbol} SL={stopPrice} TP={targetPrice}");
             
             switch (action)
             {
                 case "BUY":
                     EnterLong(qty, "Dragon_B");
+                    if (stopPrice > 0)
+                        SetStopLoss("Dragon_B", CalculationMode.Price, stopPrice, false);
+                    if (targetPrice > 0)
+                        SetProfitTarget("Dragon_B", CalculationMode.Price, targetPrice);
                     break;
                 case "SELL":
                     EnterShort(qty, "Dragon_S");
+                    if (stopPrice > 0)
+                        SetStopLoss("Dragon_S", CalculationMode.Price, stopPrice, false);
+                    if (targetPrice > 0)
+                        SetProfitTarget("Dragon_S", CalculationMode.Price, targetPrice);
                     break;
                 case "CLOSE":
                     // Force close all positions regardless of direction
