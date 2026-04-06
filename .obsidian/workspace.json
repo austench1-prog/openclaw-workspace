@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Notes_20260406.md",
     "scripts/windows_signal_server_v2.py",
     "memory/2026-04-05.md",
     "Master_Tree_v1.0.md",
@@ -216,7 +217,6 @@
     "Prop_Firm_Launch_Plan_v1.0.md",
     "TODO_and_Requirements.md",
     "Business_OS/00_Dashboard/Security_API_and_Data_Privacy.md",
-    "Business_OS/09_Decisions",
-    "Business_OS/08_Templates"
+    "Business_OS/09_Decisions"
   ]
 }
