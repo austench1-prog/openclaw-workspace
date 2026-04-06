@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/NinjaTrader_File_Signal_Strategy.cs",
+    "2026-OPS-001_AnyDesk_SOP.md",
     "scripts/dragon_signal_sender.py",
     "scripts/NinjaTrader_HTTP_Receiver.cs",
     "scripts/tradovate_connection.py",
@@ -211,12 +213,10 @@
     "Business_OS/02_Meritpoint_Logic_LLC/Company_Profile.md",
     "Business_OS/01_APM_LLC/Company_Profile.md",
     "Business_OS/01_APM_LLC/ARCHIVED_Old_Anaheim_LLC.md",
-    "Business_OS/00_Dashboard/Security_Architecture.md",
     "Business_OS/09_Decisions",
     "Business_OS/08_Templates",
     "Business_OS/07_Finance_Admin",
     "Business_OS/06_Compliance_Calendar",
-    "Business_OS/05_Banking",
-    "Business_OS/04_SOPs"
+    "Business_OS/05_Banking"
   ]
 }
