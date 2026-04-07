@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/voice_server_v10.py",
     "scripts/voice_interface_v1.py",
     "待处理/账户风控表单体系.md",
     "Agent_Prompts/ninja_startup_sop_v1.md",
@@ -211,7 +212,6 @@
     "Agent_Prompts/prop_firm_compliance_protocol_v2.md",
     "scripts/windows_signal_server.py",
     "scripts/dragon_file_signal_sender.py",
-    "scripts/NinjaTrader_File_Signal_Strategy.cs",
     "2026-OPS-001_AnyDesk_SOP.md",
     "Quick_Reference.md",
     "AGENTS.md",

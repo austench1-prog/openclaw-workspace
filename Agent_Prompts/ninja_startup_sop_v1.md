@@ -44,6 +44,19 @@
 - 同时确认：**Account = Sim101**，图表是正确品种
 - ❌ 如果账户或品种不对 → 先修正
 
+### ⚠️ 重要警告：Disconnect/Reconnect 后必须重新检查
+
+**触发场景：** 在 Connections 里把 Apex（或任何账户）Disconnect 再 Reconnect 后：
+- Strategies 面板里的 DragonFileSig **Enabled 状态会重置为白色**
+- Connection 也可能断开
+
+**必须重新执行 Checkpoint 4：**
+1. Strategies 面板 → DragonFileSig 1 Minute → 右键 Enable（变绿）
+2. 确认 Connection 显示 APEX
+3. 5 Minute 保持白色（不启用）
+
+**每次 Reconnect 后必做，否则信号来了无响应。**
+
 ### Checkpoint 5: Full Alignment Verification
 Before ANY order:
 ```
