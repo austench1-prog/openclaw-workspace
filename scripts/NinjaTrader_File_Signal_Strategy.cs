@@ -159,16 +159,16 @@ namespace NinjaTrader.NinjaScript.Strategies
                     }
                     break;
                 case "CLOSE":
-                    // Force close all positions regardless of direction
+                    // Force close all positions - no signal name filter
                     if (Position.MarketPosition == MarketPosition.Long)
                     {
-                        ExitLong(Position.Quantity, "Dragon_Close", "Dragon_B");
-                        Print($"DragonFileSignal: Closing LONG {Position.Quantity}");
+                        ExitLong("Dragon_Close");
+                        Print($"DragonFileSignal: EXIT LONG sent");
                     }
                     else if (Position.MarketPosition == MarketPosition.Short)
                     {
-                        ExitShort(Position.Quantity, "Dragon_Close", "Dragon_S");
-                        Print($"DragonFileSignal: Closing SHORT {Position.Quantity}");
+                        ExitShort("Dragon_Close");
+                        Print($"DragonFileSignal: EXIT SHORT sent");
                     }
                     else
                     {
