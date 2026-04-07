@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Security/OpenClaw_Security_Review_Video.md",
+    "Security",
     "待处理/README.md",
     "我的文件/README.md",
     "待处理",
@@ -204,7 +206,6 @@
     "2026-OPS-001_AnyDesk_SOP.md",
     "scripts/dragon_signal_sender.py",
     "scripts/NinjaTrader_HTTP_Receiver.cs",
-    "scripts/tradovate_connection.py",
     "Quick_Reference.md",
     "AGENTS.md",
     "Master_Task_List_v1.0.md",
@@ -216,7 +217,6 @@
     "Dual_System_Blueprint_v2.0.md",
     "Multi_Agent_Trading_System_v1.0.md",
     "Multi_Agent_Structure_v2.0.md",
-    "Multi_Agent_Structure_v1.0.md",
-    "Multi_Agent_Reference_Notes_v2.0.md"
+    "Multi_Agent_Structure_v1.0.md"
   ]
 }
