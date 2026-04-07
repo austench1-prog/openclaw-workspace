@@ -6,14 +6,20 @@
 
 ## 1. SYNC (Most Important)
 
-### Pull latest from GitHub (new computer)
+### 小塔（Mac mini / 龙哥操作）→ 直接 push，不需要先 pull
 ```bash
-cd ~/.openclaw/workspace && git pull
+cd ~/.openclaw/workspace && git add -A && git commit -m "说明" && git push
 ```
 
-### Push changes to GitHub (old computer / Mac mini - Dragon does this)
+### 小白（MacBook Air / 总裁操作）→ 必须先 pull 再 push
 ```bash
-cd ~/.openclaw/workspace && git add -A && git commit -m "description" && git push
+cd ~/.openclaw/workspace && git add -A && git commit -m "说明"
+git pull --rebase && git push
+```
+
+### 只拉取最新（小白同步小塔的更新）
+```bash
+cd ~/.openclaw/workspace && git pull
 ```
 
 ---
