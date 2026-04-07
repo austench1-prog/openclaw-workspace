@@ -132,7 +132,26 @@ Compare top commit with what Dragon last reported.
 
 ---
 
-## 8. PROP FIRM - Daily Check (Manual for now)
+## 8. 紧急拍拍 - 小白唤醒小塔
+
+**触发时机：** 小塔失联 / 龙哥没有回应
+
+**在小白 Terminal 执行：**
+```bash
+python3 ~/wake_mini.py
+```
+
+**执行动作：**
+1. 发送 Magic Packet 唤醒小塔
+2. 等待小塔上线（最长90秒）
+3. SSH 重载龙哥
+4. 输出：`✅ 小塔已唤醒，龙哥已重载。`
+
+**注意：** 小塔必须接网线或保持 WiFi，且 Wake on LAN 已开启（已设置）
+
+---
+
+## 9. PROP FIRM - Daily Check (Manual for now)
 
 Before trading, answer these:
 - What is today's account balance?
