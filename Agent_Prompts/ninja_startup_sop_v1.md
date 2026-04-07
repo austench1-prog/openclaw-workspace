@@ -34,12 +34,15 @@
 - Apex 那行 **Cross Order = MNQ** ✅
 - ❌ 缺任何一个 → 禁止下单
 
-### Checkpoint 4: Chart Account Alignment
-- Go to Chart/Chart Trader
-- Confirm **Account = Sim101** (Leader Account, NOT Apex directly)
-- Confirm chart is showing the **correct instrument** for this session
-- Confirm DragonFileSignal Strategy is **Enabled** on this chart
-- ❌ If wrong account or instrument → fix before proceeding
+### Checkpoint 4: Strategy Enabled（最容易忘的一步！）
+- 忍者底部 **Strategies 面板**
+- 找到 **DragonFileSig 1 Minute** 那行
+- 确认颜色是 **绿色**（Enabled）
+- **白色 = 没有激活 = 信号来了也不执行 = 单子不成功**
+- ❌ 如果是白色 → 右键 → Enable，变成绿色才能继续
+
+- 同时确认：**Account = Sim101**，图表是正确品种
+- ❌ 如果账户或品种不对 → 先修正
 
 ### Checkpoint 5: Full Alignment Verification
 Before ANY order:
