@@ -12,7 +12,7 @@ import requests
 from datetime import datetime
 
 # Config
-WINDOWS_IP = "192.168.0.59"
+WINDOWS_IP = "192.168.0.226"
 AIR_IP = "192.168.0.164"
 WINDOWS_USER = "auste"
 AIR_USER = "austinchien"

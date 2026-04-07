@@ -6,8 +6,8 @@ import socket
 import time
 import subprocess
 
-WIN_MAC = "90:10:57:d3:4e:83"
-WIN_IP = "192.168.0.59"
+WIN_MAC = "c8:53:09:f1:1a:c3"
+WIN_IP = "192.168.0.226"
 BROADCAST = "192.168.0.255"
 WIN_USER = "auste"
 

@@ -12,7 +12,7 @@ from datetime import datetime
 
 # Windows PC IP address on local network
 # Find it on Windows: open CMD → type ipconfig → look for IPv4 Address
-WINDOWS_PC_IP = "192.168.0.59"  # Windows PC (NinjaTrader)
+WINDOWS_PC_IP = "192.168.0.226"  # Windows PC (NinjaTrader)
 NINJATRADE_PORT = 5000
 BASE_URL = f"http://{WINDOWS_PC_IP}:{NINJATRADE_PORT}"
 
