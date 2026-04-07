@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/voice_interface_v1.py",
     "待处理/账户风控表单体系.md",
     "Agent_Prompts/ninja_startup_sop_v1.md",
     "scripts/wake_win.py",
@@ -216,7 +217,6 @@
     "AGENTS.md",
     "Master_Task_List_v1.0.md",
     "Dual_System_Blueprint_v1.0.md",
-    "Agent_Prompts/setup_alert_agent_v1_skeleton.md",
-    "Agent_Prompts/prop_firm_rules_agent_v1.md"
+    "Agent_Prompts/setup_alert_agent_v1_skeleton.md"
   ]
 }
