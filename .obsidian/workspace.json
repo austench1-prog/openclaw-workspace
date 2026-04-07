@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/system_monitor.py",
+    "Notes_20260406_ArchitectureDesign.md",
     "Notes_20260406_RoleRedesign.md",
     "Progress_Report_Apr3_Apr6.md",
     "Security/OpenClaw_Security_Review_Video.md",
@@ -215,8 +217,6 @@
     "Agent_Prompts/setup_alert_agent_v1_skeleton.md",
     "Agent_Prompts/prop_firm_rules_agent_v1.md",
     "Capital_Flow_Model_v1.0.md",
-    "Capital_Allocation_Blueprint_v1.0.md",
-    "Dual_System_Blueprint_v2.0.md",
-    "Multi_Agent_Trading_System_v1.0.md"
+    "Capital_Allocation_Blueprint_v1.0.md"
   ]
 }
