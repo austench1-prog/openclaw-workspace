@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Agent_Prompts/ninja_startup_sop_v1.md",
     "scripts/wake_win.py",
     "Master_Tree_v2.0.md",
     "scripts/system_monitor.py",
@@ -210,7 +211,6 @@
     "scripts/dragon_file_signal_sender.py",
     "scripts/NinjaTrader_File_Signal_Strategy.cs",
     "2026-OPS-001_AnyDesk_SOP.md",
-    "scripts/dragon_signal_sender.py",
     "Quick_Reference.md",
     "AGENTS.md",
     "Master_Task_List_v1.0.md",

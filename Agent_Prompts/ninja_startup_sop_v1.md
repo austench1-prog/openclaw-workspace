@@ -19,13 +19,20 @@
 - Confirm leader account status is Active and connected
 - ❌ If wrong account → change leader before proceeding
 
-### Checkpoint 3: Replikanto Cross Order (品种对齐)
-- In Replikanto, confirm **Cross Order is checked** for target instrument
-- Confirm the correct instrument mapping is selected:
-  - NQ → MNQ (for Apex)
-  - ES → MES (if applicable)
-- Confirm **Apex account is checked as Follower** (green light)
-- ❌ If Cross Order not selected → select before proceeding
+### Checkpoint 3: Replikanto 双重勾选（最关键）
+
+**必须同时满足两个条件，缺一不可：**
+
+| 条件 | 说明 | 结果 |
+|---|---|---|
+| On ✅ + Cross Order ✅ | 两个都勾 | ✅ 成交，按 MNQ 微型复制（损失$13）|
+| On ✅ + Cross Order ❌ | 只勾 On | ❌ 成交，按 NQ 全尺寸复制（损失$130！）|
+| On ❌ + Cross Order ✅ | 只勾 Cross | ❌ 不成交 |
+
+**操作：**
+- Apex 那行 **On = 绿灯** ✅
+- Apex 那行 **Cross Order = MNQ** ✅
+- ❌ 缺任何一个 → 禁止下单
 
 ### Checkpoint 4: Chart Account Alignment
 - Go to Chart/Chart Trader
