@@ -5,6 +5,17 @@
 
 ---
 
+## 每日开盘前必做（温总重启后）
+
+```
+1. 开 NinjaTrader → 等连接完成
+2. Strategies 面板 → DragonFileSig 1 Minute → 右键 Enable（绿色）✅
+3. 启动 Python Server（或确认已自启）
+4. 再做下面5项检查
+```
+
+---
+
 ## 5-Point Pre-Trade Checklist
 
 ### Checkpoint 1: Prop Firm Connection
