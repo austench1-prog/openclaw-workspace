@@ -75,20 +75,57 @@ Before sending any signal, Dragon must verify:
 
 ---
 
+## Replikanto 关键规则（2026-04-07 实测确认）
+
+### 状态持久性
+- **On（绿/白）** 和 **Cross Order** 一旦设置，**不会自动改变**
+- 只有人为操作才会改变
+- 开机后状态保持上次设置
+
+### 颜色含义
+- **绿色** = 已勾选/已激活
+- **白色** = 未勾选/未激活
+
+### 双重条件（缺一不可）
+```
+On = 绿 ✅  +  Cross Order = 勾 ✅  =  Apex 按 MNQ 复制（小额）
+On = 绿 ✅  +  Cross Order = 无 ❌  =  Apex 按 NQ 全尺寸复制（大额！）
+On = 白 ❌  +  Cross Order = 勾 ✅  =  不复制
+```
+
+---
+
+## Strategy 启动规则
+
+### 只启用一个 DragonFileSig
+- **1 Minute = 绿色**（启用）✅
+- **5 Minute = 白色**（禁用）
+- 两个同时启用会互相干扰
+
+### Enabled 颜色确认
+- 绿色行 = Strategy 正在运行，会读取信号
+- 白色行 = Strategy 停止，不读信号
+
+---
+
 ## Failure Modes Observed
 
 | Failure | Cause | Fix |
 |---|---|---|
 | Order placed but no Apex fill | Cross Order not selected | Check Replikanto Cross Order |
-| Strategy shows but no execution | DragonFileSignal not Enabled | Enable in Strategy Manager |
+| Strategy shows but no execution | DragonFileSignal not Enabled（白色）| Enable in Strategy Manager |
 | Signal sent but no chart response | Wrong account on chart | Set chart account to Sim101 |
-| FLATTEN_ALL doesn't work | Strategy not running | Re-enable strategy |
+| FLATTEN_ALL doesn't work | Strategy CLOSE signal name mismatch | Fixed in v2: ExitLong() no filter |
+| Two strategies interfering | 1min + 5min both enabled | Disable 5min, keep only 1min |
+| SL triggered too fast | SL set too tight | Adjust SL points in signal |
 
 ---
 
 ## Version Notes
-V1.0: Initial version based on 2026-04-07 live testing experience
-- Confirmed: Cross Order must be selected in Replikanto for MNQ fills
-- Confirmed: Chart must show Sim101, not Apex directly
-
-*Next version: Add automated pre-flight check script*
+V1.0: 2026-04-07 live testing
+- Confirmed: Cross Order + On must both be green for MNQ fill
+- Confirmed: Replikanto settings are persistent (no auto-reset)
+- Confirmed: Green = active, White = inactive
+- Confirmed: Only enable 1 Minute strategy, disable 5 Minute
+- Confirmed: SL/TP auto-trigger works correctly
+- Fixed: CLOSE/FLATTEN_ALL now uses ExitLong() without signal name filter
