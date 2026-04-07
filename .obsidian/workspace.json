@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "待处理/账户风控表单体系_原版.md",
     "scripts/voice_server_v10.py",
     "scripts/voice_interface_v1.py",
     "待处理/账户风控表单体系.md",
@@ -211,7 +212,6 @@
     "Agent_Prompts/prop_firm_rules_agent_v2.md",
     "Agent_Prompts/prop_firm_compliance_protocol_v2.md",
     "scripts/windows_signal_server.py",
-    "scripts/dragon_file_signal_sender.py",
     "2026-OPS-001_AnyDesk_SOP.md",
     "Quick_Reference.md",
     "AGENTS.md",
