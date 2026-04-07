@@ -182,6 +182,11 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "我的文件/README.md",
+    "待处理",
+    "我的文件",
+    "Dragon_Team_Protocol_V6_Print.md",
+    "Dragon_Team_Protocol_V6.md",
     "scripts/playwright_apex_scraper.py",
     "Prop_Firm_Risk_Rules_v1.0.md",
     "Notes_20260406.md",
@@ -199,14 +204,12 @@
     "scripts/dragon_signal_sender.py",
     "scripts/NinjaTrader_HTTP_Receiver.cs",
     "scripts/tradovate_connection.py",
-    "scripts",
     "Quick_Reference.md",
     "AGENTS.md",
     "Master_Task_List_v1.0.md",
     "Dual_System_Blueprint_v1.0.md",
     "Agent_Prompts/setup_alert_agent_v1_skeleton.md",
     "Agent_Prompts/prop_firm_rules_agent_v1.md",
-    "Agent_Prompts",
     "Capital_Flow_Model_v1.0.md",
     "Capital_Allocation_Blueprint_v1.0.md",
     "Dual_System_Blueprint_v2.0.md",
@@ -214,9 +217,6 @@
     "Multi_Agent_Structure_v2.0.md",
     "Multi_Agent_Structure_v1.0.md",
     "Multi_Agent_Reference_Notes_v2.0.md",
-    "Multi_Agent_Reference_Notes_v1.0.md",
-    "memory/2026-04-04.md",
-    "Prop_Firm_Launch_Plan_v1.0.md",
-    "Business_OS/09_Decisions"
+    "Multi_Agent_Reference_Notes_v1.0.md"
   ]
 }
