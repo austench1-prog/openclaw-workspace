@@ -36,6 +36,35 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 
 ---
 
+## Approved Instruments Whitelist
+
+**Only the following instruments are permitted in MATS v1. All others are automatically BLOCK.**
+
+| Pair | Full Contract | Micro Contract | Ratio | Notes |
+|---|---|---|---|---|
+| NQ / MNQ | NQ (Nasdaq-100) | MNQ (Micro) | 10 MNQ = 1 NQ | ✅ Allowed |
+| ES / MES | ES (S&P 500) | MES (Micro) | 10 MES = 1 ES | ✅ Allowed |
+| GC / MGC | GC (Gold) | MGC (Micro) | 10 MGC = 1 GC | ⚠️ Allowed in system, but Apex currently SUSPENDED |
+
+**Any instrument not on this list → automatic BLOCK, no exceptions.**
+
+### Contract Size Conversion (for max position check)
+
+All position limits are expressed in full-contract equivalents:
+
+- Apex $50K max: **6 NQ-equivalent contracts**
+- 1 NQ = 10 MNQ
+- 1 ES = 10 MES
+- 1 GC = 10 MGC
+
+Examples:
+- 6 MNQ = 0.6 NQ equivalent → ALLOW
+- 60 MNQ = 6 NQ equivalent → at limit, ALLOW
+- 61 MNQ = 6.1 NQ equivalent → BLOCK (over limit)
+- Mix: 3 NQ + 30 MNQ = 3 + 3 = 6 NQ equivalent → at limit
+
+---
+
 ## Minimum Rule Set (v1)
 
 ### Hard BLOCK conditions (any one triggers BLOCK)
