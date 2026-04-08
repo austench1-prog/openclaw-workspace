@@ -42,7 +42,7 @@
 
 | 账户 | 机构 | 状态 |
 |---|---|---|
-| 银行账户 | Citibank（开户进行中）| 进行中 |
+| 银行账户 | Citibank | ✅ 已开通（2026-04-06）|
 | 自营券商账户 | TOS (Schwab) | 活跃 |
 | Prop Firm | Apex / TPT / MFF / TradeDay | 活跃 |
 

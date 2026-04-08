@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "待处理/NotebookLM = Proposal Skill.md",
+    "Business_OS/NotebookLM = Proposal Skill.md",
     "Trading/Eval_Account_Risk_Form_v1.md",
     "Trading",
     "待处理/账户风控表单体系_原版.md",
@@ -215,8 +217,6 @@
     "Agent_Prompts/prop_firm_compliance_protocol_v2.md",
     "2026-OPS-001_AnyDesk_SOP.md",
     "Quick_Reference.md",
-    "AGENTS.md",
-    "Master_Task_List_v1.0.md",
-    "Dual_System_Blueprint_v1.0.md"
+    "AGENTS.md"
   ]
 }
