@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Multi_Agent_Trading_System_v2.0.md",
     "待处理/Agent_Plan_Deep_Analysis_v1.md",
     "待处理/Agent_Plan_Comparison_v1.md",
     "待处理/Agent_Plan_B_v1.md",
@@ -216,7 +217,6 @@
     "scripts/windows_signal_server_v2.py",
     "memory/2026-04-05.md",
     "Master_Tree_v1.0.md",
-    "Agent_Prompts/prop_firm_rules_agent_v2_1.md",
-    "Agent_Prompts/prop_firm_compliance_protocol_v2_1.md"
+    "Agent_Prompts/prop_firm_rules_agent_v2_1.md"
   ]
 }
