@@ -20,7 +20,15 @@
 - [ ] Which platform type? (Tradovate / Rithmic / WealthCharts)
 - [ ] Which drawdown type? (EOD Trail / Intraday Trail)
 - [ ] Confirm spend amount
-- [ ] Confirm card: Visa ••8869
+- [ ] Confirm card: Visa ••8869 (update when APM LLC commercial card available)
+- [ ] Register under: **APM LLC** (not personal name) for all new accounts going forward
+
+## APM LLC Registration Info (for new account signups)
+
+- Entity name: ANAHEIM PROPERTY MANAGEMENT LLC
+- EIN: 81-4191044
+- Use APM LLC email for all new platform registrations
+- All exam fees paid by APM LLC card → deductible expenses
 
 ---
 

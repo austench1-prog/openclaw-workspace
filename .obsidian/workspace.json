@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "待处理/PropFirm_LLC_Migration_Plan_v1.md",
     "Agent_Prompts/prop_firm_purchase_sop_v1.md",
     "Agent_Prompts/gatekeeper_paper_test_v1.md",
     "NotebookLM_Sources/Account_Sourced_Compliance_Pack_v2.md",
@@ -226,7 +227,6 @@
     "Trading",
     "待处理/账户风控表单体系_原版.md",
     "scripts/voice_server_v10.py",
-    "待处理/账户风控表单体系.md",
-    "Agent_Prompts/ninja_startup_sop_v1.md"
+    "待处理/账户风控表单体系.md"
   ]
 }
