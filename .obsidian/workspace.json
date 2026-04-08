@@ -182,6 +182,18 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/nb_check2.png",
+    "scripts/nb_check.png",
+    "scripts/nb_filled2.png",
+    "scripts/nb_done.png",
+    "scripts/nb_js_filled.png",
+    "scripts/nb_pasted.png",
+    "scripts/nb_dialog.png",
+    "scripts/nb_filled.png",
+    "scripts/nb_copiedtext.png",
+    "scripts/nb_inside.png",
+    "scripts/notebooklm_state.png",
+    "scripts/notebooklm_add_source.py",
     "NotebookLM_Sources/query_templates_v1.md",
     "NotebookLM_Sources/compliance_source_inventory_v1.md",
     "NotebookLM_Sources",
@@ -215,8 +227,6 @@
     "待处理",
     "我的文件",
     "Dragon_Team_Protocol_V6_Print.md",
-    "Dragon_Team_Protocol_V6.md",
-    "scripts/playwright_apex_scraper.py",
-    "Prop_Firm_Risk_Rules_v1.0.md"
+    "Dragon_Team_Protocol_V6.md"
   ]
 }

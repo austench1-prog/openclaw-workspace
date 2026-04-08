@@ -1,5 +1,12 @@
 # TOOLS.md - Local Notes
 
+## System Language Policy
+- All workspace files, documents, SOPs, agent prompts, code, and operational records: **English only**
+- Chat conversation with Chairman: Chinese is fine
+- No Chinese-origin software or services in this system
+- This is a US-based operation (APM LLC, Meritpoint Logic LLC)
+- All platforms are English-native: NinjaTrader, Apex, Replikanto, OpenClaw, NotebookLM
+
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
 ## What Goes Here
