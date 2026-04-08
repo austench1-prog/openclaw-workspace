@@ -48,9 +48,8 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 
 ### Time-based action sequence
 
-- **15:55 ET** → WARNING alert to Chairman via Telegram ("5 minutes to hard close")
 - **16:09 ET** → FLATTEN_ALL + BLOCK all new orders (system enforced, no exceptions)
-- **Official platform deadline** → 16:59 ET (Apex) — our 16:09 provides 50-minute buffer
+- Official platform deadline: 16:59 ET (Apex) — our 16:09 provides 50-minute buffer
 
 ### REDUCE_SIZE conditions
 
