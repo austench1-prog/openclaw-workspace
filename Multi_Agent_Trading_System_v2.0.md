@@ -44,6 +44,7 @@
 | 输出 | 基于来源的规则回答 / 差异比对 / 合规风险提示 / 引用依据 |
 | 定位 | 信息准确性增强层，不是执行层，是风控前依据层 |
 | 不负责 | 下单 / 最终放行 / 实时执行控制 |
+| **重要限定** | **NotebookLM 输出的是供 Gatekeeper 使用的依据，不是最终执行裁决** |
 
 ### 模块 C：Strategy Pack
 | 项目 | 内容 |
@@ -103,17 +104,17 @@ Execution  → 执行已批准的动作
 市场/平台规则信息
     ↓
 模块 A：Prop Intelligence Agent（收集原始信息）
+    ├─→ 模块 B：NotebookLM Compliance Skill（规则核验）
+    └─→ 模块 C：Strategy Pack（setup 判断）
     ↓
-模块 B：NotebookLM Compliance Skill（核验准确性）
-    ↓
-模块 C：Strategy Pack（判断 setup 成熟度）
-    ↓
-模块 D：Gatekeeper（合规/风控放行）
+模块 D：Gatekeeper（综合放行/拦截——同时接收规则核验与策略判断）
     ↓
 模块 E：Execution（调用已跑通的自动下单链路）
     ↓
 小账户真实执行 → 回写结果
 ```
+
+> 说明：模块 B 和模块 C 不一定严格串行，Gatekeeper 综合两边结果再做判断。
 
 ---
 
@@ -137,11 +138,13 @@ Execution  → 执行已批准的动作
 
 | 节点 | 说明 |
 |---|---|
-| 温总（Windows PC）| 执行节点，运行 NinjaTrader 和 Replikanto |
-| NinjaTrader 8 | 执行终端，DragonFileSignal Strategy 已安装 |
-| Replikanto | Master→Follower，账户复制和映射（Sim101→Apex）|
-| Signal Server | Python HTTP Server，接收龙哥信号 |
-| DragonFileSignal | 读取 signal.txt，执行 BUY/SELL/CLOSE/SL/TP |
+| 执行节点（温总）| Windows PC，运行交易软件 |
+| 执行终端 | NinjaTrader，负责订单管理 |
+| 账户复制层 | Replikanto，Master→Follower 账户映射 |
+| Signal Server | 指令入口，接收系统下单信号 |
+| Execution Adapter | 信号转译层，将指令转为平台可执行格式 |
+
+> 注：具体实现细节（Signal Server 配置、文件路径等）见基础设施文档（infra doc），不在本主文件展开。
 
 **此层不负责：** 判断规则、判断 setup、判断合规
 
@@ -158,7 +161,7 @@ Execution  → 执行已批准的动作
 
 ---
 
-## 七、最终确认结论
+## 八、最终确认结论
 
 1. **自动下单已跑通，立即纳入 v1 使用**
 2. **NotebookLM 作为合规与规则准确性增强 skill，立即接入**
@@ -170,13 +173,13 @@ Execution  → 执行已批准的动作
 
 ---
 
-## 八、一句话版本
+## 九、一句话版本
 
 > v1 的目标不是等待一个完整系统成熟后再开始，而是在自动下单已可用的前提下，立即投入小账户实际使用，并通过 NotebookLM 提升规则与合规信息准确率，让整个执行链达到可用且安全的状态。
 
 ---
 
-## 版本控制说明
+## 十、版本控制说明
 
 **此文档为草稿，未经总裁审阅定稿。**
 
