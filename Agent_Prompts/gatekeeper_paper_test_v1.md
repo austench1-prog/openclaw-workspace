@@ -204,7 +204,7 @@
 ## Action Items from Paper Test
 
 - [ ] Remove old "Prop Firm Internal Reference v1" source from NotebookLM (replaced by official sources)
-- [ ] Add FLATTEN_ALL trigger to Gatekeeper at 15:55 ET (5 min warning) and hard at 16:00 ET
+- [ ] Add FLATTEN_ALL trigger to Gatekeeper: 15:55 ET warning, 16:09 ET hard FLATTEN_ALL (before any platform's 16:10 cutoff)
 - [ ] Add contract conversion table to Gatekeeper rule set
 
 ---

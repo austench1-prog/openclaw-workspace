@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Agent_Prompts/gatekeeper_paper_test_v1.md",
     "NotebookLM_Sources/Account_Sourced_Compliance_Pack_v2.md",
     "NotebookLM_Sources/compliance_pack_definition_v1.md",
     "NotebookLM_Sources/notebooklm_mff_test_v1_results.md",
@@ -226,7 +227,6 @@
     "scripts/voice_server_v10.py",
     "待处理/账户风控表单体系.md",
     "Agent_Prompts/ninja_startup_sop_v1.md",
-    "Master_Tree_v2.0.md",
-    "Notes_20260406_ArchitectureDesign.md"
+    "Master_Tree_v2.0.md"
   ]
 }

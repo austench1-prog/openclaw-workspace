@@ -42,9 +42,15 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 
 1. Rule verification incomplete or failed → BLOCK
 2. Account DD remaining < 10% of max DD → BLOCK
-3. Current time >= 16:00 ET → BLOCK
+3. Current time >= 16:09 ET → BLOCK + FLATTEN_ALL (system hard deadline, before any platform's 16:10 cutoff)
 4. Not a full trading day (holiday / early close) → BLOCK
 5. Platform explicitly prohibits the intended trade type → BLOCK
+
+### Time-based action sequence
+
+- **15:55 ET** → WARNING alert to Chairman via Telegram ("5 minutes to hard close")
+- **16:09 ET** → FLATTEN_ALL + BLOCK all new orders (system enforced, no exceptions)
+- **Official platform deadline** → 16:59 ET (Apex) — our 16:09 provides 50-minute buffer
 
 ### REDUCE_SIZE conditions
 
