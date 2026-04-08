@@ -44,9 +44,23 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 |---|---|---|---|---|
 | NQ / MNQ | NQ (Nasdaq-100) | MNQ (Micro) | 10 MNQ = 1 NQ | ✅ Allowed |
 | ES / MES | ES (S&P 500) | MES (Micro) | 10 MES = 1 ES | ✅ Allowed |
-| GC / MGC | GC (Gold) | MGC (Micro) | 10 MGC = 1 GC | ⚠️ Allowed in system, but Apex currently SUSPENDED |
+| GC / MGC | GC (Gold) | MGC (Micro) | 10 MGC = 1 GC | ✅ Allowed in system |
 
 **Any instrument not on this list → automatic BLOCK, no exceptions.**
+
+### Two-Layer Instrument Check
+
+The Gatekeeper applies TWO independent checks:
+
+**Layer 1 — System Whitelist (permanent, never changes):**
+NQ/MNQ, ES/MES, GC/MGC are the only allowed instruments across all platforms.
+
+**Layer 2 — Platform/Account Restriction (dynamic, read from Compliance Pack):**
+Each platform may have temporary or permanent restrictions on specific instruments.
+Example: Apex currently suspends GC/MGC — this is a platform-level rule, not a system rule.
+
+Both layers must ALLOW for a trade to proceed.
+If Layer 1 passes but Layer 2 blocks → BLOCK with reason "Platform restriction: [instrument] suspended on [platform]"
 
 ### Contract Size Conversion (for max position check)
 
