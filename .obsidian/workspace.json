@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "NotebookLM_Sources/notebooklm_mff_test_v1_results.md",
     "scripts/nb_mff_q10.png",
     "scripts/nb_mff_q9.png",
     "scripts/nb_mff_q8.png",
@@ -192,7 +193,6 @@
     "scripts/nb_mff_q3.png",
     "scripts/nb_mff_q2.png",
     "scripts/nb_mff_q1.png",
-    "scripts/nb_mff_added.png",
     "NotebookLM_Sources/MFF_Eval_Rules_raw.txt",
     "NotebookLM_Sources/MFF_Terms_raw.txt",
     "NotebookLM_Sources/compliance_output_schema_v1.md",
