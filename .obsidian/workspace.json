@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "NotebookLM_Sources/compliance_pack_definition_v1.md",
     "NotebookLM_Sources/notebooklm_mff_test_v1_results.md",
     "scripts/nb_mff_q10.png",
     "scripts/nb_mff_q9.png",
@@ -226,7 +227,6 @@
     "Agent_Prompts/ninja_startup_sop_v1.md",
     "Master_Tree_v2.0.md",
     "Notes_20260406_ArchitectureDesign.md",
-    "Notes_20260406_RoleRedesign.md",
-    "Progress_Report_Apr3_Apr6.md"
+    "Notes_20260406_RoleRedesign.md"
   ]
 }
