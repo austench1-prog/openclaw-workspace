@@ -1,0 +1,46 @@
+dashboardDashboard
+groupUser
+credit_cardPurchases
+paidPayouts
+insert_chartCharts
+candlestick_chartAccounts
+Active Evals
+Passed Evals
+Active PAs
+Dormant PAs
+Accounts History
+Account Details
+stacked_bar_chartWealthCharts
+calculateRithmic
+reportRithmic Addons
+support_agentTradovate
+Active Evaluation Accounts
+✅ Two-Factor Authentication (Enabled)
+Get Help
+account_circle
+Austin Chien
+Active Evals
+1
+Passed Evals
+0
+Active PAs
+0 of 20
+Dormant PAs
+0
+Accounts History
+Active Evals showing 1 record
+View Eval Charts
+account	status	product	expire/renewal date	action
+APEX-165583-123	Active	50k Tradovate EOD Trail	Expires on May 6, 2026	Find in Billing
+Privacy Policy
+ | 
+Cookie Policy
+ | 
+Terms Of Use
+ | 
+Risk Disclosure
+ | 
+System Status
+ | 
+Help Desk & FAQ
+© 2026 Apex Trader Funding Inc. All rights reserved.
