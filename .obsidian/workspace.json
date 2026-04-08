@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "待处理/Agent_Plan_Comparison_v1.md",
     "待处理/Agent_Plan_B_v1.md",
     "待处理/Agent_Plan_A_v1.md",
     "待处理/System_Trading_Protocol_v1.2_pending.md",
@@ -216,7 +217,6 @@
     "Master_Tree_v1.0.md",
     "Agent_Prompts/prop_firm_rules_agent_v2_1.md",
     "Agent_Prompts/prop_firm_compliance_protocol_v2_1.md",
-    "Agent_Prompts/prop_firm_rules_agent_v2.md",
-    "Agent_Prompts/prop_firm_compliance_protocol_v2.md"
+    "Agent_Prompts/prop_firm_rules_agent_v2.md"
   ]
 }
