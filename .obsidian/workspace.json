@@ -182,6 +182,10 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "NotebookLM_Sources/query_templates_v1.md",
+    "NotebookLM_Sources/compliance_source_inventory_v1.md",
+    "NotebookLM_Sources",
+    "memory/2026-04-08.md",
     "Dragon_ToDo_v1.md",
     "Multi_Agent_Trading_System_v2.0.md",
     "待处理/Agent_Plan_Deep_Analysis_v1.md",
@@ -213,10 +217,6 @@
     "Dragon_Team_Protocol_V6_Print.md",
     "Dragon_Team_Protocol_V6.md",
     "scripts/playwright_apex_scraper.py",
-    "Prop_Firm_Risk_Rules_v1.0.md",
-    "Notes_20260406.md",
-    "scripts/windows_signal_server_v2.py",
-    "memory/2026-04-05.md",
-    "Master_Tree_v1.0.md"
+    "Prop_Firm_Risk_Rules_v1.0.md"
   ]
 }
