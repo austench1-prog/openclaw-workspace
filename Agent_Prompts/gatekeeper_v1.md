@@ -36,6 +36,22 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 
 ---
 
+## ⚠️ CRITICAL: Minimum Hold Time Rule (PLACEHOLDER - PENDING RESEARCH)
+
+**Status: NOT YET DEFINED — DO NOT DEPLOY LIVE UNTIL THIS IS RESOLVED**
+
+This is a potential account termination risk. Many Prop Firms prohibit high-frequency scalping (positions held for only a few seconds).
+
+**Required action:**
+- [ ] Research minimum hold time rules for: Apex, MFF, TradeDay, TPT
+- [ ] Identify the strictest requirement across all platforms
+- [ ] Set SYSTEM-WIDE minimum hold time = strictest platform requirement
+- [ ] Add to Gatekeeper: if position held < minimum time → BLOCK close order
+
+**Why this matters:** Accounts can be terminated immediately for violating this rule.
+
+---
+
 ## Approved Instruments Whitelist
 
 **Only the following instruments are permitted in MATS v1. All others are automatically BLOCK.**
