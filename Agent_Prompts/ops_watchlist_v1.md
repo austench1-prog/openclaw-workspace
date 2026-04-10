@@ -32,6 +32,21 @@
 
 ---
 
+## Design Principle (Chairman directive 2026-04-09)
+
+> **Reduce human involvement = Reduce human error.**
+> The system must self-verify before executing. Do not rely on humans to check.
+
+**Specific problem to solve:**
+DragonFileSig 1 Minute can be accidentally unchecked by mouse click.
+Current workaround: human checks manually.
+Target solution: System auto-verifies strategy is active before sending signal.
+If strategy is inactive → auto re-enable OR block signal + alert Chairman.
+
+Status: ⏳ Pending technical solution (NinjaTrader internal state detection via SSH)
+
+---
+
 ## Alert Conditions (immediate Telegram notification)
 
 | Condition | Action |
