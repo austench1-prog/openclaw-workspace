@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/backup.log",
+    "scripts/backup_to_icloud.sh",
     "MEMORY.md",
     "Agent_Prompts/compliance_framework_v1.md",
     "待处理/Hedging_Rules_Research_v1.md",
@@ -224,9 +226,7 @@
     "NotebookLM_Sources/notebooklm_compliance_test_v1_results.md",
     "scripts/notebooklm_add_source.py",
     "NotebookLM_Sources/query_templates_v1.md",
-    "NotebookLM_Sources/compliance_source_inventory_v1.md",
     "NotebookLM_Sources",
-    "Trading",
-    "scripts/voice_server_v10.py"
+    "Trading"
   ]
 }
