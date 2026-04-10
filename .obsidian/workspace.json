@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Multi_Agent_Trading_System_v3.0.md",
     "Trading/Dragon_Team_System_v1_Gemini.md",
     "Multi_Agent_Trading_System_v3.0_Draft.md",
     "Trading/Dual_Engine_Trading_System_v2_Gemini.md",
@@ -225,7 +226,6 @@
     "待处理/Agent_Plan_B_v1.md",
     "待处理/Agent_Plan_A_v1.md",
     "待处理/System_Trading_Protocol_v1.2_pending.md",
-    "待处理/NotebookLM = Proposal Skill.md",
     "Trading",
     "scripts/voice_server_v10.py"
   ]

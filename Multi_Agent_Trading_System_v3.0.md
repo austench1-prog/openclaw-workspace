@@ -17,9 +17,10 @@
 |---|---|---|
 | Execution endpoints | NinjaTrader only | NinjaTrader + IBKR (dual path) |
 | Strategy layer | Not formally structured | Trading Strategy + Order Strategy as Layer B |
-| Account structure | Prop Firm accounts only | + Meritpoint Logic LLC as entity account |
+| Account structure | Prop Firm accounts only | + Meritpoint Logic LLC as entity account (same Tradovate path) |
 | Layer naming | Mixed | Standardized 5-layer naming |
-| IBKR | Not in scope | In scope (pending account approval) |
+| IBKR | Not in scope | Approved, pending funding |
+| Strategy input | N/A | Manual first, iterate to automated later |
 
 ---
 
@@ -57,21 +58,27 @@
 - IBKR Execution Path
 
 ### Layer D — Account & Route Layer
+
+All accounts in this layer connect via the same technical path: Tradovate → NinjaTrader.
+The difference is account type only (Prop Firm vs Entity), not the connection method.
+
 ```
-├─ NinjaTrader / Tradovate Path
-│  ├─ Meritpoint Logic LLC via Tradovate (entity account)
-│  └─ Prop Firm Tradovate Accounts
-│     ├─ Apex APEX-165583-123 (Active, EOD $50K)
-│     └─ MFF MFFUEVRPD122274040 (Suspended)
+├─ NinjaTrader / Tradovate Path (all accounts same connection method)
+│  ├─ Apex APEX-165583-123 (Prop Firm, EOD $50K, Active)
+│  ├─ MFF MFFUEVRPD122274040 (Prop Firm, Suspended)
+│  ├─ Future Prop Firm Accounts (same path)
+│  └─ Meritpoint Logic LLC via Tradovate (Entity Account, pending open)
+│     └─ Same Tradovate→NinjaTrader path as Prop Firm accounts
 │
 └─ IBKR Path
-   └─ Meritpoint Logic LLC IBKR Account (Pending approval)
+   └─ Meritpoint Logic LLC IBKR Account (Approved, pending funding)
 ```
 
 **Design principles for Layer D:**
-- Upper layer unified (same decision chain)
-- Account execution isolated (LLC separate from Prop Firm)
-- No default cross-mixing
+- All Tradovate accounts use identical connection path (no distinction at infra level)
+- Account type difference (Prop vs Entity) is a compliance/routing concern, not a technical concern
+- Upper layer unified (same decision chain for all)
+- No default cross-mixing between accounts
 
 ### Layer E — Infrastructure Layer
 - NinjaTrader (Win PC 温总, 192.168.0.226)
