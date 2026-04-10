@@ -40,15 +40,39 @@ then produces a single decision: ALLOW / BLOCK / REVIEW / REDUCE_SIZE.
 
 **Status: NOT YET DEFINED — DO NOT DEPLOY LIVE UNTIL THIS IS RESOLVED**
 
-This is a potential account termination risk. Many Prop Firms prohibit high-frequency scalping (positions held for only a few seconds).
+---
+
+### Rule 1: Minimum Hold Time (Anti-Scalping)
+
+Many Prop Firms prohibit high-frequency scalping (positions held for only a few seconds).
+Violating this = immediate account termination.
 
 **Required action:**
-- [ ] Research minimum hold time rules for: Apex, MFF, TradeDay, TPT
-- [ ] Identify the strictest requirement across all platforms
-- [ ] Set SYSTEM-WIDE minimum hold time = strictest platform requirement
-- [ ] Add to Gatekeeper: if position held < minimum time → BLOCK close order
+- [ ] Research minimum hold time for: Apex, MFF, TradeDay, TPT
+- [ ] Set SYSTEM-WIDE minimum = strictest platform requirement
+- [ ] Gatekeeper: if position held < minimum time → BLOCK close order
 
-**Why this matters:** Accounts can be terminated immediately for violating this rule.
+---
+
+### Rule 2: Valid Trading Day Definition
+
+Each platform has different requirements for a day to count as a "valid trading day" toward the minimum trading days requirement.
+
+Known so far:
+- **TPT (TakeProfitTrader)**: 1 order held > 1 minute = valid trading day (most lenient)
+- **Other platforms**: May require minimum number of orders AND/OR minimum hold time
+
+Two sub-requirements to research per platform:
+1. **Minimum number of orders** to count as valid trading day
+2. **Minimum hold time per order** to count as valid trading day
+
+**Required action:**
+- [ ] Research valid trading day definition for: Apex, MFF, TradeDay, TPT
+- [ ] Document both sub-requirements per platform
+- [ ] Set system rule: must satisfy all platforms' requirements simultaneously
+- [ ] Add to execution log: track daily order count and hold times
+
+**Why this matters:** If trading days don't count as valid, the evaluation cannot be passed even if profit target is reached.
 
 ---
 
