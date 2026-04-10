@@ -1,7 +1,13 @@
 # 忍者开机 SOP (Ninja Startup SOP)
 # Source: Dragon (based on Chairman specification)
-# Version: 1.0 | Date: 2026-04-07
+# Version: 1.1 | Date: 2026-04-09
 # CRITICAL: All 5 checkpoints must pass before any order is placed
+
+## LOCKED RULE: Replikanto Leader Account
+# Leader Account must ALWAYS be a Sim (virtual) account. Never use real/funded account as Leader.
+# Current Sim accounts: Sim101 (default) / SimNQ / SimFF
+# Sim account → Dragon signal → Replikanto copies to real accounts
+# Different strategies/symbols can use different Sim accounts as Leaders
 
 ---
 
