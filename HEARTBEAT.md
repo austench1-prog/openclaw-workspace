@@ -2,10 +2,11 @@
 
 ## Active Reminders
 
-### Meritpoint Logic LLC via Tradovate — Account Opening
-- Status: Not yet opened (pending)
-- Action: Remind Chairman to open Tradovate account for Meritpoint Logic LLC
-- Priority: HIGH
-- Remind every heartbeat until Chairman confirms it's done
+### Meritpoint Logic LLC via Tradovate — ON HOLD
+- Status: ON HOLD (Chairman decision 2026-04-10)
+- Reason: Risk management — wait until Prop Firm system is profitable first
+- Action: No reminder needed. Revisit when Prop Firm trading is stable.
 
-**REMINDER: 总裁，Meritpoint Logic LLC via Tradovate 账户还没开！请安排开户。**
+### IBKR Account U25202621
+- Status: OPEN ✅ (opened 2026-04-10)
+- Next step: Fund account from Meritpoint Logic LLC Citibank when ready
