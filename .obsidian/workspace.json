@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "待处理/Hedging_Rules_Research_v1.md",
     "Agent_Prompts/daily_checklist_v1.md",
     "memory/2026-04-09.md",
     "Trading/execution_run_log_v1.md",
@@ -225,7 +226,6 @@
     "NotebookLM_Sources",
     "memory/2026-04-08.md",
     "Dragon_ToDo_v1.md",
-    "Multi_Agent_Trading_System_v2.0.md",
     "Trading",
     "scripts/voice_server_v10.py"
   ]
