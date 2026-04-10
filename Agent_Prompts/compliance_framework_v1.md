@@ -89,4 +89,28 @@ Action required:
 
 ---
 
+## New Platform Onboarding SOP
+
+When adding a new Prop Firm to the system:
+
+**Step 1: Line 1 Compatibility Check**
+Run the new platform's rules against all Line 1 rules.
+- All Line 1 rules pass → Platform can be onboarded
+- Any Line 1 rule fails → Go to Step 2
+
+**Step 2: Conflict Resolution**
+If a platform's rules conflict with Line 1:
+- Option A: Accept the restriction (if Line 1 rule still applies, just reject this platform)
+- Option B: Discuss whether to adjust Line 1 (only if the impact is acceptable and the platform is worth it)
+- Option C: Reject the platform
+
+**Key principle:**
+> Line 1 is the frame. Every new platform must fit inside it.
+> We don't change the frame for every new platform.
+> We only discuss changing the frame if there's strong reason to.
+
+Line 1 stability = system simplicity.
+
+---
+
 *v1 | Chairman approved 2026-04-10*
