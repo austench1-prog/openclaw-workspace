@@ -40,7 +40,7 @@
 | Telegram | **电报** | TG | 唯一远程指挥与报警通道 |
 | VS Code | **代码盒** | VS | 脚本开发环境 |
 | Obsidian | **笔记宝** | Ob | 核心规则、复盘与知识库（小白个人用） |
-| NotebookLM (achatesc@gmail.com) | **交易笔记宝** | NotebookLM | 交易系统专用合规知识库 MATS_v1_Compliance |
+| NotebookLM (achatesc@gmail.com) | **书记宝** | NotebookLM | 交易系统专用合规知识库 MATS_v1_Compliance |
 | Terminal | **黑盒** | Term | 终端命令行 |
 | Samsung 990 EVO 2TB (DragonVault) | **三星** | Samsung | 小塔本地备份硬盘，每日凌晨3点自动备份 |
 
