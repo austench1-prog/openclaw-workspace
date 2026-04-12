@@ -1461,3 +1461,51 @@ sent 17048106 bytes  received 26598 bytes  29232501 bytes/sec
 total size is 16839835  speedup is 0.99
 [2026-04-12] Vault: Full workspace snapshot ✅
 [2026-04-12 02:01] Backup complete.
+[2026-04-12 03:00] Starting backup...
+[2026-04-12] Vault: MEMORY.md ✅
+[2026-04-12] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-12] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-12] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-12] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-12] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-12] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1429 files
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/5b/
+.git/objects/5b/c1084e70ba00e77fa621793c412f3bf7cb9ef8
+.git/objects/6c/
+.git/objects/6c/bd57b23baac79fcfc60f9bdeb2af795bd7d935
+.git/objects/75/
+.git/objects/75/cc889b2fe7d6632a6a98c7dee33a4158039de0
+.git/objects/79/
+.git/objects/79/a3e86bd09d5f0883693849f48bfe316ecaf068
+.git/objects/85/
+.git/objects/85/cf8bdbb8ca3e3eccb3d77eaa81a3dd9efb63a8
+.git/objects/8a/
+.git/objects/8a/483ebc28056f98401b7efb90919cd05ea5cf28
+.git/objects/94/
+.git/objects/94/c9d78ad14641acff297b2fbeff17ec92ffc7c0
+.git/objects/c0/
+.git/objects/c0/94ba52f8d855103679c51b028a44cc7b0b0425
+.git/objects/ec/
+.git/objects/ec/16e3c681db1e7804f5fdd356630105c7ab3cf1
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+memory/
+memory/2026-04-12.md
+scripts/backup.log
+
+sent 315039 bytes  received 522 bytes  2463395 bytes/sec
+total size is 16942470  speedup is 53.69
+[2026-04-12] Vault: Full workspace snapshot ✅
+[2026-04-12] Today's memory ✅
+[2026-04-12 03:00] Backup complete.

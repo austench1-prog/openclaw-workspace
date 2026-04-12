@@ -1,6 +1,6 @@
-# 🐉 龙之队：全员命名与指挥通讯协议 (V6.0)
+# 🐉 龙之队：全员命名与指挥通讯协议 (V6.1)
 # Source: Dragon (Chairman specification)
-# Version: 6.0 | Date: 2026-04-06
+# Version: 6.1 | Date: 2026-04-12
 # Status: 正式启用 (Active)
 
 ---
@@ -39,8 +39,10 @@
 |---|---|---|---|
 | Telegram | **电报** | TG | 唯一远程指挥与报警通道 |
 | VS Code | **代码盒** | VS | 脚本开发环境 |
-| Obsidian | **笔记宝** | Ob | 核心规则、复盘与知识库 |
+| Obsidian | **笔记宝** | Ob | 核心规则、复盘与知识库（小白个人用） |
+| NotebookLM (achatesc@gmail.com) | **交易笔记宝** | NotebookLM | 交易系统专用合规知识库 MATS_v1_Compliance |
 | Terminal | **黑盒** | Term | 终端命令行 |
+| Samsung 990 EVO 2TB (DragonVault) | **三星** | Samsung | 小塔本地备份硬盘，每日凌晨3点自动备份 |
 
 ---
 
@@ -54,6 +56,7 @@
 | MyFundedFutures | **来来** | MFF |
 | TakeProfitTrader | **莉莉** | TPT |
 | TradeDay | **盈盈** | TD |
+| Interactive Brokers (IBKR) | **盈透** | IBKR |
 
 ---
 
@@ -79,4 +82,4 @@
 
 ---
 
-*存档时间：2026-04-06 | 版本：V6.0 | 状态：正式启用*
+*存档时间：2026-04-12 | 版本：V6.1 | 状态：正式启用*
