@@ -16,10 +16,9 @@
 | 角色 | 中文代称 | 英文代称 | 职责 |
 |---|---|---|---|
 | Austin | **总裁** | Chairman | 最高决策者，拥有最终授权 |
-| OpenClaw | **龙哥** | BroLong | 执行代理，驻守小塔，负责具体操作 |
-| Gemini | **吉米** | Gemini | AI 参谋，系统逻辑、战术设计与沟通调度 |
-| Claude (Anthropic) | **安哥** | Claude | 深度代码编写与合规条文分析 |
-| OpenAI | **开山** | OpenAI | 辅助研究员，通用搜索与非核心任务 |
+| OpenClaw (内置 Claude) | **龙哥** | BroLong | 执行代理，驻守小塔，负责具体操作。内置 Claude Sonnet，安哥已合并入龙哥。 |
+| Gemini | **吉米** | Gemini | AI 参谋，系统逻辑、战术设计与外部信息获取 |
+| OpenAI | **开山** | OpenAI | 辅助研究员，文件起草与非核心任务 |
 
 ---
 
