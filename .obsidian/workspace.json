@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "camarilla-weekly-thinkscript-v3.txt",
     "camarilla-weekly-thinkscript-v2.txt",
     "memory/2026-04-12.md",
     "NotebookLM_Sources/Apex_Prohibited_Activities_raw.txt",
@@ -226,7 +227,6 @@
     "NotebookLM_Sources/Apex_ActiveEvals_raw.txt",
     "NotebookLM_Sources/Apex_Trading_Rules_raw.txt",
     "NotebookLM_Sources/Apex_User_Agreement_raw.txt",
-    "NotebookLM_Sources/notebooklm_compliance_test_v1_results.md",
-    "scripts/notebooklm_add_source.py"
+    "NotebookLM_Sources/notebooklm_compliance_test_v1_results.md"
   ]
 }
