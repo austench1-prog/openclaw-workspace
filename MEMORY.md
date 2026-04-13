@@ -160,4 +160,27 @@ Key workspace files:
 
 ---
 
-*Updated: 2026-04-10 | Dragon*
+## Infrastructure Status (as of 2026-04-12) — STABLE
+
+Basic infrastructure is now considered stable. Team focus shifts to strategy and execution.
+
+| Layer | Component | Status |
+|---|---|---|
+| Execution | Dragon (OpenClaw) on 小塔 | ✅ Active |
+| Research | Jimmy (Gemini CLI) on 小白 | ✅ Deployed |
+| Compliance | NotebookLM 书记宝 (7 sources) | ✅ Active |
+| Local backup | Samsung DragonVault 三星 | ✅ Daily 3am |
+| Cloud backup | GitHub + iCloud | ✅ Active |
+| Chairman workspace | Obsidian vault (iCloud/President_Command) | ✅ Setup done |
+
+### Jimmy CLI Setup (2026-04-12)
+- Gemini CLI installed on 小白 (Austin's MacAir)
+- GEMINI.md written to President_Command — auto-loaded on CLI start
+- Active Scanning Mandate enabled (proactively finds blind spots)
+- Memory Protocol enabled (reads files on start, writes session log on end)
+- Working language: Chinese with Chairman, English for code/files
+- Details to be finalized by Chairman when ready — not yet execution standard
+
+---
+
+*Updated: 2026-04-12 | Dragon*
