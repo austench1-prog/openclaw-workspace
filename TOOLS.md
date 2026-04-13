@@ -45,3 +45,19 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## VSCode Workspace Paths
+
+### 小塔 (Mac mini) - austinai
+- Workspace: `/Users/austinai/.openclaw/workspace`
+- Open: `code ~/.openclaw/workspace`
+
+### 小白 (MacBook Air) - austinchien
+- Workspace: `/Users/austinchien/.openclaw/workspace`
+- Open: `code ~/.openclaw/workspace`
+- NOT Google Drive, NOT iCloud Drive
+
+### All Pine/ThinkScript files are in workspace root:
+- `camarilla-weekly-thinkscript-v4.txt` ← current latest
+- `camarilla-weekly-thinkscript-v3.txt`
+- `camarilla-weekly-thinkscript.txt` ← original v1
