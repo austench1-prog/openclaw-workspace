@@ -1,0 +1,91 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v4
+# Fix: WC = Friday close that belongs to the SAME week as WH/WL
+#      Friday must be AFTER that week's Monday, not before
+#      Prevents using a Friday from a different week
+#
+# Logic:
+#   - Use weekly bar [1] for WH, WL, WO (clean, reliable)
+#   - Find the Friday that falls WITHIN week [1] for WC
+#   - Week [1] Monday = start of that week
+#   - Week [1] Friday = last trading day of that week
+#   - WC = daily close on that Friday only
+
+declare upper;
+
+# Last completed week's data from weekly bar (reliable)
+def WH = high(period = AggregationPeriod.WEEK)[1];
+def WL = low(period = AggregationPeriod.WEEK)[1];
+def WO = open(period = AggregationPeriod.WEEK)[1];
+
+# Get the start date of last week (Monday of week[1])
+def lastWeekStart = GetYYYYMMDD(period = AggregationPeriod.WEEK)[1];
+
+# Get the start date of this week (Monday of week[0])
+def thisWeekStart = GetYYYYMMDD(period = AggregationPeriod.WEEK)[0];
+
+# Find WC: daily close where:
+#   date > lastWeekStart (after last week's Monday)
+#   date < thisWeekStart (before this week's Monday)
+#   day of week = Friday (day = 5 in TOS: Mon=2, Tue=3, Wed=4, Thu=5, Fri=6)
+# Walk daily bars to find Friday within last week
+
+def dailyDate = GetYYYYMMDD(period = AggregationPeriod.DAY);
+def dailyDOW  = GetDayOfWeek(dailyDate);
+def dailyClose = close(period = AggregationPeriod.DAY);
+
+# Friday of last week = most recent Friday that is strictly within [lastWeekStart, thisWeekStart)
+def isFridayLastWeek = dailyDOW == 6 
+    and dailyDate > lastWeekStart 
+    and dailyDate < thisWeekStart;
+
+# Get the close of that specific Friday
+def WC = if isFridayLastWeek then dailyClose else Double.NaN;
+
+# Carry forward WC value across the week (use highest to get exact Friday value)
+def WC_fixed = if !IsNaN(WC) then WC 
+               else WC_fixed[1];
+
+# Formula
+def P   = (WH + WL + WC_fixed + WO) / 4;
+def B   = 2 * P;
+def NWH = B - WL;
+def NWL = B - WH;
+def MID = (NWH + NWL) / 2;
+
+# Only show when all inputs are valid real market data
+def show = !IsNaN(WH) and !IsNaN(WO) and !IsNaN(WC_fixed) 
+           and WC_fixed > 0 and WH > 0 and WL > 0;
+
+# Plots
+plot NextWeekHigh = if show then NWH else Double.NaN;
+NextWeekHigh.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekHigh.SetLineWeight(3);
+NextWeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekHigh.HideBubble();
+
+plot NextWeekLow = if show then NWL else Double.NaN;
+NextWeekLow.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekLow.SetLineWeight(3);
+NextWeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekLow.HideBubble();
+
+plot MidLine = if show then MID else Double.NaN;
+MidLine.SetDefaultColor(Color.YELLOW);
+MidLine.SetLineWeight(1);
+MidLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+MidLine.HideBubble();
+
+AddCloud(NextWeekHigh, NextWeekLow, CreateColor(0, 180, 255), CreateColor(0, 180, 255));
+
+# Labels - verify data source
+AddLabel(yes, "Weekly Camarilla v4", CreateColor(0, 180, 255));
+AddLabel(yes, "WH: " + AsPrice(WH) + "  WL: " + AsPrice(WL), Color.GRAY);
+AddLabel(yes, "WO(Mon): " + AsPrice(WO) + "  WC(Fri same week): " + AsPrice(WC_fixed), Color.GRAY);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 180, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 180, 255));
+
+# Alerts
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);
