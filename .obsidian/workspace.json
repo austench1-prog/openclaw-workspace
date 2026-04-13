@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "camarilla-weekly-thinkscript-v6.txt",
     "camarilla-weekly-thinkscript-v5.txt",
     "camarilla-weekly-thinkscript-v4.txt",
     "camarilla-weekly-thinkscript-v3.txt",
@@ -226,7 +227,6 @@
     "Agent_Prompts/gatekeeper_v1.md",
     "MATS_v1_scope_lock.md",
     "NotebookLM_Sources/Apex_EOD_Eval_Trading_Rules_official.txt",
-    "NotebookLM_Sources/Apex_ActiveEvals_raw.txt",
     "NotebookLM_Sources/notebooklm_compliance_test_v1_results.md"
   ]
 }

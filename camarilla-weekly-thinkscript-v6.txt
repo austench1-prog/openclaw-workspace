@@ -1,0 +1,77 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v6
+# Fix: TOS requires constant index for bar lookback []
+#      Cannot use variable as index - must use if/else with fixed numbers
+#
+# WC = Last week's Friday close
+# Today is Monday (market open) so Friday was 3 calendar days ago = 1 trading day back
+# Use if/else to select correct lookback based on day of week
+
+declare upper;
+
+# Last completed week's OHLC from weekly bar
+def WH = high(period = AggregationPeriod.WEEK)[1];
+def WL = low(period = AggregationPeriod.WEEK)[1];
+def WO = open(period = AggregationPeriod.WEEK)[1];
+
+# Day of week constants: Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6, Sat=7
+def todayDOW = GetDayOfWeek(GetYYYYMMDD());
+
+# WC = Friday close of last week
+# Use explicit if/else with constant lookback values
+# Mon: go back 1 trading day (Friday)
+# Tue: go back 2 trading days (Friday)
+# Wed: go back 3 trading days (Friday)
+# Thu: go back 4 trading days (Friday)
+# Fri: go back 5 trading days (last Friday)
+def WC =
+    if todayDOW == 2 then close(period = AggregationPeriod.DAY)[1]
+    else if todayDOW == 3 then close(period = AggregationPeriod.DAY)[2]
+    else if todayDOW == 4 then close(period = AggregationPeriod.DAY)[3]
+    else if todayDOW == 5 then close(period = AggregationPeriod.DAY)[4]
+    else if todayDOW == 6 then close(period = AggregationPeriod.DAY)[5]
+    else close(period = AggregationPeriod.DAY)[1];
+
+# Formula
+def P   = (WH + WL + WC + WO) / 4;
+def B   = 2 * P;
+def NWH = B - WL;
+def NWL = B - WH;
+def MID = (NWH + NWL) / 2;
+
+# Only show when all data is valid
+def show = !IsNaN(WH) and !IsNaN(WO) and !IsNaN(WC)
+           and WC > 0 and WH > 0 and WL > 0;
+
+# Plots
+plot NextWeekHigh = if show then NWH else Double.NaN;
+NextWeekHigh.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekHigh.SetLineWeight(3);
+NextWeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekHigh.HideBubble();
+
+plot NextWeekLow = if show then NWL else Double.NaN;
+NextWeekLow.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekLow.SetLineWeight(3);
+NextWeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekLow.HideBubble();
+
+plot MidLine = if show then MID else Double.NaN;
+MidLine.SetDefaultColor(Color.YELLOW);
+MidLine.SetLineWeight(1);
+MidLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+MidLine.HideBubble();
+
+AddCloud(NextWeekHigh, NextWeekLow, CreateColor(0, 180, 255), CreateColor(0, 180, 255));
+
+# Labels
+AddLabel(yes, "Weekly Camarilla v6", CreateColor(0, 180, 255));
+AddLabel(yes, "WH: " + AsPrice(WH) + "  WL: " + AsPrice(WL), Color.GRAY);
+AddLabel(yes, "WO(Mon): " + AsPrice(WO) + "  WC(Fri): " + AsPrice(WC), Color.GRAY);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 180, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 180, 255));
+
+# Alerts
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);
