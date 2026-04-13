@@ -1,0 +1,65 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v8
+# Logic: Show prediction lines only within current week
+# WO = last week Monday open
+# WH = last week high (Mon-Fri)
+# WL = last week low (Mon-Fri)
+# WC = last week Friday close (after 16:00)
+# Lines appear from this week Monday, stop at this week Friday 16:00
+
+declare upper;
+
+# Last completed week's data
+def WH = high(period = AggregationPeriod.WEEK)[1];
+def WL = low(period = AggregationPeriod.WEEK)[1];
+def WC = close(period = AggregationPeriod.WEEK)[1];
+def WO = open(period = AggregationPeriod.WEEK)[1];
+
+# Formula
+def P   = (WH + WL + WC + WO) / 4;
+def B   = 2 * P;
+def NWH = B - WL;
+def NWL = B - WH;
+def MID = (NWH + NWL) / 2;
+
+# Show only on current week bars (week[0] exists, week[-1] does not yet)
+# week[-1] = next week: if it exists we are past current week
+def isCurrentWeek = !IsNaN(high(period = AggregationPeriod.WEEK)[0])
+    and IsNaN(high(period = AggregationPeriod.WEEK)[-1]);
+
+def show = isCurrentWeek
+    and !IsNaN(WH) and !IsNaN(WO)
+    and WH > 0 and WL > 0 and WC > 0;
+
+# Plots
+plot NextWeekHigh = if show then NWH else Double.NaN;
+NextWeekHigh.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekHigh.SetLineWeight(3);
+NextWeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekHigh.HideBubble();
+
+plot NextWeekLow = if show then NWL else Double.NaN;
+NextWeekLow.SetDefaultColor(CreateColor(0, 180, 255));
+NextWeekLow.SetLineWeight(3);
+NextWeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+NextWeekLow.HideBubble();
+
+plot MidLine = if show then MID else Double.NaN;
+MidLine.SetDefaultColor(Color.YELLOW);
+MidLine.SetLineWeight(1);
+MidLine.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+MidLine.HideBubble();
+
+AddCloud(NextWeekHigh, NextWeekLow, CreateColor(0, 180, 255), CreateColor(0, 180, 255));
+
+# Labels
+AddLabel(yes, "Weekly Camarilla v8", CreateColor(0, 180, 255));
+AddLabel(yes, "WH: " + AsPrice(WH) + "  WL: " + AsPrice(WL), Color.GRAY);
+AddLabel(yes, "WO: " + AsPrice(WO) + "  WC: " + AsPrice(WC), Color.GRAY);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 180, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 180, 255));
+
+# Alerts
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);

@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "camarilla-weekly-thinkscript-v8.txt",
     "camarilla-weekly-thinkscript-v7.txt",
     "camarilla-weekly-thinkscript-v6.txt",
     "camarilla-weekly-thinkscript-v5.txt",
@@ -222,7 +223,6 @@
     "scripts/nb_mff_q2.png",
     "scripts/nb_mff_q1.png",
     "NotebookLM_Sources/MFF_Eval_Rules_raw.txt",
-    "NotebookLM_Sources/MFF_Terms_raw.txt",
     "NotebookLM_Sources/compliance_output_schema_v1.md",
     "Agent_Prompts/ops_watchlist_v1.md",
     "Agent_Prompts/gatekeeper_v1.md",
