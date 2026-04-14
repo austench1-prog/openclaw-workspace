@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "camarilla-weekly-v2-spec.md",
     "camarilla-weekly-spec.md",
     "camarilla-weekly-thinkscript-v9.txt",
     "camarilla-weekly-thinkscript-v8.txt",
@@ -226,7 +227,6 @@
     "NotebookLM_Sources/compliance_output_schema_v1.md",
     "Agent_Prompts/ops_watchlist_v1.md",
     "Agent_Prompts/gatekeeper_v1.md",
-    "MATS_v1_scope_lock.md",
-    "NotebookLM_Sources/notebooklm_compliance_test_v1_results.md"
+    "MATS_v1_scope_lock.md"
   ]
 }
