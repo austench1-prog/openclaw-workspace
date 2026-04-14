@@ -73,3 +73,9 @@ File naming: `[indicator-name]-spec.md`
 Example: `camarilla-weekly-spec.md`
 
 This prevents losing the original requirement and avoids confusion during iterations.
+
+## TradingView DragonLab
+- URL: https://www.tradingview.com/chart/d1zYpNgC/
+- Purpose: Dragon's dedicated lab for indicator development (no other indicators)
+- Symbol: NQ1! (NASDAQ 100 E-mini Futures)
+- Account: austench1@gmail.com (TV paid account)
