@@ -1,0 +1,64 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v17", overlay=true, max_bars_back=1000)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v17
+// New York Midnight (00:00 ET) = UTC 04:00 during DST (summer)
+//                              = UTC 05:00 during EST (winter)
+// Using UTC 04:00 = ET midnight during DST
+// ============================================================
+
+// Weekly H/L
+LWH = request.security(syminfo.tickerid, "W", high[1])
+LWL = request.security(syminfo.tickerid, "W", low[1])
+
+// ET midnight = UTC 04:00 (DST) or UTC 05:00 (EST)
+// April is DST -> use hour == 4
+ET_MIDNIGHT_UTC = 4  // Change to 5 during winter (EST)
+
+// This week Monday 00:00 ET open
+WO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == ET_MIDNIGHT_UTC and minute == 0 and dayofweek == dayofweek.monday,
+         open, 0),
+     lookahead=barmerge.lookahead_on)
+
+// Last week Monday 00:00 ET open
+LWO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == ET_MIDNIGHT_UTC and minute == 0 and dayofweek == dayofweek.monday,
+         open, 1),
+     lookahead=barmerge.lookahead_on)
+
+// Last week Friday 16:00 ET close = UTC 20:00 during DST
+LWC = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == 20 and minute == 0 and dayofweek == dayofweek.friday,
+         close, 1),
+     lookahead=barmerge.lookahead_on)
+
+// Formula
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Plot
+plot(NWH, "NWH", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(NWL, "NWL", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(MID, "MID", color=color.new(color.yellow, 0), linewidth=1, style=plot.style_linebr)
+
+// Label
+if barstate.islast
+    label.new(bar_index, NWH,
+     "NWH: " + str.tostring(math.round(NWH, 2)) +
+     "\nMID: " + str.tostring(math.round(MID, 2)) +
+     "\nNWL: " + str.tostring(math.round(NWL, 2)) +
+     "\nLWO(Mon 00:00 ET)=" + str.tostring(math.round(LWO, 2)) +
+     "\nLWC(Fri 16:00 ET)=" + str.tostring(math.round(LWC, 2)) +
+     "\nWO(Mon 00:00 ET)=" + str.tostring(math.round(WO, 2)),
+     style=label.style_label_left,
+     color=color.new(color.blue, 20),
+     textcolor=color.white,
+     size=size.small)

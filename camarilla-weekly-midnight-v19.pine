@@ -1,0 +1,82 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v19", overlay=true, max_bars_back=1000)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v19
+// Correct syntax for Pine Script v5
+// Uses timezone parameter in dayofweek() and hour variable
+// ============================================================
+
+// Weekly H/L
+LWH = request.security(syminfo.tickerid, "W", high[1])
+LWL = request.security(syminfo.tickerid, "W", low[1])
+
+// In Pine Script v5, use timestamp and math to get NY timezone
+// NY offset: UTC-5 (EST) or UTC-4 (EDT/summer)
+// April = EDT = UTC-4
+NY_OFFSET = -4 * 60 * 60 * 1000  // -4 hours in milliseconds
+
+// Function to check if a 1h bar is Monday midnight NY time
+// time variable = bar open time in milliseconds UTC
+// Add NY offset to get NY local time
+
+isMonMidnight() =>
+    ny_time = time + NY_OFFSET
+    // Get day of week and hour from ny_time
+    // Pine Script: use timestamp math
+    // 0 = midnight in NY when (time in ms) mod (24*3600000) == 0 after offset
+    seconds_in_day = 24 * 60 * 60 * 1000
+    day_ms = math.floor(ny_time / seconds_in_day) * seconds_in_day
+    hour_ms = ny_time - day_ms
+    hour_ny = math.floor(hour_ms / (60 * 60 * 1000))
+    // dayofweek uses UTC, need NY day
+    dow_ny = dayofweek(ny_time)
+    hour_ny == 0 and dow_ny == dayofweek.monday
+
+isFriClose() =>
+    ny_time = time + NY_OFFSET
+    seconds_in_day = 24 * 60 * 60 * 1000
+    day_ms = math.floor(ny_time / seconds_in_day) * seconds_in_day
+    hour_ms = ny_time - day_ms
+    hour_ny = math.floor(hour_ms / (60 * 60 * 1000))
+    dow_ny = dayofweek(ny_time)
+    hour_ny == 16 and dow_ny == dayofweek.friday
+
+// Get values using 60min bars
+WO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(isMonMidnight(), open, 0),
+     lookahead=barmerge.lookahead_on)
+
+LWO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(isMonMidnight(), open, 1),
+     lookahead=barmerge.lookahead_on)
+
+LWC = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(isFriClose(), close, 1),
+     lookahead=barmerge.lookahead_on)
+
+// Formula
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Plot
+plot(NWH, "NWH", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(NWL, "NWL", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(MID, "MID", color=color.new(color.yellow, 0), linewidth=1, style=plot.style_linebr)
+
+// Label
+if barstate.islast
+    label.new(bar_index, NWH,
+     "NWH=" + str.tostring(math.round(NWH, 2)) +
+     " MID=" + str.tostring(math.round(MID, 2)) +
+     " NWL=" + str.tostring(math.round(NWL, 2)) +
+     "\nLWO=" + str.tostring(math.round(LWO, 2)) +
+     " LWC=" + str.tostring(math.round(LWC, 2)) +
+     " WO=" + str.tostring(math.round(WO, 2)),
+     style=label.style_label_left,
+     color=color.new(color.blue, 20),
+     textcolor=color.white,
+     size=size.small)

@@ -1,0 +1,46 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v14", overlay=true, max_bars_back=500)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v14 (simplified)
+// Uses weekly bars directly for all OHLC data
+// WO = weekly open (Sunday 6pm ET for futures = close to midnight)
+// WC = weekly close (Friday 5pm ET)
+// WH = weekly high
+// WL = weekly low
+// ============================================================
+
+// Get previous week's data directly
+LWH = request.security(syminfo.tickerid, "W", high[1])
+LWL = request.security(syminfo.tickerid, "W", low[1])
+LWO = request.security(syminfo.tickerid, "W", open[1])
+LWC = request.security(syminfo.tickerid, "W", close[1])
+
+// Get this week's open
+WO  = request.security(syminfo.tickerid, "W", open[0])
+
+// Formula: B = 2P + WO - LWC
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Plot lines
+plot(NWH, "NWH", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(NWL, "NWL", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(MID, "MID", color=color.new(color.yellow, 0), linewidth=1, style=plot.style_linebr)
+
+// Verification label
+if barstate.islast
+    label.new(bar_index, NWH,
+     "NWH: " + str.tostring(math.round(NWH, 2)) +
+     "\nMID: " + str.tostring(math.round(MID, 2)) +
+     "\nNWL: " + str.tostring(math.round(NWL, 2)) +
+     "\nLWO=" + str.tostring(math.round(LWO, 2)) +
+     " LWC=" + str.tostring(math.round(LWC, 2)) +
+     "\nWO=" + str.tostring(math.round(WO, 2)),
+     style=label.style_label_left,
+     color=color.new(color.blue, 20),
+     textcolor=color.white,
+     size=size.small)

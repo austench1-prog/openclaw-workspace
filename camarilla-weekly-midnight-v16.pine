@@ -1,0 +1,65 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v16", overlay=true, max_bars_back=1000)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v16
+// Uses 1-hour bars to find exact midnight (00:00) open price
+// New York timezone: midnight = 00:00 ET
+// ============================================================
+
+// Weekly H/L (reliable from weekly bar)
+LWH = request.security(syminfo.tickerid, "W", high[1])
+LWL = request.security(syminfo.tickerid, "W", low[1])
+
+// Use 1h bars to find exact 00:00 Monday open
+// In New York time (ET), midnight Monday = 00:00 Monday
+// Hour bar at 00:00 Monday = the exact midnight open
+
+// This week Monday 00:00 open (most recent Monday 0:00 bar)
+WO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == 0 and minute == 0 and dayofweek == dayofweek.monday,
+         open, 0),
+     lookahead=barmerge.lookahead_on)
+
+// Last week Monday 00:00 open
+LWO = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == 0 and minute == 0 and dayofweek == dayofweek.monday,
+         open, 1),
+     lookahead=barmerge.lookahead_on)
+
+// Last week Friday close: last 1h bar on Friday
+// Friday last bar = 22:00 or 23:00 ET (futures close ~17:00 ET = 22:00 UTC)
+// Use Friday 16:00 ET close (last regular session bar)
+LWC = request.security(syminfo.tickerid, "60",
+     ta.valuewhen(
+         hour == 16 and minute == 0 and dayofweek == dayofweek.friday,
+         close, 1),
+     lookahead=barmerge.lookahead_on)
+
+// Formula
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Plot
+plot(NWH, "NWH", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(NWL, "NWL", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(MID, "MID", color=color.new(color.yellow, 0), linewidth=1, style=plot.style_linebr)
+
+// Verification label
+if barstate.islast
+    label.new(bar_index, NWH,
+     "NWH: " + str.tostring(math.round(NWH, 2)) +
+     "\nMID: " + str.tostring(math.round(MID, 2)) +
+     "\nNWL: " + str.tostring(math.round(NWL, 2)) +
+     "\nLWO(Mon 00:00)=" + str.tostring(math.round(LWO, 2)) +
+     "\nLWC(Fri 16:00)=" + str.tostring(math.round(LWC, 2)) +
+     "\nWO(Mon 00:00)=" + str.tostring(math.round(WO, 2)),
+     style=label.style_label_left,
+     color=color.new(color.blue, 20),
+     textcolor=color.white,
+     size=size.small)

@@ -1,0 +1,68 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v15", overlay=true, max_bars_back=500)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v15
+// LWO = Last Monday 00:00 open (daily bar Monday open = midnight open for futures)
+// LWC = Last Friday close (daily bar Friday close)
+// LWH = Last week High (weekly bar)
+// LWL = Last week Low (weekly bar)
+// WO  = This Monday 00:00 open
+// B   = 2P + WO - LWC
+// ============================================================
+
+// Weekly H/L from weekly bar (most reliable)
+LWH = request.security(syminfo.tickerid, "W", high[1])
+LWL = request.security(syminfo.tickerid, "W", low[1])
+
+// Get Monday open and Friday close from daily bars
+// dayofweek: sunday=1, monday=2, tuesday=3, wednesday=4, thursday=5, friday=6
+f_dayOpen(d) =>
+    request.security(syminfo.tickerid, "D",
+     ta.valuewhen(dayofweek == d, open, 0))
+
+f_dayClose(d) =>
+    request.security(syminfo.tickerid, "D",
+     ta.valuewhen(dayofweek == d, close, 0))
+
+// This week Monday open (occurrence=0 = most recent Monday)
+WO_raw  = request.security(syminfo.tickerid, "D",
+     ta.valuewhen(dayofweek == dayofweek.monday, open, 0))
+
+// Last week Monday open (occurrence=1 = second most recent Monday)
+LWO_raw = request.security(syminfo.tickerid, "D",
+     ta.valuewhen(dayofweek == dayofweek.monday, open, 1))
+
+// Last week Friday close (occurrence=1 = second most recent Friday)
+LWC_raw = request.security(syminfo.tickerid, "D",
+     ta.valuewhen(dayofweek == dayofweek.friday, close, 1))
+
+WO  = WO_raw
+LWO = LWO_raw
+LWC = LWC_raw
+
+// Formula
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Plot
+plot(NWH, "NWH", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(NWL, "NWL", color=color.new(color.blue, 0), linewidth=2, style=plot.style_linebr)
+plot(MID, "MID", color=color.new(color.yellow, 0), linewidth=1, style=plot.style_linebr)
+
+// Label
+if barstate.islast
+    label.new(bar_index, NWH,
+     "NWH: " + str.tostring(math.round(NWH, 2)) +
+     "\nMID: " + str.tostring(math.round(MID, 2)) +
+     "\nNWL: " + str.tostring(math.round(NWL, 2)) +
+     "\nLWO(Mon)=" + str.tostring(math.round(LWO, 2)) +
+     " LWC(Fri)=" + str.tostring(math.round(LWC, 2)) +
+     "\nWO(Mon)=" + str.tostring(math.round(WO, 2)),
+     style=label.style_label_left,
+     color=color.new(color.blue, 20),
+     textcolor=color.white,
+     size=size.small)
