@@ -61,3 +61,15 @@ Add whatever helps you do your job. This is your cheat sheet.
 - `camarilla-weekly-thinkscript-v4.txt` ← current latest
 - `camarilla-weekly-thinkscript-v3.txt`
 - `camarilla-weekly-thinkscript.txt` ← original v1
+
+## Indicator Development SOP
+
+**Before writing any indicator code:**
+1. Ask Chairman to confirm the logic in plain text
+2. Save the confirmed logic as a .md file in workspace
+3. Only then write the code
+
+File naming: `[indicator-name]-spec.md`
+Example: `camarilla-weekly-spec.md`
+
+This prevents losing the original requirement and avoids confusion during iterations.
