@@ -182,6 +182,7 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "camarilla-weekly-spec.md",
     "camarilla-weekly-thinkscript-v9.txt",
     "camarilla-weekly-thinkscript-v8.txt",
     "camarilla-weekly-thinkscript-v7.txt",
@@ -193,7 +194,6 @@
     "memory/2026-04-12.md",
     "NotebookLM_Sources/Apex_Prohibited_Activities_raw.txt",
     "scripts/backup.log",
-    "scripts/backup_to_icloud.sh",
     "MEMORY.md",
     "Agent_Prompts/compliance_framework_v1.md",
     "待处理/Hedging_Rules_Research_v1.md",
