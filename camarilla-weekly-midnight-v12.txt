@@ -1,0 +1,96 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v12 (Midnight Edition)
+# Spec: camarilla-weekly-v2-spec.md
+#
+# Key fix: Use SecondsFromTime to identify Monday 00:00 bar precisely
+# LWH/LWL = weekly bar [1] (reliable)
+# LWO = Last Monday 00:00 open (identified by day + time)
+# LWC = Last Friday close (identified by day + time)  
+# WO  = This Monday 00:00 open
+# B   = 2P + WO - LWC
+
+declare upper;
+
+# Weekly H/L from weekly bar (most reliable source)
+def LWH = high(period = AggregationPeriod.WEEK)[1];
+def LWL = low(period = AggregationPeriod.WEEK)[1];
+
+# Day of week: Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6, Sat=7
+def DOW = GetDayOfWeek(GetYYYYMMDD());
+
+# Time functions
+# SecondsFromTime(0) = seconds elapsed since midnight 00:00
+# At exactly 00:00, SecondsFromTime(0) = 0
+
+# Identify Monday 00:00 bar
+def isMondayMidnight = DOW == 2 and SecondsFromTime(0) == 0;
+
+# Identify Friday 15:59 bar (last bar before 16:00 close)
+def isFridayClose = DOW == 6 and SecondsFromTime(1559) >= 0 and SecondsFromTime(1600) < 0;
+
+# Get Monday 00:00 open - carry forward through the week
+def mondayOpen = if isMondayMidnight then open else mondayOpen[1];
+
+# Get Friday 15:59 close - carry forward
+def fridayClose = if isFridayClose then close else fridayClose[1];
+
+# WO = This week's Monday 00:00 open
+# Look back to find this week's Monday value
+def WO = mondayOpen;
+
+# LWC = Last week's Friday close
+# Need the Friday close from last week (before this Monday)
+def LWC = if DOW == 2 then fridayClose[1] else LWC[1];
+
+# LWO = Last week's Monday 00:00 open
+# Need Monday open from last week
+def LWO = if DOW == 2 then mondayOpen[5] else LWO[1];
+
+# Formula
+def P   = (LWH + LWL + LWO + LWC) / 4;
+def B   = 2 * P + WO - LWC;
+def NWH = B - LWL;
+def NWL = B - LWH;
+def MID = (NWH + NWL) / 2;
+
+# Show only on weekdays
+def isWeekday = DOW >= 2 and DOW <= 6;
+
+def show = isWeekday
+    and !IsNaN(LWH) and !IsNaN(LWL)
+    and LWO > 0 and LWC > 0 and WO > 0
+    and LWH > 0 and LWL > 0;
+
+# Plots
+plot WeekHigh = if show then NWH else Double.NaN;
+WeekHigh.SetDefaultColor(CreateColor(0, 200, 255));
+WeekHigh.SetLineWeight(3);
+WeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekHigh.HideBubble();
+
+plot WeekLow = if show then NWL else Double.NaN;
+WeekLow.SetDefaultColor(CreateColor(0, 200, 255));
+WeekLow.SetLineWeight(3);
+WeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekLow.HideBubble();
+
+plot WeekMid = if show then MID else Double.NaN;
+WeekMid.SetDefaultColor(Color.YELLOW);
+WeekMid.SetLineWeight(1);
+WeekMid.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekMid.HideBubble();
+
+AddCloud(WeekHigh, WeekLow, CreateColor(0, 200, 255), CreateColor(0, 200, 255));
+
+# Labels for verification
+AddLabel(yes, "Weekly Camarilla v12 (Midnight)", CreateColor(0, 200, 255));
+AddLabel(yes, "LWH: " + AsPrice(LWH) + "  LWL: " + AsPrice(LWL), Color.GRAY);
+AddLabel(yes, "LWO(Mon 00:00): " + AsPrice(LWO), Color.GRAY);
+AddLabel(yes, "LWC(Fri close): " + AsPrice(LWC), Color.GRAY);
+AddLabel(yes, "WO(this Mon 00:00): " + AsPrice(WO), Color.WHITE);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 200, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 200, 255));
+
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);
