@@ -1,0 +1,78 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v10 (Midnight Edition)
+# Spec: camarilla-weekly-v2-spec.md
+# Confirmed by Chairman 2026-04-13
+#
+# LWH = Last week High
+# LWL = Last week Low
+# LWO = Last week Open (Monday 0:01 / Sunday 6pm ET futures open)
+# LWC = Last week Close (Friday 15:59 / 5pm ET futures close)
+# WO  = This week Open (Monday 0:01 / Sunday 6pm ET)
+# P   = (LWH + LWL + LWO + LWC) / 4
+# B   = 2P + WO - LWC
+# NWH = B - LWL  <- This week predicted High
+# NWL = B - LWH  <- This week predicted Low
+
+declare upper;
+
+# Last completed week's data (L = Last week)
+def LWH = high(period = AggregationPeriod.WEEK)[1];
+def LWL = low(period = AggregationPeriod.WEEK)[1];
+def LWO = open(period = AggregationPeriod.WEEK)[1];
+def LWC = close(period = AggregationPeriod.WEEK)[1];
+
+# This week's open (WO = Monday 0:01 / Sunday 6pm ET futures open)
+def WO = open(period = AggregationPeriod.WEEK)[0];
+
+# Formula v2
+def P   = (LWH + LWL + LWO + LWC) / 4;
+def B   = 2 * P + WO - LWC;
+def NWH = B - LWL;
+def NWL = B - LWH;
+def MID = (NWH + NWL) / 2;
+
+# Show only on weekdays (Mon-Fri), not weekends or future
+# Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6, Sat=7
+def dow = GetDayOfWeek(GetYYYYMMDD());
+def isWeekday = dow >= 2 and dow <= 6;
+
+def show = isWeekday
+    and !IsNaN(LWH) and !IsNaN(LWL)
+    and !IsNaN(LWO) and !IsNaN(LWC)
+    and !IsNaN(WO)
+    and LWH > 0 and LWL > 0 and WO > 0;
+
+# Plots
+plot WeekHigh = if show then NWH else Double.NaN;
+WeekHigh.SetDefaultColor(CreateColor(0, 200, 255));
+WeekHigh.SetLineWeight(3);
+WeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekHigh.HideBubble();
+
+plot WeekLow = if show then NWL else Double.NaN;
+WeekLow.SetDefaultColor(CreateColor(0, 200, 255));
+WeekLow.SetLineWeight(3);
+WeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekLow.HideBubble();
+
+plot WeekMid = if show then MID else Double.NaN;
+WeekMid.SetDefaultColor(Color.YELLOW);
+WeekMid.SetLineWeight(1);
+WeekMid.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekMid.HideBubble();
+
+AddCloud(WeekHigh, WeekLow, CreateColor(0, 200, 255), CreateColor(0, 200, 255));
+
+# Labels - show all input values for verification
+AddLabel(yes, "Weekly Camarilla v10 (Midnight)", CreateColor(0, 200, 255));
+AddLabel(yes, "LWH: " + AsPrice(LWH) + "  LWL: " + AsPrice(LWL), Color.GRAY);
+AddLabel(yes, "LWO: " + AsPrice(LWO) + "  LWC: " + AsPrice(LWC), Color.GRAY);
+AddLabel(yes, "WO(this week): " + AsPrice(WO), Color.WHITE);
+AddLabel(yes, "P: " + AsPrice(P) + "  B: " + AsPrice(B), Color.GRAY);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 200, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 200, 255));
+
+# Alerts
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);
