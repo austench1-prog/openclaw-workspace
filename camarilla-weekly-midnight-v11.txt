@@ -1,0 +1,106 @@
+# Camarilla Weekly Formula - TOS ThinkScript
+# Version: v11 (Midnight Edition)
+# Spec: camarilla-weekly-v2-spec.md
+# Fix: LWO and WO use Monday 00:00 daily bar open (not Sunday 6pm weekly bar open)
+#
+# LWH = Last week High (weekly bar, reliable)
+# LWL = Last week Low (weekly bar, reliable)
+# LWO = Last week Monday 00:00 open (daily bar)
+# LWC = Last week Friday close (daily bar)
+# WO  = This week Monday 00:00 open (daily bar)
+# P   = (LWH + LWL + LWO + LWC) / 4
+# B   = 2P + WO - LWC
+# NWH = B - LWL
+# NWL = B - LWH
+
+declare upper;
+
+# Last week High and Low from weekly bar (most reliable)
+def LWH = high(period = AggregationPeriod.WEEK)[1];
+def LWL = low(period = AggregationPeriod.WEEK)[1];
+
+# Day of week for current bar
+# Sun=1, Mon=2, Tue=3, Wed=4, Thu=5, Fri=6, Sat=7
+def dow = GetDayOfWeek(GetYYYYMMDD());
+
+# LWO = Last week Monday 00:00 open
+# From today (Mon=2), last Monday was 7 trading days ago in calendar
+# But in daily bars: Mon to Mon = 5 trading days back
+# Using daily bar: [5] from today (Monday) goes back to last Monday
+def LWO =
+    if dow == 2 then open(period = AggregationPeriod.DAY)[5]   # Mon: 5 days back
+    else if dow == 3 then open(period = AggregationPeriod.DAY)[6]   # Tue
+    else if dow == 4 then open(period = AggregationPeriod.DAY)[7]   # Wed
+    else if dow == 5 then open(period = AggregationPeriod.DAY)[8]   # Thu
+    else if dow == 6 then open(period = AggregationPeriod.DAY)[9]   # Fri
+    else open(period = AggregationPeriod.DAY)[5];
+
+# LWC = Last week Friday close
+# From today (Monday), last Friday was 1 trading day back
+def LWC =
+    if dow == 2 then close(period = AggregationPeriod.DAY)[1]  # Mon: Fri was 1 day back
+    else if dow == 3 then close(period = AggregationPeriod.DAY)[2]
+    else if dow == 4 then close(period = AggregationPeriod.DAY)[3]
+    else if dow == 5 then close(period = AggregationPeriod.DAY)[4]
+    else if dow == 6 then close(period = AggregationPeriod.DAY)[5]  # Fri: last Fri was 5 back
+    else close(period = AggregationPeriod.DAY)[1];
+
+# WO = This week Monday 00:00 open
+# From today (Monday), this Monday is today = [0]
+def WO =
+    if dow == 2 then open(period = AggregationPeriod.DAY)[0]   # Mon: today
+    else if dow == 3 then open(period = AggregationPeriod.DAY)[1]   # Tue: Mon was yesterday
+    else if dow == 4 then open(period = AggregationPeriod.DAY)[2]
+    else if dow == 5 then open(period = AggregationPeriod.DAY)[3]
+    else if dow == 6 then open(period = AggregationPeriod.DAY)[4]
+    else open(period = AggregationPeriod.DAY)[0];
+
+# Formula
+def P   = (LWH + LWL + LWO + LWC) / 4;
+def B   = 2 * P + WO - LWC;
+def NWH = B - LWL;
+def NWL = B - LWH;
+def MID = (NWH + NWL) / 2;
+
+# Show only on weekdays
+def isWeekday = dow >= 2 and dow <= 6;
+
+def show = isWeekday
+    and !IsNaN(LWH) and !IsNaN(LWL)
+    and !IsNaN(LWO) and !IsNaN(LWC)
+    and !IsNaN(WO)
+    and LWH > 0 and LWL > 0 and WO > 0;
+
+# Plots
+plot WeekHigh = if show then NWH else Double.NaN;
+WeekHigh.SetDefaultColor(CreateColor(0, 200, 255));
+WeekHigh.SetLineWeight(3);
+WeekHigh.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekHigh.HideBubble();
+
+plot WeekLow = if show then NWL else Double.NaN;
+WeekLow.SetDefaultColor(CreateColor(0, 200, 255));
+WeekLow.SetLineWeight(3);
+WeekLow.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekLow.HideBubble();
+
+plot WeekMid = if show then MID else Double.NaN;
+WeekMid.SetDefaultColor(Color.YELLOW);
+WeekMid.SetLineWeight(1);
+WeekMid.SetPaintingStrategy(PaintingStrategy.HORIZONTAL);
+WeekMid.HideBubble();
+
+AddCloud(WeekHigh, WeekLow, CreateColor(0, 200, 255), CreateColor(0, 200, 255));
+
+# Labels - all inputs for verification
+AddLabel(yes, "Weekly Camarilla v11 (Midnight)", CreateColor(0, 200, 255));
+AddLabel(yes, "LWH: " + AsPrice(LWH) + "  LWL: " + AsPrice(LWL), Color.GRAY);
+AddLabel(yes, "LWO(Mon 00:00): " + AsPrice(LWO) + "  LWC(Fri close): " + AsPrice(LWC), Color.GRAY);
+AddLabel(yes, "WO(this Mon 00:00): " + AsPrice(WO), Color.WHITE);
+AddLabel(yes, "P: " + AsPrice(P) + "  B: " + AsPrice(B), Color.GRAY);
+AddLabel(yes, "NWH: " + AsPrice(NWH), CreateColor(0, 200, 255));
+AddLabel(yes, "MID: " + AsPrice(MID), Color.YELLOW);
+AddLabel(yes, "NWL: " + AsPrice(NWL), CreateColor(0, 200, 255));
+
+Alert(show and close >= NWH, "Touched Week High: " + AsPrice(NWH), Alert.BAR, Sound.Bell);
+Alert(show and close <= NWL, "Touched Week Low: " + AsPrice(NWL), Alert.BAR, Sound.Bell);
