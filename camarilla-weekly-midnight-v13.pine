@@ -1,0 +1,76 @@
+//@version=5
+indicator("Camarilla Weekly Midnight v13", overlay=true)
+
+// ============================================================
+// Camarilla Weekly - Midnight Edition v13
+// Spec: camarilla-weekly-v2-spec.md
+//
+// LWO = Last week Monday 00:00 open (midnight)
+// LWC = Last week Friday close
+// LWH = Last week High
+// LWL = Last week Low
+// WO  = This week Monday 00:00 open (midnight)
+// P   = (LWH + LWL + LWO + LWC) / 4
+// B   = 2P + WO - LWC
+// NWH = B - LWL
+// NWL = B - LWH
+// ============================================================
+
+// Weekly High/Low (reliable from weekly bar)
+LWH = request.security(syminfo.tickerid, "W", high[1], lookahead=barmerge.lookahead_on)
+LWL = request.security(syminfo.tickerid, "W", low[1], lookahead=barmerge.lookahead_on)
+
+// Monday open and Friday close using daily bars
+// dayofweek: sunday=1, monday=2, tuesday=3, wednesday=4, thursday=5, friday=6, saturday=7
+isMonday = request.security(syminfo.tickerid, "D", dayofweek == dayofweek.monday, lookahead=barmerge.lookahead_on)
+isFriday = request.security(syminfo.tickerid, "D", dayofweek == dayofweek.friday, lookahead=barmerge.lookahead_on)
+
+// Last week Monday 00:00 open
+// ta.valuewhen(condition, source, occurrence): occurrence=0 = most recent, 1 = second most recent
+LWO = request.security(syminfo.tickerid, "D", 
+     ta.valuewhen(dayofweek == dayofweek.monday, open, 1), 
+     lookahead=barmerge.lookahead_on)
+
+// Last week Friday close
+LWC = request.security(syminfo.tickerid, "D", 
+     ta.valuewhen(dayofweek == dayofweek.friday, close, 1), 
+     lookahead=barmerge.lookahead_on)
+
+// This week Monday 00:00 open
+WO = request.security(syminfo.tickerid, "D", 
+     ta.valuewhen(dayofweek == dayofweek.monday, open, 0), 
+     lookahead=barmerge.lookahead_on)
+
+// Formula
+P   = (LWH + LWL + LWO + LWC) / 4
+B   = 2 * P + WO - LWC
+NWH = B - LWL
+NWL = B - LWH
+MID = (NWH + NWL) / 2
+
+// Display
+plot(NWH, "Week High", color=color.new(color.blue, 0), linewidth=2)
+plot(NWL, "Week Low",  color=color.new(color.blue, 0), linewidth=2)
+plot(MID, "Mid",       color=color.new(color.yellow, 0), linewidth=1)
+
+// Fill between NWH and NWL
+nwh_plot = plot(NWH, display=display.none)
+nwl_plot = plot(NWL, display=display.none)
+fill(nwh_plot, nwl_plot, color=color.new(color.blue, 85), title="Zone")
+
+// Verification label on last bar
+if barstate.islast
+    label.new(bar_index + 2, NWH + (NWH - NWL) * 0.1,
+     "NWH: " + str.tostring(NWH, "#.##") + 
+     "\nMID: " + str.tostring(MID, "#.##") +
+     "\nNWL: " + str.tostring(NWL, "#.##") +
+     "\n--- Inputs ---" +
+     "\nLWH: " + str.tostring(LWH, "#.##") +
+     "\nLWL: " + str.tostring(LWL, "#.##") +
+     "\nLWO: " + str.tostring(LWO, "#.##") +
+     "\nLWC: " + str.tostring(LWC, "#.##") +
+     "\nWO:  " + str.tostring(WO, "#.##"),
+     style=label.style_label_left, 
+     color=color.new(color.blue, 20), 
+     textcolor=color.white, 
+     size=size.small)
