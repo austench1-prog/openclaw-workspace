@@ -11,9 +11,18 @@
 |---|---|
 | LWH | Last week High |
 | LWL | Last week Low |
-| LWO | Last week Open — Monday 0:01 (midnight, futures open) |
+| LWO | Last week Open — **Monday 00:00 midnight** (NOT Sunday 6pm ET) |
 | LWC | Last week Close — Friday 15:59 |
-| WO | This week Open — Monday 0:01 (midnight, futures open) |
+| WO | This week Open — **Monday 00:00 midnight** (NOT Sunday 6pm ET) |
+
+## Data Source Confirmation (2026-04-13)
+
+| Variable | open(WEEK) value | Correct midnight value | Difference |
+|---|---|---|---|
+| WO (this week) | 24980 (Sun 6pm ET) | 25059 (Mon 00:00) | +79 pts |
+| LWO (last week) | 24093 (Sun 6pm ET) | 24224 (Mon 00:00) | +131 pts |
+
+**Conclusion:** Must use Monday 00:00 daily bar open, NOT weekly bar open.
 | P | (LWH + LWL + LWO + LWC) / 4 |
 | B | 2P + WO - LWC |
 | NWH | B - LWL → This week predicted High |
