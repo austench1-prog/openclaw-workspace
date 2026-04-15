@@ -182,6 +182,9 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "scripts/dl_v20.png",
+    "camarilla-weekly-midnight-v20.pine",
+    "Trading/NQ_Weekly_Camarilla_Data.csv",
     "memory/2026-04-14.md",
     "Trading/Camarilla_Weekly_Midnight_Research_Report.md",
     "scripts/dl_1h_current.png",
@@ -204,8 +207,6 @@
     "memory/2026-04-13.md",
     "Agent_Prompts/indicator_dev_workflow_v1.md",
     "camarilla-weekly-midnight-v12.txt",
-    "camarilla-weekly-midnight-v11.txt",
-    "camarilla-weekly-midnight-v10.txt",
     "camarilla-weekly-v2-spec.md",
     "camarilla-weekly-spec.md",
     "memory/2026-04-12.md",
@@ -226,7 +227,6 @@
     "Agent_Prompts/prop_firm_purchase_sop_v1.md",
     "Agent_Prompts/gatekeeper_paper_test_v1.md",
     "NotebookLM_Sources/Account_Sourced_Compliance_Pack_v2.md",
-    "NotebookLM_Sources/compliance_pack_definition_v1.md",
-    "NotebookLM_Sources/notebooklm_mff_test_v1_results.md"
+    "NotebookLM_Sources/compliance_pack_definition_v1.md"
   ]
 }
