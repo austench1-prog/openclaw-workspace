@@ -1,19 +1,16 @@
 //@version=6
 // Camarilla Formula 3 — GC (Gold Futures)
-// Session: 18:00 ET open → 17:00 ET close (CME Globex natural session)
-// O = 18:00 ET open = TV daily bar open[1] for GC ✓
+// O = 18:00 ET open = TV daily bar open[1] for GC
 // P = (H + L + C + O) / 4
 // TH = 2P - L  |  TL = 2P - H  |  MID = (TH + TL) / 2
 
-indicator("Camarilla F3 - GC Gold", overlay=true, max_lines_count=500, max_labels_count=500)
+indicator("Camarilla F3 - GC Gold", overlay=true, max_labels_count=10)
 
 // ── Daily OHLC (previous session)
-prevH     = request.security(syminfo.tickerid, "D", high[1],    lookahead=barmerge.lookahead_on)
-prevL     = request.security(syminfo.tickerid, "D", low[1],     lookahead=barmerge.lookahead_on)
-prevC     = request.security(syminfo.tickerid, "D", close[1],   lookahead=barmerge.lookahead_on)
-prevO     = request.security(syminfo.tickerid, "D", open[1],    lookahead=barmerge.lookahead_on)
-sessOpen  = request.security(syminfo.tickerid, "D", time,       lookahead=barmerge.lookahead_on)
-sessClose = request.security(syminfo.tickerid, "D", time_close, lookahead=barmerge.lookahead_on)
+prevH = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+prevO = request.security(syminfo.tickerid, "D", open[1],  lookahead=barmerge.lookahead_on)
 
 // ── Camarilla levels
 P   = (prevH + prevL + prevC + prevO) / 4
@@ -22,35 +19,24 @@ TH  = B - prevL
 TL  = B - prevH
 MID = (TH + TL) / 2
 
-// ── Drawing objects (all drawn on last bar — most reliable)
-var line     lnTH   = na
-var line     lnTL   = na
-var line     lnMID  = na
-var linefill lfZone = na
-var label    lbTH   = na
-var label    lbTL   = na
-var label    lbMID  = na
+// ── Plot lines (always visible, no drift, no time condition needed)
+pTH  = plot(TH,  title="TH",  color=color.fuchsia, linewidth=2)
+pTL  = plot(TL,  title="TL",  color=color.fuchsia, linewidth=2)
+pMID = plot(MID, title="MID", color=color.yellow,  linewidth=1)
+fill(pTH, pTL, color=color.new(color.purple, 85), title="F3 Zone")
 
-if barstate.islast and not na(prevH)
-    // Clean up
-    line.delete(lnTH)
-    line.delete(lnTL)
-    line.delete(lnMID)
-    linefill.delete(lfZone)
+// ── Labels at last bar
+var label lbTH  = na
+var label lbTL  = na
+var label lbMID = na
+
+if barstate.islast and not na(TH)
     label.delete(lbTH)
     label.delete(lbTL)
     label.delete(lbMID)
-
-    // Lines anchored to session timestamps
-    lnTH   := line.new(sessOpen, TH,  sessClose, TH,  xloc=xloc.bar_time, color=color.fuchsia, width=2)
-    lnTL   := line.new(sessOpen, TL,  sessClose, TL,  xloc=xloc.bar_time, color=color.fuchsia, width=2)
-    lnMID  := line.new(sessOpen, MID, sessClose, MID, xloc=xloc.bar_time, color=color.yellow,  width=1)
-    lfZone := linefill.new(lnTH, lnTL, color=color.new(color.purple, 85))
-
-    // Labels at current bar (always visible)
-    lbTH   := label.new(bar_index + 1, TH,  "TH "  + str.tostring(TH,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
-    lbTL   := label.new(bar_index + 1, TL,  "TL "  + str.tostring(TL,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
-    lbMID  := label.new(bar_index + 1, MID, "MID " + str.tostring(MID, "#.00"), color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTH  := label.new(bar_index + 1, TH,  "TH "  + str.tostring(TH,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(bar_index + 1, TL,  "TL "  + str.tostring(TL,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index + 1, MID, "MID " + str.tostring(MID, "#.00"), color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
 
 // ── Info table
 var table tbl = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 55), border_width=1)
