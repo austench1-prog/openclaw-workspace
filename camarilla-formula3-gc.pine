@@ -19,10 +19,13 @@ TH  = B - prevL
 TL  = B - prevH
 MID = (TH + TL) / 2
 
-// ── Plot lines (always visible, no drift, no time condition needed)
-pTH  = plot(TH,  title="TH",  color=color.fuchsia, linewidth=2)
-pTL  = plot(TL,  title="TL",  color=color.fuchsia, linewidth=2)
-pMID = plot(MID, title="MID", color=color.yellow,  linewidth=1)
+// ── Session filter: GC trades 18:00–17:00 ET, maintenance 17:00–18:00
+// Hide lines during maintenance window (hour == 17 ET)
+inSession = hour != 17
+
+pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pTL  = plot(inSession ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pMID = plot(inSession ? MID : na, title="MID", color=color.yellow,  linewidth=1, style=plot.style_linebr)
 fill(pTH, pTL, color=color.new(color.purple, 85), title="F3 Zone")
 
 // ── Labels at last bar
