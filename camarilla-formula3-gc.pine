@@ -7,10 +7,11 @@
 indicator("Camarilla F3 - GC Gold", overlay=true, max_labels_count=10)
 
 // ── Daily OHLC (previous session)
-prevH = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
-prevL = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
-prevC = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
-prevO = request.security(syminfo.tickerid, "D", open[1],  lookahead=barmerge.lookahead_on)
+prevH    = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL    = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC    = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+prevO    = request.security(syminfo.tickerid, "D", open[1],  lookahead=barmerge.lookahead_on)
+sessOpen = request.security(syminfo.tickerid, "D", time,     lookahead=barmerge.lookahead_on)
 
 // ── Camarilla levels
 P   = (prevH + prevL + prevC + prevO) / 4
