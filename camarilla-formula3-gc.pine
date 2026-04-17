@@ -27,8 +27,10 @@ isNewSess = sessOpen != lastSessTime
 if isNewSess
     lastSessTime := sessOpen
 
-// Hide during maintenance AND on the first bar of each new session
-inSession = hour != 17 and not isNewSess
+// Show: 18:00 ET open → 13:30 ET close (COMEX pit close)
+// Hide: 13:30–18:00 (including 17:00–18:00 maintenance)
+afterPitClose = (hour == 13 and minute >= 30) or hour > 13
+inSession = not afterPitClose and not isNewSess
 
 pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
 pTL  = plot(inSession ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
