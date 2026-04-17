@@ -59,14 +59,20 @@ if isNewDay
     lnMID  := line.new(t1, MID, t2, MID, xloc=xloc.bar_time, color=color.yellow,  width=1)
     lfZone := linefill.new(lnTH, lnTL, color=color.new(color.purple, 85))
 
-    lbTH  := label.new(t2, TH,  "TH "  + str.tostring(TH,  "#.00"), xloc=xloc.bar_time, color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
-    lbTL  := label.new(t2, TL,  "TL "  + str.tostring(TL,  "#.00"), xloc=xloc.bar_time, color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
-    lbMID := label.new(t2, MID, "MID " + str.tostring(MID, "#.00"), xloc=xloc.bar_time, color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
+    // Labels: use bar_index so they always appear at the current last bar (visible on chart)
+    lbTH  := label.new(bar_index + 1, TH,  "TH "  + str.tostring(TH,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(bar_index + 1, TL,  "TL "  + str.tostring(TL,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index + 1, MID, "MID " + str.tostring(MID, "#.00"), color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
 
 // ── Info table (top-right)
 var table tbl = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 55), border_width=1)
 
 if barstate.islast and not na(prevH)
+    // Update label positions to stay at current last bar
+    label.set_x(lbTH,  bar_index + 1)
+    label.set_x(lbTL,  bar_index + 1)
+    label.set_x(lbMID, bar_index + 1)
+
     table.cell(tbl, 0, 0, "F3 - GC Gold",  text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
     table.cell(tbl, 1, 0, "TODAY Active",  text_color=color.black,  bgcolor=color.new(color.blue,  20), text_size=size.small)
     table.cell(tbl, 0, 1, "H",             text_color=color.white,  bgcolor=color.new(color.gray,  60), text_size=size.small)
