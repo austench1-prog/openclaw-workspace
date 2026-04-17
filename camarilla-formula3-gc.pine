@@ -20,8 +20,14 @@ TL  = B - prevH
 MID = (TH + TL) / 2
 
 // ── Session filter: GC trades 18:00–17:00 ET, maintenance 17:00–18:00
-// Hide lines during maintenance window (hour == 17 ET)
-inSession = hour != 17
+// Also set na on first bar of new session (18:00) to prevent staircase connection
+var int lastSessTime = na
+isNewSess = sessOpen != lastSessTime
+if isNewSess
+    lastSessTime := sessOpen
+
+// Hide during maintenance AND on the first bar of each new session
+inSession = hour != 17 and not isNewSess
 
 pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
 pTL  = plot(inSession ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
