@@ -1,0 +1,87 @@
+//@version=6
+// Camarilla Formula 3 — GC (Gold Futures)
+// Session: 18:00 ET open → 17:00 ET close (CME Globex natural session)
+// O = session open (18:00 ET) = TV daily bar open[1] for GC ✓
+// P = (H + L + C + O) / 4
+// TH = 2P - L   |   TL = 2P - H   |   MID = (TH + TL) / 2
+//
+// Fix: lines drawn with xloc.bar_time (timestamp-based) → no drift on any timeframe
+
+indicator("Camarilla F3 - GC Gold", overlay=true, max_lines_count=500, max_labels_count=500)
+
+// ── Daily OHLC
+// For GC, TV daily bar opens at 18:00 ET, so open[1] = yesterday's natural 18:00 open ✓
+prevH      = request.security(syminfo.tickerid, "D", high[1],       lookahead=barmerge.lookahead_on)
+prevL      = request.security(syminfo.tickerid, "D", low[1],        lookahead=barmerge.lookahead_on)
+prevC      = request.security(syminfo.tickerid, "D", close[1],      lookahead=barmerge.lookahead_on)
+prevO      = request.security(syminfo.tickerid, "D", open[1],       lookahead=barmerge.lookahead_on)
+dTime      = request.security(syminfo.tickerid, "D", time,          lookahead=barmerge.lookahead_on)
+dTimeClose = request.security(syminfo.tickerid, "D", time_close,    lookahead=barmerge.lookahead_on)
+
+// ── Camarilla levels
+P   = (prevH + prevL + prevC + prevO) / 4
+B   = 2 * P
+TH  = B - prevL
+TL  = B - prevH
+MID = (TH + TL) / 2
+
+// ── Detect new daily session (first intraday bar of each new GC day)
+var int lastDay = na
+isNewDay = dTime != lastDay and not na(prevH)
+
+// ── Persistent drawing objects
+var line     lnTH   = na
+var line     lnTL   = na
+var line     lnMID  = na
+var linefill lfZone = na
+var label    lbTH   = na
+var label    lbTL   = na
+var label    lbMID  = na
+
+if isNewDay
+    lastDay := dTime
+
+    // Clean up previous session drawings
+    line.delete(lnTH)
+    line.delete(lnTL)
+    line.delete(lnMID)
+    linefill.delete(lfZone)
+    label.delete(lbTH)
+    label.delete(lbTL)
+    label.delete(lbMID)
+
+    int t1 = dTime        // session open  (18:00 ET)
+    int t2 = dTimeClose   // session close (17:00 ET next day)
+
+    // Draw lines anchored to timestamps — no bar-index drift
+    lnTH   := line.new(t1, TH,  t2, TH,  xloc=xloc.bar_time, color=color.fuchsia, width=2)
+    lnTL   := line.new(t1, TL,  t2, TL,  xloc=xloc.bar_time, color=color.fuchsia, width=2)
+    lnMID  := line.new(t1, MID, t2, MID, xloc=xloc.bar_time, color=color.yellow,  width=1)
+    lfZone := linefill.new(lnTH, lnTL, color=color.new(color.purple, 85))
+
+    lbTH  := label.new(t2, TH,  "TH "  + str.tostring(TH,  "#.00"), xloc=xloc.bar_time, color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(t2, TL,  "TL "  + str.tostring(TL,  "#.00"), xloc=xloc.bar_time, color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(t2, MID, "MID " + str.tostring(MID, "#.00"), xloc=xloc.bar_time, color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
+
+// ── Info table (top-right)
+var table tbl = table.new(position.top_right, 2, 9, bgcolor=color.new(color.black, 55), border_width=1)
+
+if barstate.islast and not na(prevH)
+    table.cell(tbl, 0, 0, "F3 - GC Gold",  text_color=color.yellow, bgcolor=color.new(color.black, 30), text_size=size.small)
+    table.cell(tbl, 1, 0, "TODAY Active",  text_color=color.black,  bgcolor=color.new(color.blue,  20), text_size=size.small)
+    table.cell(tbl, 0, 1, "H",             text_color=color.white,  bgcolor=color.new(color.gray,  60), text_size=size.small)
+    table.cell(tbl, 1, 1, str.tostring(prevH, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 2, "L",             text_color=color.white,  bgcolor=color.new(color.gray,  60), text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(prevL, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 3, "C",             text_color=color.white,  bgcolor=color.new(color.gray,  60), text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(prevC, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 4, "O 18:00",       text_color=color.white,  bgcolor=color.new(color.gray,  60), text_size=size.small)
+    table.cell(tbl, 1, 4, str.tostring(prevO, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 5, "---",           text_color=color.gray,   bgcolor=color.new(color.black, 50), text_size=size.small)
+    table.cell(tbl, 1, 5, "---",           text_color=color.gray,   bgcolor=color.new(color.black, 50), text_size=size.small)
+    table.cell(tbl, 0, 6, "TH",            text_color=color.black,  bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 6, str.tostring(TH,  "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 0, 7, "MID",           text_color=color.black,  bgcolor=color.new(color.yellow, 30), text_size=size.small)
+    table.cell(tbl, 1, 7, str.tostring(MID, "#.00"), text_color=color.black, bgcolor=color.new(color.yellow, 30), text_size=size.small)
+    table.cell(tbl, 0, 8, "TL",            text_color=color.black,  bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 8, str.tostring(TL,  "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
