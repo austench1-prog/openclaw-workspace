@@ -1,0 +1,78 @@
+//@version=6
+// Camarilla Formula 3 — GC Gold — V1
+// P = (H + L + C) / 3
+// B = 2P + C - O
+// TH = B - L  |  TL = B - H  |  MID = (TH + TL) / 2
+// H, L, C = yesterday's completed session
+// O = today's 18:00 ET open
+// Display window: 18:00 ET → 13:30 ET next day
+
+indicator("Camarilla F3 GC - V2 (B=2P+C-O)", overlay=true, max_labels_count=10)
+
+// ── Daily OHLC
+prevH    = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL    = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC    = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+todayO   = request.security(syminfo.tickerid, "D", open,     lookahead=barmerge.lookahead_on)
+sessOpen = request.security(syminfo.tickerid, "D", time,     lookahead=barmerge.lookahead_on)
+
+// ── Camarilla levels
+P   = (prevH + prevL + prevC) / 3
+B   = 2 * P + prevC - todayO
+TH  = B - prevL
+TL  = B - prevH
+MID = (TH + TL) / 2
+
+// ── Session boundary detection (prevent staircase)
+var int lastSessTime = na
+isNewSess = sessOpen != lastSessTime
+if isNewSess
+    lastSessTime := sessOpen
+
+// ── Display window: 18:00–13:30
+inGCWindow = hour >= 18 or hour < 13 or (hour == 13 and minute < 30)
+inSession  = inGCWindow and not isNewSess
+
+// ── Plot
+pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pTL  = plot(inSession ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pMID = plot(inSession ? MID : na, title="MID", color=color.yellow,  linewidth=1, style=plot.style_linebr)
+fill(pTH, pTL, color=color.new(color.purple, 85), title="F3 Zone")
+
+// ── Labels
+var label lbTH  = na
+var label lbTL  = na
+var label lbMID = na
+
+if barstate.islast and not na(TH)
+    label.delete(lbTH)
+    label.delete(lbTL)
+    label.delete(lbMID)
+    lbTH  := label.new(bar_index + 1, TH,  "TH "  + str.tostring(TH,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL  := label.new(bar_index + 1, TL,  "TL "  + str.tostring(TL,  "#.00"), color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbMID := label.new(bar_index + 1, MID, "MID " + str.tostring(MID, "#.00"), color=color.yellow,  textcolor=color.black, style=label.style_label_left, size=size.small)
+
+// ── Info table
+var table tbl = table.new(position.top_right, 2, 10, bgcolor=color.new(color.black, 55), border_width=1)
+
+if barstate.islast and not na(prevH)
+    table.cell(tbl, 0, 0, "F3 GC - V2",   text_color=color.yellow, bgcolor=color.new(color.black,   30), text_size=size.small)
+    table.cell(tbl, 1, 0, "B = 2P",        text_color=color.black,  bgcolor=color.new(color.blue,    20), text_size=size.small)
+    table.cell(tbl, 0, 1, "H",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
+    table.cell(tbl, 1, 1, str.tostring(prevH,  "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 2, "L",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(prevL,  "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 3, "C",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(prevC,  "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 4, "O 18:00",       text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
+    table.cell(tbl, 1, 4, str.tostring(todayO, "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 5, "P",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
+    table.cell(tbl, 1, 5, str.tostring(P,     "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
+    table.cell(tbl, 0, 6, "---",           text_color=color.gray,   bgcolor=color.new(color.black,   50), text_size=size.small)
+    table.cell(tbl, 1, 6, "---",           text_color=color.gray,   bgcolor=color.new(color.black,   50), text_size=size.small)
+    table.cell(tbl, 0, 7, "TH",            text_color=color.black,  bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 7, str.tostring(TH,    "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 0, 8, "MID",           text_color=color.black,  bgcolor=color.new(color.yellow,  30), text_size=size.small)
+    table.cell(tbl, 1, 8, str.tostring(MID,   "#.00"), text_color=color.black, bgcolor=color.new(color.yellow, 30), text_size=size.small)
+    table.cell(tbl, 0, 9, "TL",            text_color=color.black,  bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
+    table.cell(tbl, 1, 9, str.tostring(TL,    "#.00"), text_color=color.black, bgcolor=color.new(color.fuchsia, 30), text_size=size.small)
