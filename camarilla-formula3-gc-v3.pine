@@ -1,20 +1,19 @@
 //@version=6
-// Camarilla Formula 3 — GC Gold — V1
+// Camarilla Formula 3 — GC Gold — V3
 // P = (H + L + C) / 3
 // B = 2P + O - C
 // TH = B - L  |  TL = B - H  |  MID = (TH + TL) / 2
 // H, L, C = yesterday's completed session
 // O = today's 18:00 ET open
-// Display window: 18:00 ET → 13:30 ET next day
+// Display window: 18:00 ET → 13:30 ET next day (ET timezone-aware)
 
 indicator("Camarilla F3 GC - V3 (B=2P+O-C)", overlay=true, max_labels_count=10)
 
 // ── Daily OHLC
-prevH    = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
-prevL    = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
-prevC    = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
-todayO   = request.security(syminfo.tickerid, "D", open,     lookahead=barmerge.lookahead_on)
-sessOpen = request.security(syminfo.tickerid, "D", time,     lookahead=barmerge.lookahead_on)
+prevH  = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevL  = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevC  = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+todayO = request.security(syminfo.tickerid, "D", open,     lookahead=barmerge.lookahead_on)
 
 // ── Camarilla levels
 P   = (prevH + prevL + prevC) / 3
@@ -23,20 +22,15 @@ TH  = B - prevL
 TL  = B - prevH
 MID = (TH + TL) / 2
 
-// ── Session boundary detection (prevent staircase)
-var int lastSessTime = na
-isNewSess = sessOpen != lastSessTime
-if isNewSess
-    lastSessTime := sessOpen
+// ── Display window: 18:00–13:30 ET (timezone-aware, no drift)
+// GC session: 18:00 ET Sunday–Friday, closes 13:30 ET
+// time() returns na when outside the session string
+inGCWindow = not na(time("1", "1800-1330", "America/New_York"))
 
-// ── Display window: 18:00–13:30
-inGCWindow = hour >= 18 or hour < 13 or (hour == 13 and minute < 30)
-inSession  = inGCWindow and not isNewSess
-
-// ── Plot
-pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
-pTL  = plot(inSession ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
-pMID = plot(inSession ? MID : na, title="MID", color=color.yellow,  linewidth=1, style=plot.style_linebr)
+// ── Plot (linebr = no connecting lines between sessions)
+pTH  = plot(inGCWindow ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pTL  = plot(inGCWindow ? TL  : na, title="TL",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+pMID = plot(inGCWindow ? MID : na, title="MID", color=color.yellow,  linewidth=1, style=plot.style_linebr)
 fill(pTH, pTL, color=color.new(color.purple, 85), title="F3 Zone")
 
 // ── Labels
@@ -56,8 +50,8 @@ if barstate.islast and not na(TH)
 var table tbl = table.new(position.top_right, 2, 10, bgcolor=color.new(color.black, 55), border_width=1)
 
 if barstate.islast and not na(prevH)
-    table.cell(tbl, 0, 0, "F3 GC - V3",   text_color=color.yellow, bgcolor=color.new(color.black,   30), text_size=size.small)
-    table.cell(tbl, 1, 0, "B = 2P",        text_color=color.black,  bgcolor=color.new(color.blue,    20), text_size=size.small)
+    table.cell(tbl, 0, 0, "F3 GC - V3",    text_color=color.yellow, bgcolor=color.new(color.black,   30), text_size=size.small)
+    table.cell(tbl, 1, 0, "B=2P+O-C",      text_color=color.black,  bgcolor=color.new(color.blue,    20), text_size=size.small)
     table.cell(tbl, 0, 1, "H",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)
     table.cell(tbl, 1, 1, str.tostring(prevH,  "#.00"), text_color=color.white, bgcolor=color.new(color.gray, 60), text_size=size.small)
     table.cell(tbl, 0, 2, "L",             text_color=color.white,  bgcolor=color.new(color.gray,    60), text_size=size.small)

@@ -14,7 +14,6 @@ prevH    = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.
 prevL    = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
 prevC    = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
 todayO   = request.security(syminfo.tickerid, "D", open,     lookahead=barmerge.lookahead_on)
-sessOpen = request.security(syminfo.tickerid, "D", time,     lookahead=barmerge.lookahead_on)
 
 // ── Camarilla levels
 P   = (prevH + prevL + prevC) / 3
@@ -24,14 +23,10 @@ TL  = B - prevH
 MID = (TH + TL) / 2
 
 // ── Session boundary detection (prevent staircase)
-var int lastSessTime = na
-isNewSess = sessOpen != lastSessTime
-if isNewSess
-    lastSessTime := sessOpen
 
 // ── Display window: 18:00–13:30
-inGCWindow = hour >= 18 or hour < 13 or (hour == 13 and minute < 30)
-inSession  = inGCWindow and not isNewSess
+inGCWindow = not na(time("1", "1800-1330", "America/New_York"))
+inSession  = inGCWindow
 
 // ── Plot
 pTH  = plot(inSession ? TH  : na, title="TH",  color=color.fuchsia, linewidth=2, style=plot.style_linebr)
