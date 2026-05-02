@@ -1,0 +1,81 @@
+//@version=6
+// TH/TL Daily Range from Prior Day + Today Open
+// B = P + O  |  TH = B - L  |  TL = B - H
+// RTH: 09:30–16:00 ET
+// Fixed: lookahead_on, ET timezone, label at last bar
+
+indicator("TH/TL Daily Range from Prior Day + Today Open", overlay=true, max_labels_count=50)
+
+// ===== User inputs =====
+showP    = input.bool(true,  "Show P")
+showTH   = input.bool(true,  "Show TH")
+showTL   = input.bool(true,  "Show TL")
+showFill = input.bool(true,  "Fill TH-TL Zone")
+
+// ===== Detect RTH (ET timezone-aware) =====
+inRTH    = not na(time(timeframe.period, "0930-1600", "America/New_York"))
+newRTHDay = inRTH and not inRTH[1]
+
+// ===== Prior day H/L/C — lookahead_on ensures values ready at session open =====
+prevHigh  = request.security(syminfo.tickerid, "D", high[1],  lookahead=barmerge.lookahead_on)
+prevLow   = request.security(syminfo.tickerid, "D", low[1],   lookahead=barmerge.lookahead_on)
+prevClose = request.security(syminfo.tickerid, "D", close[1], lookahead=barmerge.lookahead_on)
+
+// ===== Lock today's RTH open =====
+var float todayOpen = na
+if newRTHDay
+    todayOpen := open
+if not inRTH
+    todayOpen := na
+
+// ===== Calculate levels =====
+float P  = na
+float TH = na
+float TL = na
+
+if inRTH and not na(todayOpen) and not na(prevHigh) and not na(prevLow) and not na(prevClose)
+    P  := (prevHigh + prevLow + prevClose) / 3.0
+    TH := P + todayOpen - prevLow
+    TL := P + todayOpen - prevHigh
+
+// ===== Plot =====
+pPlot  = plot(showP  and inRTH ? P  : na, "P",  color=color.gray,    linewidth=1, style=plot.style_linebr)
+thPlot = plot(showTH and inRTH ? TH : na, "TH", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+tlPlot = plot(showTL and inRTH ? TL : na, "TL", color=color.fuchsia, linewidth=2, style=plot.style_linebr)
+fill(thPlot, tlPlot, color=showFill ? color.new(color.blue, 85) : na, title="TH-TL Zone")
+
+// ===== Labels — placed at last bar of each RTH session =====
+var label lbTH  = na
+var label lbTL  = na
+var label lbP   = na
+
+endRTH = not inRTH and inRTH[1]  // first bar AFTER RTH closes
+
+if endRTH and not na(TH[1]) and not na(TL[1])
+    label.delete(lbTH)
+    label.delete(lbTL)
+    label.delete(lbP)
+    lbTH := label.new(bar_index, TH[1], "TH " + str.tostring(TH[1], "#.00"),
+         color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTL := label.new(bar_index, TL[1], "TL " + str.tostring(TL[1], "#.00"),
+         color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    if showP
+        lbP := label.new(bar_index, P[1], "P "  + str.tostring(P[1],  "#.00"),
+             color=color.gray, textcolor=color.white, style=label.style_label_left, size=size.small)
+
+// Today's labels — update on last bar
+var label lbTHnow  = na
+var label lbTLnow  = na
+var label lbPnow   = na
+
+if barstate.islast and inRTH and not na(TH)
+    label.delete(lbTHnow)
+    label.delete(lbTLnow)
+    label.delete(lbPnow)
+    lbTHnow := label.new(bar_index + 1, TH,  "TH " + str.tostring(TH,  "#.00"),
+         color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    lbTLnow := label.new(bar_index + 1, TL,  "TL " + str.tostring(TL,  "#.00"),
+         color=color.fuchsia, textcolor=color.black, style=label.style_label_left, size=size.small)
+    if showP
+        lbPnow := label.new(bar_index + 1, P,   "P "  + str.tostring(P,   "#.00"),
+             color=color.gray, textcolor=color.white, style=label.style_label_left, size=size.small)
