@@ -1994,3 +1994,1115 @@ sent 23853320 bytes  received 3310 bytes  58031208 bytes/sec
 total size is 40712881  speedup is 1.71
 [2026-04-15] Vault: Full workspace snapshot ✅
 [2026-04-15 03:00] Backup complete.
+[2026-04-16 03:00] Starting backup...
+[2026-04-16] Vault: MEMORY.md ✅
+[2026-04-16] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-16] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-16] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-16] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-16] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-16] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1679 files
+./
+camarilla-weekly-midnight-v20.pine
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/2e/
+.git/objects/2e/9551ac745847cb9dc6c550ef8ba4ce158ace54
+.git/objects/68/
+.git/objects/68/d9da0c41c22eccc7fc5d5bdb4170efcc7290cc
+.git/objects/91/
+.git/objects/91/60e18ab6b0f589cafed80790771577f0d5aa71
+.git/objects/98/
+.git/objects/98/be66bfd620a60cec12b69cfb584fdff06a02ab
+.git/objects/b4/
+.git/objects/b4/fefe460b32df7c3730f3e8b5e7feae165c77bb
+.git/objects/d6/
+.git/objects/d6/158af4b69723046a1ebf43fc18da3c3cb94e4d
+.git/objects/d8/
+.git/objects/d8/78291b8a2e30fc95fb94385d15724153987cbd
+.git/objects/db/
+.git/objects/db/2bf9412f45c40b80f246d4878111865d15160d
+.git/objects/e0/
+.git/objects/e0/77825c95aa705dbe8b6a7a65b012842edac457
+.git/objects/e2/
+.git/objects/e2/2a89f7942274fa0a3d6244408adead6bd8731e
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+Trading/
+Trading/NQ_Midnight_IBKR_Data.csv
+scripts/
+scripts/backup.log
+scripts/dl_v20.png
+
+sent 856615 bytes  received 606 bytes  4759694 bytes/sec
+total size is 41243470  speedup is 48.11
+[2026-04-16] Vault: Full workspace snapshot ✅
+[2026-04-16 03:00] Backup complete.
+[2026-04-17 03:00] Starting backup...
+[2026-04-17] Vault: MEMORY.md ✅
+[2026-04-17] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-17] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-17] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-17] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-17] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-17] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1695 files
+./
+camarilla-formula3-gc.pine
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/1a/
+.git/objects/1a/b45ebc383fb36719b8eb2cafa7aa106d859100
+.git/objects/2a/
+.git/objects/2a/5954bacfbba9d9f33b45d50666b81d978cb66f
+.git/objects/53/
+.git/objects/53/54601288a676e1f7525270f07736d9b86d8491
+.git/objects/54/
+.git/objects/54/4f67cd0217abd2c5ef06ed4dce8822440bf62c
+.git/objects/5e/
+.git/objects/5e/6e02ed934911f9f186247f68a1e98afae4b1b8
+.git/objects/65/
+.git/objects/65/22690ebb49a6548449ce263dbbb3eaa4902344
+.git/objects/6a/
+.git/objects/6a/c164d5b74cef7195af05b9cc382f65e082581a
+.git/objects/7b/
+.git/objects/7b/a6f0f49303d75e82af154a0f715f4bc6248ab0
+.git/objects/80/
+.git/objects/80/2e54e2723ee5ea7a84b1e8c2af63ac8055d883
+.git/objects/9d/
+.git/objects/9d/8ef919b5219131a13757ee908f8b673f06dae0
+.git/objects/a7/
+.git/objects/a7/d05f1e15cf370dceeeb69e3c227576c3c7a40d
+.git/objects/b8/
+.git/objects/b8/dee3e03ddd8d9ff60e6f4032b695f20b54bed7
+.git/objects/dd/
+.git/objects/dd/5fdf6634a76649217e583f0670f5846f6e5eb3
+.git/objects/dd/7058583f1ba751e71b533963e1e88d0aeeaf51
+.git/objects/e0/
+.git/objects/e0/8ed9b7dff7f76548746610584c342c7d348910
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/core-plugins.json
+.obsidian/workspace.json
+scripts/backup.log
+
+sent 368069 bytes  received 750 bytes  1960760 bytes/sec
+total size is 41275136  speedup is 111.91
+[2026-04-17] Vault: Full workspace snapshot ✅
+[2026-04-17 03:00] Backup complete.
+[2026-04-18 03:00] Starting backup...
+[2026-04-18] Vault: MEMORY.md ✅
+[2026-04-18] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-18] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-18] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-18] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-18] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-18] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+./
+camarilla-formula3-gc-v1.pine
+camarilla-formula3-gc-v2.pine
+camarilla-formula3-gc-v3.pine
+camarilla-formula3-gc.pine
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/0e/
+.git/objects/0e/aed82a036cb06c080d0a4ffa7f88eaa62823f7
+.git/objects/1e/
+.git/objects/1e/456ca6b4c4d9a07fbf8ce95562784bc8645f0b
+.git/objects/23/
+.git/objects/23/aebd45cf9af2f6485afa60780efbffcd6b669b
+.git/objects/3b/
+.git/objects/3b/bb925e47da3a6aee8b82086224b85a7a6ac293
+.git/objects/49/
+.git/objects/49/55f13ef161a2ecea7e8831f0aa42b51d520dfb
+.git/objects/74/
+.git/objects/74/1405e5d9014e15c2bebffd189ef6ee036b2aab
+.git/objects/77/
+.git/objects/77/398ffcba34846c9cfec3b345168defed72e07e
+.git/objects/88/
+.git/objects/88/4b6db7faff9599a3e83aa3ac842c92fc756ec1
+.git/objects/8f/
+.git/objects/8f/e59b6abfe97cdac6d0c1d03cc2b9ec6ba882de
+.git/objects/9b/
+.git/objects/9b/4c53c82d5db3108fb6eda2f1a66abb613da97f
+.git/objects/a6/
+.git/objects/a6/1f0d43dcf7ec6bb650ff595103391906a463c3
+.git/objects/aa/
+.git/objects/aa/29ad2cb9c5e4eb06dea285de98fd9a8a9cd013
+.git/objects/b4/
+.git/objects/b4/7dade9159905bc37cb6f44cc7f85cc53ab7742
+.git/objects/c1/
+.git/objects/c1/e27289f623a56734aef709e1f4b67decef9154
+.git/objects/d7/
+.git/objects/d7/b862610e95200fe4b51f760b85a63fed1650ee
+.git/objects/d8/
+.git/objects/d8/2af20da6b633d7d3dc5a87726ba03a82e5a159
+.git/objects/de/
+.git/objects/de/c2ebd3a71299e548273e28f31b3de5c0a393bf
+.git/objects/f0/
+.git/objects/f0/a00b91be223afeff711860fbae5d866ddd43ae
+.git/objects/f1/
+.git/objects/f1/2bc6661ff3b6db69643dac560dbca14f2c3ead
+.git/objects/f6/
+.git/objects/f6/413c49cfd2510406dc8e7ce010a32d0e0b6d99
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+scripts/backup.log
+
+sent 398113 bytes  received 896 bytes  2291838 bytes/sec
+total size is 41326773  speedup is 103.57
+[2026-04-18] Vault: Full workspace snapshot ✅
+[2026-04-18 03:00] Backup complete.
+[2026-04-19 03:00] Starting backup...
+[2026-04-19] Vault: MEMORY.md ✅
+[2026-04-19] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-19] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-19] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-19] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-19] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-19] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 206245 bytes  received 42 bytes  1272590 bytes/sec
+total size is 41329227  speedup is 200.35
+[2026-04-19] Vault: Full workspace snapshot ✅
+[2026-04-19 03:00] Backup complete.
+[2026-04-20 03:00] Starting backup...
+[2026-04-20] Vault: MEMORY.md ✅
+[2026-04-20] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-20] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-20] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-20] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-20] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-20] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 206892 bytes  received 42 bytes  1253385 bytes/sec
+total size is 41329874  speedup is 199.72
+[2026-04-20] Vault: Full workspace snapshot ✅
+[2026-04-20 03:00] Backup complete.
+[2026-04-21 03:00] Starting backup...
+[2026-04-21] Vault: MEMORY.md ✅
+[2026-04-21] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-21] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-21] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-21] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-21] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-21] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 207539 bytes  received 42 bytes  1312972 bytes/sec
+total size is 41330521  speedup is 199.11
+[2026-04-21] Vault: Full workspace snapshot ✅
+[2026-04-21 03:00] Backup complete.
+[2026-04-22 03:00] Starting backup...
+[2026-04-22] Vault: MEMORY.md ✅
+[2026-04-22] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-22] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-22] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-22] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-22] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-22] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 208186 bytes  received 42 bytes  1342540 bytes/sec
+total size is 41331168  speedup is 198.49
+[2026-04-22] Vault: Full workspace snapshot ✅
+[2026-04-22 03:00] Backup complete.
+[2026-04-23 03:00] Starting backup...
+[2026-04-23] Vault: MEMORY.md ✅
+[2026-04-23] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-23] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-23] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-23] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-23] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-23] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 208833 bytes  received 42 bytes  1321157 bytes/sec
+total size is 41331815  speedup is 197.88
+[2026-04-23] Vault: Full workspace snapshot ✅
+[2026-04-23 03:00] Backup complete.
+[2026-04-24 03:00] Starting backup...
+[2026-04-24] Vault: MEMORY.md ✅
+[2026-04-24] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-24] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-24] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-24] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-24] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-24] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 209480 bytes  received 42 bytes  1269061 bytes/sec
+total size is 41332462  speedup is 197.27
+[2026-04-24] Vault: Full workspace snapshot ✅
+[2026-04-24 03:00] Backup complete.
+[2026-04-25 03:00] Starting backup...
+[2026-04-25] Vault: MEMORY.md ✅
+[2026-04-25] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-25] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-25] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-25] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-25] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-25] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 210127 bytes  received 42 bytes  1180061 bytes/sec
+total size is 41333109  speedup is 196.67
+[2026-04-25] Vault: Full workspace snapshot ✅
+[2026-04-25 03:00] Backup complete.
+[2026-04-26 03:00] Starting backup...
+[2026-04-26] Vault: MEMORY.md ✅
+[2026-04-26] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-26] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-26] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-26] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-26] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-26] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 210774 bytes  received 42 bytes  1254110 bytes/sec
+total size is 41333756  speedup is 196.07
+[2026-04-26] Vault: Full workspace snapshot ✅
+[2026-04-26 03:00] Backup complete.
+[2026-04-27 03:00] Starting backup...
+[2026-04-27] Vault: MEMORY.md ✅
+[2026-04-27] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-27] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-27] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-27] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-27] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-27] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 211421 bytes  received 42 bytes  1296523 bytes/sec
+total size is 41334403  speedup is 195.47
+[2026-04-27] Vault: Full workspace snapshot ✅
+[2026-04-27 03:00] Backup complete.
+[2026-04-28 03:00] Starting backup...
+[2026-04-28] Vault: MEMORY.md ✅
+[2026-04-28] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-28] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-28] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-28] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-28] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-28] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 212068 bytes  received 42 bytes  1308513 bytes/sec
+total size is 41335050  speedup is 194.88
+[2026-04-28] Vault: Full workspace snapshot ✅
+[2026-04-28 03:00] Backup complete.
+[2026-04-29 03:00] Starting backup...
+[2026-04-29] Vault: MEMORY.md ✅
+[2026-04-29] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-29] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-29] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-29] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-29] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-29] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 212715 bytes  received 42 bytes  1296508 bytes/sec
+total size is 41335697  speedup is 194.29
+[2026-04-29] Vault: Full workspace snapshot ✅
+[2026-04-29 03:00] Backup complete.
+[2026-04-30 03:00] Starting backup...
+[2026-04-30] Vault: MEMORY.md ✅
+[2026-04-30] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-04-30] Vault: Dragon_ToDo_v1.md ✅
+[2026-04-30] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-04-30] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-04-30] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-04-30] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 213362 bytes  received 42 bytes  1269506 bytes/sec
+total size is 41336344  speedup is 193.70
+[2026-04-30] Vault: Full workspace snapshot ✅
+[2026-04-30 03:00] Backup complete.
+[2026-05-01 03:00] Starting backup...
+[2026-05-01] Vault: MEMORY.md ✅
+[2026-05-01] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-01] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-01] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-01] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-01] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-01] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1718 files
+scripts/backup.log
+
+sent 214009 bytes  received 42 bytes  1296493 bytes/sec
+total size is 41336991  speedup is 193.12
+[2026-05-01] Vault: Full workspace snapshot ✅
+[2026-05-01 03:00] Backup complete.
+[2026-05-02 03:00] Starting backup...
+[2026-05-02] Vault: MEMORY.md ✅
+[2026-05-02] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-02] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-02] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-02] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-02] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-02] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+./
+camarilla-formula3-gc-v1.pine
+camarilla-formula3-gc-v2.pine
+camarilla-formula3-gc-v3.pine
+camarilla-tntl-rth.pine
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/10/
+.git/objects/10/1f7cfdb02f96d9b83bb5cef1c0c57f5a6668d8
+.git/objects/20/
+.git/objects/20/ae395736300bfb850cf1c625754f9e7eba6cc8
+.git/objects/21/
+.git/objects/21/08c84bb3a5a43e442f6465b4da0b0039d1e185
+.git/objects/21/5342963f1db10952f75ea74a2ad8a24e23f545
+.git/objects/6c/
+.git/objects/6c/acb58755b7668c5ccb15104607d79d1c70f0e9
+.git/objects/7d/
+.git/objects/7d/bb5ee4df0bc656ae173e8178ecf28e3b8de3ba
+.git/objects/a4/
+.git/objects/a4/e192a73f0328833358515c044db7e6573ff46b
+.git/objects/e3/
+.git/objects/e3/4c8d7a4c15f20d1c0383c23ad6f52281a5ea7d
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+scripts/backup.log
+
+sent 389854 bytes  received 554 bytes  2216967 bytes/sec
+total size is 41353499  speedup is 105.92
+[2026-05-02] Vault: Full workspace snapshot ✅
+[2026-05-02 03:00] Backup complete.
+[2026-05-03 03:00] Starting backup...
+[2026-05-03] Vault: MEMORY.md ✅
+[2026-05-03] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-03] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-03] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-03] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-03] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-03] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 216910 bytes  received 42 bytes  1346691 bytes/sec
+total size is 41355069  speedup is 190.62
+[2026-05-03] Vault: Full workspace snapshot ✅
+[2026-05-03 03:00] Backup complete.
+[2026-05-04 03:00] Starting backup...
+[2026-05-04] Vault: MEMORY.md ✅
+[2026-05-04] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-04] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-04] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-04] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-04] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-04] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 217557 bytes  received 42 bytes  1294461 bytes/sec
+total size is 41355716  speedup is 190.05
+[2026-05-04] Vault: Full workspace snapshot ✅
+[2026-05-04 03:00] Backup complete.
+[2026-05-05 03:00] Starting backup...
+[2026-05-05] Vault: MEMORY.md ✅
+[2026-05-05] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-05] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-05] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-05] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-05] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-05] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 218204 bytes  received 42 bytes  1298310 bytes/sec
+total size is 41356363  speedup is 189.49
+[2026-05-05] Vault: Full workspace snapshot ✅
+[2026-05-05 03:00] Backup complete.
+[2026-05-06 03:00] Starting backup...
+[2026-05-06] Vault: MEMORY.md ✅
+[2026-05-06] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-06] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-06] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-06] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-06] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-06] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 218851 bytes  received 42 bytes  1342078 bytes/sec
+total size is 41357010  speedup is 188.94
+[2026-05-06] Vault: Full workspace snapshot ✅
+[2026-05-06 03:00] Backup complete.
+[2026-05-07 03:00] Starting backup...
+[2026-05-07] Vault: MEMORY.md ✅
+[2026-05-07] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-07] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-07] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-07] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-07] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-07] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 219498 bytes  received 42 bytes  1397453 bytes/sec
+total size is 41357657  speedup is 188.38
+[2026-05-07] Vault: Full workspace snapshot ✅
+[2026-05-07 03:00] Backup complete.
+[2026-05-08 03:00] Starting backup...
+[2026-05-08] Vault: MEMORY.md ✅
+[2026-05-08] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-08] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-08] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-08] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-08] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-08] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 220145 bytes  received 42 bytes  1375309 bytes/sec
+total size is 41358304  speedup is 187.83
+[2026-05-08] Vault: Full workspace snapshot ✅
+[2026-05-08 03:00] Backup complete.
+[2026-05-09 03:00] Starting backup...
+[2026-05-09] Vault: MEMORY.md ✅
+[2026-05-09] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-09] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-09] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-09] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-09] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-09] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 220792 bytes  received 42 bytes  1261187 bytes/sec
+total size is 41358951  speedup is 187.29
+[2026-05-09] Vault: Full workspace snapshot ✅
+[2026-05-09 03:00] Backup complete.
+[2026-05-10 03:00] Starting backup...
+[2026-05-10] Vault: MEMORY.md ✅
+[2026-05-10] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-10] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-10] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-10] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-10] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-10] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 221439 bytes  received 42 bytes  1325439 bytes/sec
+total size is 41359598  speedup is 186.74
+[2026-05-10] Vault: Full workspace snapshot ✅
+[2026-05-10 03:00] Backup complete.
+[2026-05-11 03:00] Starting backup...
+[2026-05-11] Vault: MEMORY.md ✅
+[2026-05-11] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-11] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-11] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-11] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-11] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-11] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 222086 bytes  received 42 bytes  1337314 bytes/sec
+total size is 41360245  speedup is 186.20
+[2026-05-11] Vault: Full workspace snapshot ✅
+[2026-05-11 03:00] Backup complete.
+[2026-05-12 03:00] Starting backup...
+[2026-05-12] Vault: MEMORY.md ✅
+[2026-05-12] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-12] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-12] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-12] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-12] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-12] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 222733 bytes  received 42 bytes  1418045 bytes/sec
+total size is 41360892  speedup is 185.66
+[2026-05-12] Vault: Full workspace snapshot ✅
+[2026-05-12 03:00] Backup complete.
+[2026-05-13 03:00] Starting backup...
+[2026-05-13] Vault: MEMORY.md ✅
+[2026-05-13] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-13] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-13] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-13] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-13] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-13] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 223380 bytes  received 42 bytes  1337055 bytes/sec
+total size is 41361539  speedup is 185.13
+[2026-05-13] Vault: Full workspace snapshot ✅
+[2026-05-13 03:00] Backup complete.
+[2026-05-14 03:00] Starting backup...
+[2026-05-14] Vault: MEMORY.md ✅
+[2026-05-14] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-14] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-14] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-14] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-14] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-14] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 224027 bytes  received 42 bytes  1258107 bytes/sec
+total size is 41362186  speedup is 184.60
+[2026-05-14] Vault: Full workspace snapshot ✅
+[2026-05-14 03:00] Backup complete.
+[2026-05-15 03:00] Starting backup...
+[2026-05-15] Vault: MEMORY.md ✅
+[2026-05-15] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-15] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-15] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-15] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-15] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-15] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 224674 bytes  received 42 bytes  1377780 bytes/sec
+total size is 41362833  speedup is 184.07
+[2026-05-15] Vault: Full workspace snapshot ✅
+[2026-05-15 03:00] Backup complete.
+[2026-05-16 03:00] Starting backup...
+[2026-05-16] Vault: MEMORY.md ✅
+[2026-05-16] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-16] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-16] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-16] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-16] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-16] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 225321 bytes  received 42 bytes  1381747 bytes/sec
+total size is 41363480  speedup is 183.54
+[2026-05-16] Vault: Full workspace snapshot ✅
+[2026-05-16 03:00] Backup complete.
+[2026-05-17 03:00] Starting backup...
+[2026-05-17] Vault: MEMORY.md ✅
+[2026-05-17] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-17] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-17] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-17] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-17] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-17] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 225968 bytes  received 42 bytes  1352543 bytes/sec
+total size is 41364127  speedup is 183.02
+[2026-05-17] Vault: Full workspace snapshot ✅
+[2026-05-17 03:00] Backup complete.
+[2026-05-18 03:00] Starting backup...
+[2026-05-18] Vault: MEMORY.md ✅
+[2026-05-18] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-18] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-18] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-18] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-18] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-18] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 226615 bytes  received 42 bytes  1424619 bytes/sec
+total size is 41364774  speedup is 182.50
+[2026-05-18] Vault: Full workspace snapshot ✅
+[2026-05-18 03:00] Backup complete.
+[2026-05-19 03:00] Starting backup...
+[2026-05-19] Vault: MEMORY.md ✅
+[2026-05-19] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-19] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-19] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-19] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-19] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-19] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 227262 bytes  received 42 bytes  1393648 bytes/sec
+total size is 41365421  speedup is 181.98
+[2026-05-19] Vault: Full workspace snapshot ✅
+[2026-05-19 03:00] Backup complete.
+[2026-05-20 03:00] Starting backup...
+[2026-05-20] Vault: MEMORY.md ✅
+[2026-05-20] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-20] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-20] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-20] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-20] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-20] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 227909 bytes  received 42 bytes  1414965 bytes/sec
+total size is 41366068  speedup is 181.47
+[2026-05-20] Vault: Full workspace snapshot ✅
+[2026-05-20 03:00] Backup complete.
+[2026-05-21 03:00] Starting backup...
+[2026-05-21] Vault: MEMORY.md ✅
+[2026-05-21] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-21] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-21] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-21] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-21] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-21] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 228556 bytes  received 42 bytes  1464433 bytes/sec
+total size is 41366715  speedup is 180.96
+[2026-05-21] Vault: Full workspace snapshot ✅
+[2026-05-21 03:00] Backup complete.
+[2026-05-22 03:00] Starting backup...
+[2026-05-22] Vault: MEMORY.md ✅
+[2026-05-22] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-22] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-22] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-22] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-22] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-22] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 229203 bytes  received 42 bytes  1324350 bytes/sec
+total size is 41367362  speedup is 180.45
+[2026-05-22] Vault: Full workspace snapshot ✅
+[2026-05-22 03:00] Backup complete.
+[2026-05-23 03:00] Starting backup...
+[2026-05-23] Vault: MEMORY.md ✅
+[2026-05-23] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-23] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-23] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-23] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-23] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-23] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 229850 bytes  received 42 bytes  1444952 bytes/sec
+total size is 41368009  speedup is 179.95
+[2026-05-23] Vault: Full workspace snapshot ✅
+[2026-05-23 03:00] Backup complete.
+[2026-05-24 03:00] Starting backup...
+[2026-05-24] Vault: MEMORY.md ✅
+[2026-05-24] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-24] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-24] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-24] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-24] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-24] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 230497 bytes  received 42 bytes  1458184 bytes/sec
+total size is 41368656  speedup is 179.44
+[2026-05-24] Vault: Full workspace snapshot ✅
+[2026-05-24 03:00] Backup complete.
+[2026-05-25 03:00] Starting backup...
+[2026-05-25] Vault: MEMORY.md ✅
+[2026-05-25] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-25] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-25] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-25] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-25] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-25] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 231144 bytes  received 42 bytes  1462277 bytes/sec
+total size is 41369303  speedup is 178.94
+[2026-05-25] Vault: Full workspace snapshot ✅
+[2026-05-25 03:00] Backup complete.
+[2026-05-26 03:00] Starting backup...
+[2026-05-26] Vault: MEMORY.md ✅
+[2026-05-26] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-26] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-26] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-26] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-26] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-26] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 231791 bytes  received 42 bytes  1387390 bytes/sec
+total size is 41369950  speedup is 178.45
+[2026-05-26] Vault: Full workspace snapshot ✅
+[2026-05-26 03:00] Backup complete.
+[2026-05-27 03:00] Starting backup...
+[2026-05-27] Vault: MEMORY.md ✅
+[2026-05-27] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-27] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-27] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-27] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-27] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-27] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 232438 bytes  received 42 bytes  1443078 bytes/sec
+total size is 41370597  speedup is 177.95
+[2026-05-27] Vault: Full workspace snapshot ✅
+[2026-05-27 03:00] Backup complete.
+[2026-05-28 03:00] Starting backup...
+[2026-05-28] Vault: MEMORY.md ✅
+[2026-05-28] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-28] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-28] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-28] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-28] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-28] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 233085 bytes  received 42 bytes  1483940 bytes/sec
+total size is 41371244  speedup is 177.46
+[2026-05-28] Vault: Full workspace snapshot ✅
+[2026-05-28 03:00] Backup complete.
+[2026-05-29 03:00] Starting backup...
+[2026-05-29] Vault: MEMORY.md ✅
+[2026-05-29] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-29] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-29] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-29] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-29] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-29] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 233732 bytes  received 42 bytes  1507246 bytes/sec
+total size is 41371891  speedup is 176.97
+[2026-05-29] Vault: Full workspace snapshot ✅
+[2026-05-29 03:00] Backup complete.
+[2026-05-30 03:00] Starting backup...
+[2026-05-30] Vault: MEMORY.md ✅
+[2026-05-30] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-30] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-30] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-30] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-30] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-30] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 234379 bytes  received 42 bytes  1473419 bytes/sec
+total size is 41372538  speedup is 176.49
+[2026-05-30] Vault: Full workspace snapshot ✅
+[2026-05-30 03:00] Backup complete.
+[2026-05-31 03:00] Starting backup...
+[2026-05-31] Vault: MEMORY.md ✅
+[2026-05-31] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-05-31] Vault: Dragon_ToDo_v1.md ✅
+[2026-05-31] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-05-31] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-05-31] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-05-31] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 235026 bytes  received 42 bytes  1441250 bytes/sec
+total size is 41373185  speedup is 176.01
+[2026-05-31] Vault: Full workspace snapshot ✅
+[2026-05-31 03:00] Backup complete.
+[2026-06-01 03:00] Starting backup...
+[2026-06-01] Vault: MEMORY.md ✅
+[2026-06-01] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-01] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-01] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-01] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-01] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-01] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 235673 bytes  received 42 bytes  1419114 bytes/sec
+total size is 41373832  speedup is 175.52
+[2026-06-01] Vault: Full workspace snapshot ✅
+[2026-06-01 03:00] Backup complete.
+[2026-06-02 03:00] Starting backup...
+[2026-06-02] Vault: MEMORY.md ✅
+[2026-06-02] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-02] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-02] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-02] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-02] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-02] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 236320 bytes  received 42 bytes  1514170 bytes/sec
+total size is 41374479  speedup is 175.05
+[2026-06-02] Vault: Full workspace snapshot ✅
+[2026-06-02 03:00] Backup complete.
+[2026-06-03 03:00] Starting backup...
+[2026-06-03] Vault: MEMORY.md ✅
+[2026-06-03] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-03] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-03] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-03] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-03] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-03] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 236967 bytes  received 42 bytes  1435548 bytes/sec
+total size is 41375126  speedup is 174.57
+[2026-06-03] Vault: Full workspace snapshot ✅
+[2026-06-03 03:00] Backup complete.
+[2026-06-04 03:00] Starting backup...
+[2026-06-04] Vault: MEMORY.md ✅
+[2026-06-04] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-04] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-04] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-04] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-04] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-04] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1727 files
+scripts/backup.log
+
+sent 237614 bytes  received 42 bytes  1439466 bytes/sec
+total size is 41375773  speedup is 174.10
+[2026-06-04] Vault: Full workspace snapshot ✅
+[2026-06-04 03:00] Backup complete.
+[2026-06-05 03:00] Starting backup...
+[2026-06-05] Vault: MEMORY.md ✅
+[2026-06-05] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-05] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-05] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-05] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-05] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-05] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+.obsidian/workspace.json
+memory/
+memory/2026-06-04.md
+scripts/backup.log
+
+sent 247495 bytes  received 92 bytes  1527371 bytes/sec
+total size is 41378832  speedup is 167.13
+[2026-06-05] Vault: Full workspace snapshot ✅
+[2026-06-05 03:00] Backup complete.
+[2026-06-06 03:00] Starting backup...
+[2026-06-06] Vault: MEMORY.md ✅
+[2026-06-06] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-06] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-06] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-06] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-06] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-06] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 239007 bytes  received 42 bytes  1447904 bytes/sec
+total size is 41379533  speedup is 173.10
+[2026-06-06] Vault: Full workspace snapshot ✅
+[2026-06-06 03:00] Backup complete.
+[2026-06-07 03:00] Starting backup...
+[2026-06-07] Vault: MEMORY.md ✅
+[2026-06-07] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-07] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-07] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-07] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-07] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-07] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 239654 bytes  received 42 bytes  1506574 bytes/sec
+total size is 41380180  speedup is 172.64
+[2026-06-07] Vault: Full workspace snapshot ✅
+[2026-06-07 03:00] Backup complete.
+[2026-06-08 03:00] Starting backup...
+[2026-06-08] Vault: MEMORY.md ✅
+[2026-06-08] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-08] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-08] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-08] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-08] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-08] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 240301 bytes  received 42 bytes  1412951 bytes/sec
+total size is 41380827  speedup is 172.17
+[2026-06-08] Vault: Full workspace snapshot ✅
+[2026-06-08 03:00] Backup complete.
+[2026-06-09 03:00] Starting backup...
+[2026-06-09] Vault: MEMORY.md ✅
+[2026-06-09] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-09] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-09] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-09] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-09] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-09] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 240948 bytes  received 42 bytes  1495903 bytes/sec
+total size is 41381474  speedup is 171.71
+[2026-06-09] Vault: Full workspace snapshot ✅
+[2026-06-09 03:00] Backup complete.
+[2026-06-10 03:00] Starting backup...
+[2026-06-10] Vault: MEMORY.md ✅
+[2026-06-10] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-10] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-10] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-10] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-10] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-10] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 241595 bytes  received 42 bytes  1454768 bytes/sec
+total size is 41382121  speedup is 171.26
+[2026-06-10] Vault: Full workspace snapshot ✅
+[2026-06-10 03:00] Backup complete.
+[2026-06-11 03:00] Starting backup...
+[2026-06-11] Vault: MEMORY.md ✅
+[2026-06-11] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-11] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-11] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-11] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-11] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-11] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1728 files
+scripts/backup.log
+
+sent 242242 bytes  received 42 bytes  1494657 bytes/sec
+total size is 41382768  speedup is 170.80
+[2026-06-11] Vault: Full workspace snapshot ✅
+[2026-06-11 03:00] Backup complete.
+[2026-06-12 03:00] Starting backup...
+[2026-06-12] Vault: MEMORY.md ✅
+[2026-06-12] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-12] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-12] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-12] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-12] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-12] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1737 files
+./
+TakeProfitTrader-PRO-vs-PRO-plus.jpg
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/11/
+.git/objects/11/e535c511f04f4a42ae918b834b37e534025b9a
+.git/objects/1f/
+.git/objects/1f/8cebd02c086c281c0eeea51275dafb9b2c90b2
+.git/objects/36/
+.git/objects/36/97c0dd7aceedfed57655e7cae2ad705082f3ff
+.git/objects/a3/
+.git/objects/a3/9e08873b92bf1dab4d8e621c8469976ee989b0
+.git/objects/ae/
+.git/objects/ae/1b9bf2c1bc570dad9d3a73d042b92c1a876a18
+.git/objects/f5/
+.git/objects/f5/e0d3a6964b5429996b9156e19813f842c34a4f
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+Trading/
+Trading/AP_Background_and_Technique_Notes.md
+Trading/Trading_Material_Library_v1.md
+scripts/backup.log
+
+sent 492069 bytes  received 488 bytes  2719806 bytes/sec
+total size is 41487764  speedup is 84.23
+[2026-06-12] Vault: Full workspace snapshot ✅
+[2026-06-12 03:00] Backup complete.
+[2026-06-13 03:00] Starting backup...
+[2026-06-13] Vault: MEMORY.md ✅
+[2026-06-13] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-13] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-13] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-13] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-13] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-13] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1737 files
+scripts/backup.log
+
+sent 245014 bytes  received 42 bytes  1415690 bytes/sec
+total size is 41489222  speedup is 169.31
+[2026-06-13] Vault: Full workspace snapshot ✅
+[2026-06-13 03:00] Backup complete.
+[2026-06-14 03:00] Starting backup...
+[2026-06-14] Vault: MEMORY.md ✅
+[2026-06-14] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-14] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-14] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-14] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-14] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-14] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+Transfer starting: 1737 files
+./BOOTSTRAP.md: deleting
+./
+.obsidian/workspace.json
+.openclaw/
+.openclaw/workspace-state.json
+memory/
+memory/2026-06-13.md
+scripts/backup.log
+
+sent 255284 bytes  received 126 bytes  1402580 bytes/sec
+total size is 41491134  speedup is 162.45
+[2026-06-14] Vault: Full workspace snapshot ✅
+[2026-06-14 03:00] Backup complete.
