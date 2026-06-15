@@ -167,10 +167,24 @@ Complete Trading System v3.0
 | 2 | NotebookLM (6 sources, 20/20 tests) | ✅ Done |
 | 3 | Compliance output schema | ✅ Done |
 | 4 | Gatekeeper paper test (10/10) | ✅ Done |
-| 5 | Execution integration | 🔄 Next |
-| 6 | Strategy Pack (needs Chairman input) | ⏳ Pending |
+| 5 | Execution integration | ✅ Done (Replikanto DLL fixed 2026-06-14) |
+| 6 | Strategy Pack | 🔄 Materials ready, assembling (see note below) |
 | 7 | Dragon dual role | ✅ Done |
-| 8 | v1 acceptance report | ⏳ After Phase 5+6 |
+| 8 | v1 acceptance report | ⏳ After Phase 6 deploy |
+
+### Status Update 2026-06-14 (3 alignments to reality)
+
+**1. Phase 5 Execution — FIXED.** Replikanto DLL load failure (NinjaTrader interface change, recorded 2026-06-04) is now fully resolved. Apex follower copy path restored. Execution chain operational.
+
+**2. Phase 6 Strategy Pack — materials are IN (no longer pending input).** Layer B now has real content:
+- Trading Strategy: 进场7条 / AP-GB Fib / 引线双重用法 (sweep→OB+trendline) / Chairman FVG 修正版 / 分析纪律 / 4H 时间设置 — all in Trading_Material_Library_v1.md.
+- Order Strategy: 3 drafts pending thresholds — draft_kelly_position_sizing, draft_position_dynamics, draft_recovery_and_rhythm.
+- Next = assemble into deployable Strategy Pack(s).
+
+**3. Platform roster updated.**
+- Apex APEX-165583-123: automatable, runs full MATS chain (Replikanto fixed).
+- TakeProfitPro TAKEPROFITPRO704123103 ($50K PRO/SIM): No Algo rule — must be MANUAL. Cannot use auto chain.
+- MFF MFFUEVRPD122274040: SUSPENDED — balance depleted ($12.94 remaining), NOT a rule violation. Eval account hit DD; no compliance penalty, just a failed test.
 
 ---
 
