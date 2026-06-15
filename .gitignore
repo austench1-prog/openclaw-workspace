@@ -1,2 +1,5 @@
 scripts/voice_server_v10.py
 voice_server*.py
+
+# Chairman private folder - never push to GitHub
+我的文件/
