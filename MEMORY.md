@@ -147,8 +147,27 @@ Reason: After OpenClaw upgrade (Opus 4.8), judgment direction stayed stable but 
 - Judgment DIRECTION must stay stable (verified 2026-06-14: stable across upgrade).
 - Even in 给结论 mode, do not lose the psychology / long-term-ecosystem depth when it materially matters — that was the pre-upgrade strength; keep it as a reserve layer.
 - Keep commercialization / risk warnings SHARP (post-upgrade strength).
-- Terminology lock: use **Fractal**, never 分型. Reuse Chairman's original terms verbatim; do not paraphrase his proper nouns.
+- Terminology lock: use **Fractal**, never 分型. **OB = Order Block** (institutional order-block supply/demand zone), NOT "old block" (locked 2026-06-15). **激进 = progressive** entry setup (NOT "急进"/hasty). **交易机会 = trade opportunity** (NOT "交易智慧"/wisdom) (locked 2026-06-15). Reuse Chairman's original terms verbatim; do not paraphrase his proper nouns.
+- **Voice-input interpretation rule (locked 2026-06-15):** Chairman dictates by voice; ASR errors are large (e.g. "order block" → "old block"). DO NOT ask Chairman to pre-clean or edit his input. Dragon's job: interpret through our **domain context + professional terminology** (ICT, Order Block, FVG, R:R, MATS), auto-mapping obvious homophone/near-sound errors back to the correct term. Only ask a one-line clarification when a word would **materially change strategy meaning AND cannot be resolved from context** — never silently archive a wrong term and make Chairman correct it afterward. The terminology lock is the correction dictionary; keep expanding it. **Full ICT/SMC glossary (the master correction dictionary) lives at `Trading/ICT_Glossary_v1.md`** — consult it when interpreting Chairman's trading voice input (Order Block, FVG, BOS, CHoCH, OTE, liquidity sweep, PD Array, Kill Zones, etc.).
 - Current gear: **2 (给结论 · 总裁型)** until Chairman says otherwise.
+
+---
+
+## Market Rehearsal Log (预演 vs 规则 防火墙, 2026-06-15, locked)
+
+Chairman established a dedicated doc: `Trading/Market_Rehearsal_Log_v1.md` to record his market **rehearsals (预演)** — his read of how price *may* unfold, derived from existing rules/strategy.
+
+**One-way firewall (NON-NEGOTIABLE):**
+- Rules/Strategy → Rehearsal: ✅ allowed.
+- Rehearsal → Rules/Strategy: ❌ FORBIDDEN by default. Never let a rehearsal silently become a rule, or the system can never be fixed/stabilized.
+- Exception: if a genuinely NEW rule is discovered during a rehearsal, it must be **manually migrated** to the proper Rules/Strategy doc as a separate explicit entry.
+- It is **rehearsal (预演), NOT prediction** — prediction implies certainty, which doesn't fit our system.
+
+**Long-term value:** rehearsal = calm/neutral mind; live order = emotional constraint. Logging both lets us compare **rehearsal win-rate vs live win-rate** → tells us whether to strengthen judgment (the read) or execution psychology (the trigger).
+
+**Discipline maxim:** "日内交易并不是日日交易" (intraday ≠ daily trading). Monday + chop + no R:R = no trade; flat is correct.
+
+First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_charts/`.
 
 ---
 
@@ -161,6 +180,12 @@ Reason: After OpenClaw upgrade (Opus 4.8), judgment direction stayed stable but 
 5. **Write it down**: Mental notes don't survive session restarts. Files do.
 6. **Trading strategy** defines the boundary (entry/SL/TP/zone). **Order strategy** optimizes within it.
 7. **Source = contract only**: All compliance data from Tier 1 (account contracts), not from websites or memory.
+
+---
+
+## System / Runtime Notes
+
+- **2026-06-15: System recovered; running on OpenClaw with Opus 4.8.** Post-upgrade judgment DIRECTION verified stable; expression density/style shifted (handled via the 3-gear switch; see Communication Consistency Protocol).
 
 ---
 
