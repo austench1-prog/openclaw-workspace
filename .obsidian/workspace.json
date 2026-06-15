@@ -182,6 +182,10 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Persona/Dragon_Persona_3Gear_post-upgrade.md",
+    "Persona/Dragon_Persona_Original_pre-0412.md",
+    "Persona",
+    "scripts/git_sync.log",
     "scripts/auto_git_sync.sh",
     "Trading/_INDEX_2026-06-15.md",
     "Trading/rehearsal_charts/2026-06-15_R002_NQ_pullback_fib_2.jpg",
@@ -213,9 +217,6 @@
     "camarilla-tntl-rth.pine",
     "camarilla-formula3-gc-v3.pine",
     "camarilla-formula3-gc-v2.pine",
-    "camarilla-formula3-gc-v1.pine",
-    "camarilla-formula3-gc.pine",
-    "Trading/NQ_Midnight_IBKR_Data.csv",
     "scripts/dl_v20.png",
     "memory/2026-04-14.md",
     "Trading/Camarilla_Weekly_Midnight_Research_Report.md",
@@ -226,7 +227,6 @@
     "memory/2026-04-12.md",
     "MEMORY.md",
     "Agent_Prompts/compliance_framework_v1.md",
-    "待处理/Hedging_Rules_Research_v1.md",
-    "Agent_Prompts/daily_checklist_v1.md"
+    "待处理/Hedging_Rules_Research_v1.md"
   ]
 }
