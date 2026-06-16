@@ -140,5 +140,32 @@ Based on two points — ① the wick **must** be up-broken + ② the Order Block
 
 ---
 
+## R003 — 2026-06-15 18:30 PDT · NQ · 做空推演 (Short rehearsal)
+
+**Chart:** `strategy_charts/2026-06-15_Short_Harami_FVG_target.jpg` (15m + 1H)
+**Type:** 行情推演 + 预测(正在走的行情;不在交易计划内,目的=完善素材库 + 将来对照)。防火墙适用,不是规则。
+
+### Chairman 原话分析(尽量照讲述形式)
+看到一个很好的小的下跌行情,主要靠三个点:
+1. 价格已回落到前高点下面 —— 突破后又回到前高的下方。
+2. 形成一个向下箭头(两根绿色小柱体),再一个向上箭头指到一根两边被完全包裹的孕线组合(前面完全包住后面;判断当下后面那根红的还没出现)。
+3. 行情一定会往某个方向去:这里有一个黄色的 4H + 15m 组成的 FVG —— 这种 FVG 对价格有强烈吸引力。下方 15m 200日均线也有吸引力,但不作目标。
+
+**目标:** 放在 FVG 下方、形成该 FVG 那根 4H 的开盘价上。从 15m 看也是合理目标。
+**止损:** 孕线那根长柱体上方、1H 线上方(可优化点)。
+**关键:** 确认用的是 1H 图(不是 4H)→ 小而稳的交易区间,不是大区间。Chairman 期望这个一定能实现。
+
+### ✅ 成败判定标准(预测的核心 — 将来回头能明确判成/败)
+- **成功** = 价格向下走到「FVG 那根 4H 的开盘价」目标位(未先被止损)。
+- **失败** = 价格先上破止损位(孕线长柱体上方 / 1H 上方)。
+- 回看时按以上二者明确判定。
+
+### Outcome (to fill later)
+- [ ] 是否到达目标(FVG那根4H开盘价)?
+- [ ] 是否先触止损?
+- 判定:____ (成功 / 失败)
+
+---
+
 ## Prior charts to backfill
 Chairman noted several earlier charts already shared should also be folded in as rehearsal records. **TODO:** locate and append as R000-series once Chairman points them out.
