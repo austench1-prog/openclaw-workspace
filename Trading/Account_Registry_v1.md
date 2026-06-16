@@ -70,12 +70,13 @@
 
 **风控触发逻辑(待落地;动态,按 R-T3 逐日计算):**
 ```
-# 第1/2天 (冲盈利,上限 $1,600)
+# 第1/2天 (决盈利阶段,上限 $1,600)
 if mff_daily_pnl >= 1600 * 0.90:  发警告("接近 $1600")
 if mff_daily_pnl >= 1600:         FLATTEN_ALL()
+if mff_daily_loss >= 200:         FLATTEN_ALL()  # 默认亏损上限;R-T3 按当日实况动态调整
 # 第3天 (已达 $3,200,风控转为限亏)
-if mff_daily_loss >= 200:         FLATTEN_ALL()  # 最大亏损 $200
-# 最高目标 = Tradovate 每日最高盈利风控自动平仓
+if mff_daily_loss >= 200:         FLATTEN_ALL()  # 保住 50% 一致性条件
+# A方案(最高目标) = Tradovate Risk Settings 每日最高盈利自动平仓
 ```
 
 ---

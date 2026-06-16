@@ -51,7 +51,7 @@ Tradovate 是上游控制端 → 管到 NinjaTrader。在 Tradovate 设好后，
 
 ## 收盘后
 
-- Tradovate 每日风控设置在当日 5 PM CT 后自动失效
+- Tradovate 的「每日」以 **5:00 PM CT** 起算（不是日历日），到时风控设置自动失效
 - 下一交易日开盘前重新按上述步骤计算并设置
 - **不要依赖今日设置延续到明天**
 

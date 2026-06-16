@@ -230,6 +230,34 @@ TakeProfitTrader (TPT) 5 个 50K 账户,$2,000 trailing drawdown:
 ### 仍受总前提约束
 - ⏸ 这些都在 ISSUE-004「核心交易系统完成后再展开」的暂缓范围内,先记录概念,不立即建。
 
+---
+
+## ISSUE-005 — Tradovate 风控落地 (B 方案 + A 方案验证)
+
+**Raised:** 2026-06-16 | **Status:** OPEN
+
+### 背景
+今早讨论确定：每日风控线（盈利上限 + 亏损上限）必须落地到系统自动执行，不能靠人手盘中监控。两种方案：
+
+### A 方案 — Tradovate Risk Settings （最高目标）
+- **原理：** Tradovate 是上游控制端，在 Tradovate 设好风控线，不管 NinjaTrader 那边怎操作，触动就强制平仓。
+- **重要细节：** Tradovate 的「每日」以 **5:00 PM CT** 起算（不是日历日）。
+- **待验证：** Tradovate Risk Settings 是账户级——能否覆盖经 Replikanto 跟单的 MFF 账户，需要现場登录验证。
+- **阻塑：** 需要 MFF 官网登录凭据（Chairman 提供）。
+
+### B 方案 — Dragon 信号系统 FLATTEN（备用层）
+- **触发阈值：** 盈利 $1,600 或当日亏损 $200（默认；R-T3 动态调整）→ 发送 FLATTEN_ALL。
+- **发信号的链路：已有**（Dragon → HTTP → Signal Server → DragonFileSig → Sim101 → Replikanto）——现成链路。
+- **缺的是：** 自动监控 MFF PnL（Dragon 读不到 Tradovate 实时数据）——依赖 P2 打通。
+- **现在可用：** 手动触发版（Chairman 告知已到阈值 → Dragon 立刻发 FLATTEN）。
+- **伪代码已写入 Account_Registry，待全自动化落地。**
+
+### 下一步
+- [ ] Chairman 提供 MFF 官网登录凭据 → Dragon 登入验证 A 方案，并设好每日风控
+- [ ] P2（温总数据连通）实现后再落地 B 方案
+
+---
+
 ### C 补充 — 邮件 skill 已连通 (2026-06-15 留痕)
 - `himalaya` v1.2.0 已装,已连 Gmail austench1@gmail.com(IMAP 读 ✅ / SMTP 发已配)。
 - 密码存 macOS keychain(service: himalaya-austench1),config 不存明文,git 不同步密码。
