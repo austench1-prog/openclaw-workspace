@@ -104,10 +104,24 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 ### Line 2 (per-account from contract)
 - Profit target, Max DD, DLL, Min days, Consistency rule, Expiry, Platform restrictions
 
-### New Platform SOP
-- Run Line 1 compatibility check first
-- All pass → onboard
+### New Platform SOP / 新账户 Onboard SOP (4月定，2026-06-16 完整确认)
+1. 规则来源 = Tier 1 账户合同（不靠网站/记忆）
+2. 用 Eval_Account_Risk_Form 张表单逐项填写
+3. 跑 Line 1 兼容性检查
+4. 全过 → onboard；有不过 → 讨论
+5. 录进账户登记表（Trading/Account_Registry_v1.md）
 - Any fail → discuss before accepting
+
+### 凭据库（2026-06-16 建立）
+- 路径：`~/.openclaw/secrets/credentials.json`
+- 权限 600，物理隔离于 workspace 和 git
+- 当前存储：MFF (austenmy)
+- 待扩展：TPT、Tradovate
+
+### 方法论铁律（Chairman 2026-06-16 纠正，锁定）
+- **最高目标优先原则：** 每件事先按最高目标（系统/自动完成）去尝试 → 真的做不到，才退而求其次找替代方案。不是一上来就退回「靠 Chairman 手动」。
+- **新问题先查系统：** 遇到问题，先查「这是不是新问题？以前解决过吗？有没有记录？」——不应跳过直接去建新方案，先找现有的东西。
+- **凭据持久化是连续性的根：** 每次对话 Dragon 都是「裸的」、登录态一过期就断片，这是「一段一段」的技术根因。解决方案：凭据安全存库，持续可调用。
 
 ### CRITICAL Pending Research (⚠️ DO NOT TRADE LIVE UNTIL RESOLVED)
 - Minimum hold time (anti-scalping) — each platform different
