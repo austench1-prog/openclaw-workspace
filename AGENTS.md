@@ -14,6 +14,7 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **防断片检查（Layer 3）:** 读 `memory/active_work.md`，看 last updated 时间。如果距现在 > 30 分钟且处于工作时段（08:00-22:00 PT），主动告知 Chairman：「系统可能中断，我上次在做的是：[active_work.md 的内容]」。
 
 Don't ask permission. Just do it.
 

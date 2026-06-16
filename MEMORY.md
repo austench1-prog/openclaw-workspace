@@ -203,6 +203,12 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ---
 
+## System Management Rules
+
+- **每周日系统检查（2026-06-16 定，锁定）:** 每个星期天做一次系统检查、修补、更新。内容：OpenClaw 服务状态、备份脚本、cron 任务、磁盘空间、软件更新、Open Issues 回顾、MEMORY.md 维护。
+
+---
+
 ## System / Runtime Notes
 
 - **2026-06-15: System recovered; running on OpenClaw with Opus 4.8.** Post-upgrade judgment DIRECTION verified stable. Persona reset to SOUL.md original 龙哥 (see Persona & Communication).
