@@ -41,6 +41,43 @@
 
 ---
 
+## Session 3 — 2026-06-16 (周二) ~09:42-10:46 PDT — PPT $1500 目标达成 ✅
+
+**结果:四个真实考核账户全部命中 PPT $1500 目标。**
+
+执行结构:Leader = **Sim101**,通过 **Replikanto v1.6.1.7** 跟单到 MFFU + TPT 跟随账户。
+产品:**MNQ SEP26**(微型,主体)+ 部分 NQ SEP26。时段约 09:42-10:46 PDT(另有 6/15 尾盘几笔)。
+
+### 真实考核账户(全部达标 ✅)
+
+| 平台 | 账户 | Total PnL | Trailing Max Draw | 状态 |
+|---|---|---|---|---|
+| MFFU | MFFUEVRPD122274045 | **+$1,481.20** | $518.80 | ✅ 达标 |
+| MFFU | MFFUEVRPD122274046 | **+$1,476.20** | $523.80 | ✅ 达标 |
+| TPT | TAKEPROFIT152524137 | **+$1,494.00** | $506.00 | ✅ 达标 |
+| TPT | TAKEPROFIT718789812 | **+$1,490.00** | $510.00 | ✅ 达标 |
+| TPT | TAKEPROFIT800884314 | **+$1,489.00** | $511.00 | ✅ 达标 |
+| TPT | TAKEPROFIT973527220 | **+$1,490.00** | $510.00 | ✅ 达标 |
+
+→ **6 个真实账户全部命中 ≈$1,500 目标。** 全部平仓(Position=0),无隔夜风险。
+
+### Sim / 内部账户(仅参考,不计考核)
+
+| 账户 | Total PnL | 说明 |
+|---|---|---|
+| Sim101(Leader) | +$14,735.00 | 领单账户,虚拟 |
+| SimFF | −$975.00 | 内部 Sim,不影响考核 |
+| SimNQ | $0.00 | 未参与 |
+| TAKEPROFITPRO704123103 | −$94.50 | PRO 账户,本次小幅回撤(非 $1500 目标账户) |
+
+**记录要点:**
+- **PPT $1500 = Profit Per Target,本日单日目标。四个真实考核账户全部达成。**
+- 全部 Trailing Max Draw 健康(~$500 区间,远未触及风控硬线)。
+- 平台:NinjaTrader 手动 + Replikanto 跟单,符合平台隔离原则。
+- ⚠️ `TAKEPROFITPRO704123103` 当日 −$94.50,留意但金额极小、Trailing Draw $370.50 仍安全。
+
+---
+
 ## Lessons Learned
 
 1. **SL/TP must be realistic relative to current market price**
