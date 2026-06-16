@@ -182,6 +182,8 @@
   },
   "active": "7bf9c26549ac6137",
   "lastOpenFiles": [
+    "Trading/_REVIEW_待审清单_2026-06-15.md",
+    "Trading/strategy_charts/2026-06-15_Asia_1H_confirmed_range_ES_NQ.jpg",
     "Persona/Dragon_Persona_3Gear_post-upgrade.md",
     "Persona/Dragon_Persona_Original_pre-0412.md",
     "Persona",
@@ -217,7 +219,6 @@
     "camarilla-tntl-rth.pine",
     "camarilla-formula3-gc-v3.pine",
     "camarilla-formula3-gc-v2.pine",
-    "scripts/dl_v20.png",
     "memory/2026-04-14.md",
     "Trading/Camarilla_Weekly_Midnight_Research_Report.md",
     "memory/2026-04-13.md",
@@ -226,7 +227,6 @@
     "camarilla-weekly-spec.md",
     "memory/2026-04-12.md",
     "MEMORY.md",
-    "Agent_Prompts/compliance_framework_v1.md",
-    "待处理/Hedging_Rules_Research_v1.md"
+    "Agent_Prompts/compliance_framework_v1.md"
   ]
 }
