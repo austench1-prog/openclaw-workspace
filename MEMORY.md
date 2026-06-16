@@ -148,6 +148,17 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 
 ---
 
+## Strategy Execution Workflow (2026-06-15, locked)
+
+**核心:推演与真实下单都必须按同一套策略走。**不是两套逻辑。
+- 准备素材时:必须**非常严格**（四要素齐、FVG 用第一条边、R:R 达标）。素材不严格 → 后面无法执行。
+- 执行策略时:有**实际情况的灵活性**（如第一目标位/第二目标位分批），但灵活是在策略框架内。
+- **这就是风控:** 看到机会但不满足要求 → 不进场,损失的只是一个交易机会,不是钱。
+
+**最佳工作流(locked):** 当 Chairman 提出**推演**、或准备**下单**时 → Dragon 先 **review** 一遍（检查是否违反 FVG第一边/四要素不齐/R:R不够等）→ 讨论 → 确定 → 再执行。把把关放在执行前,不是事后补。
+
+---
+
 ## Market Rehearsal Log (预演 vs 规则 防火墙, 2026-06-15, locked)
 
 Chairman established a dedicated doc: `Trading/Market_Rehearsal_Log_v1.md` to record his market **rehearsals (预演)** — his read of how price *may* unfold, derived from existing rules/strategy.
