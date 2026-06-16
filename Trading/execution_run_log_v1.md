@@ -103,3 +103,30 @@ Dragon → Signal Server → signal.txt → DragonFileSignal → Sim101 → Mark
 ---
 
 *Session logged: 2026-04-09 | Dragon*
+
+---
+
+## Session 4 — 2026-06-16 早盘 (MNQ SEP26 全账户达标)
+
+**执行时间:** 10:10 AM — 10:33 AM PDT
+**领单:** Sim101 **跟单:** Replikanto v1.6.1.7 **品种:** MNQ SEP26
+
+### 成绩
+| 平台 | 账户 | 日盈亏 | 状态 |
+|---|---|---|---|
+| TPT | TAKEPROFIT152524137 | ~+$1,500 | ✅ 达标 |
+| TPT | TAKEPROFIT718789812 | ~+$1,500 | ✅ 达标 |
+| TPT | TAKEPROFIT800884314 | ~+$1,500 | ✅ 达标 |
+| TPT | TAKEPROFIT973527220 | ~+$1,500 | ✅ 达标 |
+| MFFU | MFFUEVRPD122274045 | **+$1,481.20** | ✅ Day 1 完成 |
+| MFFU | MFFUEVRPD122274046 | **+$1,476.20** | ✅ Day 1 完成 |
+
+**全部 6 个账户全部达标 ✅**
+
+### 记录要点
+- 成交证据：NinjaTrader 成交日志（Entry/Exit 名称带 03883AC3 信号 ID）已由 Chairman 截图确认。
+- MFF 后台显示 $0：正常——Tradovate 日内盈亏当天收盘后才同步到 MFF 后台。
+- 今日为 MFF 045/046 第 1 天，成绩顔卡下（不超 $1,600 一致性红线）✅。
+- Replikanto 领单 Sim101 全链路正常，非手动盘中监控下执行。
+
+*Session logged: 2026-06-16 | Dragon*
