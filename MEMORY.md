@@ -192,6 +192,8 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 ## System / Runtime Notes
 
 - **2026-06-15: System recovered; running on OpenClaw with Opus 4.8.** Post-upgrade judgment DIRECTION verified stable. Persona reset to SOUL.md original 龙哥 (see Persona & Communication).
+- **2026-06-16: Default model switched to Sonnet 4.6 (cost optimization).** Opus retained as heavy-duty option. Model switch commands: 「上超跑」= switch to Opus; 「回 Sonnet」= switch back to Sonnet.
+- **Model switching judgment rule (2026-06-16, locked):** Trading-related content (strategy review, rehearsal gating, compliance judgment) = quality first → proactively switch to Opus. Daily chat/files/status = stay on Sonnet. Uncertain scenario → ask Chairman first. Dragon self-manages; 「上超跑」is for Chairman to manually override when he wants Opus.
 
 ---
 
