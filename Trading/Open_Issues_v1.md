@@ -195,3 +195,16 @@ TakeProfitTrader (TPT) 5 个 50K 账户,$2,000 trailing drawdown:
 
 ### 前置条件
 - ⏸ 全部暂缓,直到**核心交易系统完成**后再启动。
+
+---
+
+## ISSUE-002 补充 — 新增 2 个 MFF 账户 (2026-06-15)
+
+来源:My Funded Futures (MFF) 续费收据邮件(via Tradovate)。
+| 账户 ID | Renewal Price | Renewal Date | Order |
+|---|---|---|---|
+| MFFUEVRPD122274045 | $97.0 | 2026-06-16 00:03:53 | ORD-fnOsZuTUAB |
+| MFFUEVRPD122274046 | $97.0 | 2026-06-16 00:03:58 | ORD-PltKhWIkwa |
+
+- 注:这是 **MFF**,与旧记录 MFFUEVRPD122274040(曾标暂停)同公司,账号后缀不同(045/046)。
+- ⚠️ 待 Chairman 厘清:现在 MFF 到底有几个活跃账户?这两个新账户是否纳入「考试账户管理」总数?(此前说的「6 个考试账户」是否要更新?)
