@@ -1,3 +1,5 @@
+# ⛔ SUPERSEDED 2026-06-16 → 改用 draft_fixed_cost_kelly_v0.1.md(固定成本分档法)。本版依赖胜率估计,Chairman 认为太虚,保留仅作历史参考。
+
 # DRAFT — Kelly Position Sizing (凯利头寸管理)
 # Status: DRAFT v0.1 — independent draft, NOT merged into main material library
 # Created: 2026-06-14 by Dragon
