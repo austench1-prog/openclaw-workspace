@@ -229,3 +229,10 @@ TakeProfitTrader (TPT) 5 个 50K 账户,$2,000 trailing drawdown:
 
 ### 仍受总前提约束
 - ⏸ 这些都在 ISSUE-004「核心交易系统完成后再展开」的暂缓范围内,先记录概念,不立即建。
+
+### C 补充 — 邮件 skill 已连通 (2026-06-15 留痕)
+- `himalaya` v1.2.0 已装,已连 Gmail austench1@gmail.com(IMAP 读 ✅ / SMTP 发已配)。
+- 密码存 macOS keychain(service: himalaya-austench1),config 不存明文,git 不同步密码。
+- 读邮件命令:`himalaya envelope list -a gmail` / `himalaya message read <id> -a gmail`。
+- 发邮件:已配但需 Chairman 批准后才发,绝不擅自。
+- 状态:管道打通、验证可用。**监控功能仍暂缓,等核心交易系统完成后再展开。**
