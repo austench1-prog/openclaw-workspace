@@ -230,3 +230,11 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    5e9d93f..f9963af  main -> main
 [2026-06-16 00:00] Pushed ✅
+[main 434998d] auto-sync 2026-06-16 00:07
+ 5 files changed, 64 insertions(+)
+ create mode 100644 Trading/draft_fixed_cost_kelly_v0.1.md
+ create mode 100644 Trading/strategy_charts/2026-06-15_FixedCost_Kelly_v1.jpg
+ create mode 100644 Trading/strategy_charts/2026-06-16_FixedCost_Kelly_v2.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   f9963af..434998d  main -> main
+[2026-06-16 00:07] Pushed ✅
