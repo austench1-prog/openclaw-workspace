@@ -12,3 +12,10 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    a17ada4..3d549b6  main -> main
 [2026-06-15 16:45] Pushed ✅
+[main 3b2806e] auto-sync 2026-06-15 17:00
+ 5 files changed, 86 insertions(+), 3 deletions(-)
+ create mode 100644 "Trading/_REVIEW_\345\276\205\345\256\241\346\270\205\345\215\225_2026-06-15.md"
+ create mode 100644 Trading/strategy_charts/2026-06-15_Asia_1H_confirmed_range_ES_NQ.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   3d549b6..3b2806e  main -> main
+[2026-06-15 17:00] Pushed ✅

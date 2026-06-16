@@ -3,3 +3,6 @@ voice_server*.py
 
 # Chairman private folder - never push to GitHub
 我的文件/
+
+# Obsidian 本地布局,各机独立,不同步
+.obsidian/workspace.json
