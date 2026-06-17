@@ -859,3 +859,54 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    6f0080d..d10406f  main -> main
 [2026-06-17 07:30] Pushed ✅
+[main 0f35f90] auto-sync 2026-06-17 07:45
+ 50 files changed, 166 insertions(+)
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/Asia_1H_confirmed_range_ES_NQ.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/GapDown_QuietBreakout_setup.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/R001_NQ_15m_4H.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/R001_update1_wick_confirmed.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/R001_update2_block_redefined.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/R002_pullback_fib_1.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/R002_pullback_fib_2.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/Short_FVG_firstedge_corrected.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/Short_Harami_FVG_entry_complete.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/Short_Harami_FVG_target.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/_RAW_backfill_notes.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_0733_a65a0aa9.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_0825_a6f076a6.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_0843_ff648714.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_0916_0f239079.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1148_b6a3a5b0.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1159_270d02a5.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1207_86cdebb8.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1249_da798b44.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1504_447b216a.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1504_a4e7abab.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1645_4fcb7723.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1830_74ff73e7.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1845_e2e28c13.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/inbound_1855_cfd3d36b.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_NQ_15m_4H_today_rehearsal.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update1_OB_confirmed.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update2_afternoon_downward.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update3_4H_AP_fib_NQ_15m_4H.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update3_ES_NQ_4H_divergence.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update4_reversal_box_4H_15m.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/R004_update5_1H_midline_doji_5m.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/_RAW_backfill_notes.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_0004_6744fb0c.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_0741_d2fdf30d.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_0741_dc8894f2.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_0757_e9931508.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_0938_649be8e9.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_1333_2ba79ff6.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_1333_b7a7086e.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_1336_73c6de87.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_1622_ae38b71c.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_2207_37cdf3f0.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_2207_39955fe3.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_2229_63a83c68.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/inbound_2236_bcbb2bc9.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   d10406f..0f35f90  main -> main
+[2026-06-17 07:45] Pushed ✅
