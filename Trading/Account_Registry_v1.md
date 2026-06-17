@@ -15,13 +15,47 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | MFFU | MFFUEVRPD122274045 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ⬜ 未设 | ✅ Tier1 后台 06-16 | 🟢 In Progress |
 | MFFU | MFFUEVRPD122274046 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ⬜ 未设 | ✅ Tier1 后台 06-16 | 🟢 In Progress |
-| TPT | TAKEPROFIT152524137 | ❓待确认 | Eval | ❓ | ❓ | ❓ | 50%(参考) | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟢 进行中 |
-| TPT | TAKEPROFIT718789812 | ❓待确认 | Eval | ❓ | ❓ | ❓ | 50%(参考) | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟢 进行中 |
-| TPT | TAKEPROFIT800884314 | ❓待确认 | Eval | ❓ | ❓ | ❓ | 50%(参考) | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟢 进行中 |
-| TPT | TAKEPROFIT973527220 | ❓待确认 | Eval | ❓ | ❓ | ❓ | 50%(参考) | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟢 进行中 |
+| TPT | TAKEPROFIT152524137 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
+| TPT | TAKEPROFIT718789812 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
+| TPT | TAKEPROFIT800884314 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
+| TPT | TAKEPROFIT973527220 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
 | TPT | TAKEPROFITPRO704123103 | ❓PRO阶段 | PRO/Funded | ❓ | ❓ | ❓ | ❓ | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟡 PRO待确认 |
 
 ⬜ = 待落地  ✅ = 已确认/已设  ❓ = 未知,需查 Tier1
+
+### TPT Test $50K 规则详情 (Tier1 CQG 后台实读 2026-06-16)
+| 项 | 内容 |
+|---|---|
+| Prop Firm | TakeProfitTrader (TPT) |
+| 计划 | Test $50K (One-Step) |
+| 盈利目标 | **$3,000** |
+| Max DD | **$2,000** (最低余额 = 起始 - $2,000, **Trailing**) |
+| **一致性** | **50%** — 最大单日 ≤ 总盈利 50% |
+| **最低交易日** | **5 天**（≠ MFF 的 2 天！） |
+| 最大合约 | **6** |
+| 持仓截止 | **17:00 EST**（注意是 EST，非 CT） |
+| Counter Positions Rule | 不得违反 |
+| 允许产品 | CME / COMEX / NYMEX / CBOT 期货；禁股票/期权/外汇/加密/CFD |
+| 平台 | **CQG** |
+| 状态示例(800884314) | 余额 $51,591，已赚 $1,591/$3,000，最大单日 49.63%，已交易 2/5 天 |
+
+⚠️ **TPT vs MFF 关键差异：** 两者一致性都是 50%，但最低交易日 TPT=5 / MFF=2。**3 天通过方案只适用 MFF，不能套 TPT**（TPT 必须凑足 5 个交易日）。
+
+### Tradeify Growth 50k ×5 规则详情 (Tier1 后台实读 2026-06-16)
+账号：TDFYG50971738857 / 50640402386 / 50785559546 / 50653786524 / 50758269179
+| 项 | 内容 |
+|---|---|
+| Prop Firm | Tradeify |
+| 计划 | **Growth 50k** (Evaluation) |
+| 盈利目标 | **$3,000** |
+| Max DD | **$2,000** (Trailing, EOD) |
+| **核心规则(One Rule)** | 不得跨过 $2,000 trailing max drawdown——官方强调「只有一条规则」 |
+| **每日亏损限制** | **$1,250** (Daily Loss Limit) |
+| Microscalping | 有检查(compliant)——允许但监控 |
+| 一致性 | ⚠️ 后台未显示 consistency %（Tradeify Growth 以「无一致性规则」著称，待 Tier1 合同最终确认） |
+| 最低交易日 | ⚠️ 后台未明示，待确认 |
+| 平台 | **Tradovate** |
+| 状态(全部) | 活跃，最后交易 Jun 10；当前都在亏损状态（~ -$840） |
 
 ---
 
