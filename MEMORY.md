@@ -130,6 +130,16 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 
 ---
 
+## 平台架构：CQG vs Tradovate（Chairman 2026-06-16 锁定）
+
+- **CQG = 底层地基**（数据源 + 订单路由 + 风控 API）；**Tradovate = 上层前端经纪平台**（跑在 CQG 上）。
+- **前端归属：TPT = CQG；MFF = Tradovate。**
+- **数据同源** → 不管哪个前端，行情/策略层一致。
+- **风控入口分平台（关键）：** 「每日盈利/亏损自动平仓」分两扇门设：**MFF→Tradovate Risk Settings；TPT→CQG / TPT 后台调 CQG**。不是“TPT 不能设风控”，是门不同。
+- 全文：`Trading/System_Landing_Framework_v1.md` L88-99。
+
+---
+
 ## Companies
 
 - **APM LLC**: Operating entity (S-Corp). EIN: 81-4191044. Citibank Checking: 209251040
