@@ -20,8 +20,14 @@
 | TPT | TAKEPROFIT800884314 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
 | TPT | TAKEPROFIT973527220 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
 | TPT | TAKEPROFITPRO704123103 | ❓PRO阶段 | PRO/Funded | ❓ | ❓ | ❓ | ❓ | ❓ | ⬜ 未设 | ⏳ 待 Tier1 | 🟡 PRO待确认 |
+| Tradeify | TDFYG50971738857 | Growth 50k | Eval | $3,000 | $2,000 | EOD Trailing | ⚠待确 | ⚠待确 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 活跃 |
+| Tradeify | TDFYG50640402386 | Growth 50k | Eval | $3,000 | $2,000 | EOD Trailing | ⚠待确 | ⚠待确 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 活跃 |
+| Tradeify | TDFYG50785559546 | Growth 50k | Eval | $3,000 | $2,000 | EOD Trailing | ⚠待确 | ⚠待确 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 活跃 |
+| Tradeify | TDFYG50653786524 | Growth 50k | Eval | $3,000 | $2,000 | EOD Trailing | ⚠待确 | ⚠待确 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 活跃 |
+| Tradeify | TDFYG50758269179 | Growth 50k | Eval | $3,000 | $2,000 | EOD Trailing | ⚠待确 | ⚠待确 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 活跃 |
+| TradeDay | ELTDER260603051540656386 | $50k Intraday QP | Eval | ❓(~$3,000) | Intraday Trail | **Intraday** | 有 | 有 | ⬜ 未设 | ✅ Tier1 06-16 | 🟢 评估中 |
 
-⬜ = 待落地  ✅ = 已确认/已设  ❓ = 未知,需查 Tier1
+⬜ = 待落地  ✅ = 已确认/已设  ❓ = 未知,需查 Tier1  ⚠ = 后台未明示待合同确认
 
 ### TPT Test $50K 规则详情 (Tier1 CQG 后台实读 2026-06-16)
 | 项 | 内容 |
@@ -56,6 +62,24 @@
 | 最低交易日 | ⚠️ 后台未明示，待确认 |
 | 平台 | **Tradovate** |
 | 状态(全部) | 活跃，最后交易 Jun 10；当前都在亏损状态（~ -$840） |
+
+### TradeDay $50k Intraday Eval (QP) 规则详情 (Tier1 后台实读 2026-06-16)
+账号：ELTDER260603051540656386
+| 项 | 内容 |
+|---|---|
+| Prop Firm | TradeDay |
+| 计划 | **$50k Intraday Evaluation (Quick Pay)** |
+| **DD 类型** | ⚠️ **Intraday Trailing**（不是 EOD！与 MFF/Tradeify 不同） |
+| 最大回撤底线 | $48,370.15（当前） |
+| 账户余额 | $48,445.30 |
+| 持仓限制 | **5 合约 / 50 微型** |
+| **一致性** | 有一致性规则（后台显示 Consistency: Pass；⚠️ 曾因不一致导致盈利目标上调） |
+| 限制交易事件 | 有 Tier1 News Events 限制（FOMC/CPI/就业报告等） |
+| 更新时间 | 每日 17:30 CT |
+| 平台 | （待确认，Quick Pay） |
+| 状态 | Being Evaluated；Days Traded: Pass / Consistency: Pass / Profit Target: Keep Trading |
+
+⚠️ **TradeDay 关键差异：** DD 是 **Intraday Trailing**（日内浮盈也会抬底线，收盘后不锁），跟 MFF/Tradeify 的 EOD Trailing 机制不同。风控计算要分开。还有 **不一致会抬高盈利目标** 的特殊机制。
 
 ---
 

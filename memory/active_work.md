@@ -11,12 +11,12 @@
 
 **主题：** 批量读取 prop firm 账户规则（按 Onboard SOP）
 
-**进度：**
-- ✅ TPT 已登入（control-center）。4 活跃 $50K 账户用 **CQG** 平台（非 Tradovate！）：800884314/718789812/152524137/973527220，续费 07/15/2026。规则详情待点入。
-- ⏳ TPT 规则详情（profit target/DD/consistency/min days）待读
-- ⏳ Tradeify 待登
-- ⏳ TradeDay 待登
-- ⏳ Apex（暂未活跃，需 2FA，暂不登）
+**进度（全部完成）：**
+- ✅ TPT：4 活跃 $50K Test，CQG，$3,000/$2,000 trailing/50%/min 5 天/17:00 EST。规则已填。
+- ✅ Tradeify：5 Growth 50k，Tradovate，$3,000/$2,000 EOD trailing/日亏 $1,250/microscalping。一致性+min days 后台未明示。
+- ✅ TradeDay：1 账户 $50k Intraday QP，**Intraday Trailing**（5 合约），有一致性+限制新闻事件。
+- ✅ 都已填进 Account_Registry。
+- ⏳ 未完：TPT PRO 704123103 规则；Tradeify 一致性/min days 待 Tier1 合同确认；Apex（需 2FA，暂不登）。
 
 ---
 
