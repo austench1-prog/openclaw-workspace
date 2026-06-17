@@ -323,5 +323,29 @@ Based on two points — ① the wick **must** be up-broken + ② the Order Block
 
 ---
 
+## R005 — 2026-06-17 06:29 PDT · 星期三晨间推演更新（看法延续昨晚）
+**Chart:** `rehearsal_charts/2026-06-17_R005_NQ_wed_morning_15m_4H.jpg` (15m + 4H)
+**Symbol:** NQ | **Bias:** 区间震荡，延续昨晚看法（无大变化）
+
+**核心：看法基本不变。** 大盘仍在区间里震荡。
+
+**4H 转折区域（转折箱体）：**
+- 4H 上看到上下两个箭头标示的区域 → 基本形成一个**转折区域 / 转折箱体**的形式。
+- **但两个问题：** ① 4H 这根**还没结束**；② 形态**不是特别明显**。15m 里看更不明显。
+- → 所以这只是一个**看法**，不是确认。
+
+**维持的判断：** 继续维持会**向上去碰 15m 的 200 日均线 + 填满黄色 FVG**。
+- 很有可能在**晚上 6:30 开盘**时出现一个巨大的 sweep 去完成这个 → **但不参与这个交易。**
+
+**今天的交易计划：** 看 **4H 绿色柱子形成以后**（即 **7 点以后**）。
+
+**待补充 Outcome:**
+- [ ] 6:30 开盘是否出现 sweep 去碰 15m 200SMA / 填黄色 FVG？
+- [ ] 4H 转折箱体是否随这根 4H 收盘变明显（确认/证伪）？
+- [ ] 7 点后 4H 绿柱是否形成（交易计划触发条件）？
+- [ ] 跨日目标延续：是否碰到星期二未碰的 1H 开盘价下沿？
+
+---
+
 ## Prior charts to backfill
 Chairman noted several earlier charts already shared should also be folded in as rehearsal records. **TODO:** locate and append as R000-series once Chairman points them out.
