@@ -4427,3 +4427,227 @@ total size is 54015994  speedup is 54.64
 [2026-06-16] iCloud: Trading/ ✅
 [2026-06-16] Vault: Trading/ ✅
 [2026-06-16 17:34] Backup complete.
+[2026-06-16 22:42] Starting backup...
+[2026-06-16] iCloud: MEMORY.md ✅
+[2026-06-16] iCloud: AGENTS.md ✅
+[2026-06-16] iCloud: TOOLS.md ✅
+[2026-06-16] iCloud: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-16] iCloud: Dragon_ToDo_v1.md ✅
+[2026-06-16] iCloud: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-16] iCloud: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-16] iCloud: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-16] iCloud: Agent_Prompts/ninja_startup_sop_v1.md ✅
+[2026-06-16] iCloud: Agent_Prompts/tradovate_daily_risk_sop_v1.md ✅
+[2026-06-16] iCloud: memory/active_work.md ✅
+[2026-06-16] Vault: MEMORY.md ✅
+[2026-06-16] Vault: AGENTS.md ✅
+[2026-06-16] Vault: TOOLS.md ✅
+[2026-06-16] Vault: Multi_Agent_Trading_System_v3.0.md ✅
+[2026-06-16] Vault: Dragon_ToDo_v1.md ✅
+[2026-06-16] Vault: Agent_Prompts/compliance_framework_v1.md ✅
+[2026-06-16] Vault: Agent_Prompts/gatekeeper_v1.md ✅
+[2026-06-16] Vault: Agent_Prompts/daily_checklist_v1.md ✅
+[2026-06-16] Vault: Agent_Prompts/ninja_startup_sop_v1.md ✅
+[2026-06-16] Vault: Agent_Prompts/tradovate_daily_risk_sop_v1.md ✅
+[2026-06-16] Vault: memory/active_work.md ✅
+Transfer starting: 2524 files
+.git/
+.git/COMMIT_EDITMSG
+.git/index
+.git/logs/HEAD
+.git/logs/refs/heads/main
+.git/logs/refs/remotes/origin/main
+.git/objects/
+.git/objects/03/
+.git/objects/03/3db1355283cceb4fcdd8ee7c1679b6ffb14066
+.git/objects/0d/
+.git/objects/0d/0ece761565bb35bae453c8404474f59999818c
+.git/objects/0f/
+.git/objects/0f/8e3f1fa72d33007191d41f933e81855c15c283
+.git/objects/12/
+.git/objects/12/47670b70e97c09a2683783083429616aefb456
+.git/objects/13/
+.git/objects/13/ff09a24f111d4b906848e033f888be0ea3fe32
+.git/objects/15/
+.git/objects/15/8ec830d8878095d2ef27997017f51bf27b6546
+.git/objects/1c/
+.git/objects/1c/ba1012e18d030a0f341344f15231a14ba75e37
+.git/objects/1e/
+.git/objects/1e/2a9fe2514d73036a173888f0aa0278b9cdc206
+.git/objects/21/
+.git/objects/21/5df008e20547d14ae5600f46b57cf58cf849da
+.git/objects/23/
+.git/objects/23/eb398b976747c89926ffba01158116b51000ee
+.git/objects/24/
+.git/objects/24/b84b38595e6dcb5d217edac17162de370fa7ec
+.git/objects/28/
+.git/objects/28/7207328ba8539ac40b9261e1d16f62aea7214f
+.git/objects/2c/
+.git/objects/2c/9d81fcce7e28eb08d3bd8db8166cdc703aa570
+.git/objects/2d/
+.git/objects/2d/7588d95ab668125392f1c6a63aeff6fe51f792
+.git/objects/2e/
+.git/objects/2e/a3eb917917940953c63888e10a62d6c1799aae
+.git/objects/30/
+.git/objects/30/0406cb2cf3a35feb4b907452dff7e5983b706c
+.git/objects/35/
+.git/objects/35/94ef4f37fd8ddab8d94af01e23aa0207acdbf7
+.git/objects/37/
+.git/objects/37/a5b3564135f093c5c065533cc52eb3a6a75261
+.git/objects/39/
+.git/objects/39/b677b44eeae8c9b66f0d2acc46c6bf9aceb704
+.git/objects/3c/
+.git/objects/3c/1bb57d474d5c039be624f0933127e638ff1386
+.git/objects/3d/
+.git/objects/3d/8bfc9827fe2ec6e7bf8cf14d8ee5c67e14daef
+.git/objects/46/
+.git/objects/46/93b4dda6f5032beb75231119e83f804c958f09
+.git/objects/49/
+.git/objects/49/d722882a8643eb0525539d99252273789d2775
+.git/objects/4a/
+.git/objects/4a/5f8eb01f3c2bfaa13da7791af661b1fc7adfb6
+.git/objects/4b/
+.git/objects/4b/86f393882444389a97f2d63c5d68a839f5ed89
+.git/objects/50/
+.git/objects/50/760369482a3d563947d6ff8a01e6af87101813
+.git/objects/52/
+.git/objects/52/84dc07ac90bdb31f73705b45b23d8d6783e264
+.git/objects/54/
+.git/objects/54/cd43071a55ed76a7302a782eb2db41b2234062
+.git/objects/57/
+.git/objects/57/da9a8b25258a4cf8bc20c6d08ec3aa7968b57f
+.git/objects/58/
+.git/objects/58/089eebd2cc7c81b468ebc74f3c4f33641be2b8
+.git/objects/58/9252ea2da3ac7ba9c469f835bb1b52e36bd7f7
+.git/objects/58/ac0fbba129c0d51d1a027b211613dfa0964a83
+.git/objects/5e/
+.git/objects/5e/85a7ba25ae6728b0f8a2e13d052390fe86d4a6
+.git/objects/5e/e970d69dc757243b1e1f0ec83404d41a35f843
+.git/objects/61/
+.git/objects/61/13daad7bae4d60f2cce203cd4726dfcaa6b72d
+.git/objects/62/
+.git/objects/62/055cdecaa81683c3f484649125e99834fccf70
+.git/objects/62/4e573bdd0f7adb819437eef343ecbfd75c32f2
+.git/objects/62/dafdc0cd84f0c466a6756868522a7793af1330
+.git/objects/63/
+.git/objects/63/6fc34b57f94ec29c649eb205f91b4f5845df21
+.git/objects/68/
+.git/objects/68/94464c86285679e9d962d03726ba1eda940f59
+.git/objects/69/
+.git/objects/69/ac69e62fd2ca135f330ded4337739a2e8eafee
+.git/objects/6b/
+.git/objects/6b/a3621145750d97efbb4bee546f087faef17edc
+.git/objects/73/
+.git/objects/73/ca1864e414ebe252b2d3e76058a589e44433d3
+.git/objects/75/
+.git/objects/75/a69c7bd9a91456a6a02e676373aab0dcc6cbc1
+.git/objects/78/
+.git/objects/78/6e49b6a4e12000d5861bd3b169c7e7e66c43d5
+.git/objects/80/
+.git/objects/80/c15fb156875628f9222129acf209c52fb7613e
+.git/objects/84/
+.git/objects/84/57adee60b2067d79b111fdf67f23647dfc0bb6
+.git/objects/8a/
+.git/objects/8a/aa20d5894c8b999d561135c0c6eb6ffe6ab319
+.git/objects/8b/
+.git/objects/8b/3953383f5f04002bd700e5d8826ec4a28c6293
+.git/objects/8d/
+.git/objects/8d/7c971db3f491a27ffced7d71c90c7a9c91e4f1
+.git/objects/8e/
+.git/objects/8e/bcdfbd1831db1b2f75d8655b79a240e0680c71
+.git/objects/8f/
+.git/objects/8f/014810b1a56ec11df54d39de894aedc955f3c4
+.git/objects/91/
+.git/objects/91/d901d4da0386f5d2cef67b3d0b2caf0d9f182b
+.git/objects/96/
+.git/objects/96/44d71ba65064ba1095a238e5a1e2efcd582088
+.git/objects/99/
+.git/objects/99/c594c7c373d7c26276db5c88793b042573560e
+.git/objects/a2/
+.git/objects/a2/955f254d24fe9a3eb76a3da7fb5308862bb4d7
+.git/objects/a3/
+.git/objects/a3/55a8824ee0a7e327fef2d20b6ce6d26ea6fb54
+.git/objects/a3/880b22fedc4907d1d91c19cd90b922a1964011
+.git/objects/a9/
+.git/objects/a9/c6b6936ca7114d4d5a58e1447ff50c92b5048d
+.git/objects/ab/
+.git/objects/ab/14a9cfa1c9e35a66eb2a1e2c312d2e96f9928a
+.git/objects/ad/
+.git/objects/ad/2a1539a31301e1db50e41d600087469b4a008b
+.git/objects/af/
+.git/objects/af/f2dd29213e42fa53f51f344ce3a567aa9e27a0
+.git/objects/b6/
+.git/objects/b6/b4fa769ada9cc8e08c8741a007a4e6cf05a104
+.git/objects/bd/
+.git/objects/bd/35e277883d4fe3819cc663c859d6a3aa5ca0f2
+.git/objects/bd/4052c20b891b4e4411d0171477853ac4505bc4
+.git/objects/be/
+.git/objects/be/b9e45b815021d06e7cf5adaea78029de24f845
+.git/objects/c2/
+.git/objects/c2/03f70984d92a87c4bbc543143a60b26659f479
+.git/objects/c3/
+.git/objects/c3/f223eca21c215a7b35c2c114e303f7d2f2fa0f
+.git/objects/c7/
+.git/objects/c7/dccf1a571722bcfc9cb04814909654e1e89e4d
+.git/objects/cf/
+.git/objects/cf/78e6cd238feff585ad592f507674fe3177398b
+.git/objects/d3/
+.git/objects/d3/34d5059c589a60e6dda6f09ddd586aeb710c2b
+.git/objects/d6/
+.git/objects/d6/346a21ebd23d9a4b7e5a1b6a8f9a1d51675194
+.git/objects/d7/
+.git/objects/d7/99157a59aa3e703aa86e6947c225c98d8da64a
+.git/objects/dc/
+.git/objects/dc/004f75063f0466643ab8362ef7be2df68ba2cb
+.git/objects/de/
+.git/objects/de/8af9ed18d20b69bd9f40202d688f207e93dcdc
+.git/objects/df/
+.git/objects/df/078f01fa187956af0d7596d5bf2be63c6eae5b
+.git/objects/e0/
+.git/objects/e0/566fd7ebbf7a3a0a287dce1968becb5173acc1
+.git/objects/e2/
+.git/objects/e2/5b7d8c7fdbe40af8d197de033ff3b98a39680a
+.git/objects/e4/
+.git/objects/e4/f9ef542c460fdd505f6eaf8acdc47c35538abd
+.git/objects/e7/
+.git/objects/e7/92a6ffba0353111b45ffd52b96b837efb11e4a
+.git/objects/e9/
+.git/objects/e9/227c7a960a30e001c9e78f4bd95600972f22d4
+.git/objects/e9/4a1a698f0b77fc40a730432f171b19aed10cc3
+.git/objects/ee/
+.git/objects/ee/1835550b58863f9a35f38906ed710078a1d0bb
+.git/objects/f1/
+.git/objects/f1/13c0f0e94ec03117346365e9bbbf88698f7622
+.git/objects/f7/
+.git/objects/f7/61986968c46627afa9dee9d1260a980f461421
+.git/objects/f9/
+.git/objects/f9/3a33538007bf27bd638bef53062a2a1bdd5463
+.git/objects/fa/
+.git/objects/fa/d846cfcef08a0b14b2717ea844d5240aef4fee
+.git/objects/fb/
+.git/objects/fb/8068a5b40959773ce2c34f22de5a2c5db1c867
+.git/objects/fc/
+.git/objects/fc/e73c85cac3347e9cd1c84c49989113e08c6137
+.git/objects/fe/
+.git/objects/fe/1de93cf7ef5e5b4bec7d4a2b8aa0fbbc6d5166
+.git/refs/heads/
+.git/refs/heads/main
+.git/refs/remotes/origin/
+.git/refs/remotes/origin/main
+.obsidian/workspace.json
+Trading/Market_Rehearsal_Log_v1.md
+Trading/rehearsal_charts/
+Trading/rehearsal_charts/2026-06-16_R004_update3_4H_AP_fib_NQ_15m_4H.jpg
+Trading/rehearsal_charts/2026-06-16_R004_update3_ES_NQ_4H_divergence.jpg
+Trading/rehearsal_charts/2026-06-16_R004_update4_reversal_box_4H_15m.jpg
+Trading/rehearsal_charts/2026-06-16_R004_update5_1H_midline_doji_5m.jpg
+memory/active_work.md
+scripts/backup.log
+scripts/git_sync.log
+
+sent 1342115 bytes  received 2874 bytes  3193989 bytes/sec
+total size is 54740959  speedup is 40.70
+[2026-06-16] Vault: Full workspace snapshot ✅
+[2026-06-16] iCloud: Trading/ ✅
+[2026-06-16] Vault: Trading/ ✅
+[2026-06-16 22:42] Backup complete.
