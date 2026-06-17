@@ -112,11 +112,11 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 5. 录进账户登记表（Trading/Account_Registry_v1.md）
 - Any fail → discuss before accepting
 
-### 凭据库（2026-06-16 建立）
+### 凭据库（2026-06-16 建立，当日扩展到 5 平台）
 - 路径：`~/.openclaw/secrets/credentials.json`
 - 权限 600，物理隔离于 workspace 和 git
-- 当前存储：MFF (austenmy)
-- 待扩展：TPT、Tradovate
+- 存储：MFF(austenmy) / TPT / Tradeify / TradeDay — 均活跃；Apex(austench) — 暂未活跃 + 需 2FA
+- Apex 登录需两次认证，启用时需 Chairman 配合输验证码
 
 ### 方法论铁律（Chairman 2026-06-16 纠正，锁定）
 - **最高目标优先原则：** 每件事先按最高目标（系统/自动完成）去尝试 → 真的做不到，才退而求其次找替代方案。不是一上来就退回「靠 Chairman 手动」。
