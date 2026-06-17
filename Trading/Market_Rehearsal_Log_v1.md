@@ -448,5 +448,38 @@ Based on two points — ① the wick **must** be up-broken + ② the Order Block
 
 ---
 
+## R007 — 2026-06-17 15:31 PDT · 星期四日线级别预推演（ES + NQ 对照）
+**Chart:** `rehearsal_charts/2026-06-17_R007_thursday_daily_ES_NQ_1D.jpg` (ES 1D + NQ 1D)
+**Symbol:** NQ（主）+ ES（对照，未作主分析） | **级别：日线（首次上日线预推演）**
+
+**关键位（NQ 日线）：**
+- **STOP** 上移到**日线星期三的最高点**（前高线 ~30,815）。
+- **向上可能达到位 = 星期三开盘价 = 星期二收盘价**（黄色位）。
+- **向下：红色 overlap → Target** 这个位值得关注。
+- **蓝色 4H 200SMA ~29,460**。
+
+**期待的走势（推演）：**
+- 大盘继续向上突破黄色可能达到位 → 在上面**盘整** → 但**不突破 STOP**。
+- 这样形成**三天连续的高点向下** → 符合下跌行情。
+
+**大趋势关注点（ES & NQ 共同）：**
+- 关注 **X 热线**所形成的后续范围 — 正是这个范围使大盘到最高点时形成了**日线级别背离**，值得关注。
+
+**周线：** 暂看不出太大趋势 → 暂不分析。
+
+**ES 对照（辅助，不过多分析）：**
+- ES 与 NQ 底部都画了**蓝色 OB++**。
+- ⚠️ **ES 的 OB 更重要：** 它前面有一个重要位置——一根**反向红色柱体** → 更加重要。
+- NQ **没有**这样的结构 → 所以目前不做过多分析。
+
+**待补充 Outcome（星期四验证）：**
+- [ ] 是否向上碰黄色位（周三开盘/周二收盘）后盘整、不破 STOP（周三高）？
+- [ ] 是否形成三天连续高点向下？
+- [ ] 是否向下去 Target / 4H 200SMA ~29,460？
+
+**⚠️ 防火墙：** 推演，不是预测。日线背离 / OB / overlap 都是应用现有规则得出的 read。
+
+---
+
 ## Prior charts to backfill
 Chairman noted several earlier charts already shared should also be folded in as rehearsal records. **TODO:** locate and append as R000-series once Chairman points them out.
