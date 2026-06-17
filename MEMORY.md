@@ -191,6 +191,30 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ---
 
+## 素材库管理铁律（Chairman 2026-06-17 锁定，最高优先级）
+
+**核心：** 交易素材是 Chairman **在状态中一眼抓住、一张一张手动抠下来的原始截图。这种工作人类做不出第二次**——错过那一瞬间就再也回不来。**原始性本身 = 真正的价值。**这是 Chairman 现在“进入状态”的时机，把这些都收集进系统 = 头号优先事项。
+
+**Dragon 的职责：即抓即存，瞬间稳妥归档，绝不加工、绝不丢失。**
+
+**四条铁律（不可违反）：**
+1. 即抓即存、原样保管。
+2. **绝不修改原始素材（图 + Chairman 原话）。** 不 P 图、不裁剪、不重画。修改就没意义。需回测验证的东西回测里早有；这里收的是最原始的东西。
+3. **不合并。** 只做归类（同类目下交叉索引），每条独立保留，绝不揉成一条。
+4. **不断丰富、不断加强。** 同一形态实战中每见一根就原样收进对应类目 → 越来越丰富。
+
+**两条线：** 规则（抽象逻辑，存素材库正文）vs 零件/实例（同一东西的不同变体 + 实战原始图例，存 `Trading/material_specimens/<类目>/`，每类一个 `_INDEX.md` 做归类索引）。
+
+**已建类目：** `material_specimens/pinbar_doji/`（长影线/十字星/Pin Bar 反转引线类）。管理铁律全文在 `Trading/Trading_Material_Library_v1.md` 【素材库管理铁律】。
+
+### 两层架构（Chairman 2026-06-17 锁定）
+- **① 奥斯汀素材原稿备份（Austin Raw Archive）= 底片，永不修改。** 路径 `Trading/austin_raw_archive/`（按日期子目录 + 每日 `_RAW.md`）。只存 Chairman **原话逐字（对错不管）+ 原图原字节**，像截图一样一动不动。**不总结、不归类、不判断、不纠错。**
+- **② 系统记录 = 加工层（Dragon 总结/归类/规则/索引）。** 在 `Market_Rehearsal_Log_v1.md` / `Trading_Material_Library_v1.md` / `material_specimens/`。
+- **关系：** 原稿备份是底片，系统记录从底片提炼给系统用；系统记录出错 → 回底片还原真相。
+- **标准动作（锁定）：** Chairman 每丢一条 → Dragon **同时**做两件：先存原稿（①层）再做系统记录（②层）；原稿绝不因做系统记录而改动。
+
+---
+
 ## Design Principles (Chairman's core directives)
 
 1. **Reduce human involvement** = reduce human error. System must self-verify.
