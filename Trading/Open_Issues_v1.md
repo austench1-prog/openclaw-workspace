@@ -292,3 +292,26 @@ TakeProfitTrader (TPT) 5 个 50K 账户,$2,000 trailing drawdown:
 - 读邮件命令:`himalaya envelope list -a gmail` / `himalaya message read <id> -a gmail`。
 - 发邮件:已配但需 Chairman 批准后才发,绝不擅自。
 - 状态:管道打通、验证可用。**监控功能仍暂缓,等核心交易系统完成后再展开。**
+
+---
+
+## ISSUE-007 — Tradovate Risk Settings 自动设置缺口
+
+**Raised:** 2026-06-17 | **Status:** OPEN | **Priority:** HIGH
+
+### 问题
+Tradovate Risk Settings（每日盈亏自动平仓）无法可靠地自动设置：
+- Browser 自动化：canvas UI，坐标盲点，不可靠，成本高
+- API：Tradovate 不开放此功能给交易者端
+- 结果：系统无法自主完成这个关键的风控配置步骤，违反"减少人为参与"原则
+
+### 影响
+每次需要更新风控参数（新账户、每日调整），都要人工登录操作。今天（6/17）因此导致：
+- MFF 两个账户花了约 1 小时才设好（本应几分钟）
+- TPT 5 个未完成
+- 大量 API token 浪费在浏览器截图/重试
+
+### 待解决
+- [ ] 研究 Tradovate 是否有隐藏的 WebSocket/内部 API 可用
+- [ ] 或通过 NinjaTrader 端设置同等风控（已有 FLATTEN 信号链）
+- [ ] 或找到可靠的 browser automation 方案（headless + 稳定 selector）
