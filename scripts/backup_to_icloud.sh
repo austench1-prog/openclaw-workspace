@@ -1,11 +1,13 @@
 #!/bin/bash
 # Dragon Backup Script - iCloud + DragonVault (local)
 # Runs automatically via cron daily at 3am
-# Created: 2026-04-10 | Updated: 2026-06-16
+# Created: 2026-04-10 | Updated: 2026-06-18
 
 WORKSPACE="/Users/austinai/.openclaw/workspace"
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dragon_Backup"
-VAULT="/Volumes/DragonVault/Dragon_Backup"
+# DragonVault volume name contains a newline in APFS metadata; use glob to resolve
+VAULT_ROOT=$(cd /Volumes/Dragon* 2>/dev/null && pwd)
+VAULT="${VAULT_ROOT}/Dragon_Backup"
 DATE=$(date +%Y-%m-%d)
 LOG="$WORKSPACE/scripts/backup.log"
 
@@ -35,7 +37,7 @@ for f in "${FILES[@]}"; do
 done
 
 # --- DragonVault Backup (local) ---
-if [ -d "/Volumes/DragonVault" ]; then
+if [ -n "$VAULT_ROOT" ] && [ -d "$VAULT_ROOT" ]; then
     mkdir -p "$VAULT"
     for f in "${FILES[@]}"; do
         if [ -f "$WORKSPACE/$f" ]; then
@@ -43,7 +45,7 @@ if [ -d "/Volumes/DragonVault" ]; then
         fi
     done
     # Full workspace snapshot to DragonVault
-    rsync -av --delete "$WORKSPACE/" "$VAULT/workspace_full/" >> "$LOG" 2>&1
+    rsync -av --delete "$WORKSPACE/" "${VAULT_ROOT}/workspace_full/" >> "$LOG" 2>&1
     echo "[$DATE] Vault: Full workspace snapshot ✅" >> "$LOG"
 else
     echo "[$DATE] DragonVault not mounted - skipping local backup" >> "$LOG"
@@ -53,7 +55,7 @@ fi
 if [ -d "$ICLOUD" ]; then
     rsync -a --delete "$WORKSPACE/Trading/" "$ICLOUD/Trading/" && echo "[$DATE] iCloud: Trading/ ✅" >> "$LOG"
 fi
-if [ -d "/Volumes/DragonVault" ]; then
+if [ -n "$VAULT_ROOT" ] && [ -d "$VAULT_ROOT" ]; then
     rsync -a --delete "$WORKSPACE/Trading/" "$VAULT/Trading/" && echo "[$DATE] Vault: Trading/ ✅" >> "$LOG"
 fi
 
@@ -61,7 +63,7 @@ fi
 MEMORY_FILE="$WORKSPACE/memory/$(date +%Y-%m-%d).md"
 if [ -f "$MEMORY_FILE" ]; then
     cp "$MEMORY_FILE" "$ICLOUD/memory_$(date +%Y-%m-%d).md"
-    [ -d "/Volumes/DragonVault" ] && cp "$MEMORY_FILE" "$VAULT/memory_$(date +%Y-%m-%d).md"
+    [ -n "$VAULT_ROOT" ] && [ -d "$VAULT_ROOT" ] && cp "$MEMORY_FILE" "$VAULT/memory_$(date +%Y-%m-%d).md"
     echo "[$DATE] Today's memory ✅" >> "$LOG"
 fi
 
