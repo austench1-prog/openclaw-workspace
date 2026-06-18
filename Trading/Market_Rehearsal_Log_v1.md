@@ -546,5 +546,41 @@ Based on two points — ① the wick **must** be up-broken + ② the Order Block
 
 ---
 
+## R008 — 2026-06-18 07:08 PDT · 今日新推演（R007失败后重建观点）
+**Chart:** `rehearsal_charts/2026-06-18_R008_15m_4H_up_FVG_target.jpg` (NQ 15m + 4H)
+**Symbol:** NQ | **时间框架：** 15m + 4H | **方向：** ⬆️ 向上
+
+**背景：** R007 已关闭（失败推演，STOP被突破）。市场已转折向上，重新建立今日观点。
+
+**关键结构更新：**
+- **新 Block 层界：** 以 4H **十字星（蜀烛）的红色柱体部分**作为新的 OB Block （也是今早 0624 素材中该十字星的应用）
+- **STOP：** 十字星下方（图标注 ~30,134 区域 / STOP 红虚线）
+- **第一目标：** 填补黄色 FVG（FVG++ 4H & 15，当前价格上方 ~30,750+）
+
+**关键位水平（图上可读）：**
+- 前高点： ~30,815
+- 黄色 FVG++ 4H & 15： ~30,750–30,815（第一目标）
+- OB__（红色）： ~30,670–30,850（内含十字星）
+- 当前价： ~30,570
+- STOP： ~30,134（十字星下方）
+- OB++（蓝色）： ~30,134 层
+- Target（备注）： ~29,220 橙色线（更大级别参考，非今日目标）
+- 4H 200SMA： ~29,080
+
+**技术联动：** 与今日素材内容高度关联―
+- 0624素材【被完全包裹的十字星 = 新一段上升起点】：这根十字星 + 其后大维柱上涌，正是该素材的实盘應用。
+- 0624素材【关键位置突破后持续价值】：今日分界线作止损 / 入场参考。
+
+**待验证（推演题）：**
+- [ ] 价格是否到达黄色 FVG（~30,750+）？
+- [ ] STOP (~30,134) 是否未被突破？
+- [ ] 到达 FVG 后行情态态？（突破前高 / 回调 / 适度盘整）
+
+**状态：** 🟡 **活跍**（2026-06-18 07:08 PDT开始）
+
+**⚠️ 防火墙：** 推演不是预测。FVG 吸引 + 十字星结构 + OB Block 是应用现有规则的 read。
+
+---
+
 ## Prior charts to backfill
 Chairman noted several earlier charts already shared should also be folded in as rehearsal records. **TODO:** locate and append as R000-series once Chairman points them out.
