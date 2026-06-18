@@ -13,8 +13,8 @@
 
 | 平台 | 账号 | 计划 | 阶段 | 盈利目标 | Max DD | DD类型 | 一致性 | 最低天数 | $1600/日自动平仓 | 规则来源 | 状态 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| MFFU | MFFUEVRPD122274045 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ⬜ 未设 | ✅ Tier1 后台 06-16 | 🟢 In Progress |
-| MFFU | MFFUEVRPD122274046 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ⬜ 未设 | ✅ Tier1 后台 06-16 | 🟢 In Progress |
+| MFFU | MFFUEVRPD122274045 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ✅ 已设 DL$300/DP$1500 (06-17 Tradovate) | ✅ Tier1 后台 06-16 | 🟢 In Progress |
+| MFFU | MFFUEVRPD122274046 | **Rapid** | Eval | $3,000 | $2,000 | EOD Trailing | **50%** | 2 | ✅ 已设 DL$300/DP$1500 (06-17 Tradovate) | ✅ Tier1 后台 06-16 | 🟢 In Progress |
 | TPT | TAKEPROFIT152524137 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
 | TPT | TAKEPROFIT718789812 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |
 | TPT | TAKEPROFIT800884314 | Test $50K | Eval | $3,000 | $2,000 | Trailing | **50%** | **5** | ⬜ 未设 | ✅ Tier1 CQG 06-16 | 🟢 进行中 |

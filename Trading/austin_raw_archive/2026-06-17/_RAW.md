@@ -294,3 +294,11 @@
 > 作为背景今天交易的背景，你可以记录一下，今天那是联邦储备委员会的利息公布日，也就是说for M C，但是这么重要的一条我也Mis掉了，那么还好，今天因为我没有在他们开会的这个时间进场，我经常的时间是比较靠后了，所以因为没有没有因为这一条毁掉账户，但是这是一个极大的风险，就表明说在我们的系统没有工作起来我们是有多么大的风险
 
 （无新图。承接今日交易复盘。FOMC=Federal Open Market Committee 利率决议日。）
+
+---
+
+## [系统记录 ~18:50 PDT] Dragon — MFF 风控落地完成
+- 路径确认：Tradovate → 右上角 sliders 图标 → Settings → Accounts 标签 → 各账户 "Risk Settings" 按钮。直接 URL: trader.tradovate.com/#accounts
+- MFFUEVRPD122274045: Daily Loss $300 / Daily Profit $1,500 ✅ Saved
+- MFFUEVRPD122274046: Daily Loss $300 / Daily Profit $1,500 ✅ Saved
+- 凭据已存库 tradovate_mff（用户名 MFFUAVGtOavkMN，密码经 MFF dashboard Copy→pbpaste 取得，600 权限）
