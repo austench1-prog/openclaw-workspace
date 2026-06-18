@@ -2,12 +2,11 @@
 
 ## Active Reminders
 
-### 小塔替换机 — Mac mini M4 (16GB/512GB, Open Box Excellent) — 星期五到货
-- 背景: 现机小塔过热 + 工作量难扛。M4 现货是市面唯一一台 (官方店要等到10月)。
-- ETA: 2026-06-19 (Fri)
-- 到货当天: 执行 OpenClaw 整套迁移 (workspace + secrets/credentials.json 600权限 + cron + 备份脚本 + 信号链通温总PC 5000)
-- 待 Chairman 定: 新机命名? 老小塔退役做冷备?
-- 迁移 SOP: 待写 (到货前备好)
+### ✅ 小塔 M4 迁移完成 — 2026-06-18
+- 新机：Mac mini M4 (16GB/512GB)，已迁移并验证
+- 待确认：温总 PC (192.168.0.226) 信号链（需温总开机后测试）
+- 备份脚本：待验证 Samsung DragonVault 3am 脚本是否正常转移
+
 
 
 ### Meritpoint Logic LLC via Tradovate — ON HOLD
