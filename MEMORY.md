@@ -238,6 +238,18 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ---
 
+## 执行架构铁律（2026-06-17 锁定）
+
+**Tradovate 网页风控设置** = 人工偶尔做，系统不做（浏览器UI不可靠，不是系统该走的路）。
+
+**ATM 控制** = 在 DragonFileSignal Strategy 里扩展，加 NinjaTrader ATM API 调用（纯代码，止损/止盈/跟踪止损程序化）。这是下一个工程任务。
+
+**实时风控保障** = FLATTEN_ALL 信号链（龙哥→HTTP→温总5000→signal.txt→DragonFileSignal→Sim101→Replikanto）已通，立即可用。
+
+**浏览器操作纪律**：执行前先用知识定位目标，再操作，不盲点截图试错。Chairman 发 "stop" = 完成当前这步立刻停，报告状态等指示。
+
+---
+
 ## System Management Rules
 
 - **每周日系统检查（2026-06-16 定，锁定）:** 每个星期天做一次系统检查、修补、更新。内容：OpenClaw 服务状态、备份脚本、cron 任务、磁盘空间、软件更新、Open Issues 回顾、MEMORY.md 维护。
