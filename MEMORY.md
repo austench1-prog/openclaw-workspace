@@ -199,6 +199,8 @@ Chairman established a dedicated doc: `Trading/Market_Rehearsal_Log_v1.md` to re
 
 First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_charts/`.
 
+**多品种扩展（Chairman 2026-06-18 锁定）：** 推演不能只做 NQ——只做一项太少。**每个交易日强制做全品种：① NQ ② 黄金 GC（可能要实际交易）③ ES 或直接 SPX（最终要操作的品种，ES 作辅助）。** 已设每日 cron 提醒（周一至周五 06:20 PDT，jobId f56c3d21）。
+
 ---
 
 ## 素材库管理铁律（Chairman 2026-06-17 锁定，最高优先级）
