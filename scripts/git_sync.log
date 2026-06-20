@@ -2563,3 +2563,38 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    3dd5dca..59d40fc  main -> main
 [2026-06-20 15:00] Pushed ✅
+[main 61c37f4] auto-sync 2026-06-20 15:15
+ 31 files changed, 5 insertions(+)
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1038_ES_NQ_4h_divergence_buyside_principle.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1116_ES_NQ_divergence_four_scenarios.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1135_chairman_divergence_application.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1141_risk_management_RR_table.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1159_chairman_ranging_vs_trending_judgment.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1205_dragon_4h_15m_1m_execution_framework.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1220_AP_strategy_summary.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1235_NQ_FVG_judgment_execution_gap.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1235_dragon_judgment_vs_execution_card.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1324_ES_NQ_divergence_real_scenario.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1328_NQ_TNTL_HH_LL_custom_indicator_response.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1333_NQ_ICT_killzone_indicator_response.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1335_dragon_strategy_existing_gaps_analysis.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1441_NQ_oscillation_monday_breakout_watch.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1448_chairman_consolidation_analysis_plan.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/0929_NQ_4h_OB_trading_zone_ABCD_short.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/0744_NQ_4h_sweep_point_A_large_picture.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/2023_strategy_testing_methodology.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/2114_NQ_MTF_4h_OB_order_block_analysis.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/2129_sweep_point_extended_explanation.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1526_NQ_dual_chart_gap_up_open_analysis.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1533_chairman_red_box_buyzone_trend_analysis.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1621_FVG_entry_SL_analysis_detailed.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1650_trendline_OB_sweep_point_4h_trend.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1657_trendline_chart_updated_boundaries.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1822_chairman_win_rate_testing_methodology.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1833_dragon_strategy_testing_methodology.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1838_dragon_FVG_entry_unit_win_rate_framework.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1856_dragon_strategy_fractal_4h_15m_framework.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1930_chairman_strategy_implementation_questions.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   59d40fc..61c37f4  main -> main
+[2026-06-20 15:15] Pushed ✅
