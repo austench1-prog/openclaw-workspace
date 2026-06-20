@@ -1,5 +1,5 @@
 # MEMORY.md - Dragon Long-Term Memory
-# Last updated: 2026-06-19
+# Last updated: 2026-06-20
 # This file is my curated long-term memory. Load in main session only.
 
 ---
@@ -247,6 +247,10 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 **Dragon 的职责：即抓即存，瞬间稳妥归档，绝不加工、绝不丢失。**
 
+**即存范围（2026-06-20 锁定）：** 交易相关（K线图/ICT素材/推演图/规则文档）即存当天 raw-archive。**宁可多存，不要漏存。** 排除：账户截图/资金证书/平台设置截图（有专项文件）、terminal log/debug、与交易策略完全无关的内容。
+
+**补档方法：** 6/15 之前的空白，Chairman 手工爬楼截图发我（能拿到原话+图+时间戳，效率远高于自动扫描）。
+
 **四条铁律（不可违反）：**
 1. 即抓即存、原样保管。
 2. **绝不修改原始素材（图 + Chairman 原话）。** 不 P 图、不裁剪、不重画。修改就没意义。需回测验证的东西回测里早有；这里收的是最原始的东西。
@@ -255,7 +259,13 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 **两条线：** 规则（抽象逻辑，存素材库正文）vs 零件/实例（同一东西的不同变体 + 实战原始图例，存 `Trading/material_specimens/<类目>/`，每类一个 `_INDEX.md` 做归类索引）。
 
-**已建类目：** `material_specimens/pinbar_doji/`（长影线/十字星/Pin Bar 反转引线类）。管理铁律全文在 `Trading/Trading_Material_Library_v1.md` 【素材库管理铁律】。
+**已建类目（2026-06-20 更新）：**
+- `material_specimens/pinbar_doji/`（长影线/十字星/Pin Bar 反转引线类）
+- `material_specimens/candle_retracement/`（反直觉K线走势，1-10号柱体）
+- `material_specimens/three_strike_reversal/`（三振反转/震荡区间ABC双路径）
+- `material_specimens/one_setup_ict/`（ICT One Setup For Life：Inversion + Breaker + Time & Price参考卡）
+
+管理铁律全文在 `Trading/Trading_Material_Library_v1.md` 【素材库管理铁律】。
 
 ### 两层架构（Chairman 2026-06-17 锁定）
 - **① 奥斯汀素材原稿备份（Austin Raw Archive）= 底片，永不修改。** 路径 `Trading/austin_raw_archive/`（按日期子目录 + 每日 `_RAW.md`）。只存 Chairman **原话逐字（对错不管）+ 原图原字节**，像截图一样一动不动。**不总结、不归类、不判断、不纠错。**

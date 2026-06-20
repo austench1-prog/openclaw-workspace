@@ -1,23 +1,48 @@
 # Austin Raw Archive — 2026-06-12
-# ⚠️ 底片层：原话逐字，原图原字节。不总结、不归类、不判断、不纠错。
-# 补档说明：此文件于 2026-06-20 根据 Chairman 提供的对话截图补录。
+# ⚠️ 底片层。补档说明：2026-06-20 根据 inbound 文件夹时间戳 + Chairman 提供的截图补录。
 
 ---
 
-## 1140 — 素材：One Setup for Life（ICT 参考框架）
+## ~1038 — TRADING: SPX/NQ Buyside/Sellside 双图
 
-**图片：** `1140_one_setup_for_life_ICT.jpg`
-**原始 inbound 文件：** `file_511---744c95ca-7b14-4cd5-b0fb-e47dc908986d.jpg`
+**图片：**
+- `1038_SPX_NQ_daily_buyside_sellside.jpg` — MES/MNQ 日线双图，Buyside/Sellside 标注
+- `1038_SPX_NQ_4h_liquidity.jpg` — MES/MNQ 4h 双图，Buyside/Sellside 流动性结构
+**分类：** TRADING — 多品种流动性结构对比（ES+NQ 同步分析）
 
-**Chairman 原话（逐字，来源：2026-06-20 Chairman 提供的对话截图）：**
+---
 
+## 1140 — TRADING: One Setup For Life（ICT 参考框架）⭐
+
+**图片：** `1140_one_setup_for_life_ICT.jpg`（已存，见 material_specimens/one_setup_ict/）
+**Chairman 原话（2026-06-20 补录，来源：对话截图）：**
 > 這個作為我們將來在制定策略的時候，作為一個重要的參考的框架
 
-**时间戳：** 11:40 AM PDT 2026-06-12
+---
 
-**补档说明：**
-- 原图发送时间：2026-06-12 11:40 AM
-- 此次 Dragon 当时已分析图片核心结构，但因 6/12 session 结束前未完成正式入库，导致该图在 raw-archive 中缺失
-- 正式素材库入库时间：2026-06-20（见 `material_specimens/one_setup_ict/`）
+## ~1141 — TRADING: 风险管理盈亏比胜率对照表
+
+**图片：** `1141_risk_mgmt_RR_table.jpg`
+- 印刷纸照片，标题"Day Trading is Risky. Risk Management is Key."
+- 左表：Reward/Risk vs Breakeven Win Rate%（1:50→98%, 1:1→50%, 3:1→25%, 50:1→2%）
+- 右图：盈亏比 1:2/1:1/2:1 的 Profitable/Unprofitable 区间
+**分类：** TRADING — 基础风控概念参考（与我们"止损优先、1:5 R:R"规则体系一致）
+
+---
+
+
+## ~1441 — TRADING: NQ 4h Over Leap 目标推演
+
+**图片：** `1441_NQ_4h_over_leap.jpg`
+- MES/MNQ 4h 双图，Over Leap（橙色线）+ Buyside/Sellside + Target 标注
+**分类：** TRADING — Over Leap 目标结构推演
+
+---
+
+## ~2114 — TRADING: NQ 4H Wick 当作 Order Block
+
+**图片：** `2114_NQ_4h_wick_OB.jpg`
+- MNQ 4h+15m 双图，黄色大区"4H Wick 看作是Order block"（中文标注）；OB/OB++ 标注；Sellside/Buyside
+**分类：** TRADING — 4H Wick Order Block 核心素材（对应 material_specimens/pinbar_doji/ 类目概念）
 
 ---
