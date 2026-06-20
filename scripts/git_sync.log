@@ -2613,3 +2613,30 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    61c37f4..49b9703  main -> main
 [2026-06-20 15:30] Pushed ✅
+[main fafa736] auto-sync 2026-06-20 15:45
+ 29 files changed, 201 insertions(+)
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img01_camarilla_formula_three_B_variants.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img02_trading_rules_SL_cooling_period.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img03_zone_req_100pts_dynamic_SL.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img04_wick_block_reverse_barrier_text.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img05_wick_block_chart_green_boxes.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img06_4h_15m_wick_dual_chart_green.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img07_AP_two_uses_lookback_predict.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img08_MNQ_5m_AP_fibonacci_zones.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img09_MNQ_4h_wick_block_correction_green_boxes.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img10_wick_core_use_predict_pullback.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img11_FVG_MTF_overlap_4h_15m_dual_chart.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img12_FVG_TP_refinement_15m_inside_4h.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img13_MNQ_4h_ABC_candle_reversal_structure.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img14_4h_15m_check_cross_BC_zones.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img15_4h_15m_doji_inside_big_red_B_zone.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img16_complex_ABC_three_fingers_text.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img17_complex_market_structure_chart_ABC.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img18_candle_pattern_core_def_2_3_doji.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img19_6-10_2235_MTF_4h_15m_C_pos_continuation.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/img20_6-10_2252_SP_cross_candle_dragon_response.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-15/_RAW.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-16/_RAW.md
+To https://github.com/austench1-prog/openclaw-workspace.git
+   49b9703..fafa736  main -> main
+[2026-06-20 15:45] Pushed ✅
