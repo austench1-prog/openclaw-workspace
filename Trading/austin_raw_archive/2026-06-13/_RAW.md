@@ -21,3 +21,14 @@
 **分类：** TRADING — 关键素材：引线=OB + FVG 双重确认（重要规则）
 
 ---
+
+---
+
+## 补档批次（2026-06-20 批次6 重发补录）
+# 来源：重档，Chairman 原话缺失
+
+- `0744_NQ_4h_sweep_point_A_large_picture.jpg` — NQ 4H sweep point A大图（4H首次回调蜡=A点，止损参考）
+- `2023_strategy_testing_methodology.jpg` — 策略测试方法论：130天（100样本+30验证），必要/次要条件
+- `2114_NQ_MTF_4h_OB_order_block_analysis.jpg` — 大时间框架NQ双图 Order Block定义（Chairman自己理解）
+- `2129_sweep_point_extended_explanation.jpg` — 三点=sweep point详解 A-D形态 市场观点转换
+

@@ -12,6 +12,12 @@
 - MEMORY.md 锁定即存规则：宁多勿漏，交易/业务相关当天即存
 - material_specimens 已建类目更新：4个（pinbar_doji / candle_retracement / three_strike_reversal / one_setup_ict）
 
+## 今天补档收尾（2026-06-20 下午完成）
+- 67张图批次重发补档完成（批次1-8，共68张）
+- staging 20张已移入 2026-06-10/（共29张）
+- _RAW.md 已追加/新建：6/10, 6/11, 6/12, 6/13, 6/14, 6/15, 6/16
+- 底片层：6/10–6/16 全部有图有记录
+
 ## ⏳ 压着未完成
 - MFF×2 风控落实（Tradovate：Daily Profit $1,500 / Daily Loss $900）→ 需先查余额
 - TPT×4 风控落实（CQG/TPT 后台）

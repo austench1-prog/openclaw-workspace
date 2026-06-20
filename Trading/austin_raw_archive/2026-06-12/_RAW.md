@@ -46,3 +46,11 @@
 **分类：** TRADING — 4H Wick Order Block 核心素材（对应 material_specimens/pinbar_doji/ 类目概念）
 
 ---
+
+---
+
+## 补档批次（2026-06-20 批次6 重发补录）
+# 来源：重档，Chairman 原话缺失
+
+- `0929_NQ_4h_OB_trading_zone_ABCD_short.jpg` — NQ 4H OB交易区间 ABCD做空结构 R:R 5.43
+

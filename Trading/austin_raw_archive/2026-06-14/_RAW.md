@@ -50,3 +50,28 @@
 **分类：** TRADING — 止损策略推演，三层止损选择
 
 ---
+
+---
+
+## 补档批次（2026-06-20 批次7-8 重发补录）
+# 来源：重档，Chairman 原话缺失
+
+### 批次7新增（15:26–19:30）
+- `1526_NQ_dual_chart_gap_up_open_analysis.jpg` — NQ双图 跳空高开超出预期 分析
+- `1533_chairman_red_box_buyzone_trend_analysis.jpg` — Chairman：红框买区趋势研判（语音）
+- `1621_FVG_entry_SL_analysis_detailed.jpg` — FVG入场+止损详解（ICT公开教学胜率低的原因）
+- `1650_trendline_OB_sweep_point_4h_trend.jpg` — 引线/OB/Sweep/趋势线 4H趋势结构概念图（A-F点）
+- `1657_trendline_chart_updated_boundaries.jpg` — 上图更新版：加入区间边界线更清晰
+- `1822_chairman_win_rate_testing_methodology.jpg` — Chairman：胜率测试方法论 固定微型策略
+- `1833_dragon_strategy_testing_methodology.jpg` — 龙哥：策略测试（程序回测+自建交易数据）
+- `1838_dragon_FVG_entry_unit_win_rate_framework.jpg` — 龙哥：FVG最小战术单元+胜率框架
+- `1856_dragon_strategy_fractal_4h_15m_framework.jpg` — 龙哥：策略分型原理 4H+15min双层架构
+- `1930_chairman_strategy_implementation_questions.jpg` — Chairman：策略实用化要求
+
+### 批次8新增（19:36–19:46）
+- `1936_chairman_signal_light_colorball_panel.jpg` — Chairman：信号灯/彩球面板概念（红黄绿视觉化机会）
+- `1936_dragon_signal_light_panel_feasibility.jpg` — 龙哥：信号灯面板记录+可行性评估
+- `1937_dragon_signal_light_panel_MATS_idea.jpg` — 龙哥：信号灯与MATS系统关系 idea
+- `1945_chairman_green_light_risk_supplement.jpg` — Chairman：绿灯=风控通过（非质量）补充
+- `1946_dragon_green_light_gatekeeper_summary.jpg` — 龙哥：绿灯=Gatekeeper ALLOW 总结
+

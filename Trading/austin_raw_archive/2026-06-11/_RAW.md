@@ -136,3 +136,40 @@ SP 三条线（图中从下到上）：
 **Chairman原话（11:10 AM）：** 「补充的重点，就是说，影线作为形成block的关键的或者是常用的元素，同时这也结合或者说将合影线有吸引价格去反向突破的可能性。也就是说，一个被反向突破的影线，那么会形成一个强的block，或者说是被确认的block……长的上影线或者说拼霸形成的时候，那么通常的理解就是说，这个上影线长的话，拼霸，那么它会把价格往下压……不期望这个价格会一直向下，而是认为这个价格会先回来填补这个拼霸，或者说突破这个拼霸的高点，然后再形成真正的走势……」
 **Dragon提炼：** 引线与Block统一理解：引线是形成Block的核心元素，两者逻辑一致。引线天然具有吸引价格反向突破的特性；当引线被反向突破后→形成被确认的强Block。长上引线（Pin Bar）完整逻辑：传统理解（正确但不完整）= 长上引线→价格被压下来→看跌。完整补充理解：长上引线压下来后→不期望直接一路向下→而是预期价格会先：①回来填补这根引线（回到引线区域）②或突破引线高点，③然后才形成真正的走势方向。实际操作意义：Pin Bar形成后的向下走势→是震荡阶段，不是直接趋势；震荡结束后的突破方向→才是真正的趋势；引线的高/低点→可作为后续操作的目标价位。一句话总结：「引线不只是压力/支撑，它是价格必须回来面对的区域，突破或填补引线之后，才能判断真正的方向。」
 
+
+---
+
+## 补档批次（2026-06-20 批次3-6 重发补录）
+# 来源：重档，Chairman 原话缺失（部分内容从图中可见）
+
+### 批次3新增（09:35–11:10）
+- `0935_SP_ABCD_full_conversation_v2.jpg` — SP ABCD完整对话截图 v2
+- `0935_dragon_structured_response_SP_ABCD.jpg` — 龙哥结构化回应：SP ABCD框架
+- `0955_AI_trading_video_NQ_analysis_limits.jpg` — AI交易视频局限性讨论
+- `1001_dingpan_communication_mechanism.jpg` — 盯盘通信机制说明
+- `1038_price_broke_E_zone_live_update.jpg` — 实时更新：价格突破E区
+- `1059_OB_MTF_4h_15m_dragon_response.jpg` — OB多时间框架龙哥分析回应
+- `1059_OB_MTF_4h_15m_dual_chart.jpg` — OB 4H/15min双图
+- `1110_pinbar_wick_block_complete_logic.jpg` — Pin Bar/引线Block完整逻辑
+
+### 批次4新增（11:16–13:33）
+- `1116_ES_NQ_divergence_four_scenarios.jpg` — 4H ES/NQ背离四种情形框架
+- `1135_chairman_divergence_application.jpg` — Chairman：背离实战应用难点
+- `1141_risk_management_RR_table.jpg` — 风控参考卡：盈亏比表格
+- `1220_AP_strategy_summary.jpg` — AP策略完整总结文字
+- `1235_NQ_FVG_judgment_execution_gap.jpg` — NQ图+FVG突破 判断/执行差距
+- `1235_dragon_judgment_vs_execution_card.jpg` — 龙哥：判断→执行差距分析卡
+- `1328_NQ_TNTL_HH_LL_custom_indicator_response.jpg` — NQ 15min自制指标TNTL+HH/LL 龙哥记录
+- `1333_NQ_ICT_killzone_indicator_response.jpg` — ICT KillZone指标说明（蓝框亚盘/白线TDO/红线16:00）
+
+### 批次5新增（10:38, 13:35）
+- `1038_ES_NQ_4h_divergence_buyside_principle.jpg` — 4H ES/NQ背离Buyside确认大行情反转原则
+- `1335_dragon_strategy_existing_gaps_analysis.jpg` — 龙哥：策略已有要素vs缺口清单
+
+### 批次6新增（11:59–14:48）
+- `1159_chairman_ranging_vs_trending_judgment.jpg` — Chairman：震荡vs单边判断原则（多时间框架）
+- `1205_dragon_4h_15m_1m_execution_framework.jpg` — 龙哥：4H震荡大背景/15min+1min执行框架
+- `1324_ES_NQ_divergence_real_scenario.jpg` — ES/NQ背离真实情形：ES持多近目标 NQ扫Buyside
+- `1441_NQ_oscillation_monday_breakout_watch.jpg` — NQ震荡确认 关注周一跳空方向
+- `1448_chairman_consolidation_analysis_plan.jpg` — Chairman：盘整走势展望 周末深度分析计划
+
