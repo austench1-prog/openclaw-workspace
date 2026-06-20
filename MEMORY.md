@@ -199,7 +199,7 @@ Chairman established a dedicated doc: `Trading/Market_Rehearsal_Log_v1.md` to re
 
 First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_charts/`.
 
-**多品种扩展（Chairman 2026-06-18 锁定）：** 推演不能只做 NQ——只做一项太少。**每个交易日强制做全品种：① NQ ② 黄金 GC（可能要实际交易）③ ES 或直接 SPX（最终要操作的品种，ES 作辅助）。** 已设每日 cron 提醒（周一至周五 06:20 PDT，jobId f56c3d21）。
+**多品种扩展（Chairman 2026-06-18 锁定）：** 推演不能只做 NQ——只做一项太少。**每个交易日强制做全品种：① NQ ② 黄金 GC（可能要实际交易）③ ES 或直接 SPX（最终要操作的品种，ES 作辅助）。** 已设每日 cron 提醒（周一至周五 18:00 PT 盘后，第一小时已走完=最佳分析时段；jobId f56c3d21）。周级别推演 = Chairman 自己记得，不设 cron（2026-06-19）。
 
 ---
 
@@ -254,6 +254,7 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ## System Management Rules
 
+- **内部记录自动对齐（Chairman 2026-06-19 锁定）：** 任何决定一旦拍板，所有相关内部记录（MEMORY.md / active_work.md / HEARTBEAT.md / cron / 登记表等）**立即自动跟最新状态对齐，不再请示**。否则文件互相矛盾、系统不自洽。纯一致性维护 = 自动做；只有“该不该改决定本身”才问 Chairman。
 - **每周日系统检查（2026-06-16 定，锁定）:** 每个星期天做一次系统检查、修补、更新。内容：OpenClaw 服务状态、备份脚本、cron 任务、磁盘空间、软件更新、Open Issues 回顾、MEMORY.md 维护。
 
 ---
