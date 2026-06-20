@@ -6322,3 +6322,6 @@ total size is 69767495  speedup is 19.47
 [2026-06-19] Vault: Full workspace snapshot ✅
 [2026-06-19] Vault: Trading/ ✅
 [2026-06-19 03:00] Backup complete.
+[2026-06-20 03:00] Starting backup...
+[2026-06-20] DragonVault not mounted - skipping local backup
+[2026-06-20 03:00] Backup complete.
