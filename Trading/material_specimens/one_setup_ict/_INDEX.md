@@ -9,7 +9,7 @@
 
 ### S001 — 2026-06-20 · One Setup For Life 参考图（印刷版）
 **文件：** `2026-06-20_one_setup_for_life_ICT_inversion_breaker.jpg`
-**原稿：** Chairman 拍照发送（最初发送时间：2026-06-15 之前；当前存档：2026-06-20）
+**原稿：** `austin_raw_archive/2026-06-12/1140_one_setup_for_life_ICT.jpg`（原图 2026-06-12 11:40 AM 发送；2026-06-20 补档入库）
 **图类型：** 印刷纸张照片（非实盘截图）
 
 **图上关键元素：**
