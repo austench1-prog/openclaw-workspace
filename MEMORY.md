@@ -48,6 +48,44 @@ One-line definition:
 
 ---
 
+## OC + Hermes 下一阶段架构（Chairman 2026-06-19 锁定，讨论稿阶段—未实施）
+
+全文：`Architecture/OC_Hermes_System_Judgment_v1.md`（精简主干版）+ `Architecture/OC_Hermes_Bus_Spec.md`（信息总线）。**纯设计，未建任何真东西。**
+
+### 第一过滤器（总闸门，锁定）
+- **1分效率却要 5分工作量 → 直接砍。** 系统不需解决所有问题；不断找可能性，但不一直给它找麻烦。追求最简洁版。
+
+### Hermes = 独立第二执行层
+- 第二台 Mac mini `austinha` 账户，独立 Telegram bot，独立 `.hermes`。模型：OpenAI gpt-5.5 主 / Anthropic opus-4-8 备。排除 Nous/OpenRouter/中国源。
+- Hermes core workspace：`/Users/austinha/Documents/Hermes_Migration_Pack/Obsidian_Core`。
+- **分工：OC = 手+闸门（执行/路由/风控/交易提醒/参数包）；Hermes = 后台+外勤（网站/规则/合规库/账户/行政/提醒/报告）；主席 = 大脑（策略方向/授权/批准）。**
+- v3.0 = 骨架，不重建；Hermes 是加法，不破坏主链。
+
+### 精简主干 = 只做 4 件
+1. **Module A** 视觉证据输入 — 零成本已能用（纪律：没图不瞎猜）。
+2. **Module D** 策略参数包 — ⭐最高杠杆，杀掉每天改 Pine（固定层逻辑 + 每日参数层）。
+3. **Module C** 提醒中继 — 价格到位自动叫你，**只提醒不下单**。
+4. **Hermes F1** 公开页监控 + 后台/合规/行政。
+- **砍掉/搁置：** AMP 自动下单（系统对系统太难，完全排除）、买数据 API、F2/F3 登录态站内自动化、Module E 多策略路由器、执行桥（TV→实盘）。
+- **永久排除（需单独批）：** 执行桥、现金账户密码、实盘交易 API Key。
+
+### 已拍板决定
+- **建设顺序：先做 Module D（地基，C 依赖它）。**
+- **Module C 触发源 = 温总 NinjaTrader feed ONLY**（不用 TV、不买 API）。理由：TV 与尼加数据有时不一致，交易在尼加成交 → 提醒价必须 = 成交价。整条 参数→盯盘→提醒 链自给自足。
+- **Hermes F1 首站 = TradeDay**（\u7 ~7/4 到期驱动；F1 = 公开页，不需登录，Apex 登录难不影响 F1）。
+- **合规库：沿用 v3.0 现有 NotebookLM + Compliance Pack，不新建**；Hermes 只抓变化 → 生成差异摘要 → 主席批准后才更新库。
+
+### 信息总线（主席最担心的问题，锁定）
+- **三层：** ①共享文件总线=主渠道/唯一真相源 ②消息层=门铃（不是真相）③人工入口=总裁入口。
+- **总线 = Git 私有库 `oc-hermes-bus`**，放 OC 侧 GitHub，Hermes **只读 pull（read-only deploy key）**。理由：Git 天生防冲突 + 全程审计（谁/何时/改了啥/改前啥样）；iCloud 会冲突副本→真相分裂，局域盘要两台都开机。
+- **五目录：** inbox(oc_to_hermes/hermes_to_oc) / state(account/rule/strategy/route) / reports / logs / approvals。
+- **五种单子 schema 锁死：** task/state/result/exception/approval（YAML 头+正文，见 Bus_Spec §5）。
+- **六铁律：** 真相在文件不在聊天 / 绝不删单（改 status 或加 result）/ 各守车道 / 审批落 approvals 文件（不口头）/ 一 ID 一文件 append 历史 / schema 锁死坏单当异常。
+- **Hermes 只读的后果（待实施时定）：** Hermes 推不了自己的单 → (a) 通过门铃通知 OC 代写（默认）或 (b) 后续给 Hermes 仅限自己车道的可写权限。
+- **待实施时定：** 同步频率（事件驱动+兑底定时）、两台挂载路径。
+
+---
+
 ## Key Technical Facts
 
 ### Execution Chain

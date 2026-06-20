@@ -223,12 +223,18 @@ All of the above happen only AFTER Chairman approves moving to implementation.
 
 ---
 
-## 8. Open Decisions before implementation
+## 8. Decisions before implementation (Chairman, 2026-06-19)
 
-1. **Repo name** for the private bus repo (e.g. `oc-hermes-bus`)?
-2. **Hermes access method:** deploy key / PAT / SSH for Hermes to pull (and push its lane)?
-3. **Sync cadence:** how often does each side pull (event-driven via Layer-2 ping, or polled every N minutes)?
-4. **Where each agent mounts the repo** on its machine (OC path / Hermes path under austinha)?
+1. **Repo name:** ✅ **`oc-hermes-bus`** (private GitHub repo, OC side).
+2. **Hermes access:** ✅ **read-only deploy key** (Hermes PULLS only; cannot push).
+   - ⚠️ Consequence to resolve at implementation: read-only means Hermes cannot
+     push its own outbound tickets (`hermes_to_oc/`). Two options (pick at build time):
+     (a) Hermes notifies OC via Layer-2 ping → OC writes the ticket on Hermes's behalf; OR
+     (b) later grant Hermes a write credential scoped to its own lane only.
+     Default for now = (a), keeping Hermes strictly read-only.
+3. **Sync cadence:** ⏳ **TBD at implementation** (proposed: event-driven via Layer-2
+   ping + fallback periodic pull).
+4. **Mount paths:** ⏳ **TBD at implementation** (one path on OC, one on Hermes under `austinha`).
 
 ---
 

@@ -121,12 +121,12 @@ v3.0 main chain (Layers C/D/E execution) is untouched. New work attaches at the 
 
 ---
 
-## 7. Open Decisions for Chairman (nothing built until chosen)
+## 7. Decisions (Chairman, LOCKED 2026-06-19)
 
-1. **Build order:** Stage 1 (Module D) first — confirm?
-2. **Module C trigger source:** start with TradingView alerts + 温总 feed (no paid API) — confirm?
-3. **Hermes F1 first target platform:** which Prop Firm public site first (Apex? TradeDay?)?
-4. **Info-flow mechanism:** shared structured files + Chairman approval — confirm?
+1. **Build order:** ✅ **Stage 1 = Module D (param pack) FIRST.** It is the daily-pain, independent foundation; Module C depends on it.
+2. **Module C trigger source:** ✅ **温总 NinjaTrader feed ONLY** (no TradingView alert, no paid API). Reason: TV and NinjaTrader prices sometimes differ, and trades settle on NinjaTrader — so the alert price MUST equal the fill price, or the alert is false. This also makes the whole param→watch→alert chain self-contained (温总 feed + OC param pack, no external dependency).
+3. **Hermes F1 first target platform:** ✅ **TradeDay** (accounts expiring ~7/4 = real driver). Note: F1 = public-page monitoring, needs NO login, so Apex's login difficulty does not affect F1.
+4. **Info-flow mechanism:** ✅ **Shared file bus = Git private repo on OC side, Hermes pulls (read-only) + Chairman approval.** Full spec in `OC_Hermes_Bus_Spec.md`.
 
 ---
 
