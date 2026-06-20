@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OC + Hermes 系统架构图 (2026-06-19 锁定)</title>
+<style>
+  body { margin:0; background:#0f1117; color:#e6e6e6; font-family:-apple-system,"PingFang SC","Segoe UI",sans-serif; padding:20px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { font-size:12px; color:#8b94a7; margin-bottom:16px; }
+  .wrap { overflow-x:auto; }
+  svg { background:#0f1117; display:block; }
+  .legend { display:flex; gap:18px; flex-wrap:wrap; margin-top:14px; font-size:12px; color:#b9c0cf; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .sw { width:14px; height:14px; border-radius:3px; display:inline-block; border:1px solid #2a2f3a; }
+</style>
+</head>
+<body>
+  <h1>OC + Hermes 系统架构图 · 精简主干版</h1>
+  <div class="sub">Chairman 锁定 2026-06-19 · 讨论稿（未实施）· v3.0 不破坏，Hermes 是加法</div>
+  <div class="wrap">
+  <svg width="1180" height="900" viewBox="0 0 1180 900" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidthUnits">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#7f8aa3"/>
+      </marker>
+      <marker id="arrG" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidthUnits">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#3fae6e"/>
+      </marker>
+    </defs>
+
+    <!-- ============ CONNECTORS (drawn first) ============ -->
+    <!-- Chairman brain to OC and Hermes -->
+    <path d="M590,118 L300,165" stroke="#c9a24b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <path d="M590,118 L880,165" stroke="#c9a24b" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- OC <-> Bus -->
+    <path d="M300,300 L520,470" stroke="#7f8aa3" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <!-- Hermes -> Bus read-only -->
+    <path d="M880,300 L660,470" stroke="#3fae6e" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arrG)"/>
+    <!-- Bus -> Chairman approvals (human entry) -->
+    <path d="M590,470 L590,128" stroke="#7f8aa3" stroke-width="1.5" fill="none" stroke-dasharray="3 4"/>
+
+    <!-- OC down to modules -->
+    <path d="M230,300 L160,640" stroke="#7f8aa3" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <path d="M260,300 L360,640" stroke="#7f8aa3" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <!-- Module D -> Module C (dependency) -->
+    <path d="M250,700 L320,700" stroke="#c9a24b" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+    <!-- 温总 feed -> Module C -->
+    <path d="M560,760 L450,715" stroke="#7f8aa3" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+    <!-- Module C -> Telegram (notify only) -->
+    <path d="M385,740 L385,800" stroke="#7f8aa3" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+    <!-- Hermes down to F1 + backoffice -->
+    <path d="M880,300 L880,640" stroke="#3fae6e" stroke-width="2" fill="none" marker-end="url(#arrG)"/>
+    <!-- Hermes F1 -> compliance lib (reuse v3.0) -->
+    <path d="M1000,700 L1075,700" stroke="#3fae6e" stroke-width="2" fill="none" marker-end="url(#arrG)"/>
+
+    <!-- ============ NODES ============ -->
+    <!-- Chairman (brain) -->
+    <rect x="490" y="60" width="200" height="58" rx="10" fill="#3a2f12" stroke="#c9a24b" stroke-width="2"/>
+    <text x="590" y="86" text-anchor="middle" font-size="15" fill="#f0d894" font-weight="bold">主席 Chairman = 大脑</text>
+    <text x="590" y="106" text-anchor="middle" font-size="11" fill="#cbb87a">策略方向 · 授权 · 批准</text>
+
+    <!-- OC -->
+    <rect x="120" y="165" width="260" height="135" rx="12" fill="#10233b" stroke="#3a78c2" stroke-width="2"/>
+    <text x="250" y="192" text-anchor="middle" font-size="15" fill="#7fb6f0" font-weight="bold">OC (龙哥) = 手 + 闸门</text>
+    <text x="250" y="214" text-anchor="middle" font-size="11" fill="#9fc0e6">小塔 Mac mini · austinai</text>
+    <text x="250" y="236" text-anchor="middle" font-size="11" fill="#c9d6ea">执行 · 路由 · 风控门控</text>
+    <text x="250" y="254" text-anchor="middle" font-size="11" fill="#c9d6ea">交易提醒 · 策略参数包</text>
+    <text x="250" y="278" text-anchor="middle" font-size="10" fill="#7f8aa3">v3.0 主执行链 (C/D/E层) 不变</text>
+
+    <!-- Hermes -->
+    <rect x="800" y="165" width="260" height="135" rx="12" fill="#10301f" stroke="#3fae6e" stroke-width="2"/>
+    <text x="930" y="192" text-anchor="middle" font-size="15" fill="#7fe0a6" font-weight="bold">Hermes = 后台 + 外勤</text>
+    <text x="930" y="214" text-anchor="middle" font-size="11" fill="#9fe0bd">第二台 Mac mini · austinha</text>
+    <text x="930" y="236" text-anchor="middle" font-size="11" fill="#cfeada">OpenAI gpt-5.5 主 / opus 备</text>
+    <text x="930" y="254" text-anchor="middle" font-size="11" fill="#cfeada">网站 · 规则 · 合规 · 行政</text>
+    <text x="930" y="278" text-anchor="middle" font-size="10" fill="#7f8aa3">独立 Telegram bot · 独立 .hermes</text>
+
+    <!-- BUS -->
+    <rect x="430" y="470" width="320" height="150" rx="12" fill="#241a2e" stroke="#9b6fc4" stroke-width="2"/>
+    <text x="590" y="496" text-anchor="middle" font-size="14" fill="#c9a6e8" font-weight="bold">信息总线 = Git 私有库</text>
+    <text x="590" y="514" text-anchor="middle" font-size="11" fill="#b59ad0">oc-hermes-bus · OC侧 · Hermes只读pull</text>
+    <text x="445" y="540" font-size="10.5" fill="#d7c8e8">📁 inbox/ (oc↔hermes 任务单)</text>
+    <text x="445" y="558" font-size="10.5" fill="#d7c8e8">📁 state/ (account·rule·strategy·route)</text>
+    <text x="445" y="576" font-size="10.5" fill="#d7c8e8">📁 reports/  📁 logs/  📁 approvals/</text>
+    <text x="445" y="598" font-size="10" fill="#8b94a7">5单子schema锁死 · 6铁律 · 全程审计</text>
+    <text x="445" y="613" font-size="10" fill="#8b94a7">真相在文件 · 绝不删单 · 各守车道</text>
+
+    <!-- Module D -->
+    <rect x="90" y="640" width="160" height="80" rx="10" fill="#10233b" stroke="#3a78c2" stroke-width="2"/>
+    <text x="170" y="666" text-anchor="middle" font-size="13" fill="#7fb6f0" font-weight="bold">Module D ⭐</text>
+    <text x="170" y="685" text-anchor="middle" font-size="10.5" fill="#c9d6ea">策略参数包</text>
+    <text x="170" y="702" text-anchor="middle" font-size="9.5" fill="#8b94a7">杀掉每天改Pine · 先做</text>
+
+    <!-- Module C -->
+    <rect x="320" y="660" width="130" height="80" rx="10" fill="#10233b" stroke="#3a78c2" stroke-width="2"/>
+    <text x="385" y="686" text-anchor="middle" font-size="13" fill="#7fb6f0" font-weight="bold">Module C</text>
+    <text x="385" y="704" text-anchor="middle" font-size="10" fill="#c9d6ea">提醒中继</text>
+    <text x="385" y="720" text-anchor="middle" font-size="9" fill="#8b94a7">只提醒不下单</text>
+
+    <!-- 温总 feed -->
+    <rect x="560" y="755" width="170" height="62" rx="10" fill="#2a2410" stroke="#b9952f" stroke-width="2"/>
+    <text x="645" y="780" text-anchor="middle" font-size="12" fill="#e3c878" font-weight="bold">温总 NinjaTrader feed</text>
+    <text x="645" y="799" text-anchor="middle" font-size="9.5" fill="#bca96a">唯一触发源 · 成交价=提醒价</text>
+
+    <!-- Telegram -->
+    <rect x="300" y="800" width="170" height="50" rx="10" fill="#152a2a" stroke="#3a9c9c" stroke-width="2"/>
+    <text x="385" y="821" text-anchor="middle" font-size="12" fill="#7fd0d0" font-weight="bold">Telegram 提醒</text>
+    <text x="385" y="838" text-anchor="middle" font-size="9.5" fill="#8bb5b5">门铃 · 非真相源</text>
+
+    <!-- Module A note -->
+    <rect x="90" y="745" width="200" height="44" rx="8" fill="#161a22" stroke="#3a4150" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="190" y="765" text-anchor="middle" font-size="11" fill="#aeb6c5" font-weight="bold">Module A 视觉证据输入</text>
+    <text x="190" y="781" text-anchor="middle" font-size="9" fill="#7f8aa3">已能用·零成本·没图不瞎猜</text>
+
+    <!-- Hermes F1 -->
+    <rect x="800" y="640" width="200" height="80" rx="10" fill="#10301f" stroke="#3fae6e" stroke-width="2"/>
+    <text x="900" y="666" text-anchor="middle" font-size="13" fill="#7fe0a6" font-weight="bold">Hermes F1 + 后台</text>
+    <text x="900" y="685" text-anchor="middle" font-size="10" fill="#cfeada">公开页监控(首站TradeDay)</text>
+    <text x="900" y="702" text-anchor="middle" font-size="9.5" fill="#8b94a7">提醒·报告·账户·行政</text>
+
+    <!-- Compliance lib (reuse) -->
+    <rect x="1075" y="665" width="95" height="70" rx="10" fill="#161a22" stroke="#3a4150" stroke-width="1.5"/>
+    <text x="1122" y="690" text-anchor="middle" font-size="10.5" fill="#aeb6c5" font-weight="bold">合规库</text>
+    <text x="1122" y="707" text-anchor="middle" font-size="8.5" fill="#7f8aa3">沿用v3.0</text>
+    <text x="1122" y="721" text-anchor="middle" font-size="8.5" fill="#7f8aa3">NotebookLM</text>
+
+    <!-- DROPPED box -->
+    <rect x="800" y="755" width="370" height="95" rx="10" fill="#2a1414" stroke="#a14747" stroke-width="1.5"/>
+    <text x="985" y="778" text-anchor="middle" font-size="12" fill="#e08b8b" font-weight="bold">🔴 全部搁置 (1分效率/5分工作量→砍)</text>
+    <text x="985" y="800" text-anchor="middle" font-size="10" fill="#d0a0a0">AMP自动下单 · 买数据API · F2/F3登录态自动化</text>
+    <text x="985" y="818" text-anchor="middle" font-size="10" fill="#d0a0a0">多策略路由器(E) · 执行桥(TV→实盘)</text>
+    <text x="985" y="838" text-anchor="middle" font-size="9.5" fill="#a06868">永久排除(需单独批)：执行桥·现金密码·实盘API Key</text>
+
+    <!-- Build order banner -->
+    <rect x="90" y="865" width="1080" height="26" rx="6" fill="#1a1f2a" stroke="#2a2f3a" stroke-width="1"/>
+    <text x="100" y="883" font-size="11.5" fill="#c9d6ea" font-weight="bold">建设顺序：</text>
+    <text x="175" y="883" font-size="11.5" fill="#7fb6f0">① Module D(参数包)</text>
+    <text x="320" y="883" font-size="11.5" fill="#7f8aa3">→</text>
+    <text x="340" y="883" font-size="11.5" fill="#7fb6f0">② Module C(提醒中继)</text>
+    <text x="500" y="883" font-size="11.5" fill="#7f8aa3">→</text>
+    <text x="520" y="883" font-size="11.5" fill="#7fe0a6">③ Hermes F1+后台</text>
+    <text x="680" y="883" font-size="11.5" fill="#8b94a7">· 全程不碰实盘 · 不破坏 v3.0 主链 · Module A 已在用</text>
+  </svg>
+  </div>
+
+  <div class="legend">
+    <span><i class="sw" style="background:#3a2f12;border-color:#c9a24b"></i> 主席(大脑)</span>
+    <span><i class="sw" style="background:#10233b;border-color:#3a78c2"></i> OC(手+闸门)</span>
+    <span><i class="sw" style="background:#10301f;border-color:#3fae6e"></i> Hermes(后台+外勤)</span>
+    <span><i class="sw" style="background:#241a2e;border-color:#9b6fc4"></i> 信息总线(Git)</span>
+    <span><i class="sw" style="background:#2a2410;border-color:#b9952f"></i> 温总feed(触发源)</span>
+    <span><i class="sw" style="background:#2a1414;border-color:#a14747"></i> 搁置/排除</span>
+    <span>— 实线=数据/控制流　--- 绿虚线=Hermes只读pull</span>
+  </div>
+</body>
+</html>

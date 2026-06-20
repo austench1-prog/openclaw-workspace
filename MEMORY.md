@@ -1,5 +1,5 @@
 # MEMORY.md - Dragon Long-Term Memory
-# Last updated: 2026-04-10
+# Last updated: 2026-06-19
 # This file is my curated long-term memory. Load in main session only.
 
 ---
@@ -72,7 +72,7 @@ One-line definition:
 ### 已拍板决定
 - **建设顺序：先做 Module D（地基，C 依赖它）。**
 - **Module C 触发源 = 温总 NinjaTrader feed ONLY**（不用 TV、不买 API）。理由：TV 与尼加数据有时不一致，交易在尼加成交 → 提醒价必须 = 成交价。整条 参数→盯盘→提醒 链自给自足。
-- **Hermes F1 首站 = TradeDay**（\u7 ~7/4 到期驱动；F1 = 公开页，不需登录，Apex 登录难不影响 F1）。
+- **Hermes F1 首站 = TradeDay**（账户 ~7/4 到期驱动；F1 = 公开页，不需登录，Apex 登录难不影响 F1）。
 - **合规库：沿用 v3.0 现有 NotebookLM + Compliance Pack，不新建**；Hermes 只抓变化 → 生成差异摘要 → 主席批准后才更新库。
 
 ### 信息总线（主席最担心的问题，锁定）
