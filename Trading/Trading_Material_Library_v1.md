@@ -5,6 +5,27 @@
 
 ---
 
+## 【ICT One Setup For Life — Inversion + Breaker 模型】（2026-06-20 归档）
+
+**核心逻辑：** 在 ICT Macro 时间窗内，等 Stop Hunt（猎杀流动性）之后，用 INVERSION 或 BREAKER 作为进场确认，做反向，目标 1:2 R:R。
+
+**进场确认二选一：**
+- **INVERSION（反转 FVG）：** 原为下行方向的 FVG，被价格穿越后翻转为阻力区 → K 线收盘跌破 IFVG 低点，下一根 K 开盘进场
+- **BREAKER（破坏块）：** 前一个多头 OB 失效、被突破，变为空头阻力 → K 线收盘跌破 BREAKER 低点，下一根 K 开盘进场
+
+**止损：** 猎杀高点之上，或 INVERSION 区上方
+
+**必要前提：** Stop Hunt（先猎杀流动性） → premium PD array 位置 → Macro 时间窗内
+
+**ICT Macros（纽约时间，AM + PM）：**
+- AM: 7:50-8:10 / 8:50-9:10 / 9:50-10:10 / 10:50-11:10 / 11:50-12:10
+- PM: 1:20-1:40 / 2:50-3:10 / 3:15-3:45 / 3:50-4:10
+
+> 实例图：`material_specimens/one_setup_ict/2026-06-20_one_setup_for_life_ICT_inversion_breaker.jpg`
+> Index：`material_specimens/one_setup_ict/_INDEX.md`
+
+---
+
 ## 【策略建设原则】
 
 1. 素材库中的内容不需要全部融合在一个策略里，按需选取
