@@ -2359,3 +2359,41 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    97d6d7c..46942f4  main -> main
 [2026-06-20 10:45] Pushed ✅
+[main a2c9220] auto-sync 2026-06-20 11:00
+ 37 files changed, 215 insertions(+), 24 deletions(-)
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/1904_NQ_LG_dual_screen.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2037_NQ_5min_AP_fibonacci.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2108_NQ_4h_green_OB.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2113_NQ_4h_green_demand_zones.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2127_NQ_15m_4h_FVG_yellow.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2142_NQ_4h_ABC_red_boxes.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2210_NQ_ABC_annotated.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2224_NQ_BC_checkmark.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/2230_NQ_BC_dual_checkmark_x.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-10/_RAW.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1038_NQ_dragonlab_FVG.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1059_NQ_4h_yellow_block.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1235_NQ_FVG_E_SP_dual.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1328_camarilla_F3_GC_gold.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/1333_camarilla_wed_thu.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/2102_masterWU_SPX_twitter.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-11/_RAW.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/1038_SPX_NQ_4h_liquidity.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/1038_SPX_NQ_daily_buyside_sellside.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/1141_risk_mgmt_RR_table.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/1441_NQ_4h_over_leap.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-12/2114_NQ_4h_wick_OB.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/0744_NQ_4h_wick_OB_dual.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/0929_NQ_4h_OB_B_point_chinese.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-13/_RAW.md
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1526_NQ_4h_wick_OB_liquidity.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1533_NQ_4h_15m_red_supply.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1539_ICT_time_and_price_card.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1650_ICT_wick_OB_trendline.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/1657_ICT_wick_OB_buyside_sellside.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/2347_NQ_4h_15m_stop_chinese.jpg
+ create mode 100644 Trading/austin_raw_archive/2026-06-14/_RAW.md
+ create mode 100644 Trading/material_specimens/one_setup_ict/2026-06-14_ICT_time_and_price_card.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   46942f4..a2c9220  main -> main
+[2026-06-20 11:00] Pushed ✅
