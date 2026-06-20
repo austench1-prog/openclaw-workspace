@@ -1,4 +1,4 @@
-# Active Work — last updated 2026-06-17 17:16 PDT
+# Active Work — last updated 2026-06-19 17:25 PDT
 
 ## 今天做完的（6/17）
 - 行情推演全天链条：R005(15m/4H 全天 + 收盘总结复盘) / R006(Judas Swing + 长下影十字星) / R007(星期四日线 + 4H/15m 分水岭 + MFVG延长confluence)。
@@ -16,5 +16,6 @@
 - 6 账户合并挑救策略（待 Chairman 出方向）
 - 素材库"专门找时间综合精简一次"（独立专项，不实时做）
 
-## 📦 倒计时
-- Mac mini M4 到货：Fri 6/19（2天）。迁移 SOP 还没写，需到货前备好。
+## 🗓️ 待办
+- 星期天（6/21）做周级别推演 — 把本周（含周五）行情一起在周级别上复盘。
+  （Chairman 6/19 决定：周五 post-close 推演不单独做，并入周日 weekly。）

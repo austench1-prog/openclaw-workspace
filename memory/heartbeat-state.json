@@ -3,7 +3,7 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "activeWork": 1781827620
+    "activeWork": 1781914965
   },
-  "notes": "Recreated 2026-06-18 17:07 PDT. Friday market推演 pending post-close. M4 Mac mini arrives 6/19."
+  "notes": "2026-06-19 17:22 PDT heartbeat after gateway restart (uptime 10s). M4 migration confirmed DONE 6/18 (active_work countdown reconciled). Friday post-close 推演 pending — awaiting Chairman/Jimmy charts."
 }
