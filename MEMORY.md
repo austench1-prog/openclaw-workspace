@@ -300,6 +300,20 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ---
 
+## 交易时段纪律（铁律，Chairman 2026-06-20 锁定）
+
+全文：`Trading/Trading_Session_Discipline_v1.md`。触发背景：6/20 龙哥在大批量图片整理中多次崩盘，根因 = 单 Provider + 交易时段叠加繁重任务。教训直接关系真交易安全。
+
+- **核心：交易时段 focus 在交易。系统资源 + 人的注意力都不分给繁重任务。龙哥和 Chairman 同样适用。**
+- **交易时段 = ET 06:00–16:15**（盘前+盘中+收盘风控窗）。
+- **龙哥交易时段只做轻活：** 盯盘提醒/风控核对/信号中继/单张图快读/即时问答。
+- **龙哥交易时段绝不碰繁重任务：** 批量看图/批量改名归档/大 subagent/素材库大整理/“大搞一场”。繁重任务一律排到盘后（ET 16:15 后）或周末。
+- **执行：** 交易时段 Chairman 提繁重任务 → 龙哥主动提醒“这是繁重任务，建议放盘后”，不闷头开工。
+- **系统护栏（已实施 6/20）：** 双 Provider（Anthropic+OpenAI）+ thinking off。
+- **下周起尝试真交易**（Chairman 2026-06-20 定）：周日（6/21）整理出基本条件 + 分工方案 → 下周开始。分工方案（龙哥/Hermes/Chairman 各做什么）待 6/21 整理。
+
+---
+
 ## System Management Rules
 
 - **内部记录自动对齐（Chairman 2026-06-19 锁定）：** 任何决定一旦拍板，所有相关内部记录（MEMORY.md / active_work.md / HEARTBEAT.md / cron / 登记表等）**立即自动跟最新状态对齐，不再请示**。否则文件互相矛盾、系统不自洽。纯一致性维护 = 自动做；只有“该不该改决定本身”才问 Chairman。

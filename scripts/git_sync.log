@@ -2727,3 +2727,29 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    f5ccfcd..e94ac4c  main -> main
 [2026-06-20 18:15] Pushed ✅
+[main 8896fd9] auto-sync 2026-06-20 18:30
+ 24 files changed, 134 insertions(+), 140 deletions(-)
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/_RAW.md
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img01_camarilla_formula_three_B_variants.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img02_trading_rules_SL_cooling_period.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img03_zone_req_100pts_dynamic_SL.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img04_wick_block_reverse_barrier_text.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img05_wick_block_chart_green_boxes.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img06_4h_15m_wick_dual_chart_green.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img07_AP_two_uses_lookback_predict.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img08_MNQ_5m_AP_fibonacci_zones.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img09_MNQ_4h_wick_block_correction_green_boxes.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img10_wick_core_use_predict_pullback.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img11_FVG_MTF_overlap_4h_15m_dual_chart.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img12_FVG_TP_refinement_15m_inside_4h.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img13_MNQ_4h_ABC_candle_reversal_structure.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img14_4h_15m_check_cross_BC_zones.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img15_4h_15m_doji_inside_big_red_B_zone.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img16_complex_ABC_three_fingers_text.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img17_complex_market_structure_chart_ABC.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img18_candle_pattern_core_def_2_3_doji.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img19_6-10_2235_MTF_4h_15m_C_pos_continuation.jpg
+ delete mode 100644 Trading/austin_raw_archive/2026-06-01_09_staging/img20_6-10_2252_SP_cross_candle_dragon_response.jpg
+To https://github.com/austench1-prog/openclaw-workspace.git
+   e94ac4c..8896fd9  main -> main
+[2026-06-20 18:30] Pushed ✅
