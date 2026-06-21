@@ -620,5 +620,33 @@ Based on two points — ① the wick **must** be up-broken + ② the Order Block
 
 ---
 
+## R009 — 2026-06-21 14:48 PDT · NQ 上周推演收尾（周线级别）
+**Chart:** `rehearsal_charts/2026-06-21_R009_NQ_lastweek_close_1W_4H.jpg` (NQ 1W + 4H)
+**原稿底片:** `austin_raw_archive/2026-06-21/img_05_NQ_lastweek_rehearsal_close_1W_4H.jpg`
+**性质:** 上周推演的**收尾总结**（本周推演待 18:00 盘后 + 看完开盘第一小时线后再做）
+
+### 周线（1W）判断
+- 上周形成一根**很小的周K** → 跟前一根线比 = **润线（inside bar / 母子线）**。
+- 润线处在当前位置 → **有可能是市场转折的信号**。
+- 但周线总体处在**较强上升动力**中 → **不判断周线级别会强烈下降**，但**有回调需求**。
+- 周线结论：**仍是上涨。**
+
+### 4H 判断（本周重点）
+- 本周重点 = 判断 4H 是否**震荡**。
+- 关键：只要**未突破 Sellside / Buyside 形成的交易区域** → 认为是震荡。
+- **最可能走势（推演）：** 无论碰到与否向上第一目标位 → 都可能**向下填补绿色区域** → 碰到 **24小时均线**后再有向上冲可能。
+- **但这些都不会在这一周内发生。**
+- 4H 结论：**震荡为主，本周可能都以震荡为主。**
+
+### 期望
+- 希望周末结束时走出一个方向——**但不一定**。
+
+### 状态
+- 🟡 **上周推演收尾完成**。本周推演待盘后补上（看完开盘第一小时线）。
+
+**⚠️ 防火墙：** 这是预演，不是预测，不是规则。周线上涨/4H震荡的读 = Chairman 当前中性心态下的读，仅记录。
+
+---
+
 ## Prior charts to backfill
 Chairman noted several earlier charts already shared should also be folded in as rehearsal records. **TODO:** locate and append as R000-series once Chairman points them out.
