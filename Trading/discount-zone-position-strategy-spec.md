@@ -1,7 +1,7 @@
 # Discount Zone Position Strategy — Spec v1
 
 > **Status: BLUEPRINT (Module D).** This is a model, not a live rule. Path: blueprint → test → use. One step at a time.
-> Source negative (raw archive): `Trading/austin_raw_archive/2026-06-21/` (3 iterated images + verbatim originals).
+> Source negative (raw archive): `Trading/austin_raw_archive/2026-06-21/` (4 iterated images, v4 = current authoritative clean version + verbatim originals).
 > Authored: 2026-06-21 | Chairman原创 (TradingView手绘, 未参考他人/ICT/PO3).
 
 ---
@@ -22,6 +22,13 @@
 - 小时间框架（如 15M）找进场。两框架相差一个大级别。
 - NQ: 进场到 TP 距离 ≥ 100 点（过滤低 R:R）。
 - **手数 = 比例**，1 = 原始进场手数（非绝对手数）。
+
+### ⭐ 1:5 = 模型成立的地基（v4 明确化）
+
+- v4 图新增一条贯穿顶部的 `LTF 1:5` 黄色虚线 — 原本 1:5 不明显，现显式强调。
+- **这条 1:5 = 大时间框架模型成立的基础。** 1 份风险（Buy→Original STOP）对 5 份盈利空间（Buy→Buyside/TP）。
+- **与第5章的关系：** 这条线是“用最大风险拿最大盈利”的视觉锡。**没有 1:5 打底，下面所有“碒25%加4手”的冒险都失去根基。**
+- **与概率数学的关系：** 呼应 Chairman “概率50% + 方向1:5 → 赢面可算”——现在 1:5 不再是隐含的，而是模型成立的显式地基。
 
 ---
 
