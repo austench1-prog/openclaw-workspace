@@ -2675,3 +2675,39 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    355504c..80fb7e4  main -> main
 [2026-06-20 17:15] Pushed ✅
+[main 24b59d6] auto-sync 2026-06-20 17:30
+ 36 files changed, 102 insertions(+), 1 deletion(-)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_0733_a65a0aa9.jpg => 0733_NQ_MNQ_15m_4h_MFVG_MA_arrows.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_0825_a6f076a6.jpg => 0825_NQ_15m_4h_MFVG_OB_trendline.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_0843_ff648714.jpg => 0843_NQ_1h_5m_fib_stop_supply_targets.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_0916_0f239079.jpg => 0916_NinjaTrader_workstation_ICT_judas_swing.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1148_b6a3a5b0.jpg => 1148_NinjaTrader_NQ_15m_SMA_swing_volume.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1159_270d02a5.jpg => 1159_Tradovate_account_overview_MNQU6.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1207_86cdebb8.jpg => 1207_NinjaTrader_Tradovate_account_overview.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1249_da798b44.jpg => 1249_NinjaTrader_account_overview_TD_Tradeify.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1504_447b216a.jpg => 1504_ES_NQ_4h_fib_horizontal_zones.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1504_a4e7abab.jpg => 1504_NQ_ES_4h_fib_MasterPattern.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1645_4fcb7723.jpg => 1645_ES_NQ_1h_OB_zones_resistance.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1830_74ff73e7.jpg => 1830_NQ_15m_1h_stop_target_FVG_arrows.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1845_e2e28c13.jpg => 1845_NQ_long_setup_FVG_RR_prevhigh.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-15/{inbound_1855_cfd3d36b.jpg => 1855_NQ_long_setup_FVG_RR_PnL.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_0004_6744fb0c.jpg => 0004_kelly_fixedcost_risk_TP_buy_stop_levels.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_0741_dc8894f2.jpg => 0741_NinjaTrader_executions_MNQ_NQ_Replikanto_5m.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_0741_d2fdf30d.jpg => 0741_NinjaTrader_performance_MFFU_TPT_Replikanto.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_0757_e9931508.jpg => 0757_NQ_15m_4h_stop_target_FVG_arrows.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_0938_649be8e9.jpg => 0938_NQ_15m_4h_OB_stop_target_MA_arrows.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_1333_b7a7086e.jpg => 1333_NQ_chart_FVG_rehearsal_discussion.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_1333_2ba79ff6.jpg => 1333_NQ_charts_OB_FVG_MA_rehearsal_routeAB.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_1336_73c6de87.jpg => 1336_NinjaTrader_executions_MNQ_NQ_Replikanto_5m.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_1622_ae38b71c.jpg => 1622_NQ_OB_MA_stop_target_check_marks.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_2207_39955fe3.jpg => 2207_ES_NQ_4h_fib_stop_target_OB_200SMA.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_2207_37cdf3f0.jpg => 2207_NQ_15m_4h_FVG_stop_fib_MA.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_2229_63a83c68.jpg => 2229_NQ_15m_4h_reversal_box_FVG_monday_open.jpg} (100%)
+ rename Trading/austin_raw_archive/2026-06-16/{inbound_2236_bcbb2bc9.jpg => 2236_NQ_15m_1h_FVG_stop_target_MA_monday_open.jpg} (100%)
+ create mode 100644 Trading/material_specimens/ob_composite/2026-06-13_NQ_MTF_4h_OB_bigframe.jpg
+ create mode 100644 Trading/material_specimens/ob_composite/2026-06-14_NQ_OB_buyside_sellside_liquidity.jpg
+ create mode 100644 Trading/material_specimens/ob_composite/2026-06-14_NQ_OB_sweep_dynamic_trendline.jpg
+ create mode 100644 Trading/material_specimens/ob_composite/_INDEX.md
+To https://github.com/austench1-prog/openclaw-workspace.git
+   80fb7e4..24b59d6  main -> main
+[2026-06-20 17:30] Pushed ✅
