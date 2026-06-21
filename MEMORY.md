@@ -192,7 +192,7 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 - Notebook: **MATS_v1_Compliance** (work Google account)
 - 6 sources loaded, Apex + MFF both 10/10 accuracy
 - Sources are Tier 1 only (from account contracts, not public websites)
-- Next refresh due: 2026-04-15
+- Next refresh due: 2026-04-15 ⚠️ 已过期，待 Chairman 决定何时更新
 
 ---
 
@@ -264,6 +264,7 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 - `material_specimens/candle_retracement/`（反直觉K线走势，1-10号柱体）
 - `material_specimens/three_strike_reversal/`（三振反转/震荡区间ABC双路径）
 - `material_specimens/one_setup_ict/`（ICT One Setup For Life：Inversion + Breaker + Time & Price参考卡）
+- `material_specimens/ob_composite/`（OB综合结构，首批3张 specimen）
 
 管理铁律全文在 `Trading/Trading_Material_Library_v1.md` 【素材库管理铁律】。
 
@@ -355,7 +356,7 @@ Basic infrastructure is now considered stable. Team focus shifts to strategy and
 | Execution | Dragon (OpenClaw) on 小塔 | ✅ Active |
 | Research | Jimmy (Gemini CLI) on 小白 | ✅ Deployed |
 | Compliance | NotebookLM 书记宝 (7 sources) | ✅ Active |
-| Local backup | Samsung DragonVault 三星 | ✅ Daily 3am |
+| Local backup | Samsung DragonVault 三星 | ⚠️ Last: 2026-06-14（DragonVault 挂载但备份脚本未见定时运行记录；git_sync 正常每15min推GitHub）|
 | Cloud backup | GitHub + iCloud | ✅ Active |
 | Chairman workspace | Obsidian vault (iCloud/President_Command) | ✅ Setup done |
 
