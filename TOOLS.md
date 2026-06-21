@@ -46,6 +46,13 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+## Telegram Desktop 版本（复制按钮问题，2026-06-21 解决）
+
+- **必须用 Telegram Desktop（官方牌面版，从 GitHub release 下），版本 6.9.3 验证可用。**
+- ❗ **App Store 版 / Telegram Lite（FZ-LLC）不行** — inline code 没有复制按钮。App ID 747648890 也解决不了。
+- 下载：https://github.com/telegramdesktop/tdesktop 的 releases，或官网 desktop.telegram.org。
+- 小塔已装 6.9.3，复制按钮正常。
+
 ## VSCode Workspace Paths
 
 ### 小塔 (Mac mini) - austinai
