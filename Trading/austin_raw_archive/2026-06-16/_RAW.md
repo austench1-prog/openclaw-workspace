@@ -30,3 +30,19 @@
 - `inbound_2207_39955fe3.jpg` — 22:07 inbound图
 - `inbound_2229_63a83c68.jpg` — 22:29 inbound图
 - `inbound_2236_bcbb2bc9.jpg` — 22:36 inbound图
+
+## Inbound 补档（backfill 命名规范化 2026-06-20）
+
+- `0004_kelly_fixedcost_risk_TP_buy_stop_levels.jpg` （原 inbound_0004_6744fb0c.jpg）— 交易图示（深色背景），凯利公式/固定成本风险管理示意，TP/Buy/Stop价格层级+仓位倍数（x1/x2/x4）
+- `0741_NinjaTrader_performance_MFFU_TPT_Replikanto.jpg` （原 inbound_0741_d2fdf30d.jpg）— NinjaTrader账户绩效表（MFFU/TPT账户）+Replikanto交易复制面板，borderline 收入
+- `0741_NinjaTrader_executions_MNQ_NQ_Replikanto_5m.jpg` （原 inbound_0741_dc8894f2.jpg）— NinjaTrader 执行记录照片（MNQ/NQ SEP合约买卖明细/时间/价格）+Replikanto面板+底部NQ 5m K线
+- `0757_NQ_15m_4h_stop_target_FVG_arrows.jpg` （原 inbound_0757_e9931508.jpg）— NQ 15m+4H TradingView 双图，STOP区灰框、Target层、FVG区、箭头、中文标注
+- `0938_NQ_15m_4h_OB_stop_target_MA_arrows.jpg` （原 inbound_0938_649be8e9.jpg）— NQ 15m+4H 双图，OB方框、STOP层、Target线、MA均线、箭头+中文标注
+- `1333_NQ_charts_OB_FVG_MA_rehearsal_routeAB.jpg` （原 inbound_1333_2ba79ff6.jpg）— 混合图：顶部两张K线图（NQ，OB/FVG/MA/箭头）+下方中文预推演分析文字（路线A/B）
+- `1333_NQ_chart_FVG_rehearsal_discussion.jpg` （原 inbound_1333_b7a7086e.jpg）— 混合图：顶部小K线图（含FVG/水平线）+下方中文市场预推演讨论文字
+- `1336_NinjaTrader_executions_MNQ_NQ_Replikanto_5m.jpg` （原 inbound_1336_73c6de87.jpg）— NinjaTrader 执行记录照片（MNQ/NQ合约）+Replikanto面板+底部NQ 5m K线图
+- `1622_NQ_OB_MA_stop_target_check_marks.jpg` （原 inbound_1622_ae38b71c.jpg）— NQ 双图（TradingView），OB区块彩框、MA均线、STOP/Target线、白色箭头、X和✓标记、中文标注
+- `2207_ES_NQ_4h_fib_stop_target_OB_200SMA.jpg` （原 inbound_2207_39955fe3.jpg）— ES+NQ 4H 双图，斐波那契回撤、STOP/Target区、OB/zone彩框、4H 200SMA、中文标注
+- `2207_NQ_15m_4h_FVG_stop_fib_MA.jpg` （原 inbound_2207_37cdf3f0.jpg）— NQ 15m+4H 双图，FVG区域、STOP标记、斐波那契、绿黄框、MA均线、中文标注
+- `2229_NQ_15m_4h_reversal_box_FVG_monday_open.jpg` （原 inbound_2229_63a83c68.jpg）— NQ 15m+4H 双图，轉折箱體（灰框）、STOP虚线、FVG++4H&15'黄框、Monday 1H开盘区域绿框、箭头
+- `2236_NQ_15m_1h_FVG_stop_target_MA_monday_open.jpg` （原 inbound_2236_bcbb2bc9.jpg）— NQ 15m+1H 双图，FVG++黄框、轉折/STOP/Target、MA均线、Monday开盘区绿框、白色上箭头

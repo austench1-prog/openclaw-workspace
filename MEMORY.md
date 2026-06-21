@@ -309,6 +309,9 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ## System / Runtime Notes
 
+- **2026-06-20: 双 Provider + thinking off（防断片根治）。** 根因：旧架构只有 Anthropic 一个 Provider，且 thinking 开着 → 反复报 `Invalid signature in thinking block`（replay_invalid，跟余额无关）+ 单点挂时无退路。修复：①加 **OpenAI 作 backup provider**（`openclaw onboard --openai-api-key`，plugin openai+codex enabled，API key 存 auth profile）；② **thinking 全局关 off**（`agents.defaults.thinkingDefault=off`）根治 signature 报错；③ 系统默认模型被 onboard 改成 **openai/gpt-5.5**（Chairman 决定先不改回 Sonnet，观察）。「跟账扣款同时发生」= 巧合（用得多同时触发余额降+session变长），非因果；被拒请求不计费。
+- **2026-06-20: 素材库整理一轮 + cron 修复。** ① 6/15+6/16 共27张 inbound_xxx 规范命名+补 _RAW.md（git mv 纯rename，底片字节零修改）；② 复盘抓到 6/20 目录 img_01/02 实为历史截图（Chairman 决定不动）；③ 新建 **`material_specimens/ob_composite/`（OB 综合结构）** 类目（首批3张 specimen + _INDEX.md）。specimens 现 **5 个类目**：pinbar_doji / candle_retracement / three_strike_reversal / one_setup_ict / **ob_composite**。cron 修复：MFF风控提醒 `7 17 * * *`→`7 17 * * 1-5`（原每天触发 → 只工作日，周末不再乱叫）。
+
 - **2026-06-15: System recovered; running on OpenClaw with Opus 4.8.** Post-upgrade judgment DIRECTION verified stable. Persona reset to SOUL.md original 龙哥 (see Persona & Communication).
 - **2026-06-16: Default model switched to Sonnet 4.6 (cost optimization).** Opus retained as heavy-duty option. Model switch commands: 「上超跑」= switch to Opus; 「回 Sonnet」= switch back to Sonnet.
 - **Model switching judgment rule (2026-06-16, locked):** Trading-related content (strategy review, rehearsal gating, compliance judgment) = quality first → proactively switch to Opus. Daily chat/files/status = stay on Sonnet. Uncertain scenario → ask Chairman first. Dragon self-manages; 「上超跑」is for Chairman to manually override when he wants Opus.

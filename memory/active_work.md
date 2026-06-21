@@ -1,4 +1,4 @@
-# Active Work — last updated 2026-06-20 16:42 PDT
+# Active Work — last updated 2026-06-20 17:21 PDT
 
 ## 今天做完的（6/20）
 - 找回 6/12 One Setup For Life 原图（file_511），建 material_specimens/one_setup_ict/
@@ -13,6 +13,15 @@
 
 ## ⏳ 压着未完成
 （已清空）
+
+## 今天傍晚做完（17:00-17:21）
+- 系统：加 OpenAI 作 backup provider（Anthropic 不再单点），thinking 全局关 off（根治 signature 报错）
+- cron 修复：MFF风控提醒改 `7 17 * * 1-5`（周末不再乱叫）
+- 图片整理①②③全完成：
+  - ① 6/15+6/16 共27张 inbound 规范命名+补 _RAW.md（git mv 纯rename）
+  - ② 复盘抓到 6/20 目录2张图实为历史截图（Chairman 决定不动）
+  - ③ 新建 material_specimens/ob_composite/ 类目（OB综合结构），首批3张 specimen（6/13×1 + 6/14×2）+ _INDEX.md
+- material_specimens 类目更新：现5个（pinbar_doji / candle_retracement / three_strike_reversal / one_setup_ict / **ob_composite**）
 
 ## 🗓️ 待办
 - 周一开始：每日收到素材图即存当天 raw-archive（新规则已生效）
