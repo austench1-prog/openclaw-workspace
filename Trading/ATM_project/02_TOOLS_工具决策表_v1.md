@@ -58,15 +58,17 @@
 
 ---
 
-## 工具决策汇总
+## 工具决策汇总（Chairman 2026-06-22 拍定 E&F）
 | 缺口 | 决策 | 工具 |
 |---|---|---|
 | B 反推 | ✅ 现有能力 | Dragon+脚本 |
 | C 模板 | ✅ 现有能力 | 已会写XML |
 | D 回放测试 | ✅ 采用 | NT内置Market Replay(90天内,尽早下) |
-| E 统一风控 | 🟡 待评估 | 先试Arty Account Guard(贴合propfirm) vs 免费NinjaScript |
-| F 信号配合 | 🟡 待评估,排后 | Quagensia待核实 / 自研DragonFileSignal |
+| **E 统一风控** | **🔒 现阶段=E0** | 现阶段靠 FLATTEN_ALL信号链+手动纪律+后台风控。**E1(免费NinjaScript)/E2(Arty AddOn)作后续选项，自动风控推迟到资金盘前再选。** |
+| **F 信号配合** | **🔒 现阶段=F0** | ATM纯手动，不接信号链。**Quagensia不评估(F2自动下单已永久排除)。⚠️ F1提醒中继(Module C)需尽快落实——但归 Module C 独立线做，不在本ATM项目路径内。** |
 | G 远程GUI | 🟡 待验证(前置) | 优先复用已有AnyDesk SOP |
+
+**→ 聚焦后 ATM 项目路径只剩：G(前置) → B → C → D。E/F 移出本项目当前路径。**
 
 ## 关键判断（给路径图用）
 1. **G 是真前置** —— 不解 G，D 做不了。下一步先验 AnyDesk。
