@@ -48,6 +48,10 @@
 - **① 逐级回落 → 不单列。** 全爆分支按「一次全清=最大亏损」算，不拆三道stop阶梯。理由：(a)计算目的是找最大化亏损边界，逐级会减损；(b)现实中大时间框架结构改变会兜底出场，原始stop不会傻等到底。
 - **② 叶1（原始未形成A就失败）→ 保留。** 成立：一根反向大柱子，完全没机会进场。
 - 树状图已生成: `Trading/model_diagrams/discount_zone_tree_v1_37paths.png` + `.html`
+- **2026-06-22 11:12 主席发来修订版 SVG，Dragon 逐项核验逻辑无误（37叶对账 1+2+2+32=37 ✅），已存入系统：**
+  - 系统层: `Trading/model_diagrams/discount_zone_tree_v2_37leaves_chairman.svg`
+  - 底片层: `Trading/austin_raw_archive/2026-06-22/discount_zone_tree_37leaves_chairman_RAW.svg`
+  - 核验记录: 叶号采用「终止叶单独编号」混排（叶1=1楼终止；叶18/19=A碰25%终止；叶36/37=A没碰25%终止；叶2-9/10-17/20-27/28-35=四个A成功各自B区8叶）。逻辑与昨天锁定结构完全一致。
 - 注释(分型/时间轴)单独存: `Trading/discount-zone-model-NOTES.md`（不进模型）
 
 ## 明天 TODO（从这里接着干）
