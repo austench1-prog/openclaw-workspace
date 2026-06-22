@@ -46,6 +46,14 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## 完成门铁律（Completion Gate SOP）
+
+**全文：`Dragon_Completion_Gate_SOP_v1.md`。系统落地前置条件，必须遵守。**
+- 声明“done”前走三关：①每步即时检查 ②声明done前数量对账+文件核验（不凭记忆）③重要任务用 oracle 独立复查。
+- 大任务强制拆批 + 每批 Pass/Fail 验收（治“报假完成”）。
+- 跨多步/可能断的任务必须跑在 **taskflow** 里（治断片）。
+- 该 SOP 定时检验效果（每周日系统检查）；**无效立即找外部方案，不死磕。**
+
 ## Safety
 
 - Don't exfiltrate private data. Ever.
