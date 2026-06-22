@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#0f1115;color:#e8e8e8;font-family:-apple-system,'PingFang SC',sans-serif;padding:24px;}
+  h1{font-size:20px;color:#ffd166;margin:0 0 4px;}
+  .sub{font-size:12px;color:#9aa;margin-bottom:18px;}
+  .tree{font-size:12.5px;line-height:1.55;}
+  .L1{color:#ffd166;font-weight:700;font-size:15px;}
+  .ok{color:#6ee7a8;} .fail{color:#ff7b72;} .neutral{color:#8ab4ff;}
+  .node{margin-left:0;}
+  .branch{margin-left:22px;border-left:1px solid #2a2f3a;padding-left:14px;}
+  .leaf{background:#1a1e26;border-radius:6px;padding:3px 9px;margin:3px 0;display:inline-block;}
+  .big{color:#6ee7a8;font-weight:600;}
+  .bk{color:#c9d1d9;}
+  .loss{color:#ff7b72;}
+  .worst{color:#ff4d4d;font-weight:700;}
+  .tag{font-size:10.5px;color:#7d8590;}
+  .legend{margin-top:20px;font-size:11.5px;color:#9aa;border-top:1px solid #2a2f3a;padding-top:10px;}
+  .col{display:inline-block;width:13px;height:13px;border-radius:3px;vertical-align:middle;margin-right:5px;}
+  table{border-collapse:collapse;margin-top:8px;font-size:11.5px;}
+  td,th{border:1px solid #2a2f3a;padding:4px 8px;}
+  th{background:#1a1e26;color:#ffd166;}
+</style></head>
+<body>
+<h1>折扣区头寸策略 — 完整决策树 (37 种可能性)</h1>
+<div class="sub">时间轴确定: 原始交易(1楼) → 区域A(2楼) → 区域B(3楼) · A同构B · 各50点 · 下层失败=终止,上层不建</div>
+
+<div class="tree">
+<div class="L1">【1楼】原始交易 (100点, 1:5)</div>
+<div class="branch">
+  <div><span class="fail">├ 失败</span> ───► <span class="leaf loss">叶1 · 底仓损 [终止]</span></div>
+  <div><span class="ok">└ 成功</span> → 进入 <b>【2楼 区域A】</b></div>
+  <div class="branch">
+
+    <div class="neutral">◆ A进场1手(止损先放0) → 分叉: 碰25% / 没碰25%</div>
+
+    <div style="margin-top:6px;"><b>〈A 碰25%〉</b> 加4手(共5手,1:3)</div>
+    <div class="branch">
+      <div><span class="fail">├ 反弹失败·破第一STOP</span> ► <span class="leaf loss">叶18 · A的5手全损,底仓在 [终止]</span></div>
+      <div><span class="worst">├ 反弹失败·破Original</span> ► <span class="leaf worst">叶19 · 5手+底仓全爆(最坏)[终止]</span></div>
+      <div><span class="ok">├ 反弹→减3手→剩2手到最高TP</span> ► <b>A成功</b>，进3楼B (展开8叶: 2~9)</div>
+      <div><span class="ok">└ 反弹→减3手→剩2手保本出</span> ► <b>A成功</b>，进3楼B (展开8叶: 10~17)</div>
+    </div>
+
+    <div style="margin-top:6px;"><b>〈A 没碰25%〉</b> 回50%加3手(共4手,1:1)</div>
+    <div class="branch">
+      <div><span class="ok">├ 往上·4手到最高TP</span> ► <b>A成功</b>，进3楼B (展开8叶: 20~27)</div>
+      <div><span class="ok">├ 往上·4手保本出</span> ► <b>A成功</b>，进3楼B (展开8叶: 28~35)</div>
+      <div><span class="fail">├ 往下·破第一STOP</span> ► <span class="leaf loss">叶36 · A的4手全损,底仓在 [终止]</span></div>
+      <div><span class="worst">└ 往下·破Original</span> ► <span class="leaf worst">叶37 · 4手+底仓全爆 [终止]</span></div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div style="margin-top:18px;">
+<div class="L1" style="font-size:14px;">【3楼 区域B】每次A成功后展开 — B也是8种结局 (与A同构)</div>
+<table>
+<tr><th>B路径</th><th>结局</th><th>性质</th></tr>
+<tr><td rowspan="4">碰25%<br>(5手)</td><td>反弹→剩2手到最高TP</td><td class="big">大赢</td></tr>
+<tr><td>反弹→剩2手保本出</td><td class="bk">保本/小赢</td></tr>
+<tr><td>反弹失败·破第一STOP</td><td class="loss">B 5手损</td></tr>
+<tr><td>反弹失败·破Original</td><td class="worst">5手+底仓爆</td></tr>
+<tr><td rowspan="4">没碰25%<br>(4手)</td><td>往上·4手到最高TP</td><td class="big">大赢</td></tr>
+<tr><td>往上·4手保本出</td><td class="bk">保本/小赢</td></tr>
+<tr><td>往下·破第一STOP</td><td class="loss">B 4手损</td></tr>
+<tr><td>往下·破Original</td><td class="worst">4手+底仓爆</td></tr>
+</table>
+</div>
+
+<div class="legend">
+<div><span class="col" style="background:#6ee7a8;"></span>大赢(到最高TP) &nbsp;&nbsp;
+<span class="col" style="background:#c9d1d9;"></span>保本/小赢 &nbsp;&nbsp;
+<span class="col" style="background:#ff7b72;"></span>部分止损 &nbsp;&nbsp;
+<span class="col" style="background:#ff4d4d;"></span>全爆(含底仓,最坏)</div>
+<div style="margin-top:8px;"><b>37 = 1</b>(原始失败) <b>+ 4</b>(A失败终止,B不建) <b>+ 4×8=32</b>(A的4个成功结局 × B的8种结局)</div>
+<div style="margin-top:4px;color:#ffd166;">⚠️ 待你定: ①"逐级回落"(全局掉头依次碰2nd→1st→Original)要不要单列成叶? ②叶1(原始未形成A就失败)成不成立?</div>
+</div>
+</body></html>
