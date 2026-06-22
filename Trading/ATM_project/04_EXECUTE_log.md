@@ -1,0 +1,36 @@
+# ATM 落地项目 — 第4步 EXECUTE 执行日志
+
+> 走 `Dragon_Project_Kickoff_SOP_v1.md` 第4步。按路径图 G→B→C→D 执行，每步 Completion Gate 验收。
+> 日期：2026-06-22 起。
+
+---
+
+## STEP G — 验证远程 GUI 能力 ✅ 完成（2026-06-22 14:0x）
+
+### 实测结果
+- ✅ **AnyDesk 已装 + 正在运行**（温总PC `C:\Program Files (x86)\AnyDesk\AnyDesk.exe`，进程1个）。
+- ✅ 已有 SOP 2026-OPS-001 规范（非交易系统级任务，连完即断）。
+- ⚠️ RDP 未启用（不需要，有 AnyDesk）。
+- ⚠️ 现有回放数据：只有旧的 `NQ 09-25`（2文件，去年合约），**无 MNQ、无近期数据** → 要测必须下新的。
+
+### 关键能力边界（诚实结论）
+- AnyDesk = **人操作的图形远程**。Dragon(AI) **不能自己看屏点鼠标**。
+- 涉及 GUI 的操作（下载回放数据、读图上指标、看回放挂单）→ **必须 Chairman 在 AnyDesk 里操作，Dragon 指挥/读数/记录**。
+- Dragon 能全自动做的（SSH+命令行）：读/写/推送 ATM 模板 XML、查文件、查数据目录、查进程。
+
+### ⭐ 依赖修正（画执行才发现，省大事）
+- **B 步骤不依赖 GUI！** ATR 已从 Chairman 截图读到并定案（15M=80/1M=30），B 反推纯靠模型文本+脚本，Dragon 全自动可做。
+- **C 步骤不依赖 GUI！** 模板 XML 推送走 SSH（已验证），只有"下拉确认"需 Chairman 看一眼（轻）。
+- **只有 D（回放测试）真正依赖 GUI** —— 下数据 + 挂单测试都是图形操作。
+
+### G 验收结论
+- ✅ **PASS（带条件）**：GUI 通道有（AnyDesk在线）；模式 = Chairman操作+Dragon指挥。
+- **协作分工锁定**：
+  - Dragon 全自动：B反推、C写模板推送、所有文件/参数核验。
+  - Chairman+Dragon 协作（AnyDesk）：D 回放测试（下数据、挂单、读结果）。
+- **→ B 和 C 现在就能开干，不被 G 卡。D 到时再约 AnyDesk 协作时段。**
+
+---
+
+## STEP B — 决策树→ATM参数反推 [进行中]
+（下一步开始）
