@@ -53,7 +53,7 @@
     <TestPeriod>28</TestPeriod>
     <TradingHoursSerializable />
     <Gtd>1800-01-01T00:00:00</Gtd>
-    <Template>DZ_15M_v1</Template>
+    <Template>DZ_15M_80x400</Template>
     <TimeInForce>Day</TimeInForce>
     <OnBehalfOf />
     <ReverseAtStopStrategyId>-1</ReverseAtStopStrategyId>
