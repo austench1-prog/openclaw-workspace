@@ -46,6 +46,12 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## 开展项目铁律（Project Kickoff SOP）
+
+**全文：`Dragon_Project_Kickoff_SOP_v1.md`。Chairman 判定为「项目」时必走，日常小活不走。**
+- 五步：①Structure 结构先行（项目由哪些部分组成）②Tools 针对性工具调研（知道缺什么才找什么 + 评估实际影响）③Roadmap 路径图 ④Execute 执行 ⑤Quality 质量门。
+- 灵魂：**不埋头苦干（先有结构）+ 工具针对性调研（不撞运气搜索）。** 高效有质量做事 = 跟工具关系极大。
+
 ## 完成门铁律（Completion Gate SOP）
 
 **全文：`Dragon_Completion_Gate_SOP_v1.md`。系统落地前置条件，必须遵守。**
