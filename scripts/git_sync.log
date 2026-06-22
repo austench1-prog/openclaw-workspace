@@ -3598,3 +3598,10 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    9b1c2a5..34e754a  main -> main
 [2026-06-22 12:15] Pushed ✅
+[main 2794daf] auto-sync 2026-06-22 12:30
+ 3 files changed, 192 insertions(+)
+ create mode 100644 Trading/atm_templates_new/DZ_15M_v1.xml
+ create mode 100644 Trading/discount-zone-stop-ATR-calibration-NOTES.md
+To https://github.com/austench1-prog/openclaw-workspace.git
+   34e754a..2794daf  main -> main
+[2026-06-22 12:30] Pushed ✅
