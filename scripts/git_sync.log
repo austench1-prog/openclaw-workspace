@@ -3655,3 +3655,12 @@ To https://github.com/austench1-prog/openclaw-workspace.git
 To https://github.com/austench1-prog/openclaw-workspace.git
    f9a7035..a4777a2  main -> main
 [2026-06-22 15:00] Pushed ✅
+[main e6a4210] auto-sync 2026-06-22 15:15
+ 6 files changed, 309 insertions(+), 8 deletions(-)
+ create mode 100644 Trading/atm_templates_new/DZ_30_1to1.xml
+ create mode 100644 Trading/atm_templates_new/DZ_30_1to5.xml
+ create mode 100644 Trading/atm_templates_new/DZ_80_1to1.xml
+ create mode 100644 Trading/atm_templates_new/DZ_80_1to5.xml
+To https://github.com/austench1-prog/openclaw-workspace.git
+   a4777a2..e6a4210  main -> main
+[2026-06-22 15:15] Pushed ✅
