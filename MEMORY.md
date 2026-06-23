@@ -105,6 +105,7 @@ One-line definition:
 - **1分效率却要 5分工作量 → 直接砍。** 系统不需解决所有问题；不断找可能性，但不一直给它找麻烦。追求最简洁版。
 
 ### Hermes = 独立第二执行层
+- **机器名 = 小黑（Hermes 主机，2026-06-22 命名）。** 跟小塔同型号 Mac mini（规格待补记）。
 - 第二台 Mac mini `austinha` 账户，独立 Telegram bot，独立 `.hermes`。模型：OpenAI gpt-5.5 主 / Anthropic opus-4-8 备。排除 Nous/OpenRouter/中国源。
 - Hermes core workspace：`/Users/austinha/Documents/Hermes_Migration_Pack/Obsidian_Core`。
 - **分工：OC = 手+闸门（执行/路由/风控/交易提醒/参数包）；Hermes = 后台+外勤（网站/规则/合规库/账户/行政/提醒/报告）；主席 = 大脑（策略方向/授权/批准）。**
