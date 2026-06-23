@@ -103,16 +103,14 @@ links_to_request: 01_Research/Incoming/R-2026-001.md
 confidence: medium                       # low|medium|high
 beta_skills_flagged: [signal-postmortem]
 recommendation: REVISE                   # PASS|REVISE|REJECT (= Claude建议,非判决)
-checks:                                  # 8项检查逐项(建议性,非放行)
-  edge_credibility: pass
-  overfit_risk: revise
-  sample_size: fail
-  regime_dependence: pass
-  exit_calibration: pass
-  risk_concentration: pass
-  execution_realism: revise
-  failure_quality: pass
-blocking_issues: [sample_size_insufficient]
+checks:                                  # 基于6个白名单skill的检查(建议性,非放行)
+  signal_postmortem: pass
+  trade_performance_coach: revise
+  weekly_performance_digest: pass
+  backtest_expert: revise
+  edge_strategy_reviewer: pass
+  data_quality_checker: fail
+blocking_issues: [data_quality_issue]
 ---
 ## 发现 Findings
 ## 过程问题 Process Failures
@@ -170,8 +168,8 @@ OC 生成正式 release → 04_Execution/OC_Ready/<release_id>
 ## 6. 待 President 拍的决策(汇总)
 1. ✅ **总线一条 `mats-bus`(President 2026-06-22 锁定)。**
 2. ⏳ 本 4 格式 schema 是否认可?(可加字段/改字段)
-3. ⏳ ②报告里的8项检查名称是否照搬 edge-strategy-reviewer,还是定制?(这是Claude建议性检查,非放行门)
-4. ⏳ release 版本号规则(DZ-NQ-v1.1 这种)是否可用?
+3. ✅ 检查项 = 直接用6个白名单skill本身(总裁2026-06-22锁定,不另定制8项命名)。
+4. ✅ release 版本号规则 = `DZ-NQ-v1.1`(策略名-品种-版本)(总裁2026-06-22锁定)。
 
 ---
 
