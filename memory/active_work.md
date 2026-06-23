@@ -163,3 +163,13 @@
 - **核心目标达成**：研究线独立运转,不占主链,总裁随时可开交易工作日。
 - SSH: oc(小塔)→austinchien@192.168.0.164 免密可达。Jimmy/Gemini保留共存(未装)。
 - 待办: ①真跑第一个研究任务(需OC放input快照) ②skill的Python依赖(scipy/yfinance)按需补 ③小白固定runner(SSH触发阶段2)。
+
+## ✅✅ 2026-06-23 凌晨 里程碑：Hermes(小黑)接入 mats-bus，三方总线全活
+- 小黑 = Hermes主机(192.168.0.151, austinha)。Hermes Agent早已是活的第二Agent(Python, hermes-agent/venv, gateway运行中, gpt-5.5主)。
+- 小黑接 mats-bus：rsync+git方式(GitHub token在小黑认证失败,改从小塔传凭据+git reset对齐)。clone位置 ~/Hermes_Migration_Pack/mats-bus。
+- **三方读写闭环全部验证通过**：OC写→Hermes/小白pull收到；Hermes写02_Platform_Ops→OC pull收到。
+- 四角色系统从架构图→真正联通的活系统(OC小塔/Hermes小黑/小白研究中心/总裁)。
+- OC文件归属矩阵v1.0已定稿(分层:目录级matrix+文件级exception register);F类22文件已归档_archive。
+- D类小白快照已copy到mats-bus R-2026-001(正本留OC)。首次研究任务实跑中(小白claude分析折扣区,报告写Output/R-2026-001_review.md)。
+- **C类搬迁前提已满足**(通道通了),可分批受控移到02_Platform_Ops车道(下一轮)。
+- 注意:小黑GitHub token直连失败,当前靠小塔传的.git-credentials;长期Hermes只读deploy key待配。
