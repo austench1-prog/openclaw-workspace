@@ -51,7 +51,7 @@ Jimmy(Gemini CLI) 保留共存。OC 不跑此 skill，通过 Git/Obsidian 文件
 ## 4. 信息流（Git文件总线为真相源，Obsidian为人类界面）
 ```
 OC → Research Request Packet → Git/Obsidian Research Bus
-→ 小白(Claude Code + skills) → Quality Gate / Research Report
+→ 小白上的 Claude Code → 研究与质量审查报告(含 PASS/REVISE/REJECT 建议,非判决)
 → Chairman Review → Approval Manifest → OC 接收已批准版本
 
 Hermes → 平台/规则/账户更新 → Ops & Compliance Lane → Chairman + OC 读摘要
@@ -81,7 +81,7 @@ instrument: NQ
 timeframe: 5m
 objective: Review trade quality and identify process failures.
 input_files: [trade_log.csv, strategy_parameters.yaml, execution_notes.md]
-required_outputs: [quality_gate_report, process_failures, parameter_risks, recommended_next_test]
+required_outputs: [review_recommendation, process_failures, parameter_risks, recommended_next_test]
 ```
 
 ## 6. SSH 用法（两阶段）
@@ -105,8 +105,10 @@ required_outputs: [quality_gate_report, process_failures, parameter_risks, recom
 ---
 
 ## 8. 下一步（Chairman 锁定）= 不是安装，是先写规格
-**先做 `Trading_Research_Bus_Specification_v1.0`** —— 定4种格式：
-①研究任务包 ②研究报告 ③质量门报告 ④批准文件。
+**先做 `Trading_Research_Bus_Specification_v1.0`** —— 定3种格式(现阶段)：
+**3份**(现阶段)：①研究任务包 ②研究与质量审查报告(②③合并) ③批准文件。
+- 小白是电脑/分析工具,不是审批机构;PASS/REVISE/REJECT = Claude 建议,Chairman 才是关口。
+- 未来半自动化时再拆成4份。
 
 ---
 *DISCUSSION DRAFT v1 | 2026-06-22 | Chairman方案, Dragon记录 | 不实施待批准*

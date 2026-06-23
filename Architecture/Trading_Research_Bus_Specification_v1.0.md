@@ -49,7 +49,10 @@ mats-bus/
 
 ---
 
-## 3. 四种核心格式（schema 锁定）
+## 3. 三种核心格式（schema 锁定）
+
+> 现阶段（人工在前操作）= **3份**。未来若半自动化（OC自动发任务/小白定时跑/Hermes自动归档/Chairman只看待审清单），再把"研究"与"质量门"拆开成4份。现在不拆,避免结构过重。
+> **关键认知：小白只是电脑/分析工具,不是决策主体。** Claude 的 PASS/REVISE/REJECT = 研究建议,不是审批。最终权力在 Chairman。
 
 ### 3.1 ① 研究任务包 (Research Request Packet)
 - 位置：`01_Research/Incoming/<task_id>.md`
@@ -69,8 +72,8 @@ input_files:                # 相对总线路径,只读快照
   - 01_Research/Incoming/R-2026-001/trade_log.csv
   - 01_Research/Incoming/R-2026-001/strategy_parameters.yaml
   - 01_Research/Incoming/R-2026-001/execution_notes.md
-required_outputs:           # 必须产出哪些(对应§3.2/3.3)
-  - quality_gate_report
+required_outputs:           # 必须产出哪些(都进②研究与质量审查报告)
+  - review_recommendation   # PASS/REVISE/REJECT 建议
   - process_failures
   - parameter_risks
   - recommended_next_test
@@ -84,42 +87,23 @@ priority: normal            # low|normal|high
 研究目标、背景、特殊约束、Chairman 想知道的问题。
 ```
 
-### 3.2 ② 研究报告 (Research Report)
-- 位置：`01_Research/Output/<task_id>_research.md`
-- 写入方：小白
+### 3.2 ② 研究与质量审查报告 (Research Review Report)
+- 位置：`01_Research/Output/<task_id>_review.md`
+- 写入方：**小白上的 Claude Code**（②③合并 — 小白只是电脑/分析工具,不是审批机构）
+- **核心认知：内含的 PASS/REVISE/REJECT = Claude 的研究建议结论,不是系统自动放行。最终权力在 Chairman。**
 ```yaml
 ---
-type: research_report
+type: research_review_report
 task_id: R-2026-001
 status: done
-produced_by: Xiaobai(ClaudeCode+skills)
-engine: claude-code
+produced_by: ClaudeCode-on-Xiaobai      # 工具,非决策主体
 skills_used: [edge-strategy-reviewer, signal-postmortem]
 created: 2026-06-22T22:10:00-07:00
 links_to_request: 01_Research/Incoming/R-2026-001.md
-confidence: medium          # low|medium|high
-beta_skills_flagged: [signal-postmortem]   # 标注 beta 能力
----
-## 发现 Findings
-## 过程失败 Process Failures
-## 参数风险 Parameter Risks
-## 建议的下一步测试 Recommended Next Test
-## 证据/数据来源(可追溯)
-```
-
-### 3.3 ③ 质量门报告 (Quality Gate Report)
-- 位置：`01_Research/Output/<task_id>_qgate.md`
-- 写入方：小白 | 核心 = PASS/REVISE/REJECT 判决
-```yaml
----
-type: quality_gate_report
-task_id: R-2026-001
-status: done
-produced_by: Xiaobai(ClaudeCode+skills)
-skill: edge-strategy-reviewer
-created: 2026-06-22T22:12:00-07:00
-verdict: REVISE             # PASS|REVISE|REJECT
-gates:                      # 8项质量门逐项打分
+confidence: medium                       # low|medium|high
+beta_skills_flagged: [signal-postmortem]
+recommendation: REVISE                   # PASS|REVISE|REJECT (= Claude建议,非判决)
+checks:                                  # 8项检查逐项(建议性,非放行)
   edge_credibility: pass
   overfit_risk: revise
   sample_size: fail
@@ -130,12 +114,18 @@ gates:                      # 8项质量门逐项打分
   failure_quality: pass
 blocking_issues: [sample_size_insufficient]
 ---
-## 逐项判决理由
-## 阻断项(必须解决才能 PASS)
-## 修订建议
+## 发现 Findings
+## 过程问题 Process Failures
+## 参数风险 Parameter Risks
+## Quality Review Recommendation
+- Recommendation: PASS / REVISE / REJECT   (= Claude 分析意见,非系统放行)
+- Blocking Issues:
+- Required Evidence:
+- Suggested Next Test:
+## 证据/数据来源(可追溯)
 ```
 
-### 3.4 ④ 批准文件 (Approval Manifest)
+### 3.3 ③ 批准文件 (Approval Manifest)
 - 位置：`03_Approvals/Approved/<task_id>_approval.md`（或 Rejected/）
 - 写入方：**仅 Chairman**
 ```yaml
@@ -145,9 +135,8 @@ task_id: R-2026-001
 decision: approved          # approved|rejected|hold
 decided_by: Chairman
 decided: 2026-06-22T23:00:00-07:00
-based_on:                   # 依据哪些报告
-  - 01_Research/Output/R-2026-001_qgate.md
-  - 01_Research/Output/R-2026-001_research.md
+based_on:                   # 依据哪份报告(现在只1份合并报告)
+  - 01_Research/Output/R-2026-001_review.md
 release_to_OC: true         # 批准后是否生成 OC 可用 release
 release_id: DZ-NQ-v1.1      # 若 release,新正式版本号
 scope: "仅采用参数风险结论,不采用新加仓逻辑"   # Chairman 限定采用范围
@@ -162,12 +151,12 @@ scope: "仅采用参数风险结论,不采用新加仓逻辑"   # Chairman 限�
 ```
 OC 写 ① → Incoming/
   ↓ 小白认领,移 In_Progress/
-小白跑 Claude Code+skills
-  ↓ 成功 → 写 ②③ 到 Output/, status=done
+小白上的 Claude Code 跑 skills
+  ↓ 成功 → 写 ②(研究与质量审查报告) 到 Output/, status=done
   ↓ 失败 → 写异常到 Failed/, status=failed
-OC/小白 把 ②③ 提请 → 03_Approvals/Pending/
-  ↓ Chairman 审
-Chairman 写 ④ → Approved/ 或 Rejected/
+OC/小白 把 ② 提请 → 03_Approvals/Pending/
+  ↓ Chairman 审(②里的 PASS/REVISE/REJECT 只是建议,Chairman 才是关口)
+Chairman 写 ③ → Approved/ 或 Rejected/
   ↓ 若 approved + release_to_OC
 OC 生成正式 release → 04_Execution/OC_Ready/<release_id>
 ```
@@ -181,7 +170,7 @@ OC 生成正式 release → 04_Execution/OC_Ready/<release_id>
 ## 6. 待 Chairman 拍的决策(汇总)
 1. ✅ **总线一条 `mats-bus`(Chairman 2026-06-22 锁定)。**
 2. ⏳ 本 4 格式 schema 是否认可?(可加字段/改字段)
-3. ⏳ 8项质量门名称是否照搬 edge-strategy-reviewer,还是定制我们自己的?
+3. ⏳ ②报告里的8项检查名称是否照搬 edge-strategy-reviewer,还是定制?(这是Claude建议性检查,非放行门)
 4. ⏳ release 版本号规则(DZ-NQ-v1.1 这种)是否可用?
 
 ---
