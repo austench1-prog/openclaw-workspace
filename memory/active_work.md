@@ -150,3 +150,16 @@
 完整路径：数学验证 ✅(前置，已过) → 三步骤验证法【①尼家模拟账 → ②盘 Sim → ③真实资金盘】。
 
 折扣区模型已过数学前置关。下一关 = 三步骤验证法第①步 尼家模拟账验证。
+
+---
+
+## ✅✅ 2026-06-22 夜 里程碑：小白研究中心上线 + mats-bus 闭环
+- **小白(MacBook Air, austinchien, 192.168.0.164)研究中心 = 活的，能独立接活。**
+- Claude Code 2.1.86 + **第三个API Key**(独立,总裁建,不与其他K重合) → SSH远程跑通(不用浏览器,OC能远程触发)。
+- 6白名单skill装入 `~/Trading_Research_Lab/.claude/skills/`(对账6/6)。CLAUDE.md定义角色(工具非审批)。
+- **mats-bus 私有库**(`austench1-prog/mats-bus`,API全自动建)→ push成功 → clone到小白 `Trading_Research_Lab/Research_Bus/`。
+- **闭环验证通过**：小白claude读到种子任务R-2026-001(MNQ|3skills)。
+- 链路：OC写任务→push mats-bus→小白pull→claude跑skill→写报告→push回→OC pull→President批准。
+- **核心目标达成**：研究线独立运转,不占主链,总裁随时可开交易工作日。
+- SSH: oc(小塔)→austinchien@192.168.0.164 免密可达。Jimmy/Gemini保留共存(未装)。
+- 待办: ①真跑第一个研究任务(需OC放input快照) ②skill的Python依赖(scipy/yfinance)按需补 ③小白固定runner(SSH触发阶段2)。
