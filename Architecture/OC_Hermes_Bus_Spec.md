@@ -3,13 +3,13 @@
 # Author: Dragon (OC) | Model: Opus 4.8
 # Scope: Defines HOW OC and Hermes exchange information. Design only.
 #        No repo created, no directory built, no automation enabled.
-#        Implementation requires explicit Chairman approval.
+#        Implementation requires explicit President approval.
 
 ---
 
 ## 0. Why this document exists
 
-The information flow between OC and Hermes is the Chairman's #1 concern and the
+The information flow between OC and Hermes is the President's #1 concern and the
 single most important problem in this whole architecture. If the two agents
 "guess each other's meaning" through scattered chat, the system can never be
 made self-consistent or debugged. This spec locks the channel so that:
@@ -20,7 +20,7 @@ made self-consistent or debugged. This spec locks the channel so that:
 
 ---
 
-## 1. Three-Layer Communication Model (Chairman, 2026-06-19, LOCKED)
+## 1. Three-Layer Communication Model (President, 2026-06-19, LOCKED)
 
 ### Layer 1 — Shared File Bus  (PRIMARY / source of truth)
 - The main channel. Both sides exchange STANDARD FILES through a unified directory.
@@ -40,15 +40,15 @@ made self-consistent or debugged. This spec locks the channel so that:
   "there is a new task / a new change / an exception / a report."
 
 ### Layer 3 — Human Entry Layer  (CHAIRMAN ENTRY)
-- Chairman on 小白 (MacBook Air) via Obsidian / VS Code / Terminal / Chat window
+- President on 小白 (MacBook Air) via Obsidian / VS Code / Terminal / Chat window
   issues commands to the system.
-- This is the **Chairman entry**, NOT the primary agent-to-agent channel.
+- This is the **President entry**, NOT the primary agent-to-agent channel.
 
 ---
 
 ## 2. Bus Implementation = Git repository (LOCKED)
 
-**Decision (Chairman 2026-06-19): the file bus is a Git repository, hosted on the OC
+**Decision (President 2026-06-19): the file bus is a Git repository, hosted on the OC
 side as a PRIVATE GitHub repo; Hermes pulls from it.**
 
 Why Git (vs iCloud/Dropbox sync, vs LAN share):
@@ -61,7 +61,7 @@ Why Git (vs iCloud/Dropbox sync, vs LAN share):
 
 Key properties this gives us:
 - **Audit:** every file change records who, when, what, and the prior version.
-- **Approval integrity:** the `approvals/` folder shows exactly what Chairman
+- **Approval integrity:** the `approvals/` folder shows exactly what President
   approved, what an agent wrote, and whether anything was altered.
 - **Conflict safety:** simultaneous edits force a merge; no silent dual truth.
 
@@ -88,14 +88,14 @@ oc-hermes-bus/                 (private Git repo)
 │  └─ route_status/            # execution route status
 ├─ reports/                    # daily / weekly / review reports
 ├─ logs/                       # execution logs, error logs, event logs
-└─ approvals/                  # items awaiting Chairman confirmation
+└─ approvals/                  # items awaiting President confirmation
 ```
 
 - **inbox/** = task tickets, split by direction (sender writes into the matching folder).
 - **state/** = current truth snapshots (account/rule/strategy/route).
 - **reports/** = summaries (daily/weekly/review).
 - **logs/** = append-only logs (execution/error/event).
-- **approvals/** = anything that needs Chairman go/no-go.
+- **approvals/** = anything that needs President go/no-go.
 
 ---
 
@@ -103,7 +103,7 @@ oc-hermes-bus/                 (private Git repo)
 
 To keep merges clean, each side OWNS its write lane:
 
-| Folder | OC writes | Hermes writes | Chairman acts |
+| Folder | OC writes | Hermes writes | President acts |
 |---|---|---|---|
 | inbox/oc_to_hermes | ✅ | reads only | — |
 | inbox/hermes_to_oc | reads only | ✅ | — |
@@ -128,8 +128,8 @@ All bus files are Markdown with a YAML front-matter header. Filename convention:
 ---
 id: T001                 # T=task, unique
 type: task               # task | state | result | exception | approval
-from: OC                 # OC | Hermes | Chairman
-to: Hermes               # OC | Hermes | Chairman
+from: OC                 # OC | Hermes | President
+to: Hermes               # OC | Hermes | President
 created: 2026-06-19T23:27-07:00
 status: open             # open | in_progress | done | blocked
 priority: normal         # low | normal | high | urgent
@@ -176,7 +176,7 @@ severity: high           # low | medium | high | critical
 created: 2026-06-19T23:27-07:00
 area: platform           # platform | execution | data | account | system
 ---
-Body: what went wrong, impact, suggested action, what needs Chairman.
+Body: what went wrong, impact, suggested action, what needs President.
 ```
 
 ### 5.5 Approval ticket
@@ -189,10 +189,10 @@ created: 2026-06-19T23:27-07:00
 status: pending          # pending | approved | rejected
 ref: T001                # what this approval concerns
 ---
-Body: the change/diff/action requiring Chairman go/no-go.
-# Chairman writes decision below:
+Body: the change/diff/action requiring President go/no-go.
+# President writes decision below:
 decision:                # approved | rejected
-decided_by: Chairman
+decided_by: President
 decided_at:
 note:
 ```
@@ -204,7 +204,7 @@ note:
 1. **Truth in files, not chat.** Telegram only rings the doorbell.
 2. **Never delete a ticket.** Change `status`, or add a `result`. Full trail.
 3. **Each side owns its write lane** (§4) → clean merges, no dual truth.
-4. **Approvals are explicit and recorded** in `approvals/` with Chairman's
+4. **Approvals are explicit and recorded** in `approvals/` with President's
    decision written into the file — not given verbally.
 5. **One ID, one file, append history** — never rewrite history silently.
 6. **Schema-locked** — both agents read/write the exact headers in §5; a
@@ -219,11 +219,11 @@ note:
 - No automation, no cron, no agent wired to read/write the bus.
 - Hermes has no pull access configured yet.
 
-All of the above happen only AFTER Chairman approves moving to implementation.
+All of the above happen only AFTER President approves moving to implementation.
 
 ---
 
-## 8. Decisions before implementation (Chairman, 2026-06-19)
+## 8. Decisions before implementation (President, 2026-06-19)
 
 1. **Repo name:** ✅ **`oc-hermes-bus`** (private GitHub repo, OC side).
 2. **Hermes access:** ✅ **read-only deploy key** (Hermes PULLS only; cannot push).
@@ -238,4 +238,4 @@ All of the above happen only AFTER Chairman approves moving to implementation.
 
 ---
 
-*DISCUSSION DRAFT v1 | 2026-06-19 | Design only. Implementation requires Chairman approval.*
+*DISCUSSION DRAFT v1 | 2026-06-19 | Design only. Implementation requires President approval.*

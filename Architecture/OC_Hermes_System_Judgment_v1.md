@@ -3,11 +3,11 @@
 # Author: Dragon (OC) | Model: Opus 4.8
 # Scope: Architecture discussion + responsibility design ONLY.
 #        No change to any existing system/config/file/permission/automation.
-#        Any change requires explicit Chairman approval before implementation.
+#        Any change requires explicit President approval before implementation.
 
 ---
 
-## 0. Guiding Filter (Chairman, 2026-06-19, LOCKED)
+## 0. Guiding Filter (President, 2026-06-19, LOCKED)
 
 > **Effort-to-value is the first filter.** If a feature gives ~1 unit of efficiency
 > but costs ~5 units of work to build/maintain → REMOVE it.
@@ -24,12 +24,12 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 
 | # | Keep | Why | Cost |
 |---|---|---|---|
-| 1 | **Module A — Visual / Evidence Input** | Chairman sends screenshot/chart/data; AI reasons on evidence, never guesses the screen | **ZERO** (already works) |
+| 1 | **Module A — Visual / Evidence Input** | President sends screenshot/chart/data; AI reasons on evidence, never guesses the screen | **ZERO** (already works) |
 | 2 | **Module D — Strategy Param Pack** | ⭐ Highest leverage. Update parameters daily, NOT rewrite Pine every day | Medium |
-| 3 | **Module C — Notification Relay** | Price hits a level → system pings Chairman automatically | Medium (half the chain exists) |
+| 3 | **Module C — Notification Relay** | Price hits a level → system pings President automatically | Medium (half the chain exists) |
 | 4 | **Hermes — F1 public-page monitor + back office / compliance / admin** | Watch platform public pages for rule/payout/promo changes; run reminders/reports/logging | Medium |
 
-**Roles:** OC = hands + gate. Hermes = back office + field research. Chairman = brain.
+**Roles:** OC = hands + gate. Hermes = back office + field research. President = brain.
 
 ---
 
@@ -50,7 +50,7 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 ## 3. The 4 Modules in Plain Terms
 
 ### Module A — Visual / Evidence Input  (KEEP, zero cost)
-- AI cannot see the screen. Chairman provides screenshot / chart snapshot / page / CSV / JSON / text → AI judges on that evidence.
+- AI cannot see the screen. President provides screenshot / chart snapshot / page / CSV / JSON / text → AI judges on that evidence.
 - Already works today (OC reads images sent in Telegram).
 - **The only real rule (discipline):** when no evidence is given, the AI must say "I don't see it, send the chart" — never invent a price/level.
 
@@ -58,8 +58,8 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 - **Principle: do NOT rewrite strategy logic daily. Only update parameters + the daily plan.**
 - **Fixed layer (rarely changes):** entry/exit conditions, risk model, time/session filter, position logic, alert format.
 - **Daily param layer (changes daily/weekly):** key levels, direction bias, stop distance, target zone, no-trade zone, session on/off, risk cap, strategy state.
-- **Flow:** Chairman gives morning plan → OC produces a structured candidate param pack → shows the diff → Chairman approves → write to the designated config location → version + date it.
-- **Owner:** OC generates & versions; Chairman approves. This directly kills the "rewrite Pine every day" pain.
+- **Flow:** President gives morning plan → OC produces a structured candidate param pack → shows the diff → President approves → write to the designated config location → version + date it.
+- **Owner:** OC generates & versions; President approves. This directly kills the "rewrite Pine every day" pain.
 
 ### Module C — Notification Relay  (KEEP, half exists)
 - **Target:** `TradingView Strategy/Alert → Server-Side Alert → Secure Relay → Validation/Logging/Dedup → Telegram`.
@@ -68,10 +68,10 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 - **Owner:** OC owns trade-event alerts; Hermes owns admin/ops alerts (rule change, payout deadline, account expiry, report due).
 
 ### Hermes — F1 Public-Page Monitor + Back Office  (KEEP)
-- **F1 only:** periodically read official PUBLIC pages — FAQ, rulebook, payout policy, promo/discount, platform status, maintenance, public announcements → output: new content, rule diffs, discount + validity, payout changes, items needing Chairman confirmation.
+- **F1 only:** periodically read official PUBLIC pages — FAQ, rulebook, payout policy, promo/discount, platform status, maintenance, public announcements → output: new content, rule diffs, discount + validity, payout changes, items needing President confirmation.
 - **Back office:** reminders, reports, logging, closure, account/admin/payout/expiry tracking.
-- **Compliance library:** Hermes does NOT build a new library. It feeds the EXISTING v3.0 Layer A (NotebookLM + Account-Sourced Compliance Pack) by producing diff summaries; Chairman approves before anything updates the library.
-- **Owner:** Hermes end-to-end; Chairman approves diffs.
+- **Compliance library:** Hermes does NOT build a new library. It feeds the EXISTING v3.0 Layer A (NotebookLM + Account-Sourced Compliance Pack) by producing diff summaries; President approves before anything updates the library.
+- **Owner:** Hermes end-to-end; President approves diffs.
 
 ---
 
@@ -79,7 +79,7 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 
 ### 4.1 Boundary
 
-| Domain | OC | Hermes | Chairman |
+| Domain | OC | Hermes | President |
 |---|---|---|---|
 | Execution / trade main chain / front-line routing | **OWNS** | — | — |
 | Risk gating (Gatekeeper, FLATTEN_ALL) | **OWNS** | — | final authority |
@@ -93,7 +93,7 @@ or only marginally useful, is dropped now and revisited only if a real pain forc
 
 ### 4.2 Information flow = structured artifacts, not chat
 - Exchange via **structured records**: task ticket, status table, rule/diff summary, strategy param pack, report, approval result.
-- **Mechanism (start simple):** shared structured files (JSON/MD) + Chairman-mediated approval. Add direct agent-to-agent messaging only after the artifact schema is stable. Keeps everything auditable, avoids verbal/scattered coupling.
+- **Mechanism (start simple):** shared structured files (JSON/MD) + President-mediated approval. Add direct agent-to-agent messaging only after the artifact schema is stable. Keeps everything auditable, avoids verbal/scattered coupling.
 
 ---
 
@@ -115,19 +115,19 @@ v3.0 main chain (Layers C/D/E execution) is untouched. New work attaches at the 
 - **v3.0 stays the backbone** (it solves execution; do not rebuild).
 - **Lean version = 4 keepers:** A (free), D (⭐), C (half-built), Hermes F1 + back office.
 - **Dropped:** AMP auto-exec, paid data API, F2/F3 site automation, multi-strategy router, execution bridge.
-- **OC = hands/gate, Hermes = back office/research, Chairman = brain.**
+- **OC = hands/gate, Hermes = back office/research, President = brain.**
 - **Compliance library:** reuse v3.0's, do not build a second one.
-- **Info flow:** shared structured files + Chairman approval first.
+- **Info flow:** shared structured files + President approval first.
 
 ---
 
-## 7. Decisions (Chairman, LOCKED 2026-06-19)
+## 7. Decisions (President, LOCKED 2026-06-19)
 
 1. **Build order:** ✅ **Stage 1 = Module D (param pack) FIRST.** It is the daily-pain, independent foundation; Module C depends on it.
 2. **Module C trigger source:** ✅ **温总 NinjaTrader feed ONLY** (no TradingView alert, no paid API). Reason: TV and NinjaTrader prices sometimes differ, and trades settle on NinjaTrader — so the alert price MUST equal the fill price, or the alert is false. This also makes the whole param→watch→alert chain self-contained (温总 feed + OC param pack, no external dependency).
 3. **Hermes F1 first target platform:** ✅ **TradeDay** (accounts expiring ~7/4 = real driver). Note: F1 = public-page monitoring, needs NO login, so Apex's login difficulty does not affect F1.
-4. **Info-flow mechanism:** ✅ **Shared file bus = Git private repo on OC side, Hermes pulls (read-only) + Chairman approval.** Full spec in `OC_Hermes_Bus_Spec.md`.
+4. **Info-flow mechanism:** ✅ **Shared file bus = Git private repo on OC side, Hermes pulls (read-only) + President approval.** Full spec in `OC_Hermes_Bus_Spec.md`.
 
 ---
 
-*DISCUSSION DRAFT v1 (lean) | 2026-06-19 | No implementation until Chairman approves. v3.0 changes require Chairman approval.*
+*DISCUSSION DRAFT v1 (lean) | 2026-06-19 | No implementation until President approves. v3.0 changes require President approval.*

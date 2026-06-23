@@ -2,7 +2,7 @@
 
 ## System Language Policy
 - All workspace files, documents, SOPs, agent prompts, code, and operational records: **English only**
-- Chat conversation with Chairman: Chinese is fine
+- Chat conversation with President: Chinese is fine
 - No Chinese-origin software or services in this system
 - This is a US-based operation (APM LLC, Meritpoint Logic LLC)
 - All platforms are English-native: NinjaTrader, Apex, Replikanto, OpenClaw, NotebookLM
@@ -72,7 +72,7 @@ Add whatever helps you do your job. This is your cheat sheet.
 ## Indicator Development SOP
 
 **Before writing any indicator code:**
-1. Ask Chairman to confirm the logic in plain text
+1. Ask President to confirm the logic in plain text
 2. Save the confirmed logic as a .md file in workspace
 3. Only then write the code
 

@@ -1,18 +1,18 @@
 # 小白 研究中心 部署架构 v1（Xiaobai Research & Quality-Gate Center）
-# Date: 2026-06-22 | Status: DISCUSSION DRAFT (Chairman 主笔方案, Dragon 记录)
-# Scope: 架构 + 分工设计 ONLY。先研究，不实施。任何落地需 Chairman 批准。
+# Date: 2026-06-22 | Status: DISCUSSION DRAFT (President 主笔方案, Dragon 记录)
+# Scope: 架构 + 分工设计 ONLY。先研究，不实施。任何落地需 President 批准。
 # 关系：本文 = OC_Hermes_System_Judgment_v1 的延伸（新增"小白研究中心"第4功能角色）。
 
 ---
 
-## 0. 一句话结论（Chairman 锁定）
+## 0. 一句话结论（总裁 锁定）
 小白装 **Claude Code**（不装第二个 OpenClaw），原生运行 **claude-trading-skills**。
 Jimmy(Gemini CLI) 保留共存。OC 不跑此 skill，通过 Git/Obsidian 文件总线提交研究任务。
 
 ---
 
 ## 1. 四个功能角色（不是"五方"）
-1. **Chairman** = 大脑 / 唯一批准关口
+1. **President** = 大脑 / 唯一批准关口
 2. **OC（小塔）** = 手 + 闸门（正式策略素材、执行参数、执行控制、当前有效版本、已批准内容接收）
 3. **Hermes（第二台Mac mini）** = 后台 + 外勤（平台/规则/网站/行政/运营信息、合规库采集）
 4. **小白研究中心（MacBook Air）** = 策略研究 + 复盘 + 质量门中心
@@ -45,24 +45,24 @@ Jimmy(Gemini CLI) 保留共存。OC 不跑此 skill，通过 Git/Obsidian 文件
 |---|---|
 | Jimmy / Gemini CLI | 大范围资料阅读、长文档整理、通用研究、辅助开发、跨文档梳理 |
 | Claude Code + trading-skills | 交易复盘、策略质量门、研究流程、回测审查、结构化研究报告 |
-| Chairman | 决定最终采用哪个结论 |
+| President | 决定最终采用哪个结论 |
 - 共存不替换。Claude skills 先只由 Claude Code 跑；未来验证可移植再单独适配 Gemini。
 
 ## 4. 信息流（Git文件总线为真相源，Obsidian为人类界面）
 ```
 OC → Research Request Packet → Git/Obsidian Research Bus
 → 小白上的 Claude Code → 研究与质量审查报告(含 PASS/REVISE/REJECT 建议,非判决)
-→ Chairman Review → Approval Manifest → OC 接收已批准版本
+→ President Review → Approval Manifest → OC 接收已批准版本
 
-Hermes → 平台/规则/账户更新 → Ops & Compliance Lane → Chairman + OC 读摘要
+Hermes → 平台/规则/账户更新 → Ops & Compliance Lane → President + OC 读摘要
 ```
 **铁律：**
 - OC 输出正式素材的**只读快照**。
 - 小白**只读快照，不直接改正式策略库**；输出研究结论**不直接覆盖OC正式版本**。
-- **Chairman 批准后**才产生可供 OC 使用的正式 release。
+- **President 批准后**才产生可供 OC 使用的正式 release。
 - Hermes 只提交平台/规则/行政/网站信息+提醒，**不直接改策略结论**。
 
-## 5. 文件总线结构（🔒 一条总线 mats-bus，三方共挂，Chairman 2026-06-22 锁定）
+## 5. 文件总线结构（🔒 一条总线 mats-bus，三方共挂，总裁 2026-06-22 锁定）
 ```
 mats-bus/   (= 唯一总线, OC↔Hermes↔小白 共用, 取代原 oc-hermes-bus)
 ├── 01_Research/ {Incoming, In_Progress, Output, Failed}
@@ -90,7 +90,7 @@ required_outputs: [review_recommendation, process_failures, parameter_risks, rec
 - SSH = "启动按钮"，**不是无限制远程控制通道**。OC 不发自由文本命令、不塞大段prompt。
 
 ## 7. skill 包先用哪些（不全装全开）
-**🔒 第一轮白名单（Chairman 2026-06-22 锁定，6个，复盘/质量门/回测类）：**
+**🔒 第一轮白名单（总裁 2026-06-22 锁定，6个，复盘/质量门/回测类）：**
 1. `signal-postmortem` — 信号复盘
 2. `trade-performance-coach` — 交易纪律/执行质量
 3. `weekly-performance-digest` — 周表现摘要
@@ -104,11 +104,11 @@ required_outputs: [review_recommendation, process_failures, parameter_risks, rec
 
 ---
 
-## 8. 下一步（Chairman 锁定）= 不是安装，是先写规格
+## 8. 下一步（总裁 锁定）= 不是安装，是先写规格
 **先做 `Trading_Research_Bus_Specification_v1.0`** —— 定3种格式(现阶段)：
 **3份**(现阶段)：①研究任务包 ②研究与质量审查报告(②③合并) ③批准文件。
-- 小白是电脑/分析工具,不是审批机构;PASS/REVISE/REJECT = Claude 建议,Chairman 才是关口。
+- 小白是电脑/分析工具,不是审批机构;PASS/REVISE/REJECT = Claude 建议,President 才是关口。
 - 未来半自动化时再拆成4份。
 
 ---
-*DISCUSSION DRAFT v1 | 2026-06-22 | Chairman方案, Dragon记录 | 不实施待批准*
+*DISCUSSION DRAFT v1 | 2026-06-22 | 总裁方案, Dragon记录 | 不实施待批准*

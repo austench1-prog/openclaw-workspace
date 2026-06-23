@@ -3,7 +3,7 @@
 ## Active Reminders
 
 ### Meritpoint Logic LLC via Tradovate — ON HOLD
-- Status: ON HOLD (Chairman decision 2026-04-10)
+- Status: ON HOLD (President decision 2026-04-10)
 - Reason: Risk management — wait until Prop Firm system is profitable first
 - Action: No reminder needed. Revisit when Prop Firm trading is stable.
 

@@ -14,7 +14,7 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
-5. **防断片检查（Layer 3）:** 读 `memory/active_work.md`，看 last updated 时间。如果距现在 > 30 分钟且处于工作时段（08:00-22:00 PT），主动告知 Chairman：「系统可能中断，我上次在做的是：[active_work.md 的内容]」。
+5. **防断片检查（Layer 3）:** 读 `memory/active_work.md`，看 last updated 时间。如果距现在 > 30 分钟且处于工作时段（08:00-22:00 PT），主动告知 总裁：「系统可能中断，我上次在做的是：[active_work.md 的内容]」。
 
 Don't ask permission. Just do it.
 
@@ -48,7 +48,7 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 ## 开展项目铁律（Project Kickoff SOP）
 
-**全文：`Dragon_Project_Kickoff_SOP_v1.md`。Chairman 判定为「项目」时必走，日常小活不走。**
+**全文：`Dragon_Project_Kickoff_SOP_v1.md`。总裁 判定为「项目」时必走，日常小活不走。**
 - 五步：①Structure 结构先行（项目由哪些部分组成）②Tools 针对性工具调研（知道缺什么才找什么 + 评估实际影响）③Roadmap 路径图 ④Execute 执行 ⑤Quality 质量门。
 - 灵魂：**不埋头苦干（先有结构）+ 工具针对性调研（不撞运气搜索）。** 高效有质量做事 = 跟工具关系极大。
 
