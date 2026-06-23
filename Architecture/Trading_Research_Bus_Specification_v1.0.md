@@ -186,6 +186,12 @@ OC 生成正式 release → 04_Execution/OC_Ready/<release_id>
 
 ---
 
+## 6b. 第一轮 skill 白名单（🔒 Chairman 2026-06-22 锁定）
+研究任务包 `skills_requested` 字段只能从这6个里选：
+`signal-postmortem` / `trade-performance-coach` / `weekly-performance-digest` / `backtest-expert` / `edge-strategy-reviewer` / `data-quality-checker`
+- ❌ 不用：股票筛选器、FMP/Finviz股票模块、美股主题轮动、"自动生成策略直接进执行"。
+- beta 能力在报告里必须 flag。
+
 ## 7. 下一步(本 Spec 审过之后)
 - a. Chairman 审 + 拍 §6 四问。
 - b. 建 `mats-bus` Git 私有库 + 目录骨架 + 权限。

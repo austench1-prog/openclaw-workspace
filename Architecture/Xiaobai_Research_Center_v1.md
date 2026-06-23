@@ -90,10 +90,14 @@ required_outputs: [quality_gate_report, process_failures, parameter_risks, recom
 - SSH = "启动按钮"，**不是无限制远程控制通道**。OC 不发自由文本命令、不塞大段prompt。
 
 ## 7. skill 包先用哪些（不全装全开）
-**第一轮候选（复盘/质量门/回测类）：**
-- signal-postmortem / trade-performance-coach / weekly-performance-digest
-- backtest-expert / edge-strategy-reviewer / data-quality-checker
-- （部分仍标 beta）
+**🔒 第一轮白名单（Chairman 2026-06-22 锁定，6个，复盘/质量门/回测类）：**
+1. `signal-postmortem` — 信号复盘
+2. `trade-performance-coach` — 交易纪律/执行质量
+3. `weekly-performance-digest` — 周表现摘要
+4. `backtest-expert` — 回测建议
+5. `edge-strategy-reviewer` — 策略质量门(8项)
+6. `data-quality-checker` — 数据/完成度质量
+- （部分仍标 beta，报告里需 flag）
 **先不用：** 股票筛选器、FMP/Finviz股票研究、美股主题轮动、"自动生成一大套策略直接进执行"的流程。
 - 原因：与我们 期货/折扣区/Prop Firm 执行结构 不完全匹配。
 - ⚠️ claude-trading-skills 偏股票/ETF研究工具箱，**不能假定直接适配 NQ/PropFirm/折扣区** → 先筛真正可用的，再建 futures adapter。
