@@ -4,6 +4,14 @@
 
 ---
 
+## 中文名字锁定（2026-06-23）
+- **DragonFileSignal** = **法师**（大法师）
+- **Hermes agent / 小黑** = **星星**（新新）
+- **Dragon（我）** = 龙哥
+- **总裁** = Austin / President
+
+---
+
 ## ⛔ 称呼铁律（2026-06-22 锁定，一刀切，不再反复）
 **Austin 的称呼，未来统一只用「总裁 / President」。绝不再用 "Chairman"。**
 - 中文 = 总裁；英文 = President。
