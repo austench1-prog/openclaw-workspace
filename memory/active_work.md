@@ -173,3 +173,13 @@
 - D类小白快照已copy到mats-bus R-2026-001(正本留OC)。首次研究任务实跑中(小白claude分析折扣区,报告写Output/R-2026-001_review.md)。
 - **C类搬迁前提已满足**(通道通了),可分批受控移到02_Platform_Ops车道(下一轮)。
 - 注意:小黑GitHub token直连失败,当前靠小塔传的.git-credentials;长期Hermes只读deploy key待配。
+
+## ✅✅ 2026-06-23 凌晨 物理分割完成(C类三批迁Hermes)
+- 流程(GitHub云备代替三星,治"迁移干扰OC"):云备commit→copy到Hermes车道→小黑pull验证→才移走OC→验证OC执行链完好。
+- **批1** prop_firm 8文件→02_Platform_Ops/Rule_Updates(移走OC,归档可恢复)。
+- **批2** Business_OS 全部→02_Platform_Ops/Compliance_Review(移走OC,归档)。
+- **批3** NotebookLM合规库→Hermes只读副本;**OC正本留原位当Layer A(不删)**。
+- 小黑越界文件已清(OC核心旧拷贝+F类旧版22个)。小黑只剩Hermes该有的+自己新建的。
+- OC Agent_Prompts只剩执行类9个。OC顶层无Business_OS。OC执行链(DragonFileSig/ATM/gatekeeper)全程完好。
+- 三星DragonVault间歇闪断不可靠(6/14后无正常备份)→改用GitHub云备(更稳)。三星硬件待查/可能退役。
+- 物理分割达成:OC=执行+正式策略+合规正本; Hermes=平台/行政/合规副本; 小白=研究; 三方mats-bus联通。
