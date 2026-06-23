@@ -183,3 +183,16 @@
 - OC Agent_Prompts只剩执行类9个。OC顶层无Business_OS。OC执行链(DragonFileSig/ATM/gatekeeper)全程完好。
 - 三星DragonVault间歇闪断不可靠(6/14后无正常备份)→改用GitHub云备(更稳)。三星硬件待查/可能退役。
 - 物理分割达成:OC=执行+正式策略+合规正本; Hermes=平台/行政/合规副本; 小白=研究; 三方mats-bus联通。
+
+## 🌙 2026-06-23 凌晨 收工存档(下次从这接)
+**今晚完成(全部验证健康):**
+- 系统物理分割完成:OC=执行+策略+合规正本(Layer A) / Hermes(小黑)=平台+行政+合规副本 / 小白=研究。三方mats-bus联通。
+- 两边健康检查通过:龙哥(OC)执行链零损伤、服务running;小黑(Hermes)gateway运行中(PID959)、连Telegram、配置齐、文件全收到、**不需唤醒**。
+**下次回来的下一步选项(待总裁发令):**
+1. 给Hermes派第一个活:F1公开页监控(首站TradeDay,账户~7/4到期驱动)。
+2. 折扣区策略路(DragonFileSig)落地 — 总裁研究中的方向。
+**待办尾巴(小事,不影响主体):**
+- 小黑GitHub deploy key(现靠小塔传的凭据顶着)。
+- 三星DragonVault间歇闪断→硬件待查/可能退役(已改用GitHub云备)。
+- 小白研究任务首跑(nohup环境变量问题,需调方式重跑)。
+- OC周日系统检查cron历史偶发失败(非紧急)。
