@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATS 架构图 v2 (2026-06-22)</title>
+<style>
+  body{margin:0;background:#0f172a;font-family:-apple-system,"PingFang SC",sans-serif;color:#e2e8f0;padding:24px;width:1180px;}
+  h1{text-align:center;font-size:22px;margin:0 0 4px;color:#f8fafc;}
+  .sub{text-align:center;font-size:12px;color:#94a3b8;margin-bottom:20px;}
+  .row{display:flex;gap:16px;justify-content:center;margin-bottom:16px;}
+  .box{border-radius:12px;padding:14px 16px;border:2px solid;}
+  .role{width:300px;}
+  .brain{background:#422006;border-color:#eab308;}
+  .oc{background:#082f49;border-color:#0ea5e9;}
+  .hermes{background:#052e16;border-color:#22c55e;}
+  .xb{background:#2e1065;border-color:#a855f7;}
+  .bus{background:#1e1b4b;border-color:#818cf8;width:900px;margin:0 auto 16px;text-align:center;}
+  .title{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .small{font-size:11.5px;line-height:1.5;color:#cbd5e1;}
+  .tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:8px;margin-left:6px;}
+  .live{background:#16a34a;color:#fff;}
+  .wip{background:#ca8a04;color:#fff;}
+  .arrow{text-align:center;color:#64748b;font-size:18px;margin:2px 0;}
+  .modrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px;}
+  .mod{width:200px;border-radius:10px;padding:10px 12px;font-size:11px;border:1.5px solid;}
+  .keep{background:#0c4a6e;border-color:#38bdf8;}
+  .star{background:#365314;border-color:#a3e635;}
+  .drop{background:#450a0a;border-color:#ef4444;color:#fca5a5;}
+  .banner{text-align:center;background:#1e293b;border:1px solid #475569;border-radius:10px;padding:10px;margin-top:14px;font-size:13px;}
+  .legend{text-align:center;font-size:11px;color:#94a3b8;margin-top:10px;}
+</style>
+</head>
+<body>
+  <h1>MATS 系统架构 v2 — 四角色 + 一条总线</h1>
+  <div class="sub">更新 2026-06-22 夜 ｜ 小白研究中心已上线 ✅ ｜ Hermes(小黑) 待建</div>
+
+  <!-- 顶层四角色 -->
+  <div class="row">
+    <div class="box role brain">
+      <div class="title">🟡 总裁 President</div>
+      <div class="small">大脑：策略方向 / 授权 / 唯一批准关口</div>
+    </div>
+  </div>
+  <div class="arrow">▲ 批准 ｜ 任务 ▼</div>
+  <div class="row">
+    <div class="box role oc">
+      <div class="title">🔵 OC（小塔）<span class="tag live">运行中</span></div>
+      <div class="small">手 + 闸门<br>执行 / 路由 / 风控(FLATTEN_ALL) / 交易提醒 / 策略参数包<br>正式策略素材 + 执行版本管理</div>
+    </div>
+    <div class="box role hermes">
+      <div class="title">🟢 Hermes（小黑）<span class="tag wip">待建</span></div>
+      <div class="small">后台 + 外勤<br>F1公开页监控(首站TradeDay) / 合规库差异 / 账户行政 / 到期跟踪 / 提醒报告<br>同型号 Mac mini</div>
+    </div>
+    <div class="box role xb">
+      <div class="title">🟣 小白研究中心<span class="tag live">今晚上线</span></div>
+      <div class="small">研究 + 复盘 + 质量门<br>Claude Code + 6 skill（工具,非审批）<br>PASS/REVISE/REJECT = 建议</div>
+    </div>
+  </div>
+
+  <div class="arrow">⇅ 全部经由 ⇅</div>
+
+  <!-- 信息总线 -->
+  <div class="box bus">
+    <div class="title">🟣 信息总线 = Git 私有库 <code>mats-bus</code>（一条总线，三方共挂）<span class="tag live">已建</span></div>
+    <div class="small">
+      OC 写执行/任务 ｜ Hermes 只读pull+写运营车道 ｜ 小白 只读快照+写Output ｜ 总裁 写批准<br>
+      <b>5目录</b>：01_Research / 02_Platform_Ops / 03_Approvals / 04_Execution / 99_Schemas　
+      <b>3单子</b>：①任务包 ②研究审查报告 ③批准文件<br>
+      <b>6铁律</b>：真相在文件 / 绝不删单 / 各守车道 / 批准落文件 / 一ID一文件 / schema锁死
+    </div>
+  </div>
+
+  <!-- 底层模块 -->
+  <div class="modrow">
+    <div class="mod star">⭐ Module D 策略参数包<br><span style="color:#bef264">先做·地基</span>：固定层逻辑 + 每日参数层（杀掉每天改Pine）</div>
+    <div class="mod keep">Module C 提醒中继<br>温总 NinjaTrader feed = 唯一触发源 → Telegram（<b>只提醒不下单</b>）</div>
+    <div class="mod keep">Module A 视觉证据输入<br>已能用·零成本（没图不瞎猜）</div>
+    <div class="mod keep" style="background:#052e16;border-color:#22c55e">Hermes F1 → 合规库<br>沿用 v3.0 NotebookLM，不新建</div>
+  </div>
+
+  <!-- 搁置 -->
+  <div class="modrow" style="margin-top:12px">
+    <div class="mod drop" style="width:880px">🔴 全部搁置（不碰）：AMP自动下单 ｜ 买数据API ｜ F2/F3登录态站内自动化 ｜ Module E多策略路由 ｜ 执行桥（永久排除）</div>
+  </div>
+
+  <div class="banner">
+    🛠 建设顺序：① <b>Module D 参数包</b>（地基）→ ② Module C 提醒中继 → ③ Hermes F1<br>
+    第一过滤器：1分效率却要5分工作量 → 砍。追求最简洁版。
+  </div>
+  <div class="legend">🟢运行中 ｜ 🟡待建 ｜ 四角色 = 总裁(大脑) · OC小塔(手) · Hermes小黑(外勤) · 小白(研究)</div>
+</body>
+</html>
