@@ -147,6 +147,7 @@ Dragon (小塔) → HTTP → Signal Server (温总 port 5000) → signal.txt
 ### Device Inventory
 - 小塔 (Mac mini): 192.168.0.59 / 192.168.0.197, user: austinai
 - 小白 (MacBook Air): 192.168.0.164, user: austinchien
+- 小黑 (Mac mini, Hermes主机): 192.168.0.151, user: austinha, hostname Austins-Mini, WiFi MAC 1c:f6:4c:66:57:64, macOS 26.5.1 arm64。SSH免密(小塔公钥已装,2026-06-22)。装了git/python3,缺node/npm/claude/brew。
 - 温总 (Win PC): 192.168.0.226, user: auste, MAC: C8:53:09:F1:1A:C3
 
 ### Signal Format
