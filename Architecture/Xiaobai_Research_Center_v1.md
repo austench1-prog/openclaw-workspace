@@ -62,9 +62,9 @@ Hermes → 平台/规则/账户更新 → Ops & Compliance Lane → Chairman + O
 - **Chairman 批准后**才产生可供 OC 使用的正式 release。
 - Hermes 只提交平台/规则/行政/网站信息+提醒，**不直接改策略结论**。
 
-## 5. 文件总线结构（建议）
+## 5. 文件总线结构（🔒 一条总线 mats-bus，三方共挂，Chairman 2026-06-22 锁定）
 ```
-MATS_Bus/
+mats-bus/   (= 唯一总线, OC↔Hermes↔小白 共用, 取代原 oc-hermes-bus)
 ├── 01_Research/ {Incoming, In_Progress, Output, Failed}
 ├── 02_Platform_Ops/ {Rule_Updates, Compliance_Review, Alerts}
 ├── 03_Approvals/ {Pending, Approved, Rejected}

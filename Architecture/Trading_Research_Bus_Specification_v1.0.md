@@ -16,8 +16,8 @@
 
 ---
 
-## 1. 总线物理形态（待 Chairman 拍：一条 vs 两条）
-**Dragon 推荐：一条总线 `mats-bus`（Git 私有库），三方共挂。**
+## 1. 总线物理形态（🔒 Chairman 2026-06-22 锁定：一条总线）
+**🔒 一条总线 `mats-bus`（Git 私有库），三方共挂。**（OC↔Hermes↔小白 统一,取代原计划的独立 oc-hermes-bus）
 - 理由：避免两套目录/两套同步/双倍维护（违反"1分效率5分工作量就砍"）。
 - 权限模型（GitHub 实现）：
   | 角色 | 读 | 写 |
@@ -26,7 +26,7 @@
   | 小白研究中心 | 全部(只读OC快照) | 仅 `01_Research/Output`, `01_Research/Failed`, `In_Progress` |
   | Hermes | 全部 | 仅 `02_Platform_Ops/*` |
   | Chairman | 全部 | `03_Approvals/{Approved,Rejected}` |
-- (备选：两条总线 `oc-hermes-bus` + `oc-xiaobai-bus`，仅在 Chairman 要求隔离时采用。)
+- (备选已否决：两条总线方案不采用。)
 
 ## 2. 目录结构
 ```
@@ -179,10 +179,10 @@ OC 生成正式 release → 04_Execution/OC_Ready/<release_id>
 - 阶段2：OC 只发 `run_research_task R-2026-001`;小白固定 runner 读 task→读资料→调 Claude Code+指定 skills→写回 Output。SSH = 启动按钮,非自由命令通道。
 
 ## 6. 待 Chairman 拍的决策(汇总)
-1. **总线一条(推荐 `mats-bus`)还是两条?**
-2. 本 4 格式 schema 是否认可?(可加字段/改字段)
-3. 8项质量门名称是否照搬 edge-strategy-reviewer,还是定制我们自己的?
-4. release 版本号规则(DZ-NQ-v1.1 这种)是否可用?
+1. ✅ **总线一条 `mats-bus`(Chairman 2026-06-22 锁定)。**
+2. ⏳ 本 4 格式 schema 是否认可?(可加字段/改字段)
+3. ⏳ 8项质量门名称是否照搬 edge-strategy-reviewer,还是定制我们自己的?
+4. ⏳ release 版本号规则(DZ-NQ-v1.1 这种)是否可用?
 
 ---
 

@@ -118,7 +118,7 @@ One-line definition:
 
 ### 信息总线（主席最担心的问题，锁定）
 - **三层：** ①共享文件总线=主渠道/唯一真相源 ②消息层=门铃（不是真相）③人工入口=总裁入口。
-- **总线 = Git 私有库 `oc-hermes-bus`**，放 OC 侧 GitHub，Hermes **只读 pull（read-only deploy key）**。理由：Git 天生防冲突 + 全程审计（谁/何时/改了啥/改前啥样）；iCloud 会冲突副本→真相分裂，局域盘要两台都开机。
+- **总线 = Git 私有库 `mats-bus`**（2026-06-22 改：一条总线三方共挂 OC↔Hermes↔小白研究中心，取代原 `oc-hermes-bus`），放 OC 侧 GitHub，Hermes **只读 pull（read-only deploy key）**、小白只写自己 Output 车道。理由：Git 天生防冲突 + 全程审计；iCloud 会冲突副本→真相分裂，局域盘要两台都开机。详见 `Architecture/Trading_Research_Bus_Specification_v1.0.md`。
 - **五目录：** inbox(oc_to_hermes/hermes_to_oc) / state(account/rule/strategy/route) / reports / logs / approvals。
 - **五种单子 schema 锁死：** task/state/result/exception/approval（YAML 头+正文，见 Bus_Spec §5）。
 - **六铁律：** 真相在文件不在聊天 / 绝不删单（改 status 或加 result）/ 各守车道 / 审批落 approvals 文件（不口头）/ 一 ID 一文件 append 历史 / schema 锁死坏单当异常。
