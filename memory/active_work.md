@@ -184,6 +184,30 @@
 - 三星DragonVault间歇闪断不可靠(6/14后无正常备份)→改用GitHub云备(更稳)。三星硬件待查/可能退役。
 - 物理分割达成:OC=执行+正式策略+合规正本; Hermes=平台/行政/合规副本; 小白=研究; 三方mats-bus联通。
 
+## 🌙 2026-06-24 凌晨 收工存档(下次从这接)
+
+**今天完成：**
+- Computer Use 基础设施通了：小塔可截温总屏幕 + 发点击/键盘指令（screenshot_agent.py 在温总 C:/DragonSignals/ 跑着，端口5001）
+- 法师中文违规问题已确认（v3全是中文注释，违反系统语言铁律）
+- 策略B（DZ_80_1to5 Path B，没碰25%版本）文字草稿写好，等总裁审核
+- ADM-L3-1000 指令：GitHub 404 + 不符合操作规范，已拒绝执行，总裁确认正确
+- 中文名字锁定：DragonFileSignal=法师，Hermes=星星
+
+**下次从这里接：**
+1. 总裁审核策略B文字（草稿在本次对话 19:40 PDT 那条）
+2. 审核通过 → 一字不变存档为独立策略文件
+3. 用 Computer Use 自主编译新版法师（英文版）
+4. mats-bus 授权规范 → 总裁明天决定记录层 vs 授权层
+
+**策略B草稿（等审核）：**
+- Stop Loss: 80 points, fixed
+- Path B only (no 25% hit)
+- Step1: price hits 50% → add 1 lot
+- Step2: price turns back without hitting 25% → add 3 lots (holding 4)
+- Step3: at zone high (TP A) → sell half (2 lots)
+- Step4: remaining 2 lots align with Original
+- TP = entry + 400 points (80 × 5)
+
 ## 🌙 2026-06-23 凌晨 收工存档(下次从这接)
 **今晚完成(全部验证健康):**
 - 系统物理分割完成:OC=执行+策略+合规正本(Layer A) / Hermes(小黑)=平台+行政+合规副本 / 小白=研究。三方mats-bus联通。
