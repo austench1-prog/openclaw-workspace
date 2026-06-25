@@ -4,8 +4,8 @@
 
 ---
 
-## 中文名字锁定（2026-06-23）
-- **DragonFileSignal** = **法师**（大法师）
+## 中文名字锁定（2026-06-23，更新 2026-06-24）
+- **DragonFileSignal** = ~~法师~~ → **已弃用**（2026-06-24 总裁指令清除；DragonFileSignal v3 现阶段已废弃，不再使用此绰号）
 - **Hermes agent / 小黑** = **星星**（新新）
 - **Dragon（我）** = 龙哥
 - **总裁** = Austin / President
