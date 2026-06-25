@@ -398,6 +398,25 @@ First entry R001 (2026-06-15, NQ) archived with chart in `Trading/rehearsal_char
 
 ---
 
+## ⭐ Discount Zone Strategy 代码说明书（2026-06-24 锁定）
+
+**每次讨论这个策略前必读：`Trading/DZ_Strategy_Code_Spec_FOR_DRAGON.md`**
+
+核心公式（Stop=30，R:R=1:1）：
+- STOP      = Entry - 30
+- LEVEL_25  = Entry - 15
+- LEVEL_50  = Entry（第一笔进场点）
+- TP        = Entry + 30
+- **Entry 是唯一人为输入，其余全部自动计算。不需要再问总裁任何数字。**
+
+路径A（碰25%）：进1→加4=5→减3=2→TP卖1→剩1底仓
+路径B（没碰25%）：进1→加3=4→TP卖2→剩2底仓
+任何路径碰STOP全平。
+
+**信号：`ENTRY|NQ|<price>` → 策略自动运行完整逻辑。**
+
+---
+
 ## Files to Know
 
 Key workspace files:
