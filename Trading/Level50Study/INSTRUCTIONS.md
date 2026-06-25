@@ -1,105 +1,107 @@
-# Level50 Continuation Study — 温总 NT8 操作说明
-# 版本：1.1 | 2026-06-25 | Dragon
+# Level50 Continuation Study — NinjaTrader 8 Setup Instructions
+# Version: 1.1 | 2026-06-25 | Dragon
 
 ---
 
-## 第一步：安装代码
+## Step 1: Install the Code
 
-1. 打开 NinjaTrader 8
-2. 顶部菜单 → **Tools → Edit NinjaScript → Strategy**
-3. 左侧文件列表右键 → **New** → 命名为：`Level50ContinuationStudy`
-4. 把 `Level50ContinuationStudy.cs` 的**全部内容**复制进去（替换默认代码）
-5. 按 **F5** 编译 → 底部状态栏显示 **Compiled** = 成功
+1. Open NinjaTrader 8
+2. Top menu: **Tools → Edit NinjaScript → Strategy**
+3. Click **New Strategy**
+4. Name it exactly: `Level50ContinuationStudy`
+5. Select all default content (Ctrl+A) → Delete
+6. Paste the code (Ctrl+V) — Dragon will put it in clipboard
+7. Press **F5** to compile → status bar shows **Compiled successfully**
 
-如果编译报错，截图发给 Dragon。
-
----
-
-## 第二步：准备 NQ 数据
-
-需要：**最近 100 个交易日的 NQ 1 分钟数据**
-
-1. 打开或新建一个 **NQ（NQ 12-XX 或 NQ Continuous）** 的 **1-Minute** 图表
-2. 右键图表 → **Data Series**
-3. **Days to Load** 改为 **140**（多留一些缓冲）
-4. 点 **OK** → 让数据加载完毕（看左下角进度条）
-
-> ⚠️ 注意：NinjaTrader 需要先下载历史数据。
-> 如果数据不足，去 **Tools → Historical Data Manager → Download**，
-> 选 NQ、1 Minute、下载范围最近 6 个月。
+If compile errors appear, send screenshot to Dragon.
 
 ---
 
-## 第三步：加载策略
+## Step 2: Prepare NQ Data
 
-**方法 A：直接在图表上运行（推荐，实时看结果）**
+Required: **100 trading days of NQ 1-Minute bars**
 
-1. 在刚才那个 NQ 1-Minute 图表上
-2. 右键图表 → **Strategies → Add Strategy**
-3. 找到 `Level50ContinuationStudy` → 双击
-4. 参数设置：
-   - **Calculate** = `On each tick`（默认应该已经是）
-   - 其他参数默认即可
-5. 点 **OK**
-6. 策略会从历史数据开始跑，底部 Output 窗口会显示进度日志
+1. Open a **NQ** chart set to **1-Minute**
+2. Right-click chart → **Data Series**
+3. Set **Days to Load** to **140** (extra buffer)
+4. Click **OK** → wait for data to finish loading
 
-**方法 B：Strategy Analyzer（批量回测）**
+If data is insufficient:
+- Go to **Tools → Historical Data Manager → Download**
+- Select NQ, 1 Minute, last 6 months
 
-1. 顶部菜单 → **New → Strategy Analyzer**
-2. Instrument: `NQ 12-XX`（当季合约）或 `@NQ` Continuous
+---
+
+## Step 3: Load the Strategy
+
+**Option A: Run on chart (recommended)**
+
+1. On the NQ 1-Minute chart
+2. Right-click → **Strategies → Add Strategy**
+3. Select `Level50ContinuationStudy` → double-click
+4. Settings:
+   - **Calculate** = `On each tick`
+   - All other settings: leave default
+5. Click **OK**
+6. Strategy processes historical data; progress shows in Output window
+
+**Option B: Strategy Analyzer (batch backtest)**
+
+1. Top menu → **New → Strategy Analyzer**
+2. Instrument: NQ current contract or @NQ Continuous
 3. Strategy: `Level50ContinuationStudy`
 4. Data Series: 1 Minute
-5. Date range: 最近 100 个交易日
-6. 点 **Run**
+5. Date range: last 100 trading days
+6. Click **Run**
 
 ---
 
-## 第四步：查看结果
+## Step 4: Retrieve Results
 
-策略结束后，CSV 文件自动保存到：
+CSV files are automatically saved to:
 
 ```
-C:\Users\[你的用户名]\Documents\NinjaTrader 8\csv\
+C:\Users\auste\Documents\NinjaTrader 8\csv\
 ```
 
-会有三个文件：
-- `Level50Study_5m_YYYYMMDD_HHmmss.csv` — 5分钟 event-level 数据（每行一个事件）
-- `Level50Study_15m_YYYYMMDD_HHmmss.csv` — 15分钟 event-level 数据
-- `Level50Study_SUMMARY_YYYYMMDD_HHmmss.txt` — 汇总报告（含对比表 + 结论）
+Three files will be created:
+- `Level50Study_5m_YYYYMMDD_HHmmss.csv` — 5-minute events (one row per event)
+- `Level50Study_15m_YYYYMMDD_HHmmss.csv` — 15-minute events
+- `Level50Study_SUMMARY_YYYYMMDD_HHmmss.txt` — summary report with comparison table
 
-把这三个文件发给 Dragon 分析。
-
----
-
-## 常见问题
-
-**Q: 编译时提示找不到某个 namespace？**
-A: 截图发给 Dragon，可能是 NT8 版本差异，1分钟修复。
-
-**Q: Output 窗口没有日志？**
-A: 打开 Output 窗口：Control Center → New → Output Window
-
-**Q: CSV 文件为空？**
-A: 确认策略已经完整跑完（图表左上角策略名旁边不再有"Running..."）。
-   或者在 Strategy Analyzer 里看到 "Run Complete"。
-
-**Q: 数据只有几十天？**
-A: Historical Data Manager 重新下载 NQ 1-Minute，选更长时间段。
+Send all three files to Dragon for analysis.
 
 ---
 
-## 数据质量说明
+## Troubleshooting
 
-- **AMBIGUOUS** 行：同一根 1-Minute 柱同时碰到 High 和 Level25，无法判断顺序。
-  这是规格书要求的处理方式，不是错误。
-- **UNRESOLVED** 行：当天 session 结束前两个目标都没到达。
-  保留在报告里，不计入 UP/DOWN 比率。
+**Q: Compile error — namespace not found?**
+A: Send screenshot to Dragon. NT8 version difference, fixable in 1 minute.
+
+**Q: No output in Output window?**
+A: Open it via Control Center → New → Output Window
+
+**Q: CSV files are empty?**
+A: Confirm strategy finished running (no "Running..." indicator on chart).
+   Or check Strategy Analyzer shows "Run Complete".
+
+**Q: Only a few days of data?**
+A: Use Historical Data Manager to download NQ 1-Minute for the last 6 months.
 
 ---
 
-## 版本记录
-- v1.0: 初版（2026-06-25）
-- v1.1: 修正 HTF bar 索引读取方式（BarsInProgress 驱动）
+## Data Quality Notes
+
+- **AMBIGUOUS rows**: Both High and Level25 hit within the same 1-minute bar — sequence
+  cannot be determined. Required by spec; not an error.
+- **UNRESOLVED rows**: Neither target reached before session end.
+  Kept in report; excluded from UP/DOWN ratio calculations.
+
+---
+
+## Version History
+- v1.0: Initial version (2026-06-25)
+- v1.1: Fixed HTF bar index reading (BarsInProgress-driven approach)
 
 ---
 

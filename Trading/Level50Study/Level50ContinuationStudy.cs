@@ -7,10 +7,10 @@
 //   For each completed bullish 5-minute and 15-minute candle on NQ,
 //   detect the first Level50 retrace and record whether price breaks
 //   the candle High (UP) or touches Level25 (DOWN) first.
-//   NO entries, NO exits, NO P&L — observation only.
+//   NO entries, NO exits, NO P&L --- observation only.
 //
 // How to install:
-//   1. NinjaTrader 8 → Tools → Edit NinjaScript → Strategy
+//   1. NinjaTrader 8 --- Tools --- Edit NinjaScript --- Strategy
 //   2. Create new file: Level50ContinuationStudy.cs
 //   3. Paste this entire file, replacing the default content
 //   4. Compile (F5)
@@ -18,8 +18,8 @@
 // How to run:
 //   1. Open a NQ 1-Minute chart
 //   2. Load at least 100 trading days of 1-Minute data
-//      (right-click chart → Data Series → Days to Load: 140)
-//   3. Strategies → Add Strategy → Level50ContinuationStudy
+//      (right-click chart --- Data Series --- Days to Load: 140)
+//   3. Strategies --- Add Strategy --- Level50ContinuationStudy
 //   4. Set Calculate = On each tick
 //   5. Run (Enable on chart OR use Strategy Analyzer in backtest mode)
 //   6. CSV output: Documents\NinjaTrader 8\csv\
@@ -39,14 +39,14 @@ namespace NinjaTrader.NinjaScript.Strategies
 {
     public class Level50ContinuationStudy : Strategy
     {
-        // ─── CSV output ───────────────────────────────────────────────────────
+        // --------- CSV output ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private string _csv5mPath;
         private string _csv15mPath;
         private StreamWriter _sw5m;
         private StreamWriter _sw15m;
         private string _sessionTemplate;
 
-        // ─── Pending candle from HTF series ──────────────────────────────────
+        // --------- Pending candle from HTF series ------------------------------------------------------------------------------------------------------
         // When a new HTF bar opens, we grab the just-closed HTF bar data
         private class HtfCandle
         {
@@ -55,7 +55,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             public double Level50, Level25;
         }
 
-        // ─── Active monitoring event ──────────────────────────────────────────
+        // --------- Active monitoring event ------------------------------------------------------------------------------------------------------------------------------
         private class MonitorEvent
         {
             public HtfCandle Candle;
@@ -76,7 +76,7 @@ namespace NinjaTrader.NinjaScript.Strategies
         private int _prev5mBarCount  = 0;
         private int _prev15mBarCount = 0;
 
-        // ─── Summary counters ─────────────────────────────────────────────────
+        // --------- Summary counters ---------------------------------------------------------------------------------------------------------------------------------------------------
         private int _bull5m, _bull15m;
         private int _touch5m, _touch15m;
         private int _up5m, _dn5m, _amb5m, _unr5m;
@@ -89,12 +89,12 @@ namespace NinjaTrader.NinjaScript.Strategies
         private List<double> _rng5m   = new List<double>();
         private List<double> _rng15m  = new List<double>();
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         protected override void OnStateChange()
         {
             if (State == State.SetDefaults)
             {
-                Description     = "NQ Level50 Continuation Event Study — observation only, no orders.";
+                Description     = "NQ Level50 Continuation Event Study --- observation only, no orders.";
                 Name            = "Level50ContinuationStudy";
                 Calculate       = Calculate.OnEachTick;
                 IsOverlay       = false;
@@ -142,7 +142,7 @@ namespace NinjaTrader.NinjaScript.Strategies
                 try   { _sessionTemplate = TradingHours.Name; }
                 catch { _sessionTemplate = "Default"; }
 
-                Print("[Level50Study] DataLoaded. Output → " + csvDir);
+                Print("[Level50Study] DataLoaded. Output --- " + csvDir);
             }
             else if (State == State.Terminated)
             {
@@ -161,10 +161,10 @@ namespace NinjaTrader.NinjaScript.Strategies
             }
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         protected override void OnBarUpdate()
         {
-            // ── Process HTF candle completions ────────────────────────────────
+            // ------ Process HTF candle completions ------------------------------------------------------------------------------------------------
             // When BarsInProgress == 1 (5m series), a 5m bar just closed
             // When BarsInProgress == 2 (15m series), a 15m bar just closed
             if (BarsInProgress == 1)
@@ -178,7 +178,7 @@ namespace NinjaTrader.NinjaScript.Strategies
                 return;
             }
 
-            // ── BarsInProgress == 0: 1-minute primary tick ────────────────────
+            // ------ BarsInProgress == 0: 1-minute primary tick ------------------------------------------------------------
             // Monitor active events every tick
             if (BarsInProgress != 0) return;
             if (CurrentBars[0] < 1) return;
@@ -191,9 +191,9 @@ namespace NinjaTrader.NinjaScript.Strategies
             MonitorActive(ref _evt15m, "15m", barHigh, barLow, t);
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Called when a higher-timeframe bar closes (BarsInProgress == 1 or 2)
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void OnHtfBarClosed(Bars htfBars, string tf)
         {
             // index [0] on the HTF series inside OnBarUpdate(BarsInProgress==1/2)
@@ -204,7 +204,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             double c = htfBars.GetClose(htfBars.Count - 1);
             DateTime ot = htfBars.GetTime(htfBars.Count - 1);
 
-            // Not bullish → ignore
+            // Not bullish --- ignore
             if (c <= o) return;
 
             double range = h - l;
@@ -215,8 +215,8 @@ namespace NinjaTrader.NinjaScript.Strategies
                 _bull5m++;
                 _rng5m.Add(range);
 
-                // Previous event with no Level50 touch → discard quietly
-                // Previous event with Level50 touch → UNRESOLVED
+                // Previous event with no Level50 touch --- discard quietly
+                // Previous event with Level50 touch --- UNRESOLVED
                 if (_evt5m != null && !_evt5m.Resolved && _evt5m.Level50Touched)
                     CloseAsUnresolved(_evt5m, "5m", _sw5m);
 
@@ -257,9 +257,9 @@ namespace NinjaTrader.NinjaScript.Strategies
             };
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Called every 1-minute tick to monitor an active event
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void MonitorActive(
             ref MonitorEvent ev, string tf,
             double barHigh, double barLow, DateTime barTime)
@@ -272,7 +272,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             {
                 // Wait for price to retrace INTO Level50
                 // Condition: bar traded at or through Level50 from above
-                //   → barLow <= Level50  AND  barHigh >= Level25  (still within the zone)
+                //   --- barLow <= Level50  AND  barHigh >= Level25  (still within the zone)
                 // We also require barHigh < c.High (price is retracing, not still above)
                 // Simplified: first bar whose Low <= Level50 gets the touch
                 if (barLow <= c.Level50)
@@ -323,7 +323,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             RecordOutcome(tf, outcome, ev);
             WriteRow(tf == "5m" ? _sw5m : _sw15m, ev, tf);
 
-            // Null out — stop monitoring
+            // Null out --- stop monitoring
             ev = null;
         }
 
@@ -338,7 +338,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             WriteRow(sw, ev, tf);
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void RecordOutcome(string tf, string outcome, MonitorEvent ev)
         {
             if (tf == "5m")
@@ -363,7 +363,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             }
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void WriteRow(StreamWriter sw, MonitorEvent ev, string tf)
         {
             if (sw == null || ev == null || !ev.Level50Touched) return;
@@ -401,9 +401,9 @@ namespace NinjaTrader.NinjaScript.Strategies
             sw.Flush();
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Summary report
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void WriteSummary()
         {
             string dir = Path.GetDirectoryName(_csv5mPath);
@@ -413,7 +413,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             using (var sw = new StreamWriter(path, false))
             {
                 sw.WriteLine("=================================================================");
-                sw.WriteLine("  NQ LEVEL50 CONTINUATION STUDY — SUMMARY REPORT");
+                sw.WriteLine("  NQ LEVEL50 CONTINUATION STUDY --- SUMMARY REPORT");
                 sw.WriteLine("  Generated : " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 sw.WriteLine("  Instrument: " + Instrument.FullName);
                 sw.WriteLine("  Session   : " + _sessionTemplate);
@@ -487,7 +487,7 @@ namespace NinjaTrader.NinjaScript.Strategies
                 sw.WriteLine("=================================================================");
             }
 
-            Print("[Level50Study] Summary saved → " + path);
+            Print("[Level50Study] Summary saved --- " + path);
         }
 
         private void PrintStudyBlock(
@@ -501,7 +501,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             double ar   = touch > 0 ? (double)amb / touch  : 0;
             double ur   = touch > 0 ? (double)unr / touch  : 0;
 
-            sw.WriteLine("  ── " + label + " Candle Study ──────────────────────────────");
+            sw.WriteLine("  ------ " + label + " Candle Study ------------------------------------------------------------------------------------------");
             sw.WriteLine("  Sample Statistics");
             sw.WriteLine("    Total bullish candles:           " + bull);
             sw.WriteLine("    Total Level50 pullbacks:         " + touch);
@@ -518,15 +518,15 @@ namespace NinjaTrader.NinjaScript.Strategies
             sw.WriteLine("    Unresolved-event rate:           " + ur.ToString("P2"));
             sw.WriteLine();
             sw.WriteLine("  Timing Statistics");
-            sw.WriteLine("    Median min → High break:         " + (tUp.Count > 0  ? Median(tUp).ToString("F1")  : "N/A"));
-            sw.WriteLine("    Average min → High break:        " + (tUp.Count > 0  ? Avg(tUp).ToString("F1")     : "N/A"));
-            sw.WriteLine("    Median min → Level25 touch:      " + (tDn.Count > 0  ? Median(tDn).ToString("F1")  : "N/A"));
-            sw.WriteLine("    Average min → Level25 touch:     " + (tDn.Count > 0  ? Avg(tDn).ToString("F1")     : "N/A"));
+            sw.WriteLine("    Median min --- High break:         " + (tUp.Count > 0  ? Median(tUp).ToString("F1")  : "N/A"));
+            sw.WriteLine("    Average min --- High break:        " + (tUp.Count > 0  ? Avg(tUp).ToString("F1")     : "N/A"));
+            sw.WriteLine("    Median min --- Level25 touch:      " + (tDn.Count > 0  ? Median(tDn).ToString("F1")  : "N/A"));
+            sw.WriteLine("    Average min --- Level25 touch:     " + (tDn.Count > 0  ? Avg(tDn).ToString("F1")     : "N/A"));
             sw.WriteLine("    Median candle range (pts):       " + (rngs.Count > 0 ? Median(rngs).ToString("F2") : "N/A"));
             sw.WriteLine("    Average candle range (pts):      " + (rngs.Count > 0 ? Avg(rngs).ToString("F2")    : "N/A"));
         }
 
-        // ─────────────────────────────────────────────────────────────────────
+        // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         private double Median(List<double> d)
         {
             if (d.Count == 0) return 0;
