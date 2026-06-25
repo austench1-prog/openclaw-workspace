@@ -99,9 +99,10 @@ namespace NinjaTrader.NinjaScript.Strategies
                 Calculate       = Calculate.OnEachTick;
                 IsOverlay       = false;
                 IsAutoScale     = false;
-                // Prevent any accidental order placement
-                EntriesPerDirection   = 0;
+                // Prevent any accidental order placement (observation only)
+                EntriesPerDirection   = 1;
                 EntryHandling         = EntryHandling.AllEntries;
+                IsExitOnSessionCloseStrategy = false;
                 BarsRequiredToTrade   = 2;
             }
             else if (State == State.Configure)
