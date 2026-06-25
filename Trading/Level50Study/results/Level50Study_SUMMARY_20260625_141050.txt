@@ -1,0 +1,78 @@
+=================================================================
+  NQ LEVEL50 CONTINUATION STUDY --- SUMMARY REPORT
+  Generated : 2026-06-25 14:10:50
+  Instrument: NQ SEP26
+  Session   : CME US Index Futures ETH
+  Resolution: 1-Minute bars
+=================================================================
+
+  ------ 5-Minute Candle Study ------------------------------------------------------------------------------------------
+  Sample Statistics
+    Total bullish candles:           0
+    Total Level50 pullbacks:         0
+    UP count:                        0
+    DOWN count:                      0
+    AMBIGUOUS count:                 0
+    UNRESOLVED count:                0
+    Valid resolved (UP + DOWN):      0
+
+  Primary Ratios
+    High-first rate (UP/valid):      0.00%
+    Level25-first rate (DN/valid):   0.00%
+    Ambiguous-event rate:            0.00%
+    Unresolved-event rate:           0.00%
+
+  Timing Statistics
+    Median min --- High break:         N/A
+    Average min --- High break:        N/A
+    Median min --- Level25 touch:      N/A
+    Average min --- Level25 touch:     N/A
+    Median candle range (pts):       N/A
+    Average candle range (pts):      N/A
+
+  ------ 15-Minute Candle Study ------------------------------------------------------------------------------------------
+  Sample Statistics
+    Total bullish candles:           0
+    Total Level50 pullbacks:         0
+    UP count:                        0
+    DOWN count:                      0
+    AMBIGUOUS count:                 0
+    UNRESOLVED count:                0
+    Valid resolved (UP + DOWN):      0
+
+  Primary Ratios
+    High-first rate (UP/valid):      0.00%
+    Level25-first rate (DN/valid):   0.00%
+    Ambiguous-event rate:            0.00%
+    Unresolved-event rate:           0.00%
+
+  Timing Statistics
+    Median min --- High break:         N/A
+    Average min --- High break:        N/A
+    Median min --- Level25 touch:      N/A
+    Average min --- Level25 touch:     N/A
+    Median candle range (pts):       N/A
+    Average candle range (pts):      N/A
+
+=================================================================
+  FINAL COMPARISON TABLE
+=================================================================
+
+Metric                                           5-Minute        15-Minute
+--------------------------------------------------------------------------
+Bullish candle count                                    0                0
+Level50 pullback count                                  0                0
+High-first rate                                     0.00%            0.00%
+Level25-first rate                                  0.00%            0.00%
+Ambiguous-event rate                                0.00%            0.00%
+Unresolved-event rate                               0.00%            0.00%
+Median time to High break                             N/A              N/A
+Median time to Level25 touch                          N/A              N/A
+Median candle range                                   N/A              N/A
+
+=================================================================
+  DECISION GUIDANCE
+=================================================================
+  WARNING: Sample size too small (<30 valid events). Extend lookback.
+  Reminder: 5 criteria = rate + sample + ambiguity + L25 rate + time.
+=================================================================
