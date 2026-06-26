@@ -3,7 +3,7 @@
     "email": null,
     "calendar": null,
     "weather": null,
-    "activeWork": 1781914965
+    "activeWork": 1750899620
   },
-  "notes": "2026-06-19 17:22 PDT heartbeat after gateway restart (uptime 10s). M4 migration confirmed DONE 6/18 (active_work countdown reconciled). Friday post-close 推演 pending — awaiting Chairman/Jimmy charts."
+  "notes": "2026-06-25 17:07 PDT heartbeat. Last session was 6/23-6/24 凌晨. Active work: 折扣区 ATM 落地 — Strategy B draft pending President review. Computer Use infra up (温总 screenshot_agent.py running 192.168.0.226:5001). Three-machine bus (OC/小黑/小白) all healthy last check."
 }
