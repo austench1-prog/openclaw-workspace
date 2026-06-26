@@ -241,14 +241,14 @@ namespace NinjaTrader.NinjaScript.Strategies
         {
             if (ev == null || ev.Done) return;
 
-            // UP = breaks ImpulseHigh, DOWN = touches Level25
+            // UP = breaks ImpulseHigh (25% away), DOWN = touches Level50 (25% away)
             bool hitH   = bH > ev.H;
-            bool hitL25 = bL <= ev.L25;
+            bool hitL50 = bL <= ev.L50;
 
             string outcome = null;
-            if      (hitH && hitL25) outcome = "AMBIGUOUS";
+            if      (hitH && hitL50) outcome = "AMBIGUOUS";
             else if (hitH)           outcome = "UP";
-            else if (hitL25)         outcome = "DOWN";
+            else if (hitL50)         outcome = "DOWN";
 
             if (outcome == null) return;
 
@@ -351,7 +351,7 @@ namespace NinjaTrader.NinjaScript.Strategies
                 sw.WriteLine(string.Format(f, "Median min to High break (UP)",
                     _tUp5.Count  > 0 ? Med(_tUp5).ToString("F1")  + " min" : "N/A",
                     _tUp15.Count > 0 ? Med(_tUp15).ToString("F1") + " min" : "N/A"));
-                sw.WriteLine(string.Format(f, "Median min to L25 touch (DOWN)",
+                sw.WriteLine(string.Format(f, "Median min to L50 touch (DOWN)",
                     _tDn5.Count  > 0 ? Med(_tDn5).ToString("F1")  + " min" : "N/A",
                     _tDn15.Count > 0 ? Med(_tDn15).ToString("F1") + " min" : "N/A"));
                 sw.WriteLine(string.Format(f, "Median candle range",
@@ -386,7 +386,7 @@ namespace NinjaTrader.NinjaScript.Strategies
             sw.WriteLine("    High-first rate:     " + (v > 0 ? ((double)up/v).ToString("P2") : "N/A"));
             sw.WriteLine("    L25-first rate:      " + (v > 0 ? ((double)dn/v).ToString("P2") : "N/A"));
             sw.WriteLine("    Median min to High:  " + (tUp.Count > 0 ? Med(tUp).ToString("F1") : "N/A"));
-            sw.WriteLine("    Median min to L25:   " + (tDn.Count > 0 ? Med(tDn).ToString("F1") : "N/A"));
+            sw.WriteLine("    Median min to L50:   " + (tDn.Count > 0 ? Med(tDn).ToString("F1") : "N/A"));
             sw.WriteLine("    Median range (pts):  " + (rngs.Count > 0 ? Med(rngs).ToString("F2") : "N/A"));
         }
 

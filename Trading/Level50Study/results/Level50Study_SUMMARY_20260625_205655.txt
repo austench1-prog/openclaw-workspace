@@ -1,0 +1,52 @@
+=================================================================
+  NQ LEVEL50 CONTINUATION STUDY v3 -- SUMMARY
+  2026-06-25 20:56:55
+  NQ SEP26 | CME US Index Futures ETH
+=================================================================
+
+  -- 5-Minute --
+    Bullish candles:     16977
+    Level50 pullbacks:   10784
+    UP:                  2038
+    DOWN:                7696
+    AMBIGUOUS:           420
+    UNRESOLVED:          630
+    Valid (UP+DOWN):      9734
+    High-first rate:     20.94%
+    L25-first rate:      79.06%
+    Median min to High:  1.0
+    Median min to L25:   0.0
+    Median range (pts):  20.50
+
+  -- 15-Minute --
+    Bullish candles:     5737
+    Level50 pullbacks:   3591
+    UP:                  589
+    DOWN:                2684
+    AMBIGUOUS:           64
+    UNRESOLVED:          254
+    Valid (UP+DOWN):      3273
+    High-first rate:     18.00%
+    L25-first rate:      82.00%
+    Median min to High:  4.0
+    Median min to L25:   0.0
+    Median range (pts):  35.50
+
+=================================================================
+  COMPARISON TABLE
+=================================================================
+Metric                                           5-Minute      15-Minute
+------------------------------------------------------------------------
+Bullish candles                                     16977           5737
+Level50 pullbacks                                   10784           3591
+High-first rate                                    20.94%         18.00%
+Level25-first rate                                 79.06%         82.00%
+Ambiguous rate                                      3.89%          1.78%
+Unresolved rate                                     5.84%          7.07%
+Median min to High break                          1.0 min        4.0 min
+Median min to L25 touch                           0.0 min        0.0 min
+Median candle range                             20.50 pts      35.50 pts
+
+=================================================================
+  5-Minute shows higher High-first rate with adequate sample.
+=================================================================
