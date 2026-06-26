@@ -1,0 +1,64 @@
+NCD Minute Bar Parser — NQ 06-26 2026-06-11
+File: /Users/austinai/.openclaw/workspace/Trading/Level50Study/ncd_test/test_20260611.ncd
+File size: 10101 bytes
+
+============================================================
+PROBING HEADER SIZES
+============================================================
+Header= 0:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
+Header= 8:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
+Header=16:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
+Header=24:  200 bars, first_open=394397780.25, NQ plausible=False (0/20 bars in NQ range)
+Header=32:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
+Header=40:  200 bars, first_open=     -0.00, NQ plausible=False (0/20 bars in NQ range)
+
+No header size gave plausible NQ prices. Using header=40 for detailed output.
+============================================================
+BEST RESULT: header_size=40
+============================================================
+Total bars parsed: 1376
+tick_size_price:  5e-324
+tick_size_volume: 5.289447516e-315
+initial_price:    -1.9517895997326772e-283
+initial_volume:   936837924817651532
+initial_datetime: None (ticks=3318447387408013088)
+
+FIRST 20 BARS (CSV):
+datetime_utc,open,high,low,close,volume
+N/A,-0.00,-0.00,-0.00,-0.00,0
+N/A,-0.00,-0.00,-0.00,-0.00,3200
+N/A,-0.00,-0.00,-0.00,-0.00,2800
+N/A,-0.00,-0.00,-0.00,-0.00,0
+N/A,-0.00,-0.00,-0.00,-0.00,2000
+N/A,-0.00,-0.00,-0.00,-0.00,2500
+N/A,-0.00,-0.00,-0.00,-0.00,1
+N/A,-0.00,-0.00,-0.00,-0.00,31
+N/A,-0.00,-0.00,-0.00,-0.00,20
+N/A,-0.00,-0.00,-0.00,-0.00,11
+N/A,-0.00,-0.00,-0.00,-0.00,19
+N/A,-0.00,-0.00,-0.00,-0.00,15
+N/A,-0.00,-0.00,-0.00,-0.00,53
+N/A,-0.00,-0.00,-0.00,-0.00,15
+N/A,-0.00,-0.00,-0.00,-0.00,29
+N/A,-0.00,-0.00,-0.00,-0.00,59
+N/A,-0.00,-0.00,-0.00,-0.00,28446
+N/A,-0.00,-0.00,-0.00,-0.00,36
+N/A,-0.00,-0.00,-0.00,-0.00,70
+N/A,-0.00,-0.00,-0.00,-0.00,35
+
+FIRST 5 BARS (DETAILED):
+  Bar 1: N/A
+         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=0
+  Bar 2: N/A
+         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=3200
+  Bar 3: N/A
+         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=2800
+  Bar 4: N/A
+         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=0
+  Bar 5: N/A
+         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=2000
+
+FULL FILE PARSE (all bars):
+  Total bars: 1376
+  First bar: N/A open=-0.00
+  Last bar:  N/A close=-0.00
