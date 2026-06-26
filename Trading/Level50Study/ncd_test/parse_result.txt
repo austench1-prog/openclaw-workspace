@@ -1,64 +1,76 @@
+======================================================================
 NCD Minute Bar Parser — NQ 06-26 2026-06-11
+======================================================================
 File: /Users/austinai/.openclaw/workspace/Trading/Level50Study/ncd_test/test_20260611.ncd
 File size: 10101 bytes
 
-============================================================
-PROBING HEADER SIZES
-============================================================
-Header= 0:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
-Header= 8:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
-Header=16:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
-Header=24:  200 bars, first_open=394397780.25, NQ plausible=False (0/20 bars in NQ range)
-Header=32:  200 bars, first_open=      0.00, NQ plausible=False (0/20 bars in NQ range)
-Header=40:  200 bars, first_open=     -0.00, NQ plausible=False (0/20 bars in NQ range)
+=== HEADER ===
+Header size:     35 bytes (records start at offset 35)
+Version/type:    1
+tick_size_price: 0.25 (swapped-double at offset 8)
+last_price:      28741.2581 (swapped-double at offset 16)
+last_dt_ticks:   639167326582755617
+last_datetime:   2026-06-10 23:57:38.275558+00:00 UTC (swapped-int64 at offset 24)
+Parse errors:    0
 
-No header size gave plausible NQ prices. Using header=40 for detailed output.
-============================================================
-BEST RESULT: header_size=40
-============================================================
-Total bars parsed: 1376
-tick_size_price:  5e-324
-tick_size_volume: 5.289447516e-315
-initial_price:    -1.9517895997326772e-283
-initial_volume:   936837924817651532
-initial_datetime: None (ticks=3318447387408013088)
+=== PARSE RESULTS ===
+Total bars parsed: 1379
+First bar datetime: 2026-06-10 23:58:38.275558+00:00 UTC
+Last bar datetime:  2026-06-11 23:56:38.275558+00:00 UTC
+Plausible NQ bars (15000-40000): 1106/1379
+Open range:  -4973.24 to 72105.26
+Close range: -5003.74 to 72096.51
+Volume range: 1 to 65026
 
-FIRST 20 BARS (CSV):
+First 5 bars all plausible: True
+
+=== FIRST 20 BARS (CSV) ===
 datetime_utc,open,high,low,close,volume
-N/A,-0.00,-0.00,-0.00,-0.00,0
-N/A,-0.00,-0.00,-0.00,-0.00,3200
-N/A,-0.00,-0.00,-0.00,-0.00,2800
-N/A,-0.00,-0.00,-0.00,-0.00,0
-N/A,-0.00,-0.00,-0.00,-0.00,2000
-N/A,-0.00,-0.00,-0.00,-0.00,2500
-N/A,-0.00,-0.00,-0.00,-0.00,1
-N/A,-0.00,-0.00,-0.00,-0.00,31
-N/A,-0.00,-0.00,-0.00,-0.00,20
-N/A,-0.00,-0.00,-0.00,-0.00,11
-N/A,-0.00,-0.00,-0.00,-0.00,19
-N/A,-0.00,-0.00,-0.00,-0.00,15
-N/A,-0.00,-0.00,-0.00,-0.00,53
-N/A,-0.00,-0.00,-0.00,-0.00,15
-N/A,-0.00,-0.00,-0.00,-0.00,29
-N/A,-0.00,-0.00,-0.00,-0.00,59
-N/A,-0.00,-0.00,-0.00,-0.00,28446
-N/A,-0.00,-0.00,-0.00,-0.00,36
-N/A,-0.00,-0.00,-0.00,-0.00,70
-N/A,-0.00,-0.00,-0.00,-0.00,35
+2026-06-10 23:58:38,28740.76,28747.76,28694.26,28720.26,13
+2026-06-10 23:59:38,28716.01,28723.26,28697.76,28716.01,3
+2026-06-11 00:00:38,28708.01,28710.76,28656.26,28684.01,19
+2026-06-11 00:01:38,28680.51,28681.26,28638.26,28655.51,16
+2026-06-11 00:02:38,28649.26,28655.76,28604.76,28621.26,18
+2026-06-11 00:03:38,28623.01,28653.51,28623.01,28608.01,68
+2026-06-11 00:04:38,28623.51,28631.01,28578.01,28596.51,10
+2026-06-11 00:05:38,28600.01,28600.01,28589.26,28600.01,52
+2026-06-11 00:06:38,28587.26,28596.76,28551.51,28561.51,13
+2026-06-11 00:07:38,28565.51,28568.01,28529.01,28546.76,1
+2026-06-11 00:08:38,28537.26,28548.01,28537.26,28510.51,31
+2026-06-11 00:09:38,28515.51,28523.26,28473.51,28488.76,20
+2026-06-11 00:10:38,28489.76,28491.76,28451.26,28468.26,11
+2026-06-11 00:11:38,28460.01,28466.26,28460.01,28432.26,19
+2026-06-11 00:12:38,28436.01,28439.76,28388.26,28404.76,15
+2026-06-11 00:13:38,28405.51,28377.51,28359.01,28377.51,53
+2026-06-11 00:14:38,28366.26,28374.51,28323.01,28341.76,15
+2026-06-11 00:15:38,28339.26,28343.26,28298.51,28309.76,29
+2026-06-11 00:16:38,28312.51,28334.26,28312.51,28293.76,59
+2026-06-11 00:17:38,28307.51,28307.76,28306.76,28307.51,28446
 
-FIRST 5 BARS (DETAILED):
-  Bar 1: N/A
-         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=0
-  Bar 2: N/A
-         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=3200
-  Bar 3: N/A
-         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=2800
-  Bar 4: N/A
-         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=0
-  Bar 5: N/A
-         O=-0.00 H=-0.00 L=-0.00 C=-0.00 V=2000
+=== FIRST 5 BARS (DETAILED) ===
+Bar 1: 2026-06-10 23:58:38 UTC
+        O=28740.76 H=28747.76 L=28694.26 C=28720.26 V=13
+        NQ plausible: True
+Bar 2: 2026-06-10 23:59:38 UTC
+        O=28716.01 H=28723.26 L=28697.76 C=28716.01 V=3
+        NQ plausible: True
+Bar 3: 2026-06-11 00:00:38 UTC
+        O=28708.01 H=28710.76 L=28656.26 C=28684.01 V=19
+        NQ plausible: True
+Bar 4: 2026-06-11 00:01:38 UTC
+        O=28680.51 H=28681.26 L=28638.26 C=28655.51 V=16
+        NQ plausible: True
+Bar 5: 2026-06-11 00:02:38 UTC
+        O=28649.26 H=28655.76 L=28604.76 C=28621.26 V=18
+        NQ plausible: True
 
-FULL FILE PARSE (all bars):
-  Total bars: 1376
-  First bar: N/A open=-0.00
-  Last bar:  N/A close=-0.00
+=== FORMAT NOTES ===
+Header encoding uses 'swapped word' format:
+  - Doubles: read as two LE uint32, combine as (high32<<32)|low32 then as double
+  - DateTime: same swapped int64 format
+Record format (variable length, per bar):
+  mask1: [bits 0-1]=time_flag, [bits 2-3]=open_size, [bits 5-7]=vol_flag
+  mask2: [bits 0-1]=close_size, [bits 4-5]=high_size, [bits 6-7]=low_size
+  Time: NoTime(0)=+1min, Time1/2/4=+N min gap
+  Open/Close: signed int8/16/32 delta (bias-128 for 1-byte)
+  High/Low: unsigned distance from max/min(open,close)
