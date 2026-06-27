@@ -1,4 +1,9 @@
-# Active Work — last updated 2026-06-21 22:43 PDT
+# Active Work — last updated 2026-06-26 21:25 PDT
+
+## ⛔ 2026-06-26 总裁指令：以下所有任务全部关闭，不再继续。新任务从头开始。
+
+---
+## [CLOSED] 原任务存档
 
 ## 当前任务：折扣区头寸策略 — 数学验证模型（Module D 蓝图附件）
 
