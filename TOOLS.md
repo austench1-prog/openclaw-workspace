@@ -46,6 +46,10 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 Add whatever helps you do your job. This is your cheat sheet.
 
+## AnyDesk IDs
+- 小塔 (Mac mini, austinai): **1590882779**
+- 温总 (Win PC, auste): **1879233041**
+
 ## Telegram Desktop 版本（复制按钮问题，2026-06-21 解决）
 
 - **必须用 Telegram Desktop（官方牌面版，从 GitHub release 下），版本 6.9.3 验证可用。**
