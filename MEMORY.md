@@ -440,7 +440,7 @@ Basic infrastructure is now considered stable. Team focus shifts to strategy and
 | Execution | Dragon (OpenClaw) on 小塔 | ✅ Active |
 | Research | Jimmy (Gemini CLI) on 小白 | ✅ Deployed |
 | Compliance | NotebookLM 书记宝 (7 sources) | ✅ Active |
-| Local backup | Samsung DragonVault 三星 | ⚠️ Last: 2026-06-14（DragonVault 挂载但备份脚本未见定时运行记录；git_sync 正常每15min推GitHub）|
+| Local backup | Samsung DragonVault 三星 | ⚠️ DragonVault **unmounted since 2026-06-20**（硬件不稳，可能退役）— 本地备份跳过，仅 iCloud + GitHub 生效 |
 | Cloud backup | GitHub + iCloud | ✅ Active |
 | President workspace | Obsidian vault (iCloud/President_Command) | ✅ Setup done |
 
